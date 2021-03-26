@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:sapphire_gem"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:sapphire_block",
+        "count": 1
+    }
+}

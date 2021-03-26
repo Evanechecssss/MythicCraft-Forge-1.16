@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/yew_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/yew_pressureplate_down" }
+    }
+}

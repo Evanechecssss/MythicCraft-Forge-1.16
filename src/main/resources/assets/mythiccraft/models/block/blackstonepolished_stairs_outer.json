@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/blackstone_polished",
+        "top": "mythiccraft:blocks/blackstone_polished",
+        "side": "mythiccraft:blocks/blackstone_polished"
+    }
+}

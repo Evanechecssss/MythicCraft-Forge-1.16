@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/marble_polished",
+        "top": "mythiccraft:blocks/marble_polished",
+        "side": "mythiccraft:blocks/marble_polished"
+    }
+}

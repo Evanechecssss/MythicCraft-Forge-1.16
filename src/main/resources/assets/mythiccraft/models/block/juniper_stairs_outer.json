@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/juniper_planks",
+        "top": "mythiccraft:blocks/juniper_planks",
+        "side": "mythiccraft:blocks/juniper_planks"
+    }
+}

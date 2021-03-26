@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "mythiccraft:blocks/charred_berry_bush_stage1"
+    }
+}

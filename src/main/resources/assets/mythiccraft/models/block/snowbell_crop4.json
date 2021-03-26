@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "mythiccraft:blocks/snowbell_crop_stage4"
+    }
+}

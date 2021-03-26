@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/pearlstone",
+        "top": "mythiccraft:blocks/pearlstone",
+        "side": "mythiccraft:blocks/pearlstone"
+    }
+}

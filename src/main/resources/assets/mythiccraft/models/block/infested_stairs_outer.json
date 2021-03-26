@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/infested_planks",
+        "top": "mythiccraft:blocks/infested_planks",
+        "side": "mythiccraft:blocks/infested_planks"
+    }
+}

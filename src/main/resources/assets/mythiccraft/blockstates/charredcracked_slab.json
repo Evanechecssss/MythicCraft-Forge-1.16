@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/charredcracked_slab" },
+        "type=top": { "model": "mythiccraft:block/charredcracked_slab_top" },
+        "type=double": { "model": "mythiccraft:block/charred_cracked" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/bloodoak_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/bloodoak_pressureplate_down" }
+    }
+}

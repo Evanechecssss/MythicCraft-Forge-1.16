@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/hawthorn_planks",
+        "top": "mythiccraft:blocks/hawthorn_planks",
+        "side": "mythiccraft:blocks/hawthorn_planks"
+    }
+}

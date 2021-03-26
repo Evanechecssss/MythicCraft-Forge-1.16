@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "mythiccraft:blocks/mandrake_crop_stage0"
+    }
+}

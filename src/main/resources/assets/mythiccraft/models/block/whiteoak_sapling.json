@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mythiccraft:blocks/whiteoak_sapling"
+  }
+}

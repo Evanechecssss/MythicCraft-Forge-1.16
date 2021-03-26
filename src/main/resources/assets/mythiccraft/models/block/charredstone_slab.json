@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mythiccraft:blocks/charred_stone",
+        "top": "mythiccraft:blocks/charred_stone",
+        "side": "mythiccraft:blocks/charred_stone"
+    }
+}

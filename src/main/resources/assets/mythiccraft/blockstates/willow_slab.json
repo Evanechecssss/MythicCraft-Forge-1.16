@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/willow_slab" },
+        "type=top": { "model": "mythiccraft:block/willow_slab_top" },
+        "type=double": { "model": "mythiccraft:block/willow_planks" }
+    }
+}

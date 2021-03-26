@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "mythiccraft:block/whitesage_crop0" },
+        "age=1": { "model": "mythiccraft:block/whitesage_crop1" },
+        "age=2": { "model": "mythiccraft:block/whitesage_crop2" },
+        "age=3": { "model": "mythiccraft:block/whitesage_crop3" },
+        "age=4": { "model": "mythiccraft:block/whitesage_crop4" },
+        "age=5": { "model": "mythiccraft:block/whitesage_crop5" },
+        "age=6": { "model": "mythiccraft:block/whitesage_crop6" },
+        "age=7": { "model": "mythiccraft:block/whitesage_crop7" }
+    }
+}

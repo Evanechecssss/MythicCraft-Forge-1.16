@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mythiccraft:blocks/crimson_polished",
+        "top": "mythiccraft:blocks/crimson_polished",
+        "side": "mythiccraft:blocks/crimson_polished"
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+	"mythiccraft:bloodoak_fence",
+	"mythiccraft:whiteoak_fence",
+	"mythiccraft:silverwood_fence",
+	"mythiccraft:witchwood_fence",
+	"mythiccraft:elder_fence",
+	"mythiccraft:cedar_fence",
+	"mythiccraft:ash_fence",
+	"mythiccraft:beech_fence",
+	"mythiccraft:rowan_fence",
+	"mythiccraft:hawthorn_fence",
+	"mythiccraft:alder_fence",
+	"mythiccraft:willow_fence",
+	"mythiccraft:blackthorn_fence",
+	"mythiccraft:yew_fence",
+	"mythiccraft:witchhazel_fence",
+	"mythiccraft:juniper_fence",
+	"mythiccraft:charred_fence",
+	"mythiccraft:infested_fence"
+	
+  ]
+}

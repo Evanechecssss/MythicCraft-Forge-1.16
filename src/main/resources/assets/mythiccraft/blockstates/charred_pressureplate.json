@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/charred_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/charred_pressureplate_down" }
+    }
+}

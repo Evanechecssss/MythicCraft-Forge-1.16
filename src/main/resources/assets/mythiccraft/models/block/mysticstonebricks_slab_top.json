@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "mythiccraft:blocks/mysticstone_bricks",
+        "top": "mythiccraft:blocks/mysticstone_bricks",
+        "side": "mythiccraft:blocks/mysticstone_bricks"
+    }
+}

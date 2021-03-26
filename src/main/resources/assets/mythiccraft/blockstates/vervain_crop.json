@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "mythiccraft:block/vervain_crop0" },
+        "age=1": { "model": "mythiccraft:block/vervain_crop1" },
+        "age=2": { "model": "mythiccraft:block/vervain_crop1" },
+        "age=3": { "model": "mythiccraft:block/vervain_crop1" },
+        "age=4": { "model": "mythiccraft:block/vervain_crop2" },
+        "age=5": { "model": "mythiccraft:block/vervain_crop2" },
+        "age=6": { "model": "mythiccraft:block/vervain_crop2" },
+        "age=7": { "model": "mythiccraft:block/vervain_crop3" }
+    }
+}

@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/blackthorn_slab" },
+        "type=top": { "model": "mythiccraft:block/blackthorn_slab_top" },
+        "type=double": { "model": "mythiccraft:block/blackthorn_planks" }
+    }
+}

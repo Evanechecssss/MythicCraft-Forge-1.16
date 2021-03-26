@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:blocks/ash_log_top",
+        "side": "mythiccraft:blocks/ash_log"
+    }
+}

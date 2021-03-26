@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/mysticstonebricks_slab" },
+        "type=top": { "model": "mythiccraft:block/mysticstonebricks_slab_top" },
+        "type=double": { "model": "mythiccraft:block/mysticstone_bricks" }
+    }
+}

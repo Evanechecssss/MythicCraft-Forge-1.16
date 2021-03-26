@@ -1,0 +1,9 @@
+  
+{
+    "variants": {
+        "facing=north": { "model": "mythiccraft:block/pedestal_tier1" },
+        "facing=south": { "model": "mythiccraft:block/pedestal_tier1", "y": 180 },
+        "facing=west":  { "model": "mythiccraft:block/pedestal_tier1", "y": 270 },
+        "facing=east":  { "model": "mythiccraft:block/pedestal_tier1", "y": 90 }
+    }
+}

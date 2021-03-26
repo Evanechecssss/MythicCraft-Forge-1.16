@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mythiccraft:block/elder_stripped_log" },
+        "axis=z":   { "model": "mythiccraft:block/elder_stripped_log", "x": 90 },
+        "axis=x":   { "model": "mythiccraft:block/elder_stripped_log", "x": 90, "y": 90 }
+    }
+}

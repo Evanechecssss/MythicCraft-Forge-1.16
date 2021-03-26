@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/witchhazel_planks",
+        "top": "mythiccraft:blocks/witchhazel_planks",
+        "side": "mythiccraft:blocks/witchhazel_planks"
+    }
+}

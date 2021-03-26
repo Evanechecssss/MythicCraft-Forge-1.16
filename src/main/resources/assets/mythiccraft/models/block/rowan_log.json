@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:blocks/rowan_log_top",
+        "side": "mythiccraft:blocks/rowan_log"
+    }
+}

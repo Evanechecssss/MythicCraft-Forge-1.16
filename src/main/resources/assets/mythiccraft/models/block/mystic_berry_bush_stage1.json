@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "mythiccraft:blocks/mystic_berry_bush_stage1"
+    }
+}

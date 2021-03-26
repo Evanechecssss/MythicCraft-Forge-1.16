@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/cedar_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/cedar_pressureplate_down" }
+    }
+}

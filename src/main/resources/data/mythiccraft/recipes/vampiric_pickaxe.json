@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "vvv",
+        " / ",
+        " / "
+    ],
+    "key": {
+        "v": {
+            "item": "mythiccraft:vampric_gem"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:vampiric_pickaxe",
+        "count": 1
+    }
+}

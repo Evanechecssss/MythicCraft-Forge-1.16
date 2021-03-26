@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mythiccraft:block/alder_log" },
+        "axis=z":   { "model": "mythiccraft:block/alder_log", "x": 90 },
+        "axis=x":   { "model": "mythiccraft:block/alder_log", "x": 90, "y": 90 }
+    }
+}

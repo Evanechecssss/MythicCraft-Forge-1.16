@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "mythiccraft:block/magic_quarry" },
+        "facing=south": { "model": "mythiccraft:block/magic_quarry", "y": 180 },
+        "facing=west":  { "model": "mythiccraft:block/magic_quarry", "y": 270 },
+        "facing=east":  { "model": "mythiccraft:block/magic_quarry", "y": 90 }
+    }
+}

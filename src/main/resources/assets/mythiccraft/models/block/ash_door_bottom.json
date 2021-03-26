@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "mythiccraft:blocks/ash_door_bottom",
+        "top": "mythiccraft:blocks/ash_door_top"
+    }
+}

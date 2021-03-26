@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GvG",
+        "vRv",
+        "GvG"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:glass"
+        },
+        "v": {
+            "item": "mythiccraft:silver_ingot"
+        },
+        "R": {
+            "item": "minecraft:redstone_lamp"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:silver_lantern",
+        "count": 1
+    }
+}

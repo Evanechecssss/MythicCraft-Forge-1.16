@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:blocks/beech_log_top",
+        "side": "mythiccraft:blocks/beech_log"
+    }
+}

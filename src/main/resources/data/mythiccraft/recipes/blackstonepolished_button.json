@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mythiccraft:blackstone_polished"
+        }
+    ],
+    "result": {
+        "item": "mythiccraft:blackstonepolished_button",
+        "count": 1
+    }
+}

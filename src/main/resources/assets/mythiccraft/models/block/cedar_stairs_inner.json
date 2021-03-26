@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/cedar_planks",
+        "top": "mythiccraft:blocks/cedar_planks",
+        "side": "mythiccraft:blocks/cedar_planks"
+    }
+}

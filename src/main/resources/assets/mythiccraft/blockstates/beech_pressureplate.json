@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/beech_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/beech_pressureplate_down" }
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "textures": {
+    "pane": "mythiccraft:blocks/pixie_glass",
+    "edge": "mythiccraft:blocks/pixie_glass_pane_top"
+  }
+}

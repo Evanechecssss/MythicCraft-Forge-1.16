@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "mythiccraft:items/sapphire_hoe"
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/silverwood_planks",
+        "top": "mythiccraft:blocks/silverwood_planks",
+        "side": "mythiccraft:blocks/silverwood_planks"
+    }
+}

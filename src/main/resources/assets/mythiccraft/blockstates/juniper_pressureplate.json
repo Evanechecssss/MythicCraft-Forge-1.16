@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/juniper_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/juniper_pressureplate_down" }
+    }
+}

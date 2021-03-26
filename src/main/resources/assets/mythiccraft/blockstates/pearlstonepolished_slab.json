@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/pearlstonepolished_slab" },
+        "type=top": { "model": "mythiccraft:block/pearlstonepolished_slab_top" },
+        "type=double": { "model": "mythiccraft:block/pearlstone_polished" }
+    }
+}

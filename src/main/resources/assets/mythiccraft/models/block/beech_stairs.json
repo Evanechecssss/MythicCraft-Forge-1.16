@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/beech_planks",
+        "top": "mythiccraft:blocks/beech_planks",
+        "side": "mythiccraft:blocks/beech_planks"
+    }
+}

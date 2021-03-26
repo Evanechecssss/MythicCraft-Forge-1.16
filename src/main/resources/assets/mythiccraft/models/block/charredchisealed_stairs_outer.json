@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/charred_chisealed",
+        "top": "mythiccraft:blocks/charred_chisealed",
+        "side": "mythiccraft:blocks/charred_chisealed"
+    }
+}

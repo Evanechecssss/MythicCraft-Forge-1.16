@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/crimson_cobble",
+        "top": "mythiccraft:blocks/crimson_cobble",
+        "side": "mythiccraft:blocks/crimson_cobble"
+    }
+}

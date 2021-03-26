@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:blocks/witchwood_log_top",
+        "side": "mythiccraft:blocks/witchwood_log"
+    }
+}

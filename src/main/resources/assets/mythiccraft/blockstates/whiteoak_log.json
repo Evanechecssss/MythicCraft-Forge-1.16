@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mythiccraft:block/whiteoak_log" },
+        "axis=z":   { "model": "mythiccraft:block/whiteoak_log", "x": 90 },
+        "axis=x":   { "model": "mythiccraft:block/whiteoak_log", "x": 90, "y": 90 }
+    }
+}

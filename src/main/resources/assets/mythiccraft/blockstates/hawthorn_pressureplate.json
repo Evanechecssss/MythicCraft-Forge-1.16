@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/hawthorn_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/hawthorn_pressureplate_down" }
+    }
+}

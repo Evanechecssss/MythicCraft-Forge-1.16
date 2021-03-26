@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "mythiccraft:blocks/beech_door_bottom",
+        "top": "mythiccraft:blocks/beech_door_top"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/pressure_plate_up",
+    "textures": {
+        "texture": "mythiccraft:blocks/yew_planks"
+    }
+}

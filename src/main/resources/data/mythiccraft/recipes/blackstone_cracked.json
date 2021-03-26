@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "mythiccraft:blackstone_bricks"
+    },
+    "result": "mythiccraft:blackstone_cracked",
+    "experience": 2.1,
+    "cookingtime": 200
+}

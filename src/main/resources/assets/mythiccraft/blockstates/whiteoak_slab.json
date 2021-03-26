@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/whiteoak_slab" },
+        "type=top": { "model": "mythiccraft:block/whiteoak_slab_top" },
+        "type=double": { "model": "mythiccraft:block/whiteoak_planks" }
+    }
+}

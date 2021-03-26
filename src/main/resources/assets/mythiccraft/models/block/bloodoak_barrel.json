@@ -1,0 +1,8 @@
+{
+  "parent": "mythiccraft:blocks/cube_bottom_top",
+  "textures": {
+    "top": "mythiccraft:blocks/bloodoak_barrel_top",
+    "bottom": "mythiccraft:blocks/bloodoak_barrel_bottom",
+    "side": "mythiccraft:blocks/bloodoak_barrel_side"
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "mythiccraft:blocks/charred_door_bottom",
+        "top": "mythiccraft:blocks/charred_door_top"
+    }
+}

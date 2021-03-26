@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/infested_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/infested_pressureplate_down" }
+    }
+}

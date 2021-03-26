@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "mythiccraft:block/crystal_cluster" },
+        "facing=south": { "model": "mythiccraft:block/crystal_cluster", "y": 180 },
+        "facing=west":  { "model": "mythiccraft:block/crystal_cluster", "y": 270 },
+        "facing=east":  { "model": "mythiccraft:block/crystal_cluster", "y": 90 }
+    }
+}
