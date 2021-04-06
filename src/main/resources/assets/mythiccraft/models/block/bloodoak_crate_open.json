@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "mythiccraft:blocks/bloodoak_crate_top_open",
+    "bottom": "mythiccraft:blocks/bloodoak_crate_bottom",
+    "side": "mythiccraft:blocks/bloodoak_crate_side"
+  }
+}

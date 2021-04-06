@@ -1,5 +1,10 @@
 {
-    "variants": {
-        "": { "model": "mythiccraft:block/blood_lantern" }
+  "variants": {
+    "hanging=false": {
+      "model": "mythiccraft:block/blood_lantern"
+    },
+    "hanging=true": {
+      "model": "mythiccraft:block/blood_lantern_hanging"
     }
+  }
 }

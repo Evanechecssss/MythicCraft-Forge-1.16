@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GGG",
+        "GMG",
+        "GGG"
+    ],
+    "key": {
+        "G": {
+            "tag": "forge:glass"
+        },
+        "M": {
+            "item": "mythiccraft:pixie_dust"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pixie_glass",
+        "count": 8
+    }
+}

@@ -47,31 +47,31 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> BLOODSTONE_NUGGET = ITEMS.register("bloodstone_nugget",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> dragonheart_ingot = ITEMS.register("dragonheart_ingot",
+	public static final RegistryObject<Item> DRAGONHEART_INGOT = ITEMS.register("dragonheart_ingot",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DRAGONHEART_NUGGET = ITEMS.register("dragonheart_nugget",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> sapphire = ITEMS.register("sapphire",
+	public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> ruby = ITEMS.register("ruby",
+	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> amethyst = ITEMS.register("amethyst",
+	public static final RegistryObject<Item> AMETHYST = ITEMS.register("amethyst",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> pureglowstone_dust = ITEMS.register("pureglowstone_dust",
+	public static final RegistryObject<Item> PUREGLOWSTONE_DUST = ITEMS.register("pureglowstone_dust",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> darkglowstone_dust = ITEMS.register("darkglowstone_dust",
+	public static final RegistryObject<Item> DARKGLOWSTONE_DUST = ITEMS.register("darkglowstone_dust",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> rose_quartz = ITEMS.register("rose_quartz",
+	public static final RegistryObject<Item> ROSE_QUARTZ = ITEMS.register("rose_quartz",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Item> fairy_dust = ITEMS.register("fairy_dust",
+	public static final RegistryObject<Item> FAIRY_DUST = ITEMS.register("fairy_dust",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)
 					.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 							.effect(new EffectInstance(Effects.GLOWING, 3000, 5), 0.7f)
 							.effect(new EffectInstance(Effects.LEVITATION, 6000, 5), 0.7f)
 							.effect(new EffectInstance(Effects.ABSORPTION, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Item> pixie_dust = ITEMS.register("pixie_dust",
+	public static final RegistryObject<Item> PIXIE_DUST = ITEMS.register("pixie_dust",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)
 					.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 							.effect(new EffectInstance(Effects.GLOWING, 3000, 5), 0.7f)
@@ -508,11 +508,11 @@ public class ItemInit {
 
 	// Tools
 	public static final RegistryObject<SwordItem> vampiric_sword = ITEMS.register("vampiric_sword",
-			() -> new SwordItem(ModItemTiers.VAMPIRIC, 7, 5.0f,
+			() -> new SwordItem(ModItemTiers.VAMPIRIC, 2, 5.0f,
 					new Item.Properties().group(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> vampiric_pickaxe = ITEMS.register("vampiric_pickaxe",
-			() -> new PickaxeItem(ModItemTiers.VAMPIRIC, 4, 5.0f,
+			() -> new PickaxeItem(ModItemTiers.VAMPIRIC, 2, 5.0f,
 					new Item.Properties().group(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> vampiric_shovel = ITEMS.register("vampiric_shovel",
@@ -652,59 +652,67 @@ public class ItemInit {
 					new Item.Properties().group(MythicCraftItems.instance).defaultMaxDamage(60)));
 
 	// Fuel
-	public static final RegistryObject<WoodAshItem> wood_ash = ITEMS.register("wood_ash",
+	public static final RegistryObject<WoodAshItem> WOOD_ASH = ITEMS.register("wood_ash",
 			() -> new WoodAshItem(new Item.Properties().group(MythicCraftItems.instance)));
 
 	// Food
-	public static final RegistryObject<Item> raw_kraken = ITEMS.register("raw_kraken",
+	public static final RegistryObject<Item> RAW_KRAKEN = ITEMS.register("raw_kraken",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)
 					.food(new Food.Builder().meat().hunger(3).saturation(1.2f).build())));
 	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Item> cooked_kraken = ITEMS.register("cooked_kraken",
+	public static final RegistryObject<Item> COOKED_KRAKEN = ITEMS.register("cooked_kraken",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance).food(new Food.Builder().hunger(8)
 					.saturation(1.2f).effect(new EffectInstance(Effects.REGENERATION, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Item> blood_berry = ITEMS.register("blood_berry",
+	public static final RegistryObject<Item> BLOOD_BERRY = ITEMS.register("blood_berry",
 			() -> new BlockItem(BlockInit.BLOOD_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.STRENGTH, 3000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.STRENGTH, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.POISON, 6000, 5), 0.7f).build())))));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> icy_berry = ITEMS.register("icy_berry",
 			() -> new BlockItem(BlockInit.ICY_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.SLOWNESS, 3000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.SLOWNESS, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.INSTANT_DAMAGE, 6000, 5), 0.7f).build())))));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> silver_berry = ITEMS.register("silver_berry",
 			() -> new BlockItem(BlockInit.SILVER_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.LEVITATION, 3000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.WEAKNESS, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.LEVITATION, 6000, 5), 0.7f).build())))));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> charred_berry = ITEMS.register("charred_berry",
 			() -> new BlockItem(BlockInit.CHARRED_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.HUNGER, 2000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.HUNGER, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.FIRE_RESISTANCE, 6000, 5), 0.7f).build())))));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> soul_berry = ITEMS.register("soul_berry",
 			() -> new BlockItem(BlockInit.SOUL_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.HEALTH_BOOST, 2000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.HEALTH_BOOST, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.WITHER, 6000, 5), 0.7f).build())))));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> infested_berry = ITEMS.register("infested_berry",
 			() -> new BlockItem(BlockInit.INFESTED_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.NAUSEA, 3000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.NAUSEA, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.HASTE, 6000, 5), 0.7f).build())))));
+
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> mystic_berry = ITEMS.register("mystic_berry",
 			() -> new BlockItem(BlockInit.MYSTIC_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
-									.effect(new EffectInstance(Effects.LUCK, 3000, 5), 0.7f).build())));
+									.effect(new EffectInstance(Effects.LUCK, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.BLINDNESS, 6000, 5), 0.7f).build())))));
 	public static final RegistryObject<Item> blood_apple = ITEMS.register("blood_apple",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)
 					.food(new Food.Builder().hunger(4).saturation(0.5f).build())));
@@ -753,9 +761,6 @@ public class ItemInit {
 	public static final RegistryObject<BucketItem> infestedgoo_bucket = ITEMS.register("infestedgoo_bucket",
 			() -> new BucketItem(() -> FluidInit.INFESTEDGOO_FLUID.get(),
 					new Item.Properties().group(MythicCraftItems.instance).maxStackSize(1)));
-	
-	
-	
 
 	// SpawnEggs
 	public static final RegistryObject<ModSpawnEggItem> basilisk_spawn_egg = ITEMS.register("basilisk_spawn_egg",
@@ -776,4 +781,5 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().group(MythicCraftItems.instance).maxStackSize(16)));
+
 }

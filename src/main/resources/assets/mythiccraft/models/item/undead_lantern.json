@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/undead_lantern"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mythiccraft:items/undead_lantern"
+  }
 }

@@ -39,7 +39,7 @@ public class BloodBerryBushBlock extends SweetBerryBushBlock implements IGrowabl
 	   }
 
 	   public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-	      return new ItemStack(ItemInit.blood_berry.get());
+	      return new ItemStack(ItemInit.BLOOD_BERRY.get());
 	   }
 
 	   public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {

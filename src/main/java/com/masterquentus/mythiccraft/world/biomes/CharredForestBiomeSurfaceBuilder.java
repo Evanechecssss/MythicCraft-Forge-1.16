@@ -34,7 +34,7 @@ public class CharredForestBiomeSurfaceBuilder extends SurfaceBuilder<SurfaceBuil
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
 							i == 1 ? BlockInit.HOTASH_BLOCK.get().getDefaultState()
-									: BlockInit.ASH_LAYER.get().getDefaultState(),
+									: BlockInit.ASH_BLOCK.get().getDefaultState(),
 							BlockInit.charred_cobble.get().getDefaultState(), Blocks.GRAVEL.getDefaultState()));
 		}
 

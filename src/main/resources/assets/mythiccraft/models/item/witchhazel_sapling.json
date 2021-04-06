@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/witchhazel_sapling"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "mythiccraft:blocks/witchhazel_sapling"
+    }
 }

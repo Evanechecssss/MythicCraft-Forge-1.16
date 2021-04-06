@@ -22,6 +22,7 @@ import com.masterquentus.mythiccraft.objects.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.WhitesageCrop;
 import com.masterquentus.mythiccraft.objects.WolfsCropBlock;
 import com.masterquentus.mythiccraft.objects.WormwoodCrop;
+import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModContainerTypes;
 import com.masterquentus.mythiccraft.objects.blocks.ModEntityTypes;
 import com.masterquentus.mythiccraft.objects.blocks.ModTileEntityTypes;
@@ -89,6 +90,7 @@ public class MythicCraft {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
 		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof WolfsCropBlock))
+				.filter(block -> !(block.get() instanceof HellFireBlock))
 				.filter(block -> !(block.get() instanceof GarlicCropBlock))
 				.filter(block -> !(block.get() instanceof BelladonnaCropBlock))
 				.filter(block -> !(block.get() instanceof MandrakeCropBlock))

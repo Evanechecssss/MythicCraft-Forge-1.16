@@ -1,5 +1,10 @@
 {
-    "variants": {
-        "": { "model": "mythiccraft:block/silver_lantern" }
+  "variants": {
+    "hanging=false": {
+      "model": "mythiccraft:block/silver_lantern"
+    },
+    "hanging=true": {
+      "model": "mythiccraft:block/silver_lantern_hanging"
     }
+  }
 }

@@ -28,22 +28,22 @@ public enum ModItemTiers implements IItemTier {
 	}),
 
 	DRAGONHEART(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.dragonheart_ingot.get());
+		return Ingredient.fromItems(ItemInit.DRAGONHEART_INGOT.get());
 		
 	}),
 	
 	RUBY(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.ruby.get());
+		return Ingredient.fromItems(ItemInit.RUBY.get());
 		
 	}),
 	
 	SAPPHIRE(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.sapphire.get());
+		return Ingredient.fromItems(ItemInit.SAPPHIRE.get());
 		
 	}),
 	
 	AMETHYST(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.amethyst.get());
+		return Ingredient.fromItems(ItemInit.AMETHYST.get());
 		
 	}),
 	

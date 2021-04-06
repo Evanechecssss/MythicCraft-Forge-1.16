@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/rosequartz_smooth"
+      "model": "mythiccraft:block/rosequartz_smooth"
     }
   }
 }

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "mmm",
+        " # ",
+        " # "
+    ],
+    "key": {
+        "m": {
+            "item": "mythiccraft:mythic_diamond"
+        },
+        "#": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:mythicdiamond_pickaxe",
+        "count": 1
+    }
+}

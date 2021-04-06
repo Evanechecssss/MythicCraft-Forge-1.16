@@ -1,5 +1,10 @@
 {
-    "variants": {
-        "": { "model": "mythiccraft:block/soul_lantern" }
+  "variants": {
+    "hanging=false": {
+      "model": "mythiccraft:block/soul_lantern"
+    },
+    "hanging=true": {
+      "model": "mythiccraft:block/soul_lantern_hanging"
     }
+  }
 }

@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/beech_sapling"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "mythiccraft:blocks/beech_sapling"
+    }
 }

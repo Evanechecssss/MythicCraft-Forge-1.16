@@ -23,6 +23,7 @@ import com.masterquentus.mythiccraft.objects.blocks.InfestedBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModDoor;
 import com.masterquentus.mythiccraft.objects.blocks.ModGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModLayer;
 import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModSaplingBlock;
@@ -36,6 +37,7 @@ import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalTier1;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalTier2;
+import com.masterquentus.mythiccraft.objects.blocks.PedestalTier3;
 import com.masterquentus.mythiccraft.objects.blocks.SilverBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SoulBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SpanishMossBlock;
@@ -64,6 +66,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.KelpBlock;
+import net.minecraft.block.LanternBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
@@ -74,6 +79,7 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -95,87 +101,114 @@ public class BlockInit {
 	public static final RegistryObject<Block> VAMPIRIC_ENDORE = BLOCKS.register("vampiric_endore",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
 					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> MYTHICDIAMOND_ORE = BLOCKS.register("mythicdiamond_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> MYTHICDIAMOND_ORE = BLOCKS.register("mythicdiamond_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(3)));
 	public static final RegistryObject<Block> MYTHICDIAMOND_NETHERORE = BLOCKS.register("mythicdiamond_netherore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(3)));
 	public static final RegistryObject<Block> MYTHICDIAMOND_ENDORE = BLOCKS.register("mythicdiamond_endore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SILVER_ORE = BLOCKS.register("silver_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SILVER_NETHERORE = BLOCKS.register("silver_netherore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SILVER_ENDORE = BLOCKS.register("silver_endore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> DRAGONHEART_ORE = BLOCKS.register("dragonheart_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> SILVER_ORE = BLOCKS.register("silver_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SILVER_NETHERORE = BLOCKS.register("silver_netherore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SILVER_ENDORE = BLOCKS.register("silver_endore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> DRAGONHEART_ORE = BLOCKS.register("dragonheart_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> DRAGONHEART_NETHERORE = BLOCKS.register("dragonheart_netherore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> DRAGONHESRT_ENDORE = BLOCKS.register("dragonheart_endore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> BLOODSTONE_ORE = BLOCKS.register("bloodstone_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> BLOODSTONE_ORE = BLOCKS.register("bloodstone_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> BLOODSTONE_NETHERORE = BLOCKS.register("bloodstone_netherore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> BLOODSTONE_ENDORE = BLOCKS.register("bloodstone_endore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MOONSTONE_ORE = BLOCKS.register("moonstone_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> BLOODSTONE_ENDORE = BLOCKS.register("bloodstone_endore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> MOONSTONE_ORE = BLOCKS.register("moonstone_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> MOONSTONE_NETHERORE = BLOCKS.register("moonstone_netherore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MOONSTONE_ENDORE = BLOCKS.register("moonstone_endore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ROSEQUARTZ_ORE = BLOCKS.register("rosequartz_ore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> MOONSTONE_ENDORE = BLOCKS.register("moonstone_endore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> ROSEQUARTZ_ORE = BLOCKS.register("rosequartz_ore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> ROSEQUARTZ_NETHERORE = BLOCKS.register("rosequartz_netherore",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ROSEQUARTZ_ENDORE = BLOCKS.register("rosequartz_endore", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> RUBY_NETHERORE = BLOCKS.register("ruby_netherore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> RUBY_ENDORE = BLOCKS.register("ruby_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> ROSEQUARTZ_ENDORE = BLOCKS.register("rosequartz_endore",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> RUBY_ORE = BLOCKS.register("ruby_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> RUBY_NETHERORE = BLOCKS.register("ruby_netherore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> RUBY_ENDORE = BLOCKS.register("ruby_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SAPPHIRE_ORE = BLOCKS.register("sapphire_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> SAPPHIRE_NETHERORE = BLOCKS.register("sapphire_netherore",
-			() -> new Block(
-					Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SAPPHIRE_ENDORE = BLOCKS.register("sapphire_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register("amethyst_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SAPPHIRE_ENDORE = BLOCKS.register("sapphire_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> AMETHYST_ORE = BLOCKS.register("amethyst_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> AMETHYST_NETHERORE = BLOCKS.register("amethyst_netherore",
-			() -> new Block(
-					Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> AMETHYST_ENDORE = BLOCKS.register("amethyst_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SALT_ORE = BLOCKS.register("salt_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SALT_NETHERORE = BLOCKS.register("salt_netherore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SALT_ENDORE = BLOCKS.register("salt_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MAGICAL_ORE = BLOCKS.register("magical_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MAGICAL_NETHERORE = BLOCKS.register("magical_netherore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MAGICAL_ENDORE = BLOCKS.register("magical_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRYSTAL_ORE = BLOCKS.register("crystal_ore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRYSTAL_NETHERORE = BLOCKS.register("crystal_netherore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRYSTAL_ENDORE = BLOCKS.register("crystal_endore", () -> new Block(
-			Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> AMETHYST_ENDORE = BLOCKS.register("amethyst_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SALT_ORE = BLOCKS.register("salt_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SALT_NETHERORE = BLOCKS.register("salt_netherore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> SALT_ENDORE = BLOCKS.register("salt_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> MAGICAL_ORE = BLOCKS.register("magical_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> MAGICAL_NETHERORE = BLOCKS.register("magical_netherore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> MAGICAL_ENDORE = BLOCKS.register("magical_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> CRYSTAL_ORE = BLOCKS.register("crystal_ore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> CRYSTAL_NETHERORE = BLOCKS.register("crystal_netherore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+	public static final RegistryObject<Block> CRYSTAL_ENDORE = BLOCKS.register("crystal_endore",
+			() -> new Block(Block.Properties.from(Blocks.STONE).hardnessAndResistance(3.0f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	// Blocks
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
@@ -361,37 +394,37 @@ public class BlockInit {
 
 	// Lanterns/Glowstone/Torches
 	public static final RegistryObject<Block> BLOOD_LANTERN = BLOCKS.register("blood_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> SILVER_LANTERN = BLOCKS.register("silver_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> SOUL_LANTERN = BLOCKS.register("soul_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> UNDEAD_LANTERN = BLOCKS.register("undead_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> MYSTIC_LANTERN = BLOCKS.register("mystic_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> ENDER_LANTERN = BLOCKS.register("ender_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> FAIRY_LANTERN = BLOCKS.register("fairy_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> PIXIE_LANTERN = BLOCKS.register("pixie_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> LIFE_LANTERN = BLOCKS.register("life_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> FERAL_LANTERN = BLOCKS.register("feral_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> LOVE_LANTERN = BLOCKS.register("love_lantern",
-			() -> new Block(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
+			() -> new LanternBlock(Block.Properties.from(Blocks.LANTERN).hardnessAndResistance(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightValue(15)));
 	public static final RegistryObject<Block> PURE_GLOWSTONE = BLOCKS.register("pure_glowstone",
 			() -> new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(2.0f, 10.0f).harvestLevel(2)
@@ -434,6 +467,9 @@ public class BlockInit {
 					.sound(SoundType.WOOD).lightValue(15)));
 
 	// Plants
+	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
+			() -> new FlowerBlock(Effects.NIGHT_VISION, 5,
+					Block.Properties.from(Blocks.POPPY).hardnessAndResistance(0.3f, 0.2f).sound(SoundType.PLANT)));
 
 	// Saplings
 	public static final RegistryObject<Block> bloodoak_sapling = BLOCKS.register("bloodoak_sapling",
@@ -1402,8 +1438,9 @@ public class BlockInit {
 			() -> new PedestalTier2(
 					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
+			() -> new PedestalTier3(
+					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4", () -> new Block(
 			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));

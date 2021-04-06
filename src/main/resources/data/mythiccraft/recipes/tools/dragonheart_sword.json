@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " d ",
+        " d ",
+        " # "
+    ],
+    "key": {
+        "d": {
+            "item": "mythiccraft:dragonheart_ingot"
+        },
+        "#": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:dragonheart_sword",
+        "count": 1
+    }
+}

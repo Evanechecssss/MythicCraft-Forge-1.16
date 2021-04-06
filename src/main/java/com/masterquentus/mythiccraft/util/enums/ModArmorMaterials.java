@@ -33,7 +33,7 @@ public enum ModArmorMaterials implements IArmorMaterial {
 
 	DRAGONHEART(MythicCraft.MOD_ID + ":dragonheart", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
-				return Ingredient.fromItems(ItemInit.dragonheart_ingot.get());
+				return Ingredient.fromItems(ItemInit.DRAGONHEART_INGOT.get());
 			}),
 
 	DRAGONSCALERED(MythicCraft.MOD_ID + ":dragonscalered", 5, new int[] { 7, 9, 11, 7 }, 420,
@@ -108,17 +108,17 @@ public enum ModArmorMaterials implements IArmorMaterial {
 	
 	RUBY(MythicCraft.MOD_ID + ":ruby", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
-				return Ingredient.fromItems(ItemInit.ruby.get());
+				return Ingredient.fromItems(ItemInit.RUBY.get());
 			}),
 	
 	SAPPHIRE(MythicCraft.MOD_ID + ":sapphire", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
-				return Ingredient.fromItems(ItemInit.sapphire.get());
+				return Ingredient.fromItems(ItemInit.SAPPHIRE.get());
 			}),
 	
 	AMETHYST(MythicCraft.MOD_ID + ":amethyst", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
-				return Ingredient.fromItems(ItemInit.amethyst.get());
+				return Ingredient.fromItems(ItemInit.AMETHYST.get());
 			}),
 	
 	ANCIENT(MythicCraft.MOD_ID + ":ancent", 5, new int[] { 7, 9, 11, 7 }, 420,

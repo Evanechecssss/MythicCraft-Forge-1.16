@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/cedar_sapling"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "mythiccraft:blocks/cedar_sapling"
+    }
 }

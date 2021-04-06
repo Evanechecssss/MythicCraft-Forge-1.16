@@ -32,7 +32,6 @@ public class CharredForestBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addDeadBushes(this);
 		DefaultBiomeFeatures.addDenseGrass(this);
-		DefaultBiomeFeatures.addGiantSpruceTaigaTrees(this);
 		DefaultBiomeFeatures.addInfestedStone(this);
 
 	}

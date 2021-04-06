@@ -2,8 +2,11 @@
 	"item.mythiccraft.vampiric_gem": "Vampiric Gem",
 	"item.mythiccraft.mythic_diamond": "Mythic Diamond",
 	"item.mythiccraft.silver_ingot": "Silver Ingot",
+	"item.mythiccraft.silver_nugget": "Silver Nugget",
 	"item.mythiccraft.bloodstone_ingot": "BloodStone Ingot",
+	"item.mythiccraft.bloodstone_nugget": "Bloodstone Nugget",
 	"item.mythiccraft.dragonheart_ingot": "Dragonheart Ingot",
+	"item.mythiccraft.dragonheart_nugget": "Dragonheart Nugget",
 	"item.mythiccraft.amethyst": "Amethyst",
 	"item.mythiccraft.ruby": "Ruby",
 	"item.mythiccraft.sapphire": "Sapphire",
@@ -689,6 +692,7 @@
 	"block.mythiccraft.weeping_vines": "Weeping Vines",
 	"block.mythiccraft.spanish_moss": "Spanish Moss",
 	"block.mythiccraft.hell_fire": "Hell Fire",
+	"block.mythiccraft.bloody_rose": "Bloody Rose",
 	
 	//Tools
 	"item.mythiccraft.vampiric_sword": "Vampiric Sword",
@@ -836,8 +840,8 @@
 	"biome.mythiccraft.weepingwitch_forest": "Weeping Witch Forest",
 	
 	//Containers
-	"container.bloodoakcrate_crate": "BloodOak Crate",
-	"container.whiteoakcrate_crate": "WhiteOak Crate",
+	"container.bloodoak_crate": "BloodOak Crate",
+	"container.whiteoak_crate": "WhiteOak Crate",
 	
 	//Creative tab
 	"itemGroup.mythiccraftitems": "MythicCraft Items",

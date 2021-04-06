@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-
 import com.masterquentus.mythiccraft.tileentity.WhiteOakCrateTileEntity;
 
 import net.minecraft.block.Block;

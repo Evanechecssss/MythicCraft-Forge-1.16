@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "# #",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:silver_ingot"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:silver_helmet",
+        "count": 1
+    }
+}

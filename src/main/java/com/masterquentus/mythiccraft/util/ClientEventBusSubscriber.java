@@ -132,6 +132,26 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_GLASS_PANE.get(), RenderType.getTranslucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS_PANE.get(), RenderType.getTranslucent());
+		
+		// Mic
+		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.getTranslucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOOD_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SILVER_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.UNDEAD_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIFE_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.FERAL_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LOVE_LANTERN.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODY_ROSE.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.WEEPING_VINES.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.getCutout());
+
 
 		// Entities
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntityRender::new);

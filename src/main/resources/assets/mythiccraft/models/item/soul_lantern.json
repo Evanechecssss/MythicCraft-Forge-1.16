@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/soul_lantern"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mythiccraft:items/soul_lantern"
+  }
 }

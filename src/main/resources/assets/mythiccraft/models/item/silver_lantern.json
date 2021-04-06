@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/silver_lantern"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mythiccraft:items/silver_lantern"
+  }
 }

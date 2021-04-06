@@ -1,8 +1,9 @@
 package com.masterquentus.mythiccraft.objects.items;
 
+import com.masterquentus.mythiccraft.init.BlockInit;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.FireBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -42,7 +43,7 @@ public class FlintAndHellFireItem extends FlintAndSteelItem {
 		         BlockPos blockpos1 = blockpos.offset(context.getFace());
 		         if (canSetFire(iworld.getBlockState(blockpos1), iworld, blockpos1)) {
 		            iworld.playSound(playerentity, blockpos1, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, random.nextFloat() * 0.4F + 0.8F);
-		            BlockState blockstate1 = ((FireBlock)Blocks.FIRE).getStateForPlacement(iworld, blockpos1);
+		            BlockState blockstate1 = ((FireBlock)BlockInit.HELL_FIRE.get()).getStateForPlacement(iworld, blockpos1);
 		            iworld.setBlockState(blockpos1, blockstate1, 11);
 		            ItemStack itemstack = context.getItem();
 		            if (playerentity instanceof ServerPlayerEntity) {

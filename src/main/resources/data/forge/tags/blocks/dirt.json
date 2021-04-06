@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mythiccraft:charred_soil",
+	"mythiccraft:infested_soil",
+	"mythiccraft:mystic_soil",
+	"mythiccraft:bloodly_soil"
+  ]
+}

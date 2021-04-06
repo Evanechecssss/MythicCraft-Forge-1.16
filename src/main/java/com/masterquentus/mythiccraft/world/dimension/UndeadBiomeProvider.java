@@ -7,7 +7,6 @@ import com.google.common.collect.ImmutableSet;
 import com.masterquentus.mythiccraft.init.BiomeInit;
 
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class UndeadBiomeProvider extends BiomeProvider {
@@ -20,11 +19,11 @@ public class UndeadBiomeProvider extends BiomeProvider {
 		rand = new Random();
 	}
 	
-	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.VAMPIREBIOME.get());
+	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.CRIMSON_FROST.get(), BiomeInit.CHARREDFORESTBIOME.get());
 
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {
-		return Biomes.DARK_FOREST_HILLS;
+		return BiomeInit.CRIMSON_FROST.get();
 	}
 
 }

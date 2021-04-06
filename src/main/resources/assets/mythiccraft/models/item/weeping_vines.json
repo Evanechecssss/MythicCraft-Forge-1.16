@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:items/weeping_vines"
+    "layer0": "mythiccraft:blocks/weeping_vines"
   }
 }

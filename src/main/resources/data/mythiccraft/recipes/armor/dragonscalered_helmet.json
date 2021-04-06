@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:dragonscale_red"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:dragonscalered_helmet",
+        "count": 1
+    }
+}

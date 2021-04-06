@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "mythiccraft:block/mystic_lantern"
+    },
+    "hanging=true": {
+      "model": "mythiccraft:block/mystic_lantern_hanging"
+    }
+  }
+}

@@ -1,4 +1,6 @@
-  
 {
-    "parent": "mythiccraft:block/blackthorn_sapling"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "mythiccraft:blocks/blackthorn_sapling"
+    }
 }

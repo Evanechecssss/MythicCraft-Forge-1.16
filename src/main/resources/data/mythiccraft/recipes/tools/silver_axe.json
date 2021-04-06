@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "ss ",
+        "s# ",
+        " # "
+    ],
+    "key": {
+        "s": {
+            "item": "mythiccraft:silver_ingot"
+        },
+        "#": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:silver_axe",
+        "count": 1
+    }
+}

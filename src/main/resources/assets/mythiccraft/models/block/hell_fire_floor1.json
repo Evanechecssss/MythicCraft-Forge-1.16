@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fire_floor",
+  "textures": {
+    "fire": "mythiccraft:blocks/hell_fire_1"
+  }
+}
