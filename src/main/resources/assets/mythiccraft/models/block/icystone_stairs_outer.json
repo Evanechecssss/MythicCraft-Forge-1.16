@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/icystone",
+        "top": "mythiccraft:blocks/icystone",
+        "side": "mythiccraft:blocks/icystone"
+    }
+}

@@ -4,6 +4,7 @@ import com.masterquentus.mythiccraft.init.ItemInit;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.CropsBlock;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
@@ -12,6 +13,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
 public class WaterartichokeCrop extends CropsBlock {
+	
 
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
@@ -36,4 +38,9 @@ public class WaterartichokeCrop extends CropsBlock {
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 		return SHAPE_BY_AGE[state.get(this.getAgeProperty())];
 	}
+	
+	@Override
+    protected boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
+        return state.getBlock() == Blocks.WATER;
+    }
 }

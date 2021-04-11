@@ -35,7 +35,7 @@ public class BiomeInit {
 					.waterColor(4849664).waterFogColor(3145728)
 					.surfaceBuilder(SurfaceBuilder.MOUNTAIN,
 							new SurfaceBuilderConfig(BlockInit.ASH_BLOCK.get().getDefaultState(),
-									BlockInit.BLACKSTONE.get().getDefaultState(), Blocks.CLAY.getDefaultState()))
+									Blocks.STONE.getDefaultState(), Blocks.CLAY.getDefaultState()))
 					.category(Category.FOREST).downfall(1.5F).depth(0.12F).parent(null)));
 	public static final RegistryObject<Biome> MISTICMEDDOWSBIOME = Biomes.register("misticmedows_biome",
 			() -> new MysiticMedowsBiome(new Biome.Builder().precipitation(RainType.RAIN).scale(0.5F).temperature(0.5F)

@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.world.dimension;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
-
+import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.GenerationSettings;
 
 public class UnderworldGenSettings extends GenerationSettings {
@@ -24,7 +23,7 @@ public class UnderworldGenSettings extends GenerationSettings {
 	}
 	
 	public UnderworldGenSettings() {
-		this.defaultBlock = BlockInit.BLACKSTONE.get().getDefaultState();
+		this.defaultBlock = Blocks.STONE.getDefaultState();
 	}
 }
 

@@ -2,6 +2,8 @@ package com.masterquentus.mythiccraft.objects.blocks;
 
 import java.util.Random;
 
+import com.masterquentus.mythiccraft.init.BlockInit;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -23,12 +25,13 @@ public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
 
 	public final KelpTopBlock top;
 
-	   public ModKelpBlock(KelpTopBlock kelpTopBlockIn, Block.Properties properties) {
-	      super(kelpTopBlockIn, properties);
-	      this.top = kelpTopBlockIn;
-	   }
 
-	   public IFluidState getFluidState(BlockState state) {
+	   public ModKelpBlock(Block kelpTopBlockIn, Properties properties) {
+		   super((KelpTopBlock) kelpTopBlockIn, properties);
+		      this.top = (KelpTopBlock) kelpTopBlockIn;
+	}
+
+	public IFluidState getFluidState(BlockState state) {
 	      return Fluids.WATER.getStillFluidState(false);
 	   }
 
@@ -64,7 +67,7 @@ public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
 	   }
 
 	   public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-	      return new ItemStack(Blocks.KELP);
+	      return new ItemStack(BlockInit.LIVING_KELP.get());
 	   }
 
 	   public boolean canContainFluid(IBlockReader worldIn, BlockPos pos, BlockState state, Fluid fluidIn) {

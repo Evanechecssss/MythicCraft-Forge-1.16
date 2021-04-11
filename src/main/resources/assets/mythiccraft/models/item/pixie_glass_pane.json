@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:block/pixie_glass"
+    "layer0": "mythiccraft:blocks/pixie_glass"
   }
 }

@@ -51,6 +51,10 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DRAGONHEART_NUGGET = ITEMS.register("dragonheart_nugget",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> FROSTSTEEL_INGOT = ITEMS.register("froststeel_ingot",
+			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> FROSTSTEEL_NUGGET = ITEMS.register("froststeell_nugget",
+			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",

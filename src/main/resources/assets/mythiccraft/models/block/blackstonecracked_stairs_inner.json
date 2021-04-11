@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "mythiccraft:blocks/blackstone_cracked",
-        "top": "mythiccraft:blocks/blackstone_cracked",
-        "side": "mythiccraft:blocks/blackstone_cracked"
-    }
-}

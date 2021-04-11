@@ -28,14 +28,14 @@ public class VampireBiomeSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCon
 			SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(BlockInit.ASH_BLOCK.get().getDefaultState(),
-							BlockInit.BLACKSTONE.get().getDefaultState(), BlockInit.BLACKSTONE_COBBLE.get().getDefaultState()));
+							Blocks.STONE.getDefaultState(), Blocks.STONE.getDefaultState()));
 		} else {
 			SurfaceBuilder.DEFAULT.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
 							i == 1 ? Blocks.GRASS_BLOCK.getDefaultState()
 									: BlockInit.ASH_BLOCK.get().getDefaultState(),
-									BlockInit.BLACKSTONE.get().getDefaultState(), BlockInit.BLACKSTONE_COBBLE.get().getDefaultState()));
+									Blocks.STONE.getDefaultState(), Blocks.STONE.getDefaultState()));
 		}
 	}
 }

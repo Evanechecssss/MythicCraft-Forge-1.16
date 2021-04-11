@@ -49,6 +49,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.yew_sapling.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.charred_sapling.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.infested_sapling.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_SAPLING.get(), RenderType.getCutout());
 
 		// Crops
 		RenderTypeLookup.setRenderLayer(BlockInit.vervain_crop.get(), RenderType.getCutout());
@@ -70,6 +71,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_BERRY_BUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_BERRY_BUSH.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_BERRY_BUSH.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.getCutout());
 
 		// Torches
 		RenderTypeLookup.setRenderLayer(BlockInit.BLOOD_TORCH.get(), RenderType.getCutout());
@@ -151,6 +154,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WEEPING_VINES.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.pandors_box_open.get(), RenderType.getCutout());
 
 
 		// Entities

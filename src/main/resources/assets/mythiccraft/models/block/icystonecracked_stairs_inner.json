@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/icystone_cracked",
+        "top": "mythiccraft:blocks/icystone_cracked",
+        "side": "mythiccraft:blocks/icystone_cracked"
+    }
+}
