@@ -386,17 +386,17 @@ public class BlockInit {
 					.sound(SoundType.GLASS).slipperiness(0.98f)));
 	public static final RegistryObject<Block> BLACK_PACKEDICE = BLOCKS.register("black_packedice",
 			() -> new Block(Block.Properties.from(Blocks.PACKED_ICE).hardnessAndResistance(0.3f, 0.2f)
-					.sound(SoundType.GLASS).slipperiness(0.98f).speedFactor(0.7f).tickRandomly().notSolid()))));
+					.sound(SoundType.GLASS).slipperiness(0.98f).speedFactor(0.7f).tickRandomly().notSolid()));
 	public static final RegistryObject<Block> PIXIE_GLASS = BLOCKS.register("pixie_glass", () -> new Block(
-			Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f).sound(SoundType.GLASS).notSolid()))));
+			Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f).sound(SoundType.GLASS).notSolid()));
 	public static final RegistryObject<Block> FAIRY_GLASS = BLOCKS.register("fairy_glass", () -> new Block(
-			Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f).sound(SoundType.GLASS).notSolid()))));
+			Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f).sound(SoundType.GLASS).notSolid()));
 	public static final RegistryObject<Block> PIXIE_GLASS_PANE = BLOCKS.register("pixie_glass_pane",
 			() -> new ModPaneBlock(Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f)
-					.sound(SoundType.GLASS).notSolid()))));
+					.sound(SoundType.GLASS).notSolid()));
 	public static final RegistryObject<Block> FAIRY_GLASS_PANE = BLOCKS.register("fairy_glass_pane",
 			() -> new ModPaneBlock(Block.Properties.from(Blocks.GLASS).hardnessAndResistance(0.3f, 0.2f)
-					.sound(SoundType.GLASS).notSolid()))));
+					.sound(SoundType.GLASS).notSolid()));
 
 	// Lanterns/Glowstone/Torches
 	public static final RegistryObject<Block> BLOOD_LANTERN = BLOCKS.register("blood_lantern",

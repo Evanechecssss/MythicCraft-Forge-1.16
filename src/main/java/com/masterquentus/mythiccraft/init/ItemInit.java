@@ -3,11 +3,7 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
 import com.masterquentus.mythiccraft.objects.blocks.ModEntityTypes;
-import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
-import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
-import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.objects.items.VampriricItem;
-import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
+import com.masterquentus.mythiccraft.objects.items.*;
 import com.masterquentus.mythiccraft.util.enums.ModArmorMaterials;
 import com.masterquentus.mythiccraft.util.enums.ModItemTiers;
 
@@ -673,42 +669,42 @@ public class ItemInit {
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.STRENGTH, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.POISON, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.POISON, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> icy_berry = ITEMS.register("icy_berry",
 			() -> new BlockItem(BlockInit.ICY_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.SLOWNESS, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.INSTANT_DAMAGE, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.INSTANT_DAMAGE, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> silver_berry = ITEMS.register("silver_berry",
 			() -> new BlockItem(BlockInit.SILVER_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.WEAKNESS, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.LEVITATION, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.LEVITATION, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> charred_berry = ITEMS.register("charred_berry",
 			() -> new BlockItem(BlockInit.CHARRED_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.HUNGER, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.FIRE_RESISTANCE, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.FIRE_RESISTANCE, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> soul_berry = ITEMS.register("soul_berry",
 			() -> new BlockItem(BlockInit.SOUL_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.HEALTH_BOOST, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.WITHER, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.WITHER, 6000, 5), 0.7f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> infested_berry = ITEMS.register("infested_berry",
 			() -> new BlockItem(BlockInit.INFESTED_BERRY_BUSH.get(),
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.NAUSEA, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.HASTE, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.HASTE, 6000, 5), 0.7f).build())));
 
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> mystic_berry = ITEMS.register("mystic_berry",
@@ -716,7 +712,7 @@ public class ItemInit {
 					new Item.Properties().group(MythicCraftItems.instance)
 							.food(new Food.Builder().setAlwaysEdible().hunger(2).saturation(0.4f)
 									.effect(new EffectInstance(Effects.LUCK, 3000, 5), 0.7f)
-									.effect(new EffectInstance(Effects.BLINDNESS, 6000, 5), 0.7f).build())))));
+									.effect(new EffectInstance(Effects.BLINDNESS, 6000, 5), 0.7f).build())));
 	public static final RegistryObject<Item> blood_apple = ITEMS.register("blood_apple",
 			() -> new Item(new Item.Properties().group(MythicCraftItems.instance)
 					.food(new Food.Builder().hunger(4).saturation(0.5f).build())));
@@ -750,7 +746,7 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.whitesage_crop.get(),
 					new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> waterartichoke_seeds = ITEMS.register("waterartichoke_seeds",
-			() -> new BlockItem(BlockInit.waterartichoke_crop.get(),
+			() -> new WaterCropItem(BlockInit.waterartichoke_crop.get(),
 					new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> snowbell_seeds = ITEMS.register("snowbell_seeds",
 			() -> new BlockItem(BlockInit.snowbell_crop.get(), new Item.Properties().group(MythicCraftItems.instance)));
