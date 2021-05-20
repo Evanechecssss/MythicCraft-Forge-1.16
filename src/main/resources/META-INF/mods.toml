@@ -8,7 +8,7 @@ issueTrackerURL="http://my.issue.tracker/"
 
 modId="mythiccraft"
 
-version="1.15.2-1.0"
+version="1.16.5-1.0"
 
 displayName="MythicCraft"
 
@@ -20,7 +20,7 @@ logoFile="examplemod.png"
 
 credits="MasterQuentus, thedarklord409, Thijmuhn"
 
-authors="MasterQuentus"
+authors="MasterQuentus, Luke Graham Landry"
 
 description='''
 	This mod contains mythical creatures and magic

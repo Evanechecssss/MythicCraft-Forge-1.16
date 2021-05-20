@@ -22,6 +22,6 @@ public class LilithEntityRender extends GeoEntityRenderer<LilithEntity>
 	@Override
 	public RenderType getRenderType(LilithEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation)
 	{
-		return RenderType.getEntityTranslucent(getTextureLocation(animatable));
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }

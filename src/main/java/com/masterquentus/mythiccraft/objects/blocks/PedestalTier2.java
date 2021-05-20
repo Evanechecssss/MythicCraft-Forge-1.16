@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.objects.blocks;
 
 import java.util.stream.Stream;
 
+import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;

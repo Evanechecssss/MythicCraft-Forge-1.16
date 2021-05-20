@@ -2,7 +2,8 @@ package com.masterquentus.mythiccraft.entities;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.FlyingEntity;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
@@ -28,7 +29,7 @@ public class FairyEntity extends FlyingEntity implements IAnimatable {
 	
 	public FairyEntity(EntityType<? extends FlyingEntity> type, World worldIn) {
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
+		// this.ignoreFrustumCheck = true;
 	}
 	
 	@Override
@@ -38,15 +39,11 @@ public class FairyEntity extends FlyingEntity implements IAnimatable {
 		this.goalSelector.addGoal(7, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 		this.goalSelector.addGoal(8, new LookRandomlyGoal(this));
     }
-	
-	@Override
-	protected void registerAttributes() {
-		super.registerAttributes();
-		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(26.0D);
-		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.40D);
-		this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(0.23D);
-		this.getAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(0.35D);
-  }
+
+	public static AttributeModifierMap.MutableAttribute createAttributes() {
+		return FlyingEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 26)
+				.add(Attributes.MOVEMENT_SPEED, 0.40D).add(Attributes.FOLLOW_RANGE, 25).add(Attributes.ARMOR_TOUGHNESS, 0.35D);
+	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override

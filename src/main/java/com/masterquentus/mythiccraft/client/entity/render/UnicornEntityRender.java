@@ -17,7 +17,7 @@ public class UnicornEntityRender extends MobRenderer<UnicornEntity, UnicornEntit
 	}
 
 	@Override
-	public ResourceLocation getEntityTexture(UnicornEntity entity) {
+	public ResourceLocation getTextureLocation(UnicornEntity entity) {
 		return TEXTURE;
 	}
 }

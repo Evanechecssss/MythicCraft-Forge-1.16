@@ -1,31 +1,13 @@
 package com.masterquentus.mythiccraft;
 
+import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.init.*;
+import com.masterquentus.mythiccraft.objects.blocks.*;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems.MythicCraftBlocks;
-import com.masterquentus.mythiccraft.init.BiomeInit;
-import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.DimensionInit;
-import com.masterquentus.mythiccraft.init.FeatureInit;
-import com.masterquentus.mythiccraft.init.FluidInit;
-import com.masterquentus.mythiccraft.init.ItemInit;
-import com.masterquentus.mythiccraft.objects.BelladonnaCropBlock;
-import com.masterquentus.mythiccraft.objects.FoxGlovesCropBlock;
-import com.masterquentus.mythiccraft.objects.GarlicCropBlock;
-import com.masterquentus.mythiccraft.objects.HelleboreCrop;
-import com.masterquentus.mythiccraft.objects.MandrakeCropBlock;
-import com.masterquentus.mythiccraft.objects.NightShadeCrop;
-import com.masterquentus.mythiccraft.objects.SnowbellCrop;
-import com.masterquentus.mythiccraft.objects.VervainCropBlock;
 import com.masterquentus.mythiccraft.objects.WaterartichokeCrop;
-import com.masterquentus.mythiccraft.objects.WhitesageCrop;
-import com.masterquentus.mythiccraft.objects.WolfsCropBlock;
-import com.masterquentus.mythiccraft.objects.WormwoodCrop;
-import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModContainerTypes;
-import com.masterquentus.mythiccraft.objects.blocks.ModEntityTypes;
-import com.masterquentus.mythiccraft.objects.blocks.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import com.masterquentus.mythiccraft.world.gen.MythicCraftOreGen;
 import com.masterquentus.mythiccraft.world.gen.StructureGen;
@@ -89,33 +71,34 @@ public class MythicCraft {
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
-		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof WolfsCropBlock))
+		BlockInit.BLOCKS.getEntries().stream()
 				.filter(block -> !(block.get() instanceof HellFireBlock))
-				.filter(block -> !(block.get() instanceof GarlicCropBlock))
-				.filter(block -> !(block.get() instanceof BelladonnaCropBlock))
-				.filter(block -> !(block.get() instanceof MandrakeCropBlock))
-				.filter(block -> !(block.get() instanceof FoxGlovesCropBlock))
-				.filter(block -> !(block.get() instanceof WormwoodCrop))
-				.filter(block -> !(block.get() instanceof HelleboreCrop))
-				.filter(block -> !(block.get() instanceof WhitesageCrop))
+				.filter(block -> !(block.get() instanceof ModCropBlock))
 				.filter(block -> !(block.get() instanceof WaterartichokeCrop))
-				.filter(block -> !(block.get() instanceof SnowbellCrop))
-				.filter(block -> !(block.get() instanceof NightShadeCrop)).map(RegistryObject::get)
-				.filter(block -> !(block instanceof VervainCropBlock) && !(block instanceof FlowingFluidBlock))
+				.map(RegistryObject::get)
+				.filter(block -> !(block instanceof FlowingFluidBlock))
 				.forEach(block -> {
-					final Item.Properties properties = new Item.Properties().group(MythicCraftItems.instance)
-							.group(MythicCraftBlocks.instance);
+					final Item.Properties properties = new Item.Properties().tab(MythicCraftItems.instance);
 					final BlockItem blockItem = new BlockItem(block, properties);
 					blockItem.setRegistryName(block.getRegistryName());
 					registry.register(blockItem);
 				});
 
 		LOGGER.debug("Registered BlockItems!");
-
 	}
 
 	@SubscribeEvent
-	public static void OnRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+	public static void mobAttributes(EntityAttributeCreationEvent event){
+		event.put(ModEntityTypes.BASILISK_ENTITY.get(), BasiliskEntity.createAttributes().build());
+		event.put(ModEntityTypes.FAIRY_ENTITY.get(), FairyEntity.createAttributes().build());
+		event.put(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntity.createAttributes().build());
+		event.put(ModEntityTypes.LILITH_ENTITY.get(), LilithEntity.createAttributes().build());
+		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
+		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
+	}
+
+	@SubscribeEvent
+	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
 		BiomeInit.registerBiomes();
 	}
 

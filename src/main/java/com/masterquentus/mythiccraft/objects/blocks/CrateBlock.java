@@ -1,7 +1,7 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-import com.masterquentus.mythiccraft.tileentity.JuniperCrateTileEntity;
-
+import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
+import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,9 +18,8 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class JuniperCrateBlock extends Block {
-
-	public JuniperCrateBlock(Properties properties) {
+public class CrateBlock extends Block {
+	public CrateBlock(Properties properties) {
 		super(properties);
 	}
 	
@@ -31,17 +30,16 @@ public class JuniperCrateBlock extends Block {
 	
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return ModTileEntityTypes.juniper_crate.get().create();
+		return ModTileEntityTypes.CRATE_TILE.get().create();
 	}
 	
 	@Override
-	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
-			Hand handIn, BlockRayTraceResult result) {
-		if(!worldIn.isRemote) { 
-			TileEntity tile = worldIn.getTileEntity(pos);
-			if(tile instanceof JuniperCrateTileEntity) {
-				worldIn.playSound((PlayerEntity)null, pos, SoundEvents.BLOCK_BARREL_OPEN, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.rand.nextFloat() * 0.4F);
-				NetworkHooks.openGui((ServerPlayerEntity)player, (JuniperCrateTileEntity)tile, pos);
+	public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult result) {
+		if(!worldIn.isClientSide()) {
+			TileEntity tile = worldIn.getBlockEntity(pos);
+			if(tile instanceof CrateTileEntity) {
+				worldIn.playSound(player, pos, SoundEvents.BARREL_OPEN, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+				NetworkHooks.openGui((ServerPlayerEntity)player, (CrateTileEntity)tile, pos);
 				return ActionResultType.SUCCESS;
 			}
 		}
@@ -50,12 +48,11 @@ public class JuniperCrateBlock extends Block {
 	}
 	
 	@Override
-	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+	public void onRemove(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if(state.getBlock() != newState.getBlock()) {
-			TileEntity te = worldIn.getTileEntity(pos);
-			if(te  instanceof JuniperCrateTileEntity) {
-				InventoryHelper.dropItems(worldIn, pos, ((JuniperCrateTileEntity)te).getItems());
-				
+			TileEntity te = worldIn.getBlockEntity(pos);
+			if(te instanceof CrateTileEntity) {
+				InventoryHelper.dropContents(worldIn, pos, ((CrateTileEntity)te).getItems());
 			}
 		}
 	}

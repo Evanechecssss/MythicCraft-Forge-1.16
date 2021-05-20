@@ -1,11 +1,7 @@
 package com.masterquentus.mythiccraft.tileentity;
 
-import javax.annotation.Nonnull;
-
-import com.masterquentus.mythiccraft.container.WhiteOakCrateContainer;
-import com.masterquentus.mythiccraft.objects.blocks.ModTileEntityTypes;
-import com.masterquentus.mythiccraft.objects.blocks.WhiteOakCrateBlock;
-
+import com.masterquentus.mythiccraft.container.CrateContainer;
+import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,23 +27,24 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class WhiteOakCrateTileEntity  extends LockableLootTileEntity {
-	
+import javax.annotation.Nonnull;
+
+public class CrateTileEntity extends LockableLootTileEntity {
 	private NonNullList<ItemStack> chestContents = NonNullList.withSize(36, ItemStack.EMPTY);
 	protected int numPlayersUsing;
 	private IItemHandlerModifiable items = createHandler();
 	private LazyOptional<IItemHandlerModifiable> itemHandler = LazyOptional.of(() -> items);
-	
-	public WhiteOakCrateTileEntity(TileEntityType<?> typeIn) {
+
+	public CrateTileEntity(TileEntityType<?> typeIn) {
 		super(typeIn);
 	}
-	
-	public WhiteOakCrateTileEntity() {
-		this(ModTileEntityTypes.whiteoak_crate.get());
+
+	public CrateTileEntity() {
+		this(ModTileEntityTypes.CRATE_TILE.get());
 	}
 
 	@Override
-	public int getSizeInventory() {
+	public int getContainerSize() {
 		return 36;
 	}
 
@@ -63,53 +60,53 @@ public class WhiteOakCrateTileEntity  extends LockableLootTileEntity {
 
 	@Override
 	protected ITextComponent getDefaultName() {
-		return new TranslationTextComponent("container.whiteoak_crate");
+		return new TranslationTextComponent("container.alder_crate");
 	}
 
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
-		return new WhiteOakCrateContainer(id, player, this);
+		return new CrateContainer(id, player, this);
 	}
 
 	@Override
-	public CompoundNBT write(CompoundNBT compound) {
-		super.write(compound);
-		if (!this.checkLootAndWrite(compound)) {
+	public CompoundNBT save(CompoundNBT compound) {
+		super.save(compound);
+		if (!this.tryLoadLootTable(compound)) {
 			ItemStackHelper.saveAllItems(compound, this.chestContents);
 		}
 		return compound;
 	}
 
 	@Override
-	public void read(CompoundNBT compound) {
-		super.read(compound);
-		this.chestContents = NonNullList.withSize(this.getSizeInventory(), ItemStack.EMPTY);
-		if (!this.checkLootAndRead(compound)) {
+	public void load(BlockState state, CompoundNBT compound) {
+		super.load(state, compound);
+		this.chestContents = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
+		if (!this.tryLoadLootTable(compound)) {
 			ItemStackHelper.loadAllItems(compound, this.chestContents);
 		}
 	}
 
 	@SuppressWarnings("unused")
 	private void playSound(SoundEvent sound) {
-		double dx = (double) this.pos.getX() + 0.5D;
-		double dy = (double) this.pos.getY() + 0.5D;
-		double dz = (double) this.pos.getZ() + 0.5D;
-		this.world.playSound((PlayerEntity) null, dx, dy, dz, sound, SoundCategory.BLOCKS, 0.5f,
-				this.world.rand.nextFloat() * 0.1f + 0.9f);
+		double dx = (double) this.worldPosition.getX() + 0.5D;
+		double dy = (double) this.worldPosition.getY() + 0.5D;
+		double dz = (double) this.worldPosition.getZ() + 0.5D;
+		this.level.playSound((PlayerEntity) null, dx, dy, dz, sound, SoundCategory.BLOCKS, 0.5f,
+				this.level.random.nextFloat() * 0.1f + 0.9f);
 	}
 
 	@Override
-	public boolean receiveClientEvent(int id, int type) {
+	public boolean triggerEvent(int id, int type) {
 		if (id == 1) {
 			this.numPlayersUsing = type;
 			return true;
 		} else {
-			return super.receiveClientEvent(id, type);
+			return super.triggerEvent(id, type);
 		}
 	}
 
 	@Override
-	public void openInventory(PlayerEntity player) {
+	public void startOpen(PlayerEntity player) {
 		if (!player.isSpectator()) {
 			if (this.numPlayersUsing < 0) {
 				this.numPlayersUsing = 0;
@@ -121,7 +118,7 @@ public class WhiteOakCrateTileEntity  extends LockableLootTileEntity {
 	}
 
 	@Override
-	public void closeInventory(PlayerEntity player) {
+	public void stopOpen(PlayerEntity player) {
 		if (!player.isSpectator()) {
 			--this.numPlayersUsing;
 			this.onOpenOrClose();
@@ -130,32 +127,32 @@ public class WhiteOakCrateTileEntity  extends LockableLootTileEntity {
 
 	protected void onOpenOrClose() {
 		Block block = this.getBlockState().getBlock();
-		if (block instanceof WhiteOakCrateBlock) {
-			this.world.addBlockEvent(this.pos, block, 1, this.numPlayersUsing);
-			this.world.notifyNeighborsOfStateChange(this.pos, block);
+		if (block instanceof AlderCrateBlock) {
+			this.level.blockEvent(this.worldPosition, block, 1, this.numPlayersUsing);
+			this.level.updateNeighborsAt(this.worldPosition, block);
 		}
 	}
 
 	public static int getPlayersUsing(IBlockReader reader, BlockPos pos) {
 		BlockState blockstate = reader.getBlockState(pos);
 		if (blockstate.hasTileEntity()) {
-			TileEntity tileentity = reader.getTileEntity(pos);
-			if (tileentity instanceof WhiteOakCrateTileEntity) {
-				return ((WhiteOakCrateTileEntity) tileentity).numPlayersUsing;
+			TileEntity tileentity = reader.getBlockEntity(pos);
+			if (tileentity instanceof CrateTileEntity) {
+				return ((CrateTileEntity) tileentity).numPlayersUsing;
 			}
 		}
 		return 0;
 	}
 
-	public static void swapContents(WhiteOakCrateTileEntity te, WhiteOakCrateTileEntity otherTe) {
+	public static void swapContents(CrateTileEntity te, CrateTileEntity otherTe) {
 		NonNullList<ItemStack> list = te.getItems();
 		te.setItems(otherTe.getItems());
 		otherTe.setItems(list);
 	}
 
 	@Override
-	public void updateContainingBlockInfo() {
-		super.updateContainingBlockInfo();
+	public void clearCache() {
+		super.clearCache();
 		if (this.itemHandler != null) {
 			this.itemHandler.invalidate();
 			this.itemHandler = null;
@@ -175,8 +172,8 @@ public class WhiteOakCrateTileEntity  extends LockableLootTileEntity {
 	}
 	
 	@Override
-	public void remove() {
-		super.remove();
+	public void setRemoved() {
+		super.setRemoved();
 		if(itemHandler != null) {
 			itemHandler.invalidate();
 		}

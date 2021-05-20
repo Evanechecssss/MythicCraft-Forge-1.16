@@ -7,27 +7,7 @@ import com.masterquentus.mythiccraft.client.entity.render.GoblinEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.LilithEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
-import com.masterquentus.mythiccraft.client.gui.AlderCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.AshCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.BeechCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.BlackthornCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.BloodOakCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.CedarCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.CharredCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.DistortedCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.ElderCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.HawthornCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.IcyCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.InfestedCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.JuniperCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.RowanCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.SilverWoodCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.TwistedCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.WhiteOakCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.WillowCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.WitchWoodCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.WitchhazelCrateScreen;
-import com.masterquentus.mythiccraft.client.gui.YewCrateScreen;
+import com.masterquentus.mythiccraft.client.gui.*;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.objects.blocks.ModContainerTypes;
 import com.masterquentus.mythiccraft.objects.blocks.ModEntityTypes;
@@ -47,28 +27,27 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
-
-		ScreenManager.registerFactory(ModContainerTypes.bloodoak_crate.get(), BloodOakCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.whiteoak_crate.get(), WhiteOakCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.SILVERWOOD_CRATE.get(), SilverWoodCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.WITCHWOOD_CRATE.get(), WitchWoodCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.ALDER_CRATE.get(), AlderCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.HAWTHORN_CRATE.get(), HawthornCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.ROWAN_CRATE.get(), RowanCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.WILLOW_CRATE.get(), WillowCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.BEECH_CRATE.get(), BeechCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.ASH_CRATE.get(), AshCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.BLACKTHORN_CRATE.get(), BlackthornCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.CEDAR_CRATE.get(), CedarCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.ELDER_CRATE.get(), ElderCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.JUNIPER_CRATE.get(), JuniperCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.WITCHHAZEL_CRATE.get(), WitchhazelCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.YEW_CRATE.get(), YewCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.INFESTED_CRATE.get(), InfestedCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.CHARRED_CRATE.get(), CharredCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.ICY_CRATE.get(), IcyCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.DISTORTED_CRATE.get(), DistortedCrateScreen::new);
-		ScreenManager.registerFactory(ModContainerTypes.TWISTED_CRATE.get(), TwistedCrateScreen::new);
+		ScreenManager.register(ModContainerTypes.bloodoak_crate.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.whiteoak_crate.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.SILVERWOOD_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.WITCHWOOD_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.ALDER_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.HAWTHORN_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.ROWAN_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.WILLOW_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.BEECH_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.ASH_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.BLACKTHORN_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.CEDAR_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.ELDER_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.JUNIPER_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.WITCHHAZEL_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.YEW_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.INFESTED_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.CHARRED_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
 
 		// Sapling
 		RenderTypeLookup.setRenderLayer(BlockInit.bloodoak_sapling.get(), RenderType.getCutout());

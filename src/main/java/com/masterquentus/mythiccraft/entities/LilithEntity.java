@@ -1,7 +1,9 @@
 package com.masterquentus.mythiccraft.entities;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.FlyingEntity;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -31,7 +33,7 @@ public class LilithEntity extends MonsterEntity implements IAnimatable {
 	
 	public LilithEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
+		// this.ignoreFrustumCheck = true;
 	}
 	
 	@Override
@@ -45,15 +47,11 @@ public class LilithEntity extends MonsterEntity implements IAnimatable {
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
 	
     }
-	
-	@Override
-	protected void registerAttributes() {
-		super.registerAttributes();
-		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(190.0D);
-		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.33D);
-		this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
-		this.getAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(7.35D);
-		this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(7.0D);
+
+	public static AttributeModifierMap.MutableAttribute createAttributes() {
+		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, 190)
+				.add(Attributes.MOVEMENT_SPEED, 33).add(Attributes.FOLLOW_RANGE, 35)
+				.add(Attributes.ARMOR_TOUGHNESS, 7D).add(Attributes.ATTACK_DAMAGE, 7);
   }
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })

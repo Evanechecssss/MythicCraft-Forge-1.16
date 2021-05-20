@@ -17,7 +17,7 @@ public class GoblinEntityRender extends MobRenderer<GoblinEntity, GoblinEntityMo
 	}
 
 	@Override
-	public ResourceLocation getEntityTexture(GoblinEntity entity) {
+	public ResourceLocation getTextureLocation(GoblinEntity entity) {
 		return TEXTURE;
 	}
 }

@@ -1,7 +1,8 @@
 package com.masterquentus.mythiccraft.entities;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
@@ -31,7 +32,7 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 	
 	public BasiliskEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
 		super(type, worldIn);
-		this.ignoreFrustumCheck = true;
+		// this.ignoreFrustumCheck = true;
 	}
 	
 	@Override
@@ -45,16 +46,12 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
 	
     }
-	
-	@Override
-	protected void registerAttributes() {
-		super.registerAttributes();
-		this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(26.0D);
-		this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.23D);
-		this.getAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
-		this.getAttribute(SharedMonsterAttributes.ARMOR_TOUGHNESS).setBaseValue(2.35D);
-		this.getAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3.0D);
-  }
+
+	public static AttributeModifierMap.MutableAttribute createAttributes() {
+		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, 26)
+				.add(Attributes.MOVEMENT_SPEED, 0.23D).add(Attributes.FOLLOW_RANGE, 25).add(Attributes.ARMOR_TOUGHNESS, 2.35D)
+				.add(Attributes.ATTACK_DAMAGE, 3);
+  	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override

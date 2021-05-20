@@ -1,28 +1,8 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.container.AlderCrateContainer;
-import com.masterquentus.mythiccraft.container.AshCrateContainer;
-import com.masterquentus.mythiccraft.container.BeechCrateContainer;
-import com.masterquentus.mythiccraft.container.BlackthornCrateContainer;
-import com.masterquentus.mythiccraft.container.BloodOakCrateContainer;
-import com.masterquentus.mythiccraft.container.CedarCrateContainer;
-import com.masterquentus.mythiccraft.container.CharredCrateContainer;
-import com.masterquentus.mythiccraft.container.DistortedCrateContainer;
-import com.masterquentus.mythiccraft.container.ElderCrateContainer;
-import com.masterquentus.mythiccraft.container.HawthornCrateContainer;
-import com.masterquentus.mythiccraft.container.IcyCrateContainer;
-import com.masterquentus.mythiccraft.container.InfestedCrateContainer;
-import com.masterquentus.mythiccraft.container.JuniperCrateContainer;
-import com.masterquentus.mythiccraft.container.RowanCrateContainer;
-import com.masterquentus.mythiccraft.container.SilverWoodCrateContainer;
-import com.masterquentus.mythiccraft.container.TwistedCrateContainer;
-import com.masterquentus.mythiccraft.container.WhiteOakCrateContainer;
-import com.masterquentus.mythiccraft.container.WillowCrateContainer;
-import com.masterquentus.mythiccraft.container.WitchWoodCrateContainer;
-import com.masterquentus.mythiccraft.container.WitchhazelCrateContainer;
-import com.masterquentus.mythiccraft.container.YewCrateContainer;
 
+import com.masterquentus.mythiccraft.container.CrateContainer;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.fml.RegistryObject;
@@ -32,49 +12,31 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModContainerTypes {
 
 	@SuppressWarnings("deprecation")
-	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(
-			ForgeRegistries.CONTAINERS, MythicCraft.MOD_ID);
+	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS, MythicCraft.MOD_ID);
 
-	public static final RegistryObject<ContainerType<BloodOakCrateContainer>> bloodoak_crate = CONTAINER_TYPES
-			.register("bloodoak_crate", () -> IForgeContainerType.create(BloodOakCrateContainer::new));
-	public static final RegistryObject<ContainerType<WhiteOakCrateContainer>> whiteoak_crate = CONTAINER_TYPES
-			.register("whiteoak_crate", () -> IForgeContainerType.create(WhiteOakCrateContainer::new));
-	public static final RegistryObject<ContainerType<SilverWoodCrateContainer>> SILVERWOOD_CRATE = CONTAINER_TYPES
-			.register("silverwood_crate", () -> IForgeContainerType.create(SilverWoodCrateContainer::new));
-	public static final RegistryObject<ContainerType<WitchWoodCrateContainer>> WITCHWOOD_CRATE = CONTAINER_TYPES
-			.register("witchwood_crate", () -> IForgeContainerType.create(WitchWoodCrateContainer::new));
-	public static final RegistryObject<ContainerType<AlderCrateContainer>> ALDER_CRATE = CONTAINER_TYPES
-			.register("alder_crate", () -> IForgeContainerType.create(AlderCrateContainer::new));
-	public static final RegistryObject<ContainerType<HawthornCrateContainer>> HAWTHORN_CRATE = CONTAINER_TYPES
-			.register("hawthorn_crate", () -> IForgeContainerType.create(HawthornCrateContainer::new));
-	public static final RegistryObject<ContainerType<RowanCrateContainer>> ROWAN_CRATE = CONTAINER_TYPES
-			.register("rowan_crate", () -> IForgeContainerType.create(RowanCrateContainer::new));
-	public static final RegistryObject<ContainerType<WillowCrateContainer>> WILLOW_CRATE = CONTAINER_TYPES
-			.register("willow_crate", () -> IForgeContainerType.create(WillowCrateContainer::new));
-	public static final RegistryObject<ContainerType<BeechCrateContainer>> BEECH_CRATE = CONTAINER_TYPES
-			.register("beech_crate", () -> IForgeContainerType.create(BeechCrateContainer::new));
-	public static final RegistryObject<ContainerType<AshCrateContainer>> ASH_CRATE = CONTAINER_TYPES
-			.register("ash_crate", () -> IForgeContainerType.create(AshCrateContainer::new));
-	public static final RegistryObject<ContainerType<BlackthornCrateContainer>> BLACKTHORN_CRATE = CONTAINER_TYPES
-			.register("blackthorn_crate", () -> IForgeContainerType.create(BlackthornCrateContainer::new));
-	public static final RegistryObject<ContainerType<CedarCrateContainer>> CEDAR_CRATE = CONTAINER_TYPES
-			.register("cedar_crate", () -> IForgeContainerType.create(CedarCrateContainer::new));
-	public static final RegistryObject<ContainerType<ElderCrateContainer>> ELDER_CRATE = CONTAINER_TYPES
-			.register("elder_crate", () -> IForgeContainerType.create(ElderCrateContainer::new));
-	public static final RegistryObject<ContainerType<JuniperCrateContainer>> JUNIPER_CRATE = CONTAINER_TYPES
-			.register("juniper_crate", () -> IForgeContainerType.create(JuniperCrateContainer::new));
-	public static final RegistryObject<ContainerType<WitchhazelCrateContainer>> WITCHHAZEL_CRATE = CONTAINER_TYPES
-			.register("witchhazel_crate", () -> IForgeContainerType.create(WitchhazelCrateContainer::new));
-	public static final RegistryObject<ContainerType<YewCrateContainer>> YEW_CRATE = CONTAINER_TYPES
-			.register("yew_crate", () -> IForgeContainerType.create(YewCrateContainer::new));
-	public static final RegistryObject<ContainerType<InfestedCrateContainer>> INFESTED_CRATE = CONTAINER_TYPES
-			.register("infested_crate", () -> IForgeContainerType.create(InfestedCrateContainer::new));
-	public static final RegistryObject<ContainerType<CharredCrateContainer>> CHARRED_CRATE = CONTAINER_TYPES
-			.register("charred_crate", () -> IForgeContainerType.create(CharredCrateContainer::new));
-	public static final RegistryObject<ContainerType<IcyCrateContainer>> ICY_CRATE = CONTAINER_TYPES
-			.register("icy_crate", () -> IForgeContainerType.create(IcyCrateContainer::new));
-	public static final RegistryObject<ContainerType<DistortedCrateContainer>> DISTORTED_CRATE = CONTAINER_TYPES
-			.register("distorted_crate", () -> IForgeContainerType.create(DistortedCrateContainer::new));
-	public static final RegistryObject<ContainerType<TwistedCrateContainer>> TWISTED_CRATE = CONTAINER_TYPES
-			.register("twisted_crate", () -> IForgeContainerType.create(TwistedCrateContainer::new));
+	public static final RegistryObject<ContainerType<CrateContainer>> bloodoak_crate = createContainer("bloodoak_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> whiteoak_crate = createContainer("whiteoak_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> SILVERWOOD_CRATE = createContainer("silverwood_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> WITCHWOOD_CRATE = createContainer("witchwood_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> ALDER_CRATE = createContainer("alder_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> ROWAN_CRATE = createContainer("rowan_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> WILLOW_CRATE = createContainer("willow_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> BEECH_CRATE = createContainer("beech_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> ASH_CRATE = createContainer("ash_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> BLACKTHORN_CRATE = createContainer("blackthorn_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> CEDAR_CRATE = createContainer("cedar_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> ELDER_CRATE = createContainer("elder_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> JUNIPER_CRATE = createContainer("juniper_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> YEW_CRATE = createContainer("yew_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> INFESTED_CRATE = createContainer("infested_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> CHARRED_CRATE = createContainer("charred_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> ICY_CRATE = createContainer("icy_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> DISTORTED_CRATE = createContainer("distorted_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> TWISTED_CRATE = createContainer("twisted_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> WITCHHAZEL_CRATE = createContainer("witchhazel_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CRATE = createContainer("hawthorn_crate");
+
+	public static final RegistryObject<ContainerType<CrateContainer>> createContainer(String registryName){
+		return CONTAINER_TYPES.register(registryName, () -> IForgeContainerType.create(CrateContainer::new));
+	}
 }

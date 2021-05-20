@@ -21,6 +21,6 @@ public class BasiliskEntityRender extends GeoEntityRenderer<BasiliskEntity>
 	@Override
 	public RenderType getRenderType(BasiliskEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation)
 	{
-		return RenderType.getEntityTranslucent(getTextureLocation(animatable));
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }
