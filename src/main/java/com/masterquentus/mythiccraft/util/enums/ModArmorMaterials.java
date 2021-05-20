@@ -35,6 +35,11 @@ public enum ModArmorMaterials implements IArmorMaterial {
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
 				return Ingredient.fromItems(ItemInit.DRAGONHEART_INGOT.get());
 			}),
+	
+	FROSTSTEEL(MythicCraft.MOD_ID + ":froststeel", 5, new int[] { 7, 9, 11, 7 }, 420,
+			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
+				return Ingredient.fromItems(ItemInit.FROSTSTEEL_INGOT.get());
+			}),
 
 	DRAGONSCALERED(MythicCraft.MOD_ID + ":dragonscalered", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
@@ -91,7 +96,7 @@ public enum ModArmorMaterials implements IArmorMaterial {
 				return Ingredient.fromItems(ItemInit.mermaid_scale.get());
 			}),
 
-	BASILISK(MythicCraft.MOD_ID + ":bakilisk", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+	BASILISK(MythicCraft.MOD_ID + ":basilisk", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
 			6.9F, () -> {
 				return Ingredient.fromItems(ItemInit.basilisk_scale.get());
 			}),

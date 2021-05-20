@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:blocks/icy_planks",
+        "top": "mythiccraft:blocks/icy_planks",
+        "side": "mythiccraft:blocks/icy_planks"
+    }
+}

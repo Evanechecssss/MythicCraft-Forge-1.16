@@ -1,12 +1,12 @@
 {
 	"replace": false,
   	"values": [
-		"mythiccraft:blackstone_wall",
-		"mythiccraft:blackstonecobble_wall",
-		"mythiccraft:blackstonebricks_wall",
-		"mythiccraft:blackstonepolished_wall",
-		"mythiccraft:blackstonechisealed_wall",
-		"mythiccraft:blackstonecracked_wall",
+		"mythiccraft:icystone_wall",
+		"mythiccraft:icystonecobble_wall",
+		"mythiccraft:icystonebricks_wall",
+		"mythiccraft:icystonepolished_wall",
+		"mythiccraft:icystonechisealed_wall",
+		"mythiccraft:icystonecracked_wall",
 		"mythiccraft:mysticstone_wall",
 		"mythiccraft:mysticstonecobble_wall",
 		"mythiccraft:mysticstonebricks_wall",

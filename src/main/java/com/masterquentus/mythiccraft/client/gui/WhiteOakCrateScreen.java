@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class WhiteOakCrateScreen extends ContainerScreen<WhiteOakCrateContainer> {
 	
-	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(MythicCraft.MOD_ID, "textures/gui/whiteoak_crate.png");
+	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(MythicCraft.MOD_ID, "textures/gui/crate.png");
 	
 	public WhiteOakCrateScreen(WhiteOakCrateContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
 		super(screenContainer, inv, titleIn);

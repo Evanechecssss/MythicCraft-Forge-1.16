@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "mythiccraft:block/icy_log_top",
+    "side": "mythiccraft:block/icy_log"
+  }
+}

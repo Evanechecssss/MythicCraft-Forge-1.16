@@ -5,7 +5,6 @@ import net.minecraft.block.FireBlock;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -24,7 +23,7 @@ public class HellFireBlock extends FireBlock {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-	      entityIn.attackEntityFrom(DamageSource.IN_FIRE, 1.0F);
+		entityIn.setFire(10);
 
 	}
 	
@@ -36,6 +35,11 @@ public class HellFireBlock extends FireBlock {
 	@Override
 	public boolean canEntityDestroy(BlockState state, IBlockReader world, BlockPos pos, Entity entity) {
 		return super.canEntityDestroy(state, world, pos, entity);
+	}
+	
+	@Override
+	public boolean isFireSource(BlockState state, IBlockReader world, BlockPos pos, Direction side) {
+		return super.isFireSource(state, world, pos, side);
 	}
 	
 }

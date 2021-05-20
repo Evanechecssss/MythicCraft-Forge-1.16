@@ -5,6 +5,7 @@ import com.masterquentus.mythiccraft.world.biomes.CharredForestBiome;
 import com.masterquentus.mythiccraft.world.biomes.CharredForestBiomeSurfaceBuilder;
 import com.masterquentus.mythiccraft.world.biomes.CrimsonFrostBiome;
 import com.masterquentus.mythiccraft.world.biomes.CrimsonFrostBiomeSurfaceBuilder;
+import com.masterquentus.mythiccraft.world.biomes.ForestOFLostSoulsBiome;
 import com.masterquentus.mythiccraft.world.biomes.MysiticMedowsBiome;
 import com.masterquentus.mythiccraft.world.biomes.VampireBiome;
 import com.masterquentus.mythiccraft.world.biomes.WeepingWitchForestBiome;
@@ -85,6 +86,13 @@ public class BiomeInit {
 							new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),
 									Blocks.STONE.getDefaultState(), Blocks.CLAY.getDefaultState()))
 					.category(Category.FOREST).downfall(3.5F).depth(0.12F).parent(null)));
+	public static final RegistryObject<Biome> FORESTOFLOSTSOULS = Biomes.register("forest_of_lost_souls",
+			() -> new ForestOFLostSoulsBiome(new Biome.Builder().precipitation(RainType.RAIN).scale(0.5F)
+					.temperature(0.5F).waterColor(10280898).waterFogColor(10280846)
+					.surfaceBuilder(SurfaceBuilder.DEFAULT,
+							new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),
+									Blocks.STONE.getDefaultState(), Blocks.CLAY.getDefaultState()))
+					.category(Category.FOREST).downfall(3.5F).depth(0.12F).parent(null)));
 
 	public static void registerBiomes() {
 		registerBiome(VAMPIREBIOME.get(), Type.DEAD, Type.DENSE);
@@ -94,6 +102,7 @@ public class BiomeInit {
 		registerBiome(DRAGONBIOME.get(), Type.MAGICAL, Type.DENSE);
 		registerBiome(CRIMSON_FROST.get(), Type.MAGICAL, Type.COLD);
 		registerBiome(WEEPINGWITCHFOREST.get(), Type.MAGICAL, Type.WET);
+		registerBiome(FORESTOFLOSTSOULS.get(), Type.MAGICAL, Type.FOREST);
 	}
 
 	private static void registerBiome(Biome biome, Type... types) {

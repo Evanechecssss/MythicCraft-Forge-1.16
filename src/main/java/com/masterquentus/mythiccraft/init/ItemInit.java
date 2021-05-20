@@ -283,6 +283,18 @@ public class ItemInit {
 	public static final RegistryObject<ArmorItem> dragonheart_boots = ITEMS.register("dragonheart_boots",
 			() -> new ArmorItem(ModArmorMaterials.DRAGONHEART, EquipmentSlotType.FEET,
 					new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> FROSTSTEEL_HELMET = ITEMS.register("froststeel_helmet",
+			() -> new ArmorItem(ModArmorMaterials.FROSTSTEEL, EquipmentSlotType.HEAD,
+					new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> FROSTSTEEL_CHESTPLATE = ITEMS.register("froststeel_chestplate",
+			() -> new ArmorItem(ModArmorMaterials.FROSTSTEEL, EquipmentSlotType.CHEST,
+					new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> FROSTSTEEL_LEGGINGS = ITEMS.register("froststeel_leggings",
+			() -> new ArmorItem(ModArmorMaterials.FROSTSTEEL, EquipmentSlotType.LEGS,
+					new Item.Properties().group(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> FROSTSTEEL_BOOTS = ITEMS.register("froststeel_boots",
+			() -> new ArmorItem(ModArmorMaterials.FROSTSTEEL, EquipmentSlotType.FEET,
+					new Item.Properties().group(MythicCraftItems.instance)));
 	public static final RegistryObject<ArmorItem> dragonscalered_helmet = ITEMS.register("dragonscalered_helmet",
 			() -> new ArmorItem(ModArmorMaterials.DRAGONSCALERED, EquipmentSlotType.HEAD,
 					new Item.Properties().group(MythicCraftItems.instance)));
@@ -579,6 +591,25 @@ public class ItemInit {
 
 	public static final RegistryObject<HoeItem> dragonheart_hoe = ITEMS.register("dragonheart_hoe",
 			() -> new HoeItem(ModItemTiers.DRAGONHEART, 5.0f, new Item.Properties().group(MythicCraftItems.instance)));
+	
+	public static final RegistryObject<SwordItem> FROSTSTEEL_SWORD = ITEMS.register("froststeel_sword",
+			() -> new SwordItem(ModItemTiers.FROSTSTEEL, 7, 5.0f,
+					new Item.Properties().group(MythicCraftItems.instance)));
+
+	public static final RegistryObject<PickaxeItem> FROSTSTEEL_PICKAXE = ITEMS.register("froststeel_pickaxe",
+			() -> new PickaxeItem(ModItemTiers.FROSTSTEEL, 4, 5.0f,
+					new Item.Properties().group(MythicCraftItems.instance)));
+
+	public static final RegistryObject<ShovelItem> FROSTSTEEL_SHOVEL = ITEMS.register("froststeel_shovel",
+			() -> new ShovelItem(ModItemTiers.FROSTSTEEL, 2, 5.0f,
+					new Item.Properties().group(MythicCraftItems.instance)));
+
+	public static final RegistryObject<AxeItem> FROSTSTEEL_AXE = ITEMS.register("froststeel_axe",
+			() -> new AxeItem(ModItemTiers.FROSTSTEEL, 11, 3.0f,
+					new Item.Properties().group(MythicCraftItems.instance)));
+
+	public static final RegistryObject<HoeItem> FROSTSTEEL_HOE = ITEMS.register("froststeel_hoe",
+			() -> new HoeItem(ModItemTiers.FROSTSTEEL, 5.0f, new Item.Properties().group(MythicCraftItems.instance)));
 
 	public static final RegistryObject<SwordItem> ruby_sword = ITEMS.register("ruby_sword",
 			() -> new SwordItem(ModItemTiers.RUBY, 7, 5.0f, new Item.Properties().group(MythicCraftItems.instance)));

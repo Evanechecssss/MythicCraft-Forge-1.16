@@ -21,9 +21,8 @@ public class SpanishMossBlock extends VineBlock implements IGrowable {
 		return true;
 	}
 
-	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		return true;
+	      return false;
 	}
 
 	@Override

@@ -32,6 +32,11 @@ public enum ModItemTiers implements IItemTier {
 		
 	}),
 	
+	FROSTSTEEL(2, 550, 5.0F, 6.5F, 15, () -> {
+		return Ingredient.fromItems(ItemInit.FROSTSTEEL_INGOT.get());
+		
+	}),
+	
 	RUBY(2, 550, 5.0F, 6.5F, 15, () -> {
 		return Ingredient.fromItems(ItemInit.RUBY.get());
 		

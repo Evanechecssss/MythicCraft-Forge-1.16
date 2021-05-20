@@ -23,7 +23,8 @@ public class WaterCropItem extends BlockNamedItem {
         super(crop, props);
     }
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         // if (worldIn.isRemote()) return ActionResult.resultPass(stack);

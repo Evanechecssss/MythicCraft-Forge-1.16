@@ -13,13 +13,51 @@ import com.masterquentus.mythiccraft.objects.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.WhitesageCrop;
 import com.masterquentus.mythiccraft.objects.WolfsCropBlock;
 import com.masterquentus.mythiccraft.objects.WormwoodCrop;
+import com.masterquentus.mythiccraft.objects.blocks.AlderCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.AlderLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.AlderWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.AshCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.AshLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.AshWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BeechCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BeechLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BeechWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BlackthornCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BlackthornLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BlackthornWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.BlockQuarry;
 import com.masterquentus.mythiccraft.objects.blocks.BloodBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.BloodOakCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BloodOakLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BloodOakWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CedarCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CedarLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CedarWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CharredBerryBushBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CharredCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CharredLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CharredWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DistortedCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DistortedLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DistortedWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ElderCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ElderLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ElderWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.HawthornCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.HawthornLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.HawthornWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
 import com.masterquentus.mythiccraft.objects.blocks.IcyBerryBushBlock;
+import com.masterquentus.mythiccraft.objects.blocks.IcyCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.IcyLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.IcyWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.InfestedBerryBushBlock;
+import com.masterquentus.mythiccraft.objects.blocks.InfestedCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.InfestedLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.InfestedWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.JuniperCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.JuniperLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.JuniperWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModDoor;
 import com.masterquentus.mythiccraft.objects.blocks.ModGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
@@ -39,11 +77,35 @@ import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalTier1;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalTier2;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalTier3;
+import com.masterquentus.mythiccraft.objects.blocks.PedestalTier4;
+import com.masterquentus.mythiccraft.objects.blocks.RowanCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.RowanLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.RowanWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SilverBerryBushBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SilverWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SilverWoodCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SilverWoodLogBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SoulBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SpanishMossBlock;
+import com.masterquentus.mythiccraft.objects.blocks.TwistedCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.TwistedLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.TwistedWoodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WeepingVineBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WhiteOakCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WhiteOakLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WhiteOakWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WillowCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WillowLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WillowWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchHazelLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchHazelWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchWoodBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchWoodCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchWoodLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchhazelCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.YewCrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.YewLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.YewWoodBlock;
 import com.masterquentus.mythiccraft.world.feature.AlderTree;
 import com.masterquentus.mythiccraft.world.feature.AshTree;
 import com.masterquentus.mythiccraft.world.feature.BeechTree;
@@ -51,6 +113,7 @@ import com.masterquentus.mythiccraft.world.feature.BlackthornTree;
 import com.masterquentus.mythiccraft.world.feature.BloodOakTree;
 import com.masterquentus.mythiccraft.world.feature.CedarTree;
 import com.masterquentus.mythiccraft.world.feature.CharredTree;
+import com.masterquentus.mythiccraft.world.feature.DistortedTree;
 import com.masterquentus.mythiccraft.world.feature.ElderTree;
 import com.masterquentus.mythiccraft.world.feature.HawthornTree;
 import com.masterquentus.mythiccraft.world.feature.IcyTree;
@@ -58,6 +121,7 @@ import com.masterquentus.mythiccraft.world.feature.InfestedTree;
 import com.masterquentus.mythiccraft.world.feature.JuniperTree;
 import com.masterquentus.mythiccraft.world.feature.RowanTree;
 import com.masterquentus.mythiccraft.world.feature.SilverWoodTree;
+import com.masterquentus.mythiccraft.world.feature.TwistedTree;
 import com.masterquentus.mythiccraft.world.feature.WhiteOakTree;
 import com.masterquentus.mythiccraft.world.feature.WillowTree;
 import com.masterquentus.mythiccraft.world.feature.WitchHazelTree;
@@ -216,155 +280,208 @@ public class BlockInit {
 
 	// Blocks
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
-			() -> new Block(Block.Properties.from(Blocks.OBSIDIAN)));
+			() -> new Block(Block.Properties.from(Blocks.OBSIDIAN).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(3)));
 	public static final RegistryObject<Block> CHARRED_SOIL = BLOCKS.register("charred_soil",
-			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.BLACK).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> INFESTED_SOIL = BLOCKS.register("infested_soil", () -> new ModGrassBlock(
-			Block.Properties.create(Material.SAND, MaterialColor.MAGENTA).sound(SoundType.GROUND)));
-	public static final RegistryObject<Block> MYSTIC_SOIL = BLOCKS.register("mystic_soil", () -> new ModGrassBlock(
-			Block.Properties.create(Material.SAND, MaterialColor.MAGENTA).sound(SoundType.GROUND)));
+			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.BLACK).sound(SoundType.SAND)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+	public static final RegistryObject<Block> INFESTED_SOIL = BLOCKS.register("infested_soil",
+			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.MAGENTA)
+					.sound(SoundType.GROUND).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+	public static final RegistryObject<Block> MYSTIC_SOIL = BLOCKS.register("mystic_soil",
+			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.MAGENTA)
+					.sound(SoundType.GROUND).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
 	public static final RegistryObject<Block> BLOODLY_SOIL = BLOCKS.register("bloodly_soil",
-			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.RED).sound(SoundType.GROUND)));
-	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil", () -> new ModGrassBlock(
-			Block.Properties.create(Material.GOURD, MaterialColor.BLACK).sound(SoundType.GROUND)));
-	public static final RegistryObject<Block> VAMPIRIC_BLOCK = BLOCKS.register("vampiric_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SILVER_BLOCK = BLOCKS.register("silver_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
+			() -> new ModGrassBlock(Block.Properties.create(Material.SAND, MaterialColor.RED).sound(SoundType.GROUND)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
+			() -> new ModGrassBlock(Block.Properties.create(Material.GOURD, MaterialColor.BLACK).sound(SoundType.GROUND)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+	public static final RegistryObject<Block> VAMPIRIC_BLOCK = BLOCKS.register("vampiric_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> SILVER_BLOCK = BLOCKS.register("silver_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> MYTHICDIAMOND_BLOCK = BLOCKS.register("mythicdiamond_block",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> DRAGONHEART_BLOCK = BLOCKS.register("dragonheart_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> BLOODSTONE_BLOCK = BLOCKS.register("bloodstone_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> MOONSTONE_BLOCK = BLOCKS.register("moonstone_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood", () -> new Block(
-			Block.Properties.from(Blocks.HONEY_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.SLIME)));
-	public static final RegistryObject<Block> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block", () -> new Block(
-			Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block", () -> new Block(
-			Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> AMETHYST_BLOCK = BLOCKS.register("amethyst_block", () -> new Block(
-			Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> SALT_BLOCK = BLOCKS.register("salt_block", () -> new Block(
-			Block.Properties.from(Blocks.RED_SAND).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> FROSTSTEEL_BLOCK = BLOCKS.register("froststeel_block", () -> new Block(
-			Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.GLASS)));
-	public static final RegistryObject<Block> ROSEQUARTZ_BLOCK = BLOCKS.register("rosequartz_block", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> DRAGONHEART_BLOCK = BLOCKS.register("dragonheart_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> BLOODSTONE_BLOCK = BLOCKS.register("bloodstone_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> MOONSTONE_BLOCK = BLOCKS.register("moonstone_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
+			() -> new Block(Block.Properties.from(Blocks.HONEY_BLOCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.SLIME).harvestLevel(1)));
+	public static final RegistryObject<Block> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block",
+			() -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block",
+			() -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> AMETHYST_BLOCK = BLOCKS.register("amethyst_block",
+			() -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> SALT_BLOCK = BLOCKS.register("salt_block",
+			() -> new Block(Block.Properties.from(Blocks.RED_SAND).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.SAND).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> FROSTSTEEL_BLOCK = BLOCKS.register("froststeel_block",
+			() -> new Block(Block.Properties.from(Blocks.IRON_BLOCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.GLASS).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ROSEQUARTZ_BLOCK = BLOCKS.register("rosequartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_CHISELED = BLOCKS.register("rosequartz_chiseled",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ROSEQUARTZ_SMOOTH = BLOCKS.register("rosequartz_smooth", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ROSEQUARTZ_SMOOTH = BLOCKS.register("rosequartz_smooth",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_PILLAR = BLOCKS.register("rosequartz_pillar",
-			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.QUARTZ_PILLAR)
-					.hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
+			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA,
+					Block.Properties.from(Blocks.QUARTZ_PILLAR).hardnessAndResistance(5.0f, 30.0f)
+							.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
-			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.QUARTZ_BLOCK)
-					.hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ICYSTONE = BLOCKS.register("icystone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ICYSTONE_COBBLE = BLOCKS.register("icystone_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ICYSTONE_BRICKS = BLOCKS.register("icystone_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ICYSTONE_POLISHED = BLOCKS.register("icystone_polished", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
+			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA,
+					Block.Properties.from(Blocks.QUARTZ_BLOCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)
+							.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ICYSTONE = BLOCKS.register("icystone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ICYSTONE_COBBLE = BLOCKS.register("icystone_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ICYSTONE_BRICKS = BLOCKS.register("icystone_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ICYSTONE_POLISHED = BLOCKS.register("icystone_polished",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ICYSTONE_CHISEALED = BLOCKS.register("icystone_chisealed",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> ICYSTONE_CRACKED = BLOCKS.register("icystone_cracked", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> mysticstone = BLOCKS.register("mysticstone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> ICYSTONE_CRACKED = BLOCKS.register("icystone_cracked",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> mysticstone = BLOCKS.register("mysticstone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> mysticstone_cobble = BLOCKS.register("mysticstone_cobble",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> mysticstone_bricks = BLOCKS.register("mysticstone_bricks",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> mysticstone_polished = BLOCKS.register("mysticstone_polished",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> mysticstone_chisealed = BLOCKS.register("mysticstone_chisealed",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> mysticstone_cracked = BLOCKS.register("mysticstone_cracked",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> pearlstone = BLOCKS.register("pearlstone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> pearlstone_cobble = BLOCKS.register("pearlstone_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> pearlstone_bricks = BLOCKS.register("pearlstone_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> pearlstone = BLOCKS.register("pearlstone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> pearlstone_cobble = BLOCKS.register("pearlstone_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> pearlstone_bricks = BLOCKS.register("pearlstone_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> pearlstone_polished = BLOCKS.register("pearlstone_polished",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> pearlstone_chisealed = BLOCKS.register("pearlstone_chisealed",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> pearlstone_cracked = BLOCKS.register("pearlstone_cracked",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_stone = BLOCKS.register("charred_stone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_cobble = BLOCKS.register("charred_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_bricks = BLOCKS.register("charred_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_polished = BLOCKS.register("charred_polished", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_chisealed = BLOCKS.register("charred_chisealed", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> charred_cracked = BLOCKS.register("charred_cracked", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble = BLOCKS.register("marble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble_cobble = BLOCKS.register("marble_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble_bricks = BLOCKS.register("marble_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble_polished = BLOCKS.register("marble_polished", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble_chisealed = BLOCKS.register("marble_chisealed", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> marble_cracked = BLOCKS.register("marble_cracked", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> infested_stone = BLOCKS.register("infested_stone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> infested_cobble = BLOCKS.register("infested_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> infested_bricks = BLOCKS.register("infested_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> infested_polished = BLOCKS.register("infested_polished", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> charred_stone = BLOCKS.register("charred_stone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> charred_cobble = BLOCKS.register("charred_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> charred_bricks = BLOCKS.register("charred_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));;
+	public static final RegistryObject<Block> charred_polished = BLOCKS.register("charred_polished",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> charred_chisealed = BLOCKS.register("charred_chisealed",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> charred_cracked = BLOCKS.register("charred_cracked",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble = BLOCKS.register("marble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble_cobble = BLOCKS.register("marble_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble_bricks = BLOCKS.register("marble_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble_polished = BLOCKS.register("marble_polished",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble_chisealed = BLOCKS.register("marble_chisealed",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> marble_cracked = BLOCKS.register("marble_cracked",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> infested_stone = BLOCKS.register("infested_stone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> infested_cobble = BLOCKS.register("infested_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> infested_bricks = BLOCKS.register("infested_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> infested_polished = BLOCKS.register("infested_polished",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> INFESTED_CHISEALED = BLOCKS.register("infested_chisealed",
-			() -> new Block(
-					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> INFESTED_CRACKED = BLOCKS.register("infested_cracked", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_STONE = BLOCKS.register("crimson_stone", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_COBBLE = BLOCKS.register("crimson_cobble", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_BRICKS = BLOCKS.register("crimson_bricks", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_POLISHED = BLOCKS.register("crimson_polished", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_CHISEALED = BLOCKS.register("crimson_chisealed", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> CRIMSON_CRACKED = BLOCKS.register("crimson_cracked", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> INFESTED_CRACKED = BLOCKS.register("infested_cracked",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_STONE = BLOCKS.register("crimson_stone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_COBBLE = BLOCKS.register("crimson_cobble",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_BRICKS = BLOCKS.register("crimson_bricks",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_POLISHED = BLOCKS.register("crimson_polished",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_CHISEALED = BLOCKS.register("crimson_chisealed",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> CRIMSON_CRACKED = BLOCKS.register("crimson_cracked",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
-			() -> new SlimeBlock(Block.Properties.from(Blocks.SLIME_BLOCK)));
+			() -> new SlimeBlock(Block.Properties.from(Blocks.SLIME_BLOCK).harvestLevel(1)));
 	public static final RegistryObject<Block> INFESTEDSLIME_BLOCK = BLOCKS.register("infestedslime_block",
-			() -> new SlimeBlock(Block.Properties.from(Blocks.SLIME_BLOCK)));
+			() -> new SlimeBlock(Block.Properties.from(Blocks.SLIME_BLOCK).harvestLevel(1)));
 	public static final RegistryObject<Block> ASH_BLOCK = BLOCKS.register("ash_block",
-			() -> new Block(Block.Properties.from(Blocks.RED_SAND)));
+			() -> new Block(Block.Properties.from(Blocks.RED_SAND).harvestTool(ToolType.SHOVEL).harvestLevel(1)));
 	public static final RegistryObject<Block> HOTASH_BLOCK = BLOCKS.register("hotash_block",
 			() -> new Block(Block.Properties.from(Blocks.RED_SAND)));
 	public static final RegistryObject<Block> ASH_LAYER = BLOCKS.register("ash_layer", () -> new ModLayer(
@@ -518,83 +635,179 @@ public class BlockInit {
 			() -> new ModSaplingBlock(() -> new CharredTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)));
 	public static final RegistryObject<Block> ICY_SAPLING = BLOCKS.register("icy_sapling",
 			() -> new ModSaplingBlock(() -> new IcyTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)));
+	public static final RegistryObject<Block> DISTORTED_SAPLING = BLOCKS.register("distorted_sapling",
+			() -> new ModSaplingBlock(() -> new DistortedTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)));
+	public static final RegistryObject<Block> TWISTED_SAPLING = BLOCKS.register("twisted_sapling",
+			() -> new ModSaplingBlock(() -> new TwistedTree(), Block.Properties.from(Blocks.ACACIA_SAPLING)));
 
 	// Logs
 	public static final RegistryObject<Block> bloodoak_log = BLOCKS.register("bloodoak_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+			() -> new BloodOakLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> whiteoak_log = BLOCKS.register("whiteoak_log",
+			() -> new WhiteOakLogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	public static final RegistryObject<Block> silverwood_log = BLOCKS.register("silverwood_log",
+			() -> new SilverWoodLogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.BIRCH_LOG)));
+	public static final RegistryObject<Block> witchwood_log = BLOCKS.register("witchwood_log",
+			() -> new WitchWoodLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> alder_log = BLOCKS.register("alder_log",
+			() -> new AlderLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> hawthorn_log = BLOCKS.register("hawthorn_log",
+			() -> new HawthornLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> rowan_log = BLOCKS.register("rowan_log",
+			() -> new RowanLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> willow_log = BLOCKS.register("willow_log",
+			() -> new WillowLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> beech_log = BLOCKS.register("beech_log",
+			() -> new BeechLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ash_log = BLOCKS.register("ash_log",
+			() -> new AshLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> blackthorn_log = BLOCKS.register("blackthorn_log",
+			() -> new BlackthornLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> cedar_log = BLOCKS.register("cedar_log",
+			() -> new CedarLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> elder_log = BLOCKS.register("elder_log",
+			() -> new ElderLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> juniper_log = BLOCKS.register("juniper_log",
+			() -> new JuniperLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> witchhazel_log = BLOCKS.register("witchhazel_log",
+			() -> new WitchHazelLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> yew_log = BLOCKS.register("yew_log",
+			() -> new YewLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> infested_log = BLOCKS.register("infested_log",
+			() -> new InfestedLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> charred_log = BLOCKS.register("charred_log",
+			() -> new CharredLogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ICY_LOG = BLOCKS.register("icy_log",
+			() -> new IcyLogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> DISTORTED_LOG = BLOCKS.register("distorted_log",
+			() -> new DistortedLogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> TWISTED_LOG = BLOCKS.register("twisted_log",
+			() -> new TwistedLogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> bloodoak_stripped_log = BLOCKS.register("bloodoak_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> whiteoak_log = BLOCKS.register("whiteoak_log",
-			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 	public static final RegistryObject<Block> whiteoak_stripped_log = BLOCKS.register("whiteoak_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> silverwood_log = BLOCKS.register("silverwood_log",
-			() -> new LogBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.BIRCH_LOG)));
 	public static final RegistryObject<Block> silverwood_stripped_log = BLOCKS.register("silverwood_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> witchwood_log = BLOCKS.register("witchwood_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> witchwood_stripped_log = BLOCKS.register("witchwood_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> alder_log = BLOCKS.register("alder_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> alder_stripped_log = BLOCKS.register("alder_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> hawthorn_log = BLOCKS.register("hawthorn_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> hawthorn_stripped_log = BLOCKS.register("hawthorn_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> rowan_log = BLOCKS.register("rowan_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> rowan_stripped_log = BLOCKS.register("rowan_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> willow_log = BLOCKS.register("willow_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> willow_stripped_log = BLOCKS.register("willow_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> beech_log = BLOCKS.register("beech_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> beech_stripped_log = BLOCKS.register("beech_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> ash_log = BLOCKS.register("ash_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> ash_stripped_log = BLOCKS.register("ash_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> blackthorn_log = BLOCKS.register("blackthorn_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> blackthorn_stripped_log = BLOCKS.register("blackthorn_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> cedar_log = BLOCKS.register("cedar_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> cedar_stripped_log = BLOCKS.register("cedar_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> elder_log = BLOCKS.register("elder_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> elder_stripped_log = BLOCKS.register("elder_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> juniper_log = BLOCKS.register("juniper_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> juniper_stripped_log = BLOCKS.register("juniper_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> witchhazel_log = BLOCKS.register("witchhazel_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> witchhazel_stripped_log = BLOCKS.register("witchhazel_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> yew_log = BLOCKS.register("yew_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> yew_stripped_log = BLOCKS.register("yew_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> infested_log = BLOCKS.register("infested_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> infested_stripped_log = BLOCKS.register("infested_stripped_log",
-			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> charred_log = BLOCKS.register("charred_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> charred_stripped_log = BLOCKS.register("charred_stripped_log",
 			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
-	public static final RegistryObject<Block> ICY_LOG = BLOCKS.register("icy_log",
-			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
 	public static final RegistryObject<Block> ICY_STRIPPED_LOG = BLOCKS.register("icy_stripped_log",
+			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> DISTORTED_STRIPPED_LOG = BLOCKS.register("distorted_stripped_log",
+			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> TWISTED_STRIPPED_LOG = BLOCKS.register("twisted_stripped_log",
+			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> BLOODOAK_WOOD = BLOCKS.register("bloodoak_wood",
+			() -> new BloodOakWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> WHITEOAK_WOOD = BLOCKS.register("whiteoak_wood",
+			() -> new WhiteOakWoodBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	public static final RegistryObject<Block> SILVERWOOD_WOOD = BLOCKS.register("silverwood_wood",
+			() -> new SilverWoodBlock(MaterialColor.WHITE_TERRACOTTA, Block.Properties.from(Blocks.BIRCH_LOG)));
+	public static final RegistryObject<Block> WITCHWOOD_WOOD = BLOCKS.register("witchwood_wood",
+			() -> new WitchWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ALDER_WOOD = BLOCKS.register("alder_wood",
+			() -> new AlderWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> HAWTHORN_WOOD = BLOCKS.register("hawthorn_wood",
+			() -> new HawthornWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ROWAN_WOOD = BLOCKS.register("rowan_wood",
+			() -> new RowanWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> WILLOW_WOOD = BLOCKS.register("willow_wood",
+			() -> new WillowWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> BEECH_WOOD = BLOCKS.register("beech_wood",
+			() -> new BeechWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ASH_WOOD = BLOCKS.register("ash_wood",
+			() -> new AshWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> BLACKTHORN_WOOD = BLOCKS.register("blackthorn_wood",
+			() -> new BlackthornWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> CEDAR_WOOD = BLOCKS.register("cedar_wood",
+			() -> new CedarWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ELDER_WOOD = BLOCKS.register("elder_wood",
+			() -> new ElderWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> JUNIPERWOOD = BLOCKS.register("juniper_wood",
+			() -> new JuniperWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> WITCHHAZEL_WOOD = BLOCKS.register("witchhazel_wood",
+			() -> new WitchHazelWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> YEW_WOOD = BLOCKS.register("yew_wood",
+			() -> new YewWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> INFESTED_WOOD = BLOCKS.register("infested_wood",
+			() -> new InfestedWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> CHARRED_WOOD = BLOCKS.register("charred_wood",
+			() -> new CharredWoodBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ICY_WOOD = BLOCKS.register("icy_wood",
+			() -> new IcyWoodBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> DISTORTED_WOOD = BLOCKS.register("distorted_wood",
+			() -> new DistortedWoodBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> TWISTED_WOOD = BLOCKS.register("twisted_wood",
+			() -> new TwistedWoodBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> bloodoak_stripped_wood = BLOCKS.register("bloodoak_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> whiteoak_stripped_wood = BLOCKS.register("whiteoak_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> silverwood_stripped_wood = BLOCKS.register("silverwood_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> witchwood_stripped_wood = BLOCKS.register("witchwood_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> alder_stripped_wood = BLOCKS.register("alder_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> hawthorn_stripped_wood = BLOCKS.register("hawthorn_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> rowan_stripped_wood = BLOCKS.register("rowan_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> willow_stripped_wood = BLOCKS.register("willow_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> beech_stripped_wood = BLOCKS.register("beech_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ash_stripped_wood = BLOCKS.register("ash_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> blackthorn_stripped_wood = BLOCKS.register("blackthorn_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> cedar_stripped_wood = BLOCKS.register("cedar_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> elder_stripped_wood = BLOCKS.register("elder_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> juniper_stripped_wood = BLOCKS.register("juniper_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> witchhazel_stripped_wood = BLOCKS.register("witchhazel_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> yew_stripped_wood = BLOCKS.register("yew_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> infested_stripped_wood = BLOCKS.register("infested_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> charred_stripped_wood = BLOCKS.register("charred_stripped_wood",
+			() -> new LogBlock(MaterialColor.RED, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> ICY_STRIPPED_WOOD = BLOCKS.register("icy_stripped_wood",
+			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> DISTORTED_STRIPPED_WOOD = BLOCKS.register("distorted_stripped_wood",
+			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
+	public static final RegistryObject<Block> TWISTED_STRIPPED_WOOD = BLOCKS.register("twisted_stripped_wood",
 			() -> new LogBlock(MaterialColor.LIGHT_BLUE, Block.Properties.from(Blocks.ACACIA_LOG)));
 
 	// Leaves
@@ -636,6 +849,10 @@ public class BlockInit {
 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)));
 	public static final RegistryObject<Block> ICY_LEAVES = BLOCKS.register("icy_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)));
+	public static final RegistryObject<Block> DISTORTED_LEAVES = BLOCKS.register("distorted_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)));
+	public static final RegistryObject<Block> TWISTED_LEAVES = BLOCKS.register("twisted_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.ACACIA_LEAVES)));
 
 	// Planks
 	public static final RegistryObject<Block> BLOODOAK_PLANKS = BLOCKS.register("bloodoak_planks",
@@ -676,14 +893,56 @@ public class BlockInit {
 			() -> new Block(Block.Properties.from(Blocks.ACACIA_PLANKS)));
 	public static final RegistryObject<Block> ICY_PLANKS = BLOCKS.register("icy_planks",
 			() -> new Block(Block.Properties.from(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> DISTORTED_PLANKS = BLOCKS.register("distorted_planks",
+			() -> new Block(Block.Properties.from(Blocks.ACACIA_PLANKS)));
+	public static final RegistryObject<Block> TWISTED_PLANKS = BLOCKS.register("twisted_planks",
+			() -> new Block(Block.Properties.from(Blocks.ACACIA_PLANKS)));
 
 	// Chest
 
-	// Barrels
+	// Crates
 	public static final RegistryObject<Block> bloodoak_crate = BLOCKS.register("bloodoak_crate",
 			() -> new BloodOakCrateBlock(Block.Properties.from(Blocks.BARREL)));
 	public static final RegistryObject<Block> whiteoak_crate = BLOCKS.register("whiteoak_crate",
 			() -> new WhiteOakCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> SILVERWOOD_CRATE = BLOCKS.register("silverwood_crate",
+			() -> new SilverWoodCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> WITCHWOOD_CRATE = BLOCKS.register("witchwood_crate",
+			() -> new WitchWoodCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> ALDER_CRATE = BLOCKS.register("alder_crate",
+			() -> new AlderCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> HAWTHORN_CRATE = BLOCKS.register("hawthorn_crate",
+			() -> new HawthornCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> ROWAN_CRATE = BLOCKS.register("rowan_crate",
+			() -> new RowanCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> WILLOW_CRATE = BLOCKS.register("willow_crate",
+			() -> new WillowCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> BEECH_CRATE = BLOCKS.register("beech_crate",
+			() -> new BeechCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> ASH_CRATE = BLOCKS.register("ash_crate",
+			() -> new AshCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> BLACKTHORN_CRATE = BLOCKS.register("blackthorn_crate",
+			() -> new BlackthornCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> CEDAR_CRATE = BLOCKS.register("cedar_crate",
+			() -> new CedarCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> ELDER_CRATE = BLOCKS.register("elder_crate",
+			() -> new ElderCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> JUNIPER_CRATE = BLOCKS.register("juniper_crate",
+			() -> new JuniperCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> WITCHHAZEL_CRATE = BLOCKS.register("witchhazel_crate",
+			() -> new WitchhazelCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> YEW_CRATE = BLOCKS.register("yew_crate",
+			() -> new YewCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> INFESTED_CRATE = BLOCKS.register("infested_crate",
+			() -> new InfestedCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> CHARRED_CRATE = BLOCKS.register("charred_crate",
+			() -> new CharredCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> ICY_CRATE = BLOCKS.register("icy_crate",
+			() -> new IcyCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> DISTORTED_CRATE = BLOCKS.register("distorted_crate",
+			() -> new DistortedCrateBlock(Block.Properties.from(Blocks.BARREL)));
+	public static final RegistryObject<Block> TWISTED_CRATE = BLOCKS.register("twisted_crate",
+			() -> new TwistedCrateBlock(Block.Properties.from(Blocks.BARREL)));
 
 	// Doors
 	public static final RegistryObject<Block> bloodoak_door = BLOCKS.register("bloodoak_door",
@@ -724,6 +983,10 @@ public class BlockInit {
 			() -> new ModDoor(Block.Properties.from(Blocks.OAK_DOOR)));
 	public static final RegistryObject<Block> ICY_DOOR = BLOCKS.register("icy_door",
 			() -> new ModDoor(Block.Properties.from(Blocks.OAK_DOOR)));
+	public static final RegistryObject<Block> DISTORTED_DOOR = BLOCKS.register("distorted_door",
+			() -> new ModDoor(Block.Properties.from(Blocks.OAK_DOOR)));
+	public static final RegistryObject<Block> TWISTED_DOOR = BLOCKS.register("twisted_door",
+			() -> new ModDoor(Block.Properties.from(Blocks.OAK_DOOR)));
 
 	// Trap Doors
 	public static final RegistryObject<Block> bloodoak_trapdoor = BLOCKS.register("bloodoak_trapdoor",
@@ -763,6 +1026,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> charred_trapdoor = BLOCKS.register("charred_trapdoor",
 			() -> new ModTrapDoor(Block.Properties.from(Blocks.OAK_TRAPDOOR)));
 	public static final RegistryObject<Block> ICY_TRAPDOOR = BLOCKS.register("icy_trapdoor",
+			() -> new ModTrapDoor(Block.Properties.from(Blocks.OAK_TRAPDOOR)));
+	public static final RegistryObject<Block> DISTORTED_TRAPDOOR = BLOCKS.register("distorted_trapdoor",
+			() -> new ModTrapDoor(Block.Properties.from(Blocks.OAK_TRAPDOOR)));
+	public static final RegistryObject<Block> TWISTED_TRAPDOOR = BLOCKS.register("twisted_trapdoor",
 			() -> new ModTrapDoor(Block.Properties.from(Blocks.OAK_TRAPDOOR)));
 
 	// Stairs
@@ -822,6 +1089,12 @@ public class BlockInit {
 					Block.Properties.create(Material.WOOD, MaterialColor.BLACK)));
 	public static final RegistryObject<Block> ICY_STAIRS = BLOCKS.register("icy_stairs",
 			() -> new StairsBlock(() -> BlockInit.ICY_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> DISTORTED_STAIRS = BLOCKS.register("distorted_stairs",
+			() -> new StairsBlock(() -> BlockInit.DISTORTED_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> TWISTED_STAIRS = BLOCKS.register("twisted_stairs",
+			() -> new StairsBlock(() -> BlockInit.TWISTED_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
 	public static final RegistryObject<Block> ICYSTONE_STAIRS = BLOCKS.register("icystone_stairs",
 			() -> new StairsBlock(() -> BlockInit.ICYSTONE.get().getDefaultState(),
@@ -990,6 +1263,10 @@ public class BlockInit {
 			() -> new SlabBlock(Block.Properties.from(BlockInit.CHARRED_PLANKS.get())));
 	public static final RegistryObject<Block> ICY_SLAB = BLOCKS.register("icy_slab",
 			() -> new SlabBlock(Block.Properties.from(BlockInit.ICY_PLANKS.get())));
+	public static final RegistryObject<Block> DISTORTED_SLAB = BLOCKS.register("distorted_slab",
+			() -> new SlabBlock(Block.Properties.from(BlockInit.DISTORTED_PLANKS.get())));
+	public static final RegistryObject<Block> TWISTED_SLAB = BLOCKS.register("twisted_slab",
+			() -> new SlabBlock(Block.Properties.from(BlockInit.TWISTED_PLANKS.get())));
 	public static final RegistryObject<Block> ICYSTONE_SLAB = BLOCKS.register("icystone_slab",
 			() -> new SlabBlock(Block.Properties.from(BlockInit.ICYSTONE.get())));
 	public static final RegistryObject<Block> ICYSTONECOBBLE_SLAB = BLOCKS.register("icystonecobble_slab",
@@ -1113,6 +1390,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> charred_button = BLOCKS.register("charred_button",
 			() -> new ModWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.ORANGE_TERRACOTTA)));
 	public static final RegistryObject<Block> ICY_BUTTON = BLOCKS.register("icy_button",
+			() -> new ModWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> DISTORTED_BUTTON = BLOCKS.register("distorted_button",
+			() -> new ModWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> TWISTED_BUTTON = BLOCKS.register("twisted_button",
 			() -> new ModWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
 	public static final RegistryObject<Block> ICYSTONE_BUTTON = BLOCKS.register("icystone_button",
 			() -> new ModStoneButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.LIGHT_BLUE)));
@@ -1258,6 +1539,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> ICY_PRESSUREPLATE = BLOCKS.register("icy_pressureplate",
 			() -> new ModWoodPressurePlateBlock(Sensitivity.EVERYTHING,
 					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> DISTORTED_PRESSUREPLATE = BLOCKS.register("distorted_pressureplate",
+			() -> new ModWoodPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> TWISTED_PRESSUREPLATE = BLOCKS.register("twisted_pressureplate",
+			() -> new ModWoodPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
 
 	// Fences
 	public static final RegistryObject<Block> bloodoak_fence = BLOCKS.register("bloodoak_fence",
@@ -1296,6 +1583,12 @@ public class BlockInit {
 			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WHITE_TERRACOTTA)));
 	public static final RegistryObject<Block> charred_fence = BLOCKS.register("charred_fence",
 			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.ORANGE_TERRACOTTA)));
+	public static final RegistryObject<Block> ICY_FENCE = BLOCKS.register("icy_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> DISTORTED_FENCE = BLOCKS.register("distorted_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
+	public static final RegistryObject<Block> TWISTED_FENCE = BLOCKS.register("twisted_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.LIGHT_BLUE)));
 
 	// Fence Gates
 	public static final RegistryObject<FenceGateBlock> bloodoak_fence_gate = BLOCKS.register("bloodoak_fence_gate",
@@ -1335,6 +1628,10 @@ public class BlockInit {
 	public static final RegistryObject<FenceGateBlock> charred_fence_gate = BLOCKS.register("charred_fence_gate",
 			() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)));
 	public static final RegistryObject<FenceGateBlock> ICY_FENCE_GATE = BLOCKS.register("icy_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)));
+	public static final RegistryObject<FenceGateBlock> DISTORTED_FENCE_GATE = BLOCKS.register("distorted_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)));
+	public static final RegistryObject<FenceGateBlock> TWISTED_FENCE_GATE = BLOCKS.register("twisted_fence_gate",
 			() -> new FenceGateBlock(Block.Properties.from(Blocks.OAK_FENCE_GATE)));
 
 	// Walls
@@ -1482,8 +1779,9 @@ public class BlockInit {
 			() -> new PedestalTier3(
 					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4", () -> new Block(
-			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
+			() -> new PedestalTier4(
+					Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5", () -> new Block(
 			Block.Properties.create(Material.ROCK).hardnessAndResistance(0.5f, 15.0f).sound(SoundType.STONE)));

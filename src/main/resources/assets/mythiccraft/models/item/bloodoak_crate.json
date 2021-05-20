@@ -1,3 +1,4 @@
+  
 {
-  "parent": "mythiccraft:blocks/bloodoak_crate"
+    "parent": "mythiccraft:block/bloodoak_crate"
 }
