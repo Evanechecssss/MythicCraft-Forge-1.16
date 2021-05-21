@@ -1,4 +1,4 @@
-package com.masterquentus.mythiccraft.objects.blocks;
+package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 

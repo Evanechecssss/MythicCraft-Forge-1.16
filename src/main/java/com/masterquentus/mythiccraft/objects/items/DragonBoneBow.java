@@ -12,9 +12,7 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-import com.masterquentus.mythiccraft.util.enums.ModBow;
-
-public class DragonBoneBow extends ModBow{
+public class DragonBoneBow extends ModBow {
     public DragonBoneBow(Properties builder) {
         super(builder);
     }
@@ -25,14 +23,14 @@ public class DragonBoneBow extends ModBow{
     }
 
     @Override
-    protected double getArrowDamage(ItemStack bowStack, AbstractArrowEntity arrowEntity) {
-        int powerLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, bowStack);
+    protected double getArrowBaseDamage(ItemStack bowStack, AbstractArrowEntity arrowEntity) {
+        int powerLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, bowStack);
 
         return (double)powerLevel * 0.5D + 0.5D;
     }
 
     @Override
-    public Predicate<ItemStack> getInventoryAmmoPredicate() {
+    public Predicate<ItemStack> getAllSupportedProjectiles() {
         return (ammoStack) -> {
             return ammoStack.getItem() == Items.ARROW;
         };

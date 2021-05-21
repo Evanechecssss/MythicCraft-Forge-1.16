@@ -24,70 +24,70 @@ import net.minecraft.world.World;
 
 public class BlockQuarry extends Block {
 
-	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
-	private static final VoxelShape SHAPE_N = Stream.of(Block.makeCuboidShape(0, 16.5, 0, 16, 27.5, 16),
-			Block.makeCuboidShape(7, 2.45672, 7, 9, 15.54328, 9), Block.makeCuboidShape(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.makeCuboidShape(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.makeCuboidShape(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.makeCuboidShape(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.makeCuboidShape(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.makeCuboidShape(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+	private static final VoxelShape SHAPE_N = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
+			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
+			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
+			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
+			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
+			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
+			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
+			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
+			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
+			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
+			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
-	private static final VoxelShape SHAPE_W = Stream.of(Block.makeCuboidShape(0, 16.5, 0, 16, 27.5, 16),
-			Block.makeCuboidShape(7, 2.45672, 7, 9, 15.54328, 9), Block.makeCuboidShape(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.makeCuboidShape(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.makeCuboidShape(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.makeCuboidShape(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.makeCuboidShape(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.makeCuboidShape(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+	private static final VoxelShape SHAPE_W = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
+			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
+			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
+			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
+			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
+			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
+			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
+			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
+			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
+			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
+			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
-	private static final VoxelShape SHAPE_S = Stream.of(Block.makeCuboidShape(0, 16.5, 0, 16, 27.5, 16),
-			Block.makeCuboidShape(7, 2.45672, 7, 9, 15.54328, 9), Block.makeCuboidShape(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.makeCuboidShape(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.makeCuboidShape(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.makeCuboidShape(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.makeCuboidShape(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.makeCuboidShape(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+	private static final VoxelShape SHAPE_S = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
+			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
+			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
+			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
+			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
+			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
+			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
+			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
+			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
+			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
+			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
-	private static final VoxelShape SHAPE_E = Stream.of(Block.makeCuboidShape(0, 16.5, 0, 16, 27.5, 16),
-			Block.makeCuboidShape(7, 2.45672, 7, 9, 15.54328, 9), Block.makeCuboidShape(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.makeCuboidShape(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.makeCuboidShape(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.makeCuboidShape(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.makeCuboidShape(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.makeCuboidShape(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.makeCuboidShape(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.makeCuboidShape(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+	private static final VoxelShape SHAPE_E = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
+			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
+			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
+			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
+			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
+			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
+			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
+			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
+			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
+			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
+			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 
 	public BlockQuarry(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch (state.get(FACING)) {
+		switch (state.getValue(FACING)) {
 		case NORTH:
 			return SHAPE_N;
 		case SOUTH:
@@ -103,19 +103,18 @@ public class BlockQuarry extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 
 	}
 
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
-		return state.with(FACING, rot.rotate(state.get(FACING)));
+		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
 		builder.add(FACING);
-
 	}
 
 	@SuppressWarnings("unused")
@@ -134,7 +133,7 @@ public class BlockQuarry extends Block {
 	}
 
 	@Override
-	public BlockRenderType getRenderType(BlockState iBlockState) {
+	public BlockRenderType getRenderShape(BlockState iBlockState) {
 		return BlockRenderType.MODEL;
 	}
 }

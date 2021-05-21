@@ -25,12 +25,12 @@ public class VampriricItem extends Item
 	}
 	
 	@Override
-	public boolean hasEffect(ItemStack stack) {
+	public boolean isFoil(ItemStack stack) {
 		return true;
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) 
+	public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn)
 	{
 		if(KeybordHelper.isHoldingShift()) 
 		{
@@ -39,20 +39,20 @@ public class VampriricItem extends Item
 			tooltip.add(new StringTextComponent("Hold SHIFT for more information"));
 		}
 			
-		super.addInformation(stack, worldIn, tooltip, flagIn);
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-		if(!playerIn.getCooldownTracker().hasCooldown(this)) {
-		playerIn.addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, 6000, 2555));
-		playerIn.addPotionEffect(new EffectInstance(Effects.INVISIBILITY, 5000, 1555));
-		playerIn.addPotionEffect(new EffectInstance(Effects.BAD_OMEN, 10000, 10000));
-		playerIn.getCooldownTracker().setCooldown(this, 800);
-		return ActionResult.resultSuccess(playerIn.getHeldItem(handIn));
-	}
+	public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+		if(!playerIn.getCooldowns().isOnCooldown(this)) {
+			playerIn.addEffect(new EffectInstance(Effects.NIGHT_VISION, 6000, 2555));
+			playerIn.addEffect(new EffectInstance(Effects.INVISIBILITY, 5000, 1555));
+			playerIn.addEffect(new EffectInstance(Effects.BAD_OMEN, 10000, 10000));
+			playerIn.getCooldowns().addCooldown(this, 800);
+			return ActionResult.success(playerIn.getItemInHand(handIn));
+		}
 	
-	return ActionResult.resultFail(playerIn.getHeldItem(handIn));
+		return ActionResult.fail(playerIn.getItemInHand(handIn));
 	}
 }
 

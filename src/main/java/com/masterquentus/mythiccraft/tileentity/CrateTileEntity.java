@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.tileentity;
 
 import com.masterquentus.mythiccraft.container.CrateContainer;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
+import com.masterquentus.mythiccraft.objects.blocks.CrateBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -43,7 +44,7 @@ public class CrateTileEntity extends LockableLootTileEntity {
 		this(ModTileEntityTypes.CRATE_TILE.get());
 	}
 
-	@Override
+    @Override
 	public int getContainerSize() {
 		return 36;
 	}
@@ -127,7 +128,7 @@ public class CrateTileEntity extends LockableLootTileEntity {
 
 	protected void onOpenOrClose() {
 		Block block = this.getBlockState().getBlock();
-		if (block instanceof AlderCrateBlock) {
+		if (block instanceof CrateBlock) {
 			this.level.blockEvent(this.worldPosition, block, 1, this.numPlayersUsing);
 			this.level.updateNeighborsAt(this.worldPosition, block);
 		}

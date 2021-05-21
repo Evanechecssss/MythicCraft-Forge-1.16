@@ -4,14 +4,10 @@ package com.masterquentus.mythiccraft.objects.items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-public class WoodAshItem extends Item 
-{
+public class WoodAshItem extends Item {
 
-	public WoodAshItem(Properties properties) 
-	{
+	public WoodAshItem(Properties properties) {
 		super(properties);
-	
-	
 	}
 	
 	@Override

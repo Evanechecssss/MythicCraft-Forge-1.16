@@ -25,35 +25,35 @@ public class WaterCropItem extends BlockNamedItem {
 
     @SuppressWarnings("deprecation")
 	@Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        ItemStack stack = playerIn.getHeldItem(handIn);
+    public ActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        ItemStack stack = playerIn.getItemInHand(handIn);
         // if (worldIn.isRemote()) return ActionResult.resultPass(stack);
 
-        RayTraceResult ray = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
+        RayTraceResult ray = getPlayerPOVHitResult(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
 
         if (ray.getType() != RayTraceResult.Type.BLOCK) {
-            return ActionResult.resultPass(stack);
+            return ActionResult.pass(stack);
         } else {
             BlockRayTraceResult blockRay = (BlockRayTraceResult) ray;
 
-            BlockPos hitPos = ((BlockRayTraceResult) ray).getPos();
-            Direction direction = blockRay.getFace();
-            BlockPos plantPos = hitPos.offset(direction);
+            BlockPos hitPos = ((BlockRayTraceResult) ray).getBlockPos();
+            Direction direction = blockRay.getDirection();
+            BlockPos plantPos = hitPos.relative(direction);
 
             if (worldIn.getBlockState(hitPos).getBlock() == Blocks.WATER && direction == Direction.UP && worldIn.getBlockState(plantPos).isAir()){
-                BlockState state = this.getBlock().getDefaultState();
-                worldIn.setBlockState(plantPos, state);
+                BlockState state = this.getBlock().defaultBlockState();
+                worldIn.setBlockAndUpdate(plantPos, state);
                 if (!playerIn.isCreative()) stack.shrink(1);
-                return ActionResult.resultSuccess(stack);
+                return ActionResult.success(stack);
             } else {
-                return ActionResult.resultPass(stack);
+                return ActionResult.pass(stack);
             }
         }
     }
 
     @Override
-    public ActionResultType onItemUse(ItemUseContext context) {
-        ActionResult<ItemStack> result = this.onItemRightClick(context.getWorld(), context.getPlayer(), context.getHand());
-        return result.getType();
+    public ActionResultType useOn(ItemUseContext context) {
+        ActionResult<ItemStack> result = this.use(context.getLevel(), context.getPlayer(), context.getHand());
+        return result.getResult();
     }
 }

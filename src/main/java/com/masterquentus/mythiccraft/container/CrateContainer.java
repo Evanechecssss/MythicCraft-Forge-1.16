@@ -1,7 +1,7 @@
 package com.masterquentus.mythiccraft.container;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.objects.blocks.ModContainerTypes;
+import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;

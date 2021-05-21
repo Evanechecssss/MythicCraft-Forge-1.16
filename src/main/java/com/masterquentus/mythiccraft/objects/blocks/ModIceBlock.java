@@ -15,8 +15,8 @@ public class ModIceBlock extends IceBlock {
 	}
 	
 	public void randomTick(BlockState state, ServerWorld worldIn, BlockPos pos, Random random) {
-	      if (worldIn.getLightFor(LightType.BLOCK, pos) > 11 - state.getOpacity(worldIn, pos)) {
-	         this.turnIntoWater(state, worldIn, pos);
+	      if (worldIn.getBrightness(LightType.BLOCK, pos) > 11 - state.getLightBlock(worldIn, pos)) {
+	         this.melt(state, worldIn, pos);
 	      }
 
 	   }

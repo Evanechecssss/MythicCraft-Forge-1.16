@@ -1,8 +1,5 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
-import com.masterquentus.mythiccraft.world.feature.WillowTree;
-import com.masterquentus.mythiccraft.world.feature.WitchWoodTree;
-
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;

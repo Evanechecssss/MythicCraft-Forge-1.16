@@ -7,7 +7,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.masterquentus.mythiccraft.objects.WaterartichokeCrop;
+import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import com.masterquentus.mythiccraft.world.gen.MythicCraftOreGen;
 import com.masterquentus.mythiccraft.world.gen.StructureGen;

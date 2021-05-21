@@ -24,49 +24,22 @@ public class ModKelpTopBlock extends KelpTopBlock implements IGrowable {
 		super(builder);
 
 	}
-	
-	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
-        if (!stateIn.isValidPosition(worldIn, currentPos)) {
-            if (facing == Direction.DOWN) {
-                return Blocks.AIR.getDefaultState();
-            }
 
-            worldIn.getPendingBlockTicks().scheduleTick(currentPos, this, 1);
-        }
-
-        if (facing == Direction.UP && facingState.getBlock() == this) {
-            return BlockInit.LIVING_KELP.get().getDefaultState();
-        } else {
-            worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
-            return stateIn;
-        }
-        
-        
+    @Override
+    protected Block getBodyBlock() {
+        return BlockInit.LIVING_KELP.get();
     }
 
-	@Override
-	public boolean canGrow(IBlockReader worldIn, BlockPos pos, BlockState state, boolean isClient) {
-		return true;
-	}
 
-	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		return true;
-	}
-
-	@Override
-	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-		
-	}
-	
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-        BlockPos blockpos = pos.down();
+    @Override
+	public boolean canSurvive(BlockState state, IWorldReader worldIn, BlockPos pos) {
+        BlockPos blockpos = pos.below();
         BlockState blockstate = worldIn.getBlockState(blockpos);
         Block block = blockstate.getBlock();
         if (block == Blocks.MAGMA_BLOCK) {
             return false;
         } else {
-            return block == this || block == BlockInit.LIVING_KELP.get() || blockstate.isSolidSide(worldIn, blockpos, Direction.UP);
+            return block == this || block ==this.getBodyBlock() || blockstate.isFaceSturdy(worldIn, blockpos, Direction.UP);
         }
     }
 

@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class HellFireBlock extends FireBlock {
@@ -23,7 +24,7 @@ public class HellFireBlock extends FireBlock {
 	}
 	
 	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		entityIn.setFire(10);
+		entityIn.setSecondsOnFire(10);
 
 	}
 	
@@ -38,8 +39,11 @@ public class HellFireBlock extends FireBlock {
 	}
 	
 	@Override
-	public boolean isFireSource(BlockState state, IBlockReader world, BlockPos pos, Direction side) {
+	public boolean isFireSource(BlockState state, IWorldReader world, BlockPos pos, Direction side) {
 		return super.isFireSource(state, world, pos, side);
 	}
-	
+
+	public BlockState getStateToPlace(World world, BlockPos pos) {
+		return getStateForPlacement(world, pos);
+	}
 }

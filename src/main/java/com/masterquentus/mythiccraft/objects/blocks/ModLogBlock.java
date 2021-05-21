@@ -1,10 +1,7 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,6 +12,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.RegistryObject;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModLogBlock extends RotatedPillarBlock {
     private final boolean isStripped;
@@ -35,12 +36,22 @@ public class ModLogBlock extends RotatedPillarBlock {
     public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
         Item held = player.getItemInHand(handIn).getItem();
         if (held instanceof AxeItem && !this.isStripped){
-            BlockState newState = this.defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
+            BlockState newState = this.getStripped().defaultBlockState().setValue(RotatedPillarBlock.AXIS, state.getValue(RotatedPillarBlock.AXIS));
             worldIn.setBlockAndUpdate(pos, newState);
             worldIn.playSound(player, pos, SoundEvents.AXE_STRIP, SoundCategory.BLOCKS, 0.7F, 1F);
             return ActionResultType.SUCCESS;
         }
         return super.use(state, worldIn, pos, player, handIn, hit);
-    }	
+    }
+
+    protected Block getStripped(){
+        for (BlockInit.WoodType type : BlockInit.WOOD_TYPES.values()){
+            if (this == type.log.get()) return type.strippedLog.get();
+            if (this == type.wood.get()) return type.strippedWood.get();
+        }
+
+        // this should never happen. if it does, that means the wood type wasnt properly defined
+        return Blocks.COBBLESTONE;
+    }
 
 }

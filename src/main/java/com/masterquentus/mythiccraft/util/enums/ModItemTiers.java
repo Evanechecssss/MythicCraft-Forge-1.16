@@ -13,47 +13,47 @@ public enum ModItemTiers implements IItemTier {
 	
 	
 	VAMPIRIC(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.VAMPIRIC_GEM.get());
+		return Ingredient.of(ItemInit.VAMPIRIC_GEM.get());
 		
 	}),
 	
 	SILVER(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.SILVER_INGOT.get());
+		return Ingredient.of(ItemInit.SILVER_INGOT.get());
 		
 	}),
 
 	MYTHICDIAMOND(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.MYTHIC_DIAMOND.get());
+		return Ingredient.of(ItemInit.MYTHIC_DIAMOND.get());
 		
 	}),
 
 	DRAGONHEART(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.DRAGONHEART_INGOT.get());
+		return Ingredient.of(ItemInit.DRAGONHEART_INGOT.get());
 		
 	}),
 	
 	FROSTSTEEL(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.FROSTSTEEL_INGOT.get());
+		return Ingredient.of(ItemInit.FROSTSTEEL_INGOT.get());
 		
 	}),
 	
 	RUBY(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.RUBY.get());
+		return Ingredient.of(ItemInit.RUBY.get());
 		
 	}),
 	
 	SAPPHIRE(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.SAPPHIRE.get());
+		return Ingredient.of(ItemInit.SAPPHIRE.get());
 		
 	}),
 	
 	AMETHYST(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.AMETHYST.get());
+		return Ingredient.of(ItemInit.AMETHYST.get());
 		
 	}),
 	
 	ANCIENT(2, 550, 5.0F, 6.5F, 15, () -> {
-		return Ingredient.fromItems(ItemInit.dragonscale_black.get());
+		return Ingredient.of(ItemInit.dragonscale_black.get());
 		
 	});
 
@@ -64,8 +64,7 @@ public enum ModItemTiers implements IItemTier {
 	private final int enchantability;
 	private final LazyValue<Ingredient> repairMaterial;
 
-	private ModItemTiers(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
-			Supplier<Ingredient> repairMaterial) {
+	ModItemTiers(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability, Supplier<Ingredient> repairMaterial) {
 		this.harvestLevel = harvestLevel;
 		this.maxUses = maxUses;
 		this.efficiency = efficiency;
@@ -75,32 +74,32 @@ public enum ModItemTiers implements IItemTier {
 	}
 
 	@Override
-	public int getMaxUses() {
+	public int getUses() {
 		return this.maxUses;
 	}
 
 	@Override
-	public float getEfficiency() {
+	public float getSpeed() {
 		return this.efficiency;
 	}
 
 	@Override
-	public float getAttackDamage() {
+	public float getAttackDamageBonus() {
 		return this.attackDamage;
 	}
 
 	@Override
-	public int getHarvestLevel() {
+	public int getLevel() {
 		return this.harvestLevel;
 	}
 
 	@Override
-	public int getEnchantability() {
+	public int getEnchantmentValue() {
 		return this.enchantability;
 	}
 
 	@Override
-	public Ingredient getRepairMaterial() {
-		return this.repairMaterial.getValue();
+	public Ingredient getRepairIngredient() {
+		return this.repairMaterial.get();
 	}
 }

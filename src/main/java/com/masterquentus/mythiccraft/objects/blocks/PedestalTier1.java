@@ -22,58 +22,58 @@ import net.minecraft.world.IBlockReader;
 
 public class PedestalTier1 extends Block {
 
-	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
 	private static final VoxelShape SHAPE_N = Stream
-			.of(Block.makeCuboidShape(1, 1, 1, 5, 15, 15), Block.makeCuboidShape(0, 15, 0, 5, 16, 16),
-					Block.makeCuboidShape(0, 0, 0, 5, 1, 16), Block.makeCuboidShape(5, 1, 1, 11, 15, 5),
-					Block.makeCuboidShape(5, 15, 0, 11, 16, 5), Block.makeCuboidShape(5, 0, 0, 11, 1, 5),
-					Block.makeCuboidShape(5, 1, 11, 11, 15, 15), Block.makeCuboidShape(5, 15, 11, 11, 16, 16),
-					Block.makeCuboidShape(5, 0, 11, 11, 1, 16), Block.makeCuboidShape(11, 1, 1, 15, 15, 15),
-					Block.makeCuboidShape(11, 15, 0, 16, 16, 16), Block.makeCuboidShape(11, 0, 0, 16, 1, 16))
+			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
+					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
+					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
+					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
+					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
+					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
 			.reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 	private static final VoxelShape SHAPE_W = Stream
-			.of(Block.makeCuboidShape(1, 1, 1, 5, 15, 15), Block.makeCuboidShape(0, 15, 0, 5, 16, 16),
-					Block.makeCuboidShape(0, 0, 0, 5, 1, 16), Block.makeCuboidShape(5, 1, 1, 11, 15, 5),
-					Block.makeCuboidShape(5, 15, 0, 11, 16, 5), Block.makeCuboidShape(5, 0, 0, 11, 1, 5),
-					Block.makeCuboidShape(5, 1, 11, 11, 15, 15), Block.makeCuboidShape(5, 15, 11, 11, 16, 16),
-					Block.makeCuboidShape(5, 0, 11, 11, 1, 16), Block.makeCuboidShape(11, 1, 1, 15, 15, 15),
-					Block.makeCuboidShape(11, 15, 0, 16, 16, 16), Block.makeCuboidShape(11, 0, 0, 16, 1, 16))
+			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
+					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
+					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
+					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
+					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
+					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
 			.reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 	private static final VoxelShape SHAPE_S = Stream
-			.of(Block.makeCuboidShape(1, 1, 1, 5, 15, 15), Block.makeCuboidShape(0, 15, 0, 5, 16, 16),
-					Block.makeCuboidShape(0, 0, 0, 5, 1, 16), Block.makeCuboidShape(5, 1, 1, 11, 15, 5),
-					Block.makeCuboidShape(5, 15, 0, 11, 16, 5), Block.makeCuboidShape(5, 0, 0, 11, 1, 5),
-					Block.makeCuboidShape(5, 1, 11, 11, 15, 15), Block.makeCuboidShape(5, 15, 11, 11, 16, 16),
-					Block.makeCuboidShape(5, 0, 11, 11, 1, 16), Block.makeCuboidShape(11, 1, 1, 15, 15, 15),
-					Block.makeCuboidShape(11, 15, 0, 16, 16, 16), Block.makeCuboidShape(11, 0, 0, 16, 1, 16))
+			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
+					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
+					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
+					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
+					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
+					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
 			.reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 	private static final VoxelShape SHAPE_E = Stream
-			.of(Block.makeCuboidShape(1, 1, 1, 5, 15, 15), Block.makeCuboidShape(0, 15, 0, 5, 16, 16),
-					Block.makeCuboidShape(0, 0, 0, 5, 1, 16), Block.makeCuboidShape(5, 1, 1, 11, 15, 5),
-					Block.makeCuboidShape(5, 15, 0, 11, 16, 5), Block.makeCuboidShape(5, 0, 0, 11, 1, 5),
-					Block.makeCuboidShape(5, 1, 11, 11, 15, 15), Block.makeCuboidShape(5, 15, 11, 11, 16, 16),
-					Block.makeCuboidShape(5, 0, 11, 11, 1, 16), Block.makeCuboidShape(11, 1, 1, 15, 15, 15),
-					Block.makeCuboidShape(11, 15, 0, 16, 16, 16), Block.makeCuboidShape(11, 0, 0, 16, 1, 16))
+			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
+					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
+					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
+					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
+					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
+					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
 			.reduce((v1, v2) -> {
-				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);
+				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 
 	public PedestalTier1(Properties properties) {
 		super(properties);
-		this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 
 	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch (state.get(FACING)) {
+		switch (state.getValue(FACING)) {
 		case NORTH:
 			return SHAPE_N;
 		case SOUTH:
@@ -89,17 +89,17 @@ public class PedestalTier1 extends Block {
 
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
 
 	}
 
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
-		return state.with(FACING, rot.rotate(state.get(FACING)));
+		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
 
 	@Override
-	protected void fillStateContainer(Builder<Block, BlockState> builder) {
+	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
 		builder.add(FACING);
 
 	}
@@ -115,7 +115,7 @@ public class PedestalTier1 extends Block {
 	}
 
 	@Override
-	public BlockRenderType getRenderType(BlockState iBlockState) {
+	public BlockRenderType getRenderShape(BlockState iBlockState) {
 		return BlockRenderType.MODEL;
 	}
 }

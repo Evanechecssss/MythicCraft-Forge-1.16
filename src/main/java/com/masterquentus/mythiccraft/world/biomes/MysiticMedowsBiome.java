@@ -1,7 +1,5 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
-import com.masterquentus.mythiccraft.world.feature.BloodOakTree;
-import com.masterquentus.mythiccraft.world.feature.SilverWoodTree;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
