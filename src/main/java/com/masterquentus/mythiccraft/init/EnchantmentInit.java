@@ -9,8 +9,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class EnchantmentInit {
 	
 	@SuppressWarnings("deprecation")
-	public static final DeferredRegister<Enchantment> ENCHANTMENTS = new DeferredRegister<>(ForgeRegistries.ENCHANTMENTS, MythicCraft.MOD_ID);
-	
+	public static final DeferredRegister<Enchantment> ENCHANTMENTS = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MythicCraft.MOD_ID);
+
+	// dont forget to register in main class if you ever use this
 	
 
 }

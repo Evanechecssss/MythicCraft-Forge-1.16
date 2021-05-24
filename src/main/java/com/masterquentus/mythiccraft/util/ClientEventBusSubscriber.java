@@ -50,25 +50,9 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
 
 		// Sapling
-		RenderTypeLookup.setRenderLayer(BlockInit.bloodoak_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.whiteoak_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.silverwood_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.witchwood_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.alder_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.hawthorn_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.rowan_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.willow_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.beech_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.ash_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.blackthorn_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.cedar_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.elder_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.juniper_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.witchhazel_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.yew_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.charred_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.infested_sapling.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.ICY_SAPLING.get(), RenderType.cutout());
+		BlockInit.WOOD_TYPES.forEach((name, wood) -> {
+			RenderTypeLookup.setRenderLayer(wood.sapling.get(), RenderType.cutout());
+		});
 
 		// Crops
 		RenderTypeLookup.setRenderLayer(BlockInit.vervain_crop.get(), RenderType.cutout());

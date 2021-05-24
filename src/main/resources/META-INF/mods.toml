@@ -1,20 +1,22 @@
 modLoader="javafml"
 
-loaderVersion="[31,)"
+loaderVersion="[36,)"
 
-issueTrackerURL="http://my.issue.tracker/"
+#issueTrackerURL="http://my.issue.tracker/"
+
+license="MIT"
 
 [[mods]]
 
 modId="mythiccraft"
 
-version="1.16.5-1.0"
+version="1.0"
 
 displayName="MythicCraft"
 
-updateJSONURL="http://myurl.me/"
+#updateJSONURL="http://myurl.me/"
 
-displayURL="http://example.com/"
+#displayURL="http://example.com/"
 
 logoFile="examplemod.png"
 
@@ -32,7 +34,7 @@ description='''
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
-    versionRange="[31,)" #mandatory
+    versionRange="[36,)" #mandatory
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
@@ -41,12 +43,12 @@ description='''
 [[dependencies.mythiccraft]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"
 [[dependencies.mythiccraft]]
     modId="patchouli"
     mandatory=false
-    versionRange="[1.15.2-1.2-35]"
+    versionRange="[1.16.4-51]"
     ordering="NONE"
     side="BOTH"

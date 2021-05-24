@@ -39,7 +39,7 @@ public class FluidInit {
 			"blocks/infestedgoo_overlay");
 
 	@SuppressWarnings("deprecation")
-	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<>(ForgeRegistries.FLUIDS,
+	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
 			MythicCraft.MOD_ID);
 
 	public static final RegistryObject<FlowingFluid> BLOOD_FLUID = FLUIDS.register("blood_fluid",
@@ -58,27 +58,27 @@ public class FluidInit {
 	public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> BLOOD_FLUID.get(), () -> BLOOD_FLOWING.get(),
 			FluidAttributes.builder(BLOOD_STILL_RL, BLOOD_FLOWING_RL).density(7).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.BLOCK_HONEY_BLOCK_BREAK).overlay(BLOOD_OVERLAY_RL))
+					.sound(SoundEvents.HONEY_BLOCK_BREAK).overlay(BLOOD_OVERLAY_RL))
 							.block(() -> FluidInit.BLOOD_BLOCK.get()).bucket(() -> ItemInit.blood_bucket.get());
 	public static final ForgeFlowingFluid.Properties ECTOPLASM_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> ECTOPLASM_FLUID.get(), () -> ECTOPLASM_FLOWING.get(),
 			FluidAttributes.builder(ECTOPLASM_STILL_RL, ECTOPLASM_FLOWING_RL).density(3).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.BLOCK_BEEHIVE_DROP).overlay(ECTOPLASM_OVERLAY_RL))
+					.sound(SoundEvents.BEEHIVE_DRIP).overlay(ECTOPLASM_OVERLAY_RL))
 							.block(() -> FluidInit.ECTOPLASM_BLOCK.get()).bucket(() -> ItemInit.ectoplasm_bucket.get());
 	public static final ForgeFlowingFluid.Properties INFESTEDGOO_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> INFESTEDGOO_FLUID.get(), () -> INFESTEDGOO_FLOWING.get(),
 			FluidAttributes.builder(INFESTEDGOO_STILL_RL, INFESTEDGOO_FLOWING_RL).density(9).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.BLOCK_BEEHIVE_DROP).overlay(INFESTEDGOO_OVERLAY_RL))
+					.sound(SoundEvents.BEEHIVE_DRIP).overlay(INFESTEDGOO_OVERLAY_RL))
 							.block(() -> FluidInit.INFESTEDGOO_BLOCK.get())
 							.bucket(() -> ItemInit.ectoplasm_bucket.get());
 
 	public static final RegistryObject<FlowingFluidBlock> BLOOD_BLOCK = BlockInit.BLOCKS.register("blood",
-			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(), Block.Properties.create(Material.WATER)
-					.doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(), Block.Properties.of(Material.WATER)
+					.noCollission().strength(100.0f).noDrops()));
 	public static final RegistryObject<FlowingFluidBlock> ECTOPLASM_BLOCK = BlockInit.BLOCKS.register("ectoplasm",
-			() -> new FlowingFluidBlock(() -> FluidInit.ECTOPLASM_FLUID.get(), Block.Properties.create(Material.WATER)
-					.doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.ECTOPLASM_FLUID.get(), Block.Properties.of(Material.WATER)
+					.noCollission().strength(100.0f).noDrops()));
 	public static final RegistryObject<FlowingFluidBlock> INFESTEDGOO_BLOCK = BlockInit.BLOCKS.register("infestedgoo",
-			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(), Block.Properties.create(Material.WATER)
-					.doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(), Block.Properties.of(Material.WATER)
+					.noCollission().strength(100.0f).noDrops()));
 }

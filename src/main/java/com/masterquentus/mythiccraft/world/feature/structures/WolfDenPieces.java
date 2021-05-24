@@ -18,8 +18,11 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
+import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IServerWorld;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructurePiece;
 import net.minecraft.world.gen.feature.structure.TemplateStructurePiece;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
@@ -37,7 +40,7 @@ private static final ResourceLocation Part_1 = new ResourceLocation(MythicCraft.
 		int z = pos.getZ();
 
 		BlockPos rotationOffset = new BlockPos(0, 0, 0).rotate(rot);
-		BlockPos blockpos = rotationOffset.add(x, pos.getY(), z);
+		BlockPos blockpos = rotationOffset.offset(x, pos.getY(), z);
 		pieces.add(new GoblinHousePieces.Piece(manager, Part_1, blockpos, rot));
 	}
 	
@@ -50,7 +53,7 @@ private static final ResourceLocation Part_1 = new ResourceLocation(MythicCraft.
 			super(FeatureInit.WOLF_DEN_PIECE, 0);
 			this.resourceLocation = resourceLocationIn;
 			BlockPos blockpos = WolfDenPieces.OFFSET.get(resourceLocation);
-			this.templatePosition = pos.add(blockpos.getX(), blockpos.getY(), blockpos.getZ());
+			this.templatePosition = pos.offset(blockpos.getX(), blockpos.getY(), blockpos.getZ());
 			this.rotation = rotationIn;
 			this.setupPiece(templateManagerIn);
 		}
@@ -63,39 +66,36 @@ private static final ResourceLocation Part_1 = new ResourceLocation(MythicCraft.
 		}
 
 		private void setupPiece(TemplateManager templateManager) {
-			Template template = templateManager.getTemplateDefaulted(this.resourceLocation);
+			Template template = templateManager.getOrCreate(this.resourceLocation);
 			PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation)
 					.setMirror(Mirror.NONE);
 			this.setup(template, this.templatePosition, placementsettings);
 		}
 
 		@Override
-		protected void readAdditional(CompoundNBT tagCompound) {
-			super.readAdditional(tagCompound);
+		protected void addAdditionalSaveData(CompoundNBT tagCompound) {
+			super.addAdditionalSaveData(tagCompound);
 			tagCompound.putString("Template", this.resourceLocation.toString());
 			tagCompound.putString("Rot", this.rotation.name());
 		}
 
 		@Override
-		protected void handleDataMarker(String function, BlockPos pos, IWorld worldIn, Random rand,
-				MutableBoundingBox sbb) {
+		protected void handleDataMarker(String function, BlockPos pos, IServerWorld worldIn, Random rand, MutableBoundingBox sbb) {
 			if ("chest".equals(function)) {
-				worldIn.setBlockState(pos, Blocks.CHEST.getDefaultState(), 2);
-				TileEntity tileentity = worldIn.getTileEntity(pos);
+				worldIn.setBlock(pos, Blocks.CHEST.defaultBlockState(), 2);
+				TileEntity tileentity = worldIn.getBlockEntity(pos);
 				if (tileentity instanceof ChestTileEntity) {
+					// could set loot table here
 				}
 			}
 		}
-		
+
 		@Override
-		public boolean create(IWorld worldIn, ChunkGenerator<?> chunkGeneratorIn, Random randomIn,
-				MutableBoundingBox mutableBoundingBoxIn, ChunkPos chunkPosIn) {
-			PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation)
-					.setMirror(Mirror.NONE);
+		public boolean postProcess(ISeedReader seedRead, StructureManager p_230383_2, ChunkGenerator chunkGeneratorIn, Random randomIn, MutableBoundingBox mutableBoundingBoxIn, ChunkPos chunkPosIn, BlockPos p_230383_7_) {
+			PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setMirror(Mirror.NONE);
 			BlockPos blockpos = WolfDenPieces.OFFSET.get(this.resourceLocation);
-			this.templatePosition.add(Template.transformedBlockPos(placementsettings,
-					new BlockPos(0 - blockpos.getX(), 0, 0 - blockpos.getZ())));
-			return super.create(worldIn, chunkGeneratorIn, randomIn, mutableBoundingBoxIn, chunkPosIn);
+			this.templatePosition.offset(Template.calculateRelativePosition(placementsettings, new BlockPos(0 - blockpos.getX(), 0, 0 - blockpos.getZ())));
+			return super.postProcess(seedRead, p_230383_2, chunkGeneratorIn, randomIn, mutableBoundingBoxIn, chunkPosIn, p_230383_7_);
 		}
 	}
 }

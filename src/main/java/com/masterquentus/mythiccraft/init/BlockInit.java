@@ -17,8 +17,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Supplier;
 
 public class BlockInit {
@@ -30,8 +29,8 @@ public class BlockInit {
 
 	// ****** Wood Types ****** //
 	// to add a new type of wood just add its name to this array and make the assets
-	// i could expand this system to include a data generator so you wouldn't need to make the json files manually. lmk if you're interested
-	// i could also do a similar thing to generate blocks for stone varients below. again, lmk
+	// TODO: data generators for models, land, blockstates, loot tables
+	// TODO: autogenerate blocks for stone varients below
 	private static String[] woodTypes = {"bloodoak", "whiteoak", "silverwood", "witchwood", "alder", "hawthorn", "rowan", "willow", "beech", "ash",
 			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "distorted", "icy", "twisted"};
 
@@ -54,7 +53,6 @@ public class BlockInit {
 		public final Supplier<Block> gate;
 		public final Supplier<Block> sapling;
 		public final ModTree tree;
-
 
 		public WoodType(String name, Supplier<Block> log, Supplier<Block> strippedLog, Supplier<Block> wood, Supplier<Block> strippedWood,
 						Supplier<Block> plank, Supplier<Block> leaves, Supplier<Block> door, Supplier<Block> crate, Supplier<Block> trapdoor,
@@ -105,6 +103,21 @@ public class BlockInit {
 					tree
 			));
 		}
+
+
+	}
+
+	public static Block[] getAllCrates(){
+		List<WoodType> types = new ArrayList<>();
+		WOOD_TYPES.forEach((string, type) -> {
+			types.add(type);
+		});
+		Block[] crates = new Block[BlockInit.WOOD_TYPES.size()];
+		for (int i=0;i<BlockInit.WOOD_TYPES.size();i++) {
+			crates[i] = types.get(i).crate.get();
+		}
+
+		return crates;
 	}
 
 	// Ores

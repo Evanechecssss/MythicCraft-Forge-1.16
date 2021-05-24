@@ -3,14 +3,16 @@ package com.masterquentus.mythiccraft;
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.init.*;
 import com.masterquentus.mythiccraft.objects.blocks.*;
+import com.masterquentus.mythiccraft.world.gen.OreGen;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.world.gen.MythicCraftOreGen;
-import com.masterquentus.mythiccraft.world.gen.StructureGen;
 
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.entity.EntityType;
@@ -19,7 +21,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -42,9 +43,7 @@ public class MythicCraft {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "mythiccraft";
-	public static MythicCraft instance;
-
-	public static final ResourceLocation Unerworld_Dim_Type = new ResourceLocation(MOD_ID, "underworld");
+	// public static final ResourceLocation Unerworld_Dim_Type = new ResourceLocation(MOD_ID, "underworld");
 
 	public MythicCraft() {
 		GeckoLib.initialize();
@@ -60,10 +59,7 @@ public class MythicCraft {
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
 
 		BiomeInit.BIOMES.register(modEventBus);
-		DimensionInit.MOD_DIMENSIONS.register(modEventBus);
-		FeatureInit.FEATURES.register(modEventBus);
-
-		instance = this;
+		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::addFeaturesToBiomes);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -102,17 +98,6 @@ public class MythicCraft {
 	}
 
 	@SubscribeEvent
-	public void onServerStarting(FMLServerStartingEvent event) {
-
-	}
-
-	@SubscribeEvent
-	public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-		MythicCraftOreGen.generateOre();
-		DeferredWorkQueue.runLater(StructureGen::generateStructures);
-	}
-
-	@SubscribeEvent
 	public static void onRegisterEntities(final RegistryEvent.Register<EntityType<?>> event) {
 		ModSpawnEggItem.initSpawnEggs();
 
@@ -132,6 +117,8 @@ public class MythicCraft {
 		}
 	}
 
+	// this is unused
+	// are block items supposed to go here?
 	public static class MythicCraftBlocks extends ItemGroup {
 		public static final MythicCraftBlocks instance = new MythicCraftBlocks(ItemGroup.TABS.length,
 				"mythiccraftblocks");

@@ -9,7 +9,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class KeybordHelper 
 {
-	private static final long WINDOW = Minecraft.getInstance().getMainWindow().getHandle();
+	private static final long WINDOW = Minecraft.getInstance().getWindow().getWindow();
 	
 	@OnlyIn(Dist.CLIENT)
 	public static boolean isHoldingShift() 

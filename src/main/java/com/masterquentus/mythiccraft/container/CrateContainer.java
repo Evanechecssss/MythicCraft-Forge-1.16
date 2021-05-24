@@ -65,7 +65,9 @@ public class CrateContainer extends Container {
 	
 	@Override
 	public boolean stillValid(PlayerEntity playerIn) {
-		return stillValid(canInteractWithCallable, playerIn, BlockInit.ALDER_CRATE.get());
+		return true;
+		// todo: check dist and instenceof cratetilenentity
+		// return stillValid(canInteractWithCallable, playerIn, BlockInit.ALDER_CRATE.get());
 	}
 	
 	@Override
