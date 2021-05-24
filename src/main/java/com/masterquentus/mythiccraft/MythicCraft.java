@@ -59,7 +59,7 @@ public class MythicCraft {
 		ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
 
-		BiomeInit.Biomes.register(modEventBus);
+		BiomeInit.BIOMES.register(modEventBus);
 		DimensionInit.MOD_DIMENSIONS.register(modEventBus);
 		FeatureInit.FEATURES.register(modEventBus);
 
@@ -97,11 +97,6 @@ public class MythicCraft {
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
 	}
 
-	@SubscribeEvent
-	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
-		BiomeInit.registerBiomes();
-	}
-
 	private void setup(final FMLCommonSetupEvent event) {
 
 	}
@@ -124,7 +119,7 @@ public class MythicCraft {
 	}
 
 	public static class MythicCraftItems extends ItemGroup {
-		public static final MythicCraftItems instance = new MythicCraftItems(ItemGroup.GROUPS.length,
+		public static final MythicCraftItems instance = new MythicCraftItems(ItemGroup.TABS.length,
 				"mythiccraftitems");
 
 		private MythicCraftItems(int index, String label) {
@@ -132,23 +127,23 @@ public class MythicCraft {
 		}
 
 		@Override
-		public ItemStack createIcon() {
+		public ItemStack makeIcon() {
 			return new ItemStack(ItemInit.MYTHIC_DIAMOND.get());
 		}
+	}
 
-		public static class MythicCraftBlocks extends ItemGroup {
-			public static final MythicCraftBlocks instance = new MythicCraftBlocks(ItemGroup.GROUPS.length,
-					"mythiccraftblocks");
+	public static class MythicCraftBlocks extends ItemGroup {
+		public static final MythicCraftBlocks instance = new MythicCraftBlocks(ItemGroup.TABS.length,
+				"mythiccraftblocks");
 
-			private MythicCraftBlocks(int index, String label) {
-				super(index, label);
-			}
+		private MythicCraftBlocks(int index, String label) {
+			super(index, label);
+		}
 
-			@Override
-			public ItemStack createIcon() {
-				return new ItemStack(BlockInit.MYTHICDIAMOND_BLOCK.get());
+		@Override
+		public ItemStack makeIcon() {
+			return new ItemStack(BlockInit.MYTHICDIAMOND_BLOCK.get());
 
-			}
 		}
 	}
 }

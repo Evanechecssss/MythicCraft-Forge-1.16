@@ -28,8 +28,13 @@ public class BlockInit {
 			MythicCraft.MOD_ID);
 
 
-	// Wood Types
-	public static Map<String, WoodType> WOOD_TYPES = new HashMap<>();
+	// ****** Wood Types ****** //
+	// to add a new type of wood just add its name to this array and make the assets
+	// i could expand this system to include a data generator so you wouldn't need to make the json files manually. lmk if you're interested
+	// i could also do a similar thing to generate blocks for stone varients below. again, lmk
+	private static String[] woodTypes = {"bloodoak", "whiteoak", "silverwood", "witchwood", "alder", "hawthorn", "rowan", "willow", "beech", "ash",
+			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "distorted", "icy", "twisted"};
+
 	public static class WoodType{
 		public final String name;
 		public final Supplier<Block> log;
@@ -47,12 +52,14 @@ public class BlockInit {
 		public final Supplier<Block> pressureplate;
 		public final Supplier<Block> fence;
 		public final Supplier<Block> gate;
-		private final Supplier<Block> sapling;
+		public final Supplier<Block> sapling;
+		public final ModTree tree;
+
 
 		public WoodType(String name, Supplier<Block> log, Supplier<Block> strippedLog, Supplier<Block> wood, Supplier<Block> strippedWood,
 						Supplier<Block> plank, Supplier<Block> leaves, Supplier<Block> door, Supplier<Block> crate, Supplier<Block> trapdoor,
 						Supplier<Block> stairs, Supplier<Block> slab, Supplier<Block> button, Supplier<Block> pressureplate,
-						Supplier<Block> fence, Supplier<Block> gate, Supplier<Block> sapling){
+						Supplier<Block> fence, Supplier<Block> gate, Supplier<Block> sapling, ModTree tree){
 			this.name = name;
 			this.log = log;
 			this.strippedLog = strippedLog;
@@ -70,14 +77,14 @@ public class BlockInit {
 			this.fence = fence;
 			this.gate = gate;
 			this.sapling = sapling;
+			this.tree = tree;
 		}
 	}
 
-	private static String[] woodTypes = {"bloodoak", "whiteoak", "silverwood", "witchwood", "alder", "hawthorn", "rowan", "willow", "beech", "ash",
-			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "distorted", "icy", "twisted"};
-
+	public static Map<String, WoodType> WOOD_TYPES = new HashMap<>();
 	static {
 		for (String name : woodTypes){
+			ModTree tree = new ModTree(name);
 			WOOD_TYPES.put(name, new WoodType(name,
 					BLOCKS.register(name + "_log", () -> new ModLogBlock(MaterialColor.COLOR_RED, false)),
 					BLOCKS.register(name + "_stripped_log", () -> new ModLogBlock(MaterialColor.COLOR_RED, true)),
@@ -94,7 +101,8 @@ public class BlockInit {
 					BLOCKS.register(name + "_pressureplate", () -> new ModWoodPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
 					BLOCKS.register(name + "_fence", () -> new FenceBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
 					BLOCKS.register(name + "_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE))),
-					BLOCKS.register(name + "_sapling", () -> new SaplingBlock(new ModTree(name), Block.Properties.copy(Blocks.OAK_SAPLING)))
+					BLOCKS.register(name + "_sapling", () -> new SaplingBlock(tree, Block.Properties.copy(Blocks.OAK_SAPLING))),
+					tree
 			));
 		}
 	}

@@ -2,9 +2,13 @@ package com.masterquentus.mythiccraft.world.feature;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
 import net.minecraft.block.trees.Tree;
+import net.minecraft.world.biome.BiomeGenerationSettings;
+import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
 import javax.annotation.Nullable;
@@ -26,5 +30,9 @@ public class ModTree extends Tree {
         SimpleBlockStateProvider logs = new SimpleBlockStateProvider(type.log.get().defaultBlockState());
         SimpleBlockStateProvider leaves = new SimpleBlockStateProvider(type.leaves.get().defaultBlockState());
         return Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(logs, leaves, FOLIAGE_PLAYER, TRUNK_PLACER, SIZE_TYPE).ignoreVines().build()));
+    }
+
+    public void addToBiome(BiomeGenerationSettings.Builder genSettings){
+        genSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, this.getConfiguredFeature(null, false));
     }
 }
