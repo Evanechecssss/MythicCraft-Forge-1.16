@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.entities;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.FlyingEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.LookAtGoal;

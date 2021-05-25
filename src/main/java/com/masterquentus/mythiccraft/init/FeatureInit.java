@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.init;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableList;
@@ -9,8 +8,6 @@ import com.google.common.collect.ImmutableMap;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.world.feature.structures.GoblinHousePieces;
 import com.masterquentus.mythiccraft.world.feature.structures.GoblinHouseStructure;
-import com.masterquentus.mythiccraft.world.feature.structures.WolfDenPieces;
-import com.masterquentus.mythiccraft.world.feature.structures.WolfDenStructure;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -18,7 +15,6 @@ import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.FlatChunkGenerator;
 import net.minecraft.world.gen.FlatGenerationSettings;
-import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
@@ -31,11 +27,8 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
@@ -102,6 +95,7 @@ public class FeatureInit {
 		event.getGeneration().getStructures().add(() -> CONFIGURED_WOLF_DEN);
 	}
 
+	@SuppressWarnings("resource")
 	@SubscribeEvent
 	public void addDimensionalSpacing(final WorldEvent.Load event) {
 		if(event.getWorld() instanceof ServerWorld){
@@ -115,6 +109,7 @@ public class FeatureInit {
 				return;
 			}
 
+			@SuppressWarnings("resource")
 			Map<Structure<?>, StructureSeparationSettings> tempMap = new HashMap<>(serverWorld.getChunkSource().generator.getSettings().structureConfig());
 			tempMap.put(GOBLIN_HOUSE, DimensionStructuresSettings.DEFAULTS.get(GOBLIN_HOUSE));
 			serverWorld.getChunkSource().generator.getSettings().structureConfig = tempMap;

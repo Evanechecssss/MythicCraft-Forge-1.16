@@ -38,7 +38,6 @@ public class FluidInit {
 	public static final ResourceLocation INFESTEDGOO_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"blocks/infestedgoo_overlay");
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
 			MythicCraft.MOD_ID);
 

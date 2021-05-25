@@ -25,7 +25,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemInit {
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
 			MythicCraft.MOD_ID);
 
@@ -693,6 +692,12 @@ public class ItemInit {
 	public static final RegistryObject<Item> COOKED_KRAKEN = ITEMS.register("cooked_kraken",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).food(new Food.Builder().nutrition(8)
 					.saturationMod(1.2f).effect(new EffectInstance(Effects.REGENERATION, 6000, 5), 0.7f).build())));
+	public static final RegistryObject<Item> RAW_WOLF_MEAT = ITEMS.register("raw_wolf_meat",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)
+					.food(new Food.Builder().meat().nutrition(3).saturationMod(1.2f).build())));
+	public static final RegistryObject<Item> COOKED_WOLF_MEAT = ITEMS.register("cooked_wolf_meat",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).food(new Food.Builder().nutrition(8)
+					.saturationMod(1.2f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> BLOOD_BERRY = ITEMS.register("blood_berry",
 			() -> new BlockItem(BlockInit.BLOOD_BERRY_BUSH.get(),

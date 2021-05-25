@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-import com.masterquentus.mythiccraft.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropsBlock;

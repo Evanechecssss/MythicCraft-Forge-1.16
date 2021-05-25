@@ -22,7 +22,6 @@ import java.util.function.Supplier;
 
 public class BlockInit {
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
 
@@ -1011,7 +1010,6 @@ public class BlockInit {
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
 					.sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().lightLevel((s) -> 15)));
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<Block> NO_ITEM_BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
 

@@ -36,6 +36,7 @@ public class CrateScreen extends ContainerScreen<Container> {
 		this.font.draw(stack, this.inventory.getDisplayName(), 8.0f, 90.0f, 4210752);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void renderBg(MatrixStack stack, float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);

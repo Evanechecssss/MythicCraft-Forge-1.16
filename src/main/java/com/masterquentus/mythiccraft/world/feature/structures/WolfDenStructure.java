@@ -1,19 +1,14 @@
 package com.masterquentus.mythiccraft.world.feature.structures;
 
-import java.util.Random;
-import java.util.function.Function;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.IFeatureConfig;
@@ -28,19 +23,23 @@ public class WolfDenStructure extends Structure<NoFeatureConfig> {
 		super(codec);
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public IStartFactory getStartFactory() {
 		return WolfDenStructure.Start::new;
 	}
 
 
+	@SuppressWarnings("rawtypes")
 	public static class Start extends StructureStart {
 
+		@SuppressWarnings("unchecked")
 		public Start(Structure<?> structure, int chunkX, int chunkZ, MutableBoundingBox boundingBox, int reference,
 				long seed) {
 			super(structure, chunkX, chunkZ, boundingBox, reference, seed);
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public void generatePieces(DynamicRegistries dynamicRegistryManager, ChunkGenerator generator, TemplateManager templateManagerIn, int chunkX, int chunkZ, Biome biomeIn, IFeatureConfig config) {
 			Rotation rotation = Rotation.values()[this.random.nextInt(Rotation.values().length)];

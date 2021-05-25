@@ -11,7 +11,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModContainerTypes {
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = DeferredRegister.create(ForgeRegistries.CONTAINERS, MythicCraft.MOD_ID);
 
 	public static final RegistryObject<ContainerType<CrateContainer>> bloodoak_crate = createContainer("bloodoak_crate");

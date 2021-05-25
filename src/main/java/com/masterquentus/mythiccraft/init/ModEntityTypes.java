@@ -16,7 +16,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModEntityTypes {
 
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES,
 			MythicCraft.MOD_ID);
 

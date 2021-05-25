@@ -111,7 +111,6 @@ public abstract class WorldDataCompilerAndOps<Format> extends WorldGenSettingsEx
     }
 
     /** VanillaCopy: IDataProvider.save */
-    @SuppressWarnings("UnstableApiUsage") // Mojang uses HASH_FUNCTION as well, hence the warning suppression
     private void save(DirectoryCache cache, Format dynamic, Path pathIn) throws IOException {
         String s = fileContentWriter.apply(dynamic);
         String s1 = SHA1.hashUnencodedChars(s).toString();
@@ -126,7 +125,7 @@ public abstract class WorldDataCompilerAndOps<Format> extends WorldGenSettingsEx
         cache.putNew(pathIn, s1);
     }
 
-    @SuppressWarnings({"unchecked", "rawtypes", "SameParameterValue"})
+    @SuppressWarnings({"unchecked", "rawtypes"})
     @Nullable
     protected static <T> T getFromVanillaRegistryIllegally(Registry registry, RegistryKey<T> key) {
         return (T) registry.get(key);
@@ -218,7 +217,6 @@ public abstract class WorldDataCompilerAndOps<Format> extends WorldGenSettingsEx
     }
 
     // Otherwise using an AT increases runtime overhead, so we use reflection here instead since dataGen won't run on regular minecraft runtime, so we instead have faux-constructors here
-    @SuppressWarnings("SameParameterValue")
     protected static Optional<DimensionSettings> makeDimensionSettings(DimensionStructuresSettings structures, NoiseSettings noise, BlockState defaultBlock, BlockState defaultFluid, int bedrockRoofPosition, int bedrockFloorPosition, int seaLevel, boolean disableMobGeneration) {
         try {
             Constructor<DimensionSettings> ctor = DimensionSettings.class.getDeclaredConstructor(
@@ -242,7 +240,6 @@ public abstract class WorldDataCompilerAndOps<Format> extends WorldGenSettingsEx
         }
     }
 
-    @SuppressWarnings("SameParameterValue")
     protected static Optional<DimensionType> makeDimensionType(
             OptionalLong fixedTime,
             boolean hasSkyLight,

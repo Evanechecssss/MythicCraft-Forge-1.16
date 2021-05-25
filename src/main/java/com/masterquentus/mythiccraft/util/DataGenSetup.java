@@ -2,7 +2,6 @@ package com.masterquentus.mythiccraft.util;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.DimensionSetup;
-import net.minecraft.data.BlockTagsProvider;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;

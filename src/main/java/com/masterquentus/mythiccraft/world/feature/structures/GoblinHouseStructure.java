@@ -1,19 +1,14 @@
 package com.masterquentus.mythiccraft.world.feature.structures;
 
-import java.util.Random;
-import java.util.function.Function;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.Heightmap;
@@ -50,6 +45,7 @@ public class GoblinHouseStructure extends Structure<NoFeatureConfig> {
 		return GenerationStage.Decoration.SURFACE_STRUCTURES;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public IStartFactory getStartFactory() {
 		return GoblinHouseStructure.Start::new;
@@ -80,12 +76,15 @@ public class GoblinHouseStructure extends Structure<NoFeatureConfig> {
 
 	 */
 
+	@SuppressWarnings("rawtypes")
 	public static class Start extends StructureStart {
 
+		@SuppressWarnings("unchecked")
 		public Start(Structure<?> structure, int chunkX, int chunkZ, MutableBoundingBox boundingBox, int reference, long seed) {
 			super(structure, chunkX, chunkZ, boundingBox, reference, seed);
 		}
 
+		@SuppressWarnings("unchecked")
 		@Override
 		public void generatePieces(DynamicRegistries p_230364_1_, ChunkGenerator generator, TemplateManager templateManagerIn, int chunkX, int chunkZ, Biome p_230364_6_, IFeatureConfig p_230364_7_) {
 			Rotation rotation = Rotation.values()[this.random.nextInt(Rotation.values().length)];

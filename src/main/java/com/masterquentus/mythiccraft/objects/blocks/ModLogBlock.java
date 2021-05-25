@@ -11,11 +11,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.RegistryObject;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ModLogBlock extends RotatedPillarBlock {
     private final boolean isStripped;

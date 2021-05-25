@@ -20,7 +20,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class BiomeInit {
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, MythicCraft.MOD_ID);
 
 	public static final RegistryObject<Biome> VAMPIREBIOME = BIOMES.register("vampire_biome",

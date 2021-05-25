@@ -18,7 +18,6 @@ import net.minecraft.util.registry.SimpleRegistry;
 import net.minecraft.world.Dimension;
 import net.minecraft.world.DimensionType;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.FuzzedBiomeMagnifier;
 import net.minecraft.world.gen.DimensionSettings;
 import net.minecraft.world.gen.NoiseChunkGenerator;
@@ -26,12 +25,10 @@ import net.minecraft.world.gen.settings.DimensionStructuresSettings;
 import net.minecraft.world.gen.settings.NoiseSettings;
 import net.minecraft.world.gen.settings.ScalingSettings;
 import net.minecraft.world.gen.settings.SlideSettings;
-import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
 
 import java.util.Map;
 import java.util.Optional;
 import java.util.OptionalLong;
-import java.util.stream.Collectors;
 
 import static net.minecraft.world.DimensionType.OVERWORLD_EFFECTS;
 

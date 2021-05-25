@@ -63,6 +63,7 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 		this.y--;
 	}
 
+	@SuppressWarnings("deprecation")
 	private boolean destroyBlock(BlockPos pos, boolean dropBlock, @Nullable Entity entity) {
 		BlockState blockstate = level.getBlockState(pos);
 		if (blockstate.isAir(level, pos))

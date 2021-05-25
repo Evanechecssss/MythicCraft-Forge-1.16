@@ -6,17 +6,13 @@ import com.masterquentus.mythiccraft.tileentity.MagicQuarryTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
 
-import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.*;
-import java.util.function.Supplier;
 
 public class ModTileEntityTypes {
-	@SuppressWarnings("deprecation")
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, MythicCraft.MOD_ID);
 
 	public static final RegistryObject<TileEntityType<CrateTileEntity>> CRATE_TILE = TILE_ENTITY_TYPES

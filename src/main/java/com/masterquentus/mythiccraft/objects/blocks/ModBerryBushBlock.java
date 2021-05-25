@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -49,7 +48,8 @@ public class ModBerryBushBlock extends SweetBerryBushBlock implements IGrowable
 	      }
 	   }
 	   
-	   public void tick(BlockState p_225534_1_, ServerWorld p_225534_2_, BlockPos p_225534_3_, Random p_225534_4_) {
+	   @SuppressWarnings("deprecation")
+	public void tick(BlockState p_225534_1_, ServerWorld p_225534_2_, BlockPos p_225534_3_, Random p_225534_4_) {
 	      super.tick(p_225534_1_, p_225534_2_, p_225534_3_, p_225534_4_);
 	      int i = p_225534_1_.getValue(AGE);
 	      if (i < 3 && p_225534_2_.getRawBrightness(p_225534_3_.above(), 0) >= 9 && net.minecraftforge.common.ForgeHooks.onCropsGrowPre(p_225534_2_, p_225534_3_, p_225534_1_, p_225534_4_.nextInt(5) == 0)) {

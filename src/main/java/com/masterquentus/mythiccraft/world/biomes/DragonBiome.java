@@ -4,19 +4,13 @@ package com.masterquentus.mythiccraft.world.biomes;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeGenerationSettings;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.Features;
-import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
-import net.minecraftforge.eventbus.api.BusBuilder;
-import net.minecraftforge.fml.RegistryObject;
 
 public class DragonBiome extends ModBiome{
 	protected BiomeGenerationSettings.Builder getGenSettings() {

@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.container;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,6 +16,7 @@ import java.util.Objects;
 public class CrateContainer extends Container {
 
 	public final CrateTileEntity tileEntity;
+	@SuppressWarnings("unused")
 	private final IWorldPosCallable canInteractWithCallable;
 
 	public CrateContainer(final int windowId, final PlayerInventory playerInventory, final CrateTileEntity tileEntity) {

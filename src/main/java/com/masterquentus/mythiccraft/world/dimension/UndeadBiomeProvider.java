@@ -2,7 +2,6 @@ package com.masterquentus.mythiccraft.world.dimension;
 
 import java.util.*;
 
-import com.google.common.collect.ImmutableSet;
 import com.masterquentus.mythiccraft.init.BiomeInit;
 
 import com.mojang.serialization.Codec;
@@ -11,7 +10,6 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryLookupCodec;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
-import net.minecraft.world.biome.provider.EndBiomeProvider;
 
 public class UndeadBiomeProvider extends BiomeProvider {
 
