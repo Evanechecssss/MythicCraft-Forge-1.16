@@ -1,6 +1,6 @@
 {
     "parent": "block/button",
     "textures": {
-        "texture": "mythiccraft:blocks/pearlstone_polished"
+        "texture": "mythiccraft:block/pearlstone_polished"
     }
 }

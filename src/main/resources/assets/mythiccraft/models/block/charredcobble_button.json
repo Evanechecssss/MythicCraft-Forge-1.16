@@ -1,6 +1,6 @@
 {
     "parent": "block/button",
     "textures": {
-        "texture": "mythiccraft:blocks/charred_cobble"
+        "texture": "mythiccraft:block/charred_cobble"
     }
 }

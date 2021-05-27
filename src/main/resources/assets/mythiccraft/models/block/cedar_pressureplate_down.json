@@ -1,6 +1,6 @@
 {
     "parent": "block/pressure_plate_down",
     "textures": {
-        "texture": "mythiccraft:blocks/cedar_planks"
+        "texture": "mythiccraft:block/cedar_planks"
     }
 }

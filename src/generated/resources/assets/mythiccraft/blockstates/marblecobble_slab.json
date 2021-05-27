@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/marblecobble_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/marblecobble_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/marble_cobble"
+    }
+  }
+}

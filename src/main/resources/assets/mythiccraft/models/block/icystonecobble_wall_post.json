@@ -1,6 +1,6 @@
 {
     "parent": "block/template_wall_post",
     "textures": {
-        "wall": "mythiccraft:blocks/icystone_cobble"
+        "wall": "mythiccraft:block/icystone_cobble"
     }
 }

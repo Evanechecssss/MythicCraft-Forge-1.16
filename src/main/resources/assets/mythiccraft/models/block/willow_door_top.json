@@ -1,7 +1,7 @@
 {
     "parent": "block/door_top",
     "textures": {
-        "bottom": "mythiccraft:blocks/willow_door_bottom",
-        "top": "mythiccraft:blocks/willow_door_top"
+        "bottom": "mythiccraft:block/willow_door_bottom",
+        "top": "mythiccraft:block/willow_door_top"
     }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/icy_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/icy_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/icy_planks"
+    }
+  }
+}

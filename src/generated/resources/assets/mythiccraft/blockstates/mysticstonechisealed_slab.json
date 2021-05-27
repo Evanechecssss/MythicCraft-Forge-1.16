@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/mysticstonechisealed_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/mysticstonechisealed_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/mysticstone_chisealed"
+    }
+  }
+}

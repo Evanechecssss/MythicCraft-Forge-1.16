@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/crimson_polished",
-        "top": "mythiccraft:blocks/crimson_polished",
-        "side": "mythiccraft:blocks/crimson_polished"
+        "bottom": "mythiccraft:block/crimson_polished",
+        "top": "mythiccraft:block/crimson_polished",
+        "side": "mythiccraft:block/crimson_polished"
     }
 }

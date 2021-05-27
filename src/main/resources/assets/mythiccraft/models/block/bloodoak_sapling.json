@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mythiccraft:blocks/bloodoak_sapling"
+    "cross": "mythiccraft:block/bloodoak_sapling"
   }
 }

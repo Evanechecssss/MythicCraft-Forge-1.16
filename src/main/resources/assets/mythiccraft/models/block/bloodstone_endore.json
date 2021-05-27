@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/bloodstone_endore"
+        "all": "mythiccraft:block/bloodstone_endore"
     }
 }

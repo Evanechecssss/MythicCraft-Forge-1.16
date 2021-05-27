@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/witchwood_planks",
-        "top": "mythiccraft:blocks/witchwood_planks",
-        "side": "mythiccraft:blocks/witchwood_planks"
+        "bottom": "mythiccraft:block/witchwood_planks",
+        "top": "mythiccraft:block/witchwood_planks",
+        "side": "mythiccraft:block/witchwood_planks"
     }
 }

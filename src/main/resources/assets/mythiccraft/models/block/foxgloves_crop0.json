@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/foxgloves_crop_stage0"
+        "crop": "mythiccraft:block/foxgloves_crop_stage0"
     }
 }

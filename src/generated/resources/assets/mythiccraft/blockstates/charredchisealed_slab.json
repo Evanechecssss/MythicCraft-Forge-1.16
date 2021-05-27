@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/charredchisealed_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/charredchisealed_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/charred_chisealed"
+    }
+  }
+}

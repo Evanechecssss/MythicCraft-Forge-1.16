@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "mythiccraft:blocks/rosequartz_smooth"
+    "all": "mythiccraft:block/rosequartz_smooth"
   }
 }

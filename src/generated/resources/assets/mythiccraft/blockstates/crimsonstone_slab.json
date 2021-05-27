@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/crimsonstone_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/crimsonstone_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/crimson_stone"
+    }
+  }
+}

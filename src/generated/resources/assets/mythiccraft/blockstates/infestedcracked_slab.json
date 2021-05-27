@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/infestedcracked_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/infestedcracked_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/infested_cracked"
+    }
+  }
+}

@@ -42,23 +42,24 @@ public class CharredForestBiome extends DragonBiome {
 				SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 						defaultFluid, seaLevel, seed,
 						new SurfaceBuilderConfig(BlockInit.CHARRED_SOIL.get().defaultBlockState(),
-								BlockInit.charred_stone.get().defaultBlockState(),
+								BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(),
 								BlockInit.ASH_BLOCK.get().defaultBlockState()));
+				
 			} else {
 				SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 						defaultFluid, seaLevel, seed,
 						new SurfaceBuilderConfig(
 								i == 1 ? BlockInit.HOTASH_BLOCK.get().defaultBlockState()
 										: BlockInit.ASH_BLOCK.get().defaultBlockState(),
-								BlockInit.charred_cobble.get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+								BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.COBBLE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 			}
 
 			SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
 							i == 1 ? BlockInit.ASH_BLOCK.get().defaultBlockState()
-									: BlockInit.charred_cobble.get().defaultBlockState(),
-							BlockInit.charred_stone.get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+									: BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.COBBLE).get().defaultBlockState(),
+							BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 		}
 
 	}

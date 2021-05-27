@@ -2,6 +2,6 @@
 {
     "parent": "block/button_pressed",
     "textures": {
-        "texture": "mythiccraft:blocks/crimson_cobble"
+        "texture": "mythiccraft:block/crimson_cobble"
     }
 }

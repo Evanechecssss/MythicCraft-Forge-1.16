@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:blocks/ender_torch"
+    "layer0": "mythiccraft:block/ender_torch"
   }
 }

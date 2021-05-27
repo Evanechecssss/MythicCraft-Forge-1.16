@@ -2,7 +2,7 @@
 	"credit": "Made By Dino's Modeling",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "mythiccraft:blocks/pedestal_tier3",
+		"0": "mythiccraft:block/pedestal_tier3",
 		"particle": "block/sandstone"
 	},
 	"elements": [

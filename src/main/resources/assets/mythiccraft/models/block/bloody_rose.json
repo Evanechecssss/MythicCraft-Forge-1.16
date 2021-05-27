@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mythiccraft:blocks/bloody_rose"
+    "cross": "mythiccraft:block/bloody_rose"
   }
 }

@@ -1,7 +1,7 @@
 {
     "parent": "block/door_top_rh",
     "textures": {
-        "bottom": "mythiccraft:blocks/witchhazel_door_bottom",
-        "top": "mythiccraft:blocks/witchhazel_door_top"
+        "bottom": "mythiccraft:block/witchhazel_door_bottom",
+        "top": "mythiccraft:block/witchhazel_door_top"
     }
 }

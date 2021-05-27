@@ -1,6 +1,6 @@
 {
     "parent": "block/template_wall_post",
     "textures": {
-        "wall": "mythiccraft:blocks/marble_chisealed"
+        "wall": "mythiccraft:block/marble_chisealed"
     }
 }

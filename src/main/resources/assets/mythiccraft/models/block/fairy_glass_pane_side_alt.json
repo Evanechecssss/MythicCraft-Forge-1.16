@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
-    "pane": "mythiccraft:blocks/fairy_glass",
-    "edge": "mythiccraft:blocks/fairy_glass_pane_top"
+    "pane": "mythiccraft:block/fairy_glass",
+    "edge": "mythiccraft:block/fairy_glass_pane_top"
   }
 }

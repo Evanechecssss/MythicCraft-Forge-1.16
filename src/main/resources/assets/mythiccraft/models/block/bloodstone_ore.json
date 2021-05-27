@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/bloodstone_ore"
+        "all": "mythiccraft:block/bloodstone_ore"
     }
 }

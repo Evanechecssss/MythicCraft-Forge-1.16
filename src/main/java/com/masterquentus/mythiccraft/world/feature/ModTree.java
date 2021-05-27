@@ -7,19 +7,27 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.FoliagePlacer;
+import net.minecraft.world.gen.trunkplacer.AbstractTrunkPlacer;
 import net.minecraft.world.gen.trunkplacer.StraightTrunkPlacer;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
 public class ModTree extends Tree {
-    private final String woodTypeName;
-    static final BlobFoliagePlacer FOLIAGE_PLAYER = new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3);
-    static final StraightTrunkPlacer TRUNK_PLACER = new StraightTrunkPlacer(4, 2, 0);
-    static final TwoLayerFeature SIZE_TYPE = new TwoLayerFeature(1, 0, 1);
+    protected final String woodTypeName;
+    protected static final TwoLayerFeature SIZE_TYPE = new TwoLayerFeature(1, 0, 1);
 
     public ModTree(String woodTypeName){
         this.woodTypeName = woodTypeName;
+    }
+
+    protected FoliagePlacer getFoliagePlacer(){
+        return new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3);
+    }
+
+    protected AbstractTrunkPlacer getTrunkPlacer(){
+        return new StraightTrunkPlacer(4, 2, 0);
     }
 
     @Nullable
@@ -27,7 +35,7 @@ public class ModTree extends Tree {
         BlockInit.WoodType type = BlockInit.WOOD_TYPES.get(woodTypeName);
         SimpleBlockStateProvider logs = new SimpleBlockStateProvider(type.log.get().defaultBlockState());
         SimpleBlockStateProvider leaves = new SimpleBlockStateProvider(type.leaves.get().defaultBlockState());
-        return Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(logs, leaves, FOLIAGE_PLAYER, TRUNK_PLACER, SIZE_TYPE).ignoreVines().build()));
+        return Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(logs, leaves, this.getFoliagePlacer(), this.getTrunkPlacer(), SIZE_TYPE).ignoreVines().build()));
     }
 
     public void addToBiome(BiomeGenerationSettings.Builder genSettings){

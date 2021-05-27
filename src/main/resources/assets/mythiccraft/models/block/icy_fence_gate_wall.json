@@ -2,6 +2,6 @@
 {
     "parent": "block/template_fence_gate_wall",
     "textures": {
-        "texture": "mythiccraft:blocks/icy_planks"
+        "texture": "mythiccraft:block/icy_planks"
     }
 }

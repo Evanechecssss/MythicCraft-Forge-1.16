@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "mythiccraft:blocks/silverwood_sapling"
+    "cross": "mythiccraft:block/silverwood_sapling"
   }
 }

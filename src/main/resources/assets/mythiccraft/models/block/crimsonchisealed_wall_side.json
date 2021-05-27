@@ -1,6 +1,6 @@
 {
     "parent": "block/template_wall_side",
     "textures": {
-        "wall": "mythiccraft:blocks/crimson_chisealed"
+        "wall": "mythiccraft:block/crimson_chisealed"
     }
 }

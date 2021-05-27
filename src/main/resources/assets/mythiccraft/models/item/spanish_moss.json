@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:blocks/spanish_moss"
+    "layer0": "mythiccraft:block/spanish_moss"
   }
 }

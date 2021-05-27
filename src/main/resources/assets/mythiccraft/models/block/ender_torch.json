@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_torch",
   "textures": {
-    "torch": "mythiccraft:blocks/ender_torch"
+    "torch": "mythiccraft:block/ender_torch"
   }
 }

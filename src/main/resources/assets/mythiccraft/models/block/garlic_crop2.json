@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/garlic_crop_stage2"
+        "crop": "mythiccraft:block/garlic_crop_stage2"
     }
 }

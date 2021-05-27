@@ -57,6 +57,6 @@ public class MysiticMedowsBiome extends ModBiome {
 	 */
 	protected ConfiguredSurfaceBuilder<?> getSurface() {
 		return SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(Blocks.GRASS.defaultBlockState(),
-				BlockInit.mysticstone.get().defaultBlockState(), Blocks.CLAY.defaultBlockState()));
+				BlockInit.STONE_TYPES.get("mysticstone").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(), Blocks.CLAY.defaultBlockState()));
 	}
 }

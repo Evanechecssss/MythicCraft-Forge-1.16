@@ -1,6 +1,6 @@
 {
     "parent": "block/button_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/icystone_bricks"
+        "texture": "mythiccraft:block/icystone_bricks"
     }
 }

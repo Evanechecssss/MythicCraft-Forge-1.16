@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/rosequartz_ore"
+        "all": "mythiccraft:block/rosequartz_ore"
     }
 }

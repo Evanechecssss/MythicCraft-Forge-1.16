@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/charred_cracked"
+        "all": "mythiccraft:block/charred_cracked"
     }
 }

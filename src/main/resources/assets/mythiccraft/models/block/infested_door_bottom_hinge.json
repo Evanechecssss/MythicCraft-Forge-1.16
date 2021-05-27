@@ -1,7 +1,7 @@
 {
     "parent": "block/door_bottom_rh",
     "textures": {
-        "bottom": "mythiccraft:blocks/infested_door_bottom",
-        "top": "mythiccraft:blocks/infested_door_top"
+        "bottom": "mythiccraft:block/infested_door_bottom",
+        "top": "mythiccraft:block/infested_door_top"
     }
 }

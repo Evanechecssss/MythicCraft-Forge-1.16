@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/waterartichoke_crop_stage2"
+        "crop": "mythiccraft:block/waterartichoke_crop_stage2"
     }
 }

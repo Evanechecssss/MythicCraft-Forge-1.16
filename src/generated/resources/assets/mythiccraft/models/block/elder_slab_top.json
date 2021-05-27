@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/elder_planks",
+    "bottom": "mythiccraft:block/elder_planks",
+    "top": "mythiccraft:block/elder_planks"
+  }
+}

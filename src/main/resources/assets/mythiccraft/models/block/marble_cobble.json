@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/marble_cobble"
+        "all": "mythiccraft:block/marble_cobble"
     }
 }

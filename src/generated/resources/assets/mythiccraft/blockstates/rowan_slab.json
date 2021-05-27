@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/rowan_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/rowan_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/rowan_planks"
+    }
+  }
+}

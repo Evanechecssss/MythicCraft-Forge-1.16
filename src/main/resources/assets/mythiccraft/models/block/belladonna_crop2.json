@@ -2,6 +2,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/belladonna_crop_stage2"
+        "crop": "mythiccraft:block/belladonna_crop_stage2"
     }
 }

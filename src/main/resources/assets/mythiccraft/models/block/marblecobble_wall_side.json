@@ -1,6 +1,6 @@
 {
     "parent": "block/template_wall_side",
     "textures": {
-        "wall": "mythiccraft:blocks/marble_cobble"
+        "wall": "mythiccraft:block/marble_cobble"
     }
 }

@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/black_obsidian"
+        "all": "mythiccraft:block/black_obsidian"
     }
 }

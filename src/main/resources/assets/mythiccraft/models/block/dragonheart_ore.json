@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/dragonheart_ore"
+        "all": "mythiccraft:block/dragonheart_ore"
     }
 }

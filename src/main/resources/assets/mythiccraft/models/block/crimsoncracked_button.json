@@ -1,6 +1,6 @@
 {
     "parent": "block/button",
     "textures": {
-        "texture": "mythiccraft:blocks/crimson_cracked"
+        "texture": "mythiccraft:block/crimson_cracked"
     }
 }

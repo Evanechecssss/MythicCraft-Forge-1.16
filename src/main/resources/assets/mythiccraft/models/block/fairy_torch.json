@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_torch",
   "textures": {
-    "torch": "mythiccraft:blocks/fairy_torch"
+    "torch": "mythiccraft:block/fairy_torch"
   }
 }

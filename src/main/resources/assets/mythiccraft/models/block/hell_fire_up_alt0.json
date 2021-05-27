@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_fire_up_alt",
   "textures": {
-    "fire": "mythiccraft:blocks/hell_fire_0"
+    "fire": "mythiccraft:block/hell_fire_0"
   }
 }

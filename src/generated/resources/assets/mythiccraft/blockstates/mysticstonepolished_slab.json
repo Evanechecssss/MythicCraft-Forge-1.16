@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/mysticstonepolished_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/mysticstonepolished_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/mysticstone_polished"
+    }
+  }
+}

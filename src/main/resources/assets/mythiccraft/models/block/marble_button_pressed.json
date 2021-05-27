@@ -2,6 +2,6 @@
 {
     "parent": "block/button_pressed",
     "textures": {
-        "texture": "mythiccraft:blocks/marble"
+        "texture": "mythiccraft:block/marble"
     }
 }

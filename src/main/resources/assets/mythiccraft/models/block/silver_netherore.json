@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/silver_netherore"
+        "all": "mythiccraft:block/silver_netherore"
     }
 }

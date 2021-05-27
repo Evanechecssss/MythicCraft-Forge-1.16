@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:blocks/crimson_cracked"
+        "wall": "mythiccraft:block/crimson_cracked"
     }
 }

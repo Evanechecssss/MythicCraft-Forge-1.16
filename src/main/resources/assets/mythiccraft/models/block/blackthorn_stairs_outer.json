@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/blackthorn_planks",
-        "top": "mythiccraft:blocks/blackthorn_planks",
-        "side": "mythiccraft:blocks/blackthorn_planks"
+        "bottom": "mythiccraft:block/blackthorn_planks",
+        "top": "mythiccraft:block/blackthorn_planks",
+        "side": "mythiccraft:block/blackthorn_planks"
     }
 }

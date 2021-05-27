@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_noside_alt",
   "textures": {
-    "pane": "mythiccraft:blocks/fairy_glass"
+    "pane": "mythiccraft:block/fairy_glass"
   }
 }

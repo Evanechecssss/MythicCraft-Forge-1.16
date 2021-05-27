@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/pearlstone_cracked",
-        "top": "mythiccraft:blocks/pearlstone_cracked",
-        "side": "mythiccraft:blocks/pearlstone_cracked"
+        "bottom": "mythiccraft:block/pearlstone_cracked",
+        "top": "mythiccraft:block/pearlstone_cracked",
+        "side": "mythiccraft:block/pearlstone_cracked"
     }
 }

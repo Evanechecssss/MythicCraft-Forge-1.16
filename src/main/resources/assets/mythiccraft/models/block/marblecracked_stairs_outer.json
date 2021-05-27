@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/marble_cracked",
-        "top": "mythiccraft:blocks/marble_cracked",
-        "side": "mythiccraft:blocks/marble_cracked"
+        "bottom": "mythiccraft:block/marble_cracked",
+        "top": "mythiccraft:block/marble_cracked",
+        "side": "mythiccraft:block/marble_cracked"
     }
 }

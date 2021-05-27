@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/magical_endore"
+        "all": "mythiccraft:block/magical_endore"
     }
 }

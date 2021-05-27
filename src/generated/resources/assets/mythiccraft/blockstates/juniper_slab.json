@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/juniper_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/juniper_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/juniper_planks"
+    }
+  }
+}

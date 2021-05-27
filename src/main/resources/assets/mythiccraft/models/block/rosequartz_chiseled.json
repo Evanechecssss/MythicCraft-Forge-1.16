@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "mythiccraft:blocks/rosequartz_chiseled_top",
-    "side": "mythiccraft:blocks/rosequartz_chiseled"
+    "end": "mythiccraft:block/rosequartz_chiseled_top",
+    "side": "mythiccraft:block/rosequartz_chiseled"
   }
 }

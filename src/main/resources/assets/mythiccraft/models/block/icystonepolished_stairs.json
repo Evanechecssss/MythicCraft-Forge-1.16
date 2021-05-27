@@ -1,8 +1,8 @@
 {
     "parent": "block/stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/icystone_polished",
-        "top": "mythiccraft:blocks/icystone_polished",
-        "side": "mythiccraft:blocks/icystone_polished"
+        "bottom": "mythiccraft:block/icystone_polished",
+        "top": "mythiccraft:block/icystone_polished",
+        "side": "mythiccraft:block/icystone_polished"
     }
 }

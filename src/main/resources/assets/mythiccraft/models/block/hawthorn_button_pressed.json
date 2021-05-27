@@ -2,6 +2,6 @@
 {
     "parent": "block/button_pressed",
     "textures": {
-        "texture": "mythiccraft:blocks/hawthorn_planks"
+        "texture": "mythiccraft:block/hawthorn_planks"
     }
 }

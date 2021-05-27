@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/mythicdiamond_endore"
+        "all": "mythiccraft:block/mythicdiamond_endore"
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_hanging_lantern",
   "textures": {
-    "lantern": "mythiccraft:blocks/ender_lantern"
+    "lantern": "mythiccraft:block/ender_lantern"
   }
 }

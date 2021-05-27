@@ -1,8 +1,8 @@
 {
     "parent": "block/slab",
     "textures": {
-        "bottom": "mythiccraft:blocks/crimson_chisealed",
-        "top": "mythiccraft:blocks/crimson_chisealed",
-        "side": "mythiccraft:blocks/crimson_chisealed"
+        "bottom": "mythiccraft:block/crimson_chisealed",
+        "top": "mythiccraft:block/crimson_chisealed",
+        "side": "mythiccraft:block/crimson_chisealed"
     }
 }

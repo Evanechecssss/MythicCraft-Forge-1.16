@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/yew_planks",
-        "top": "mythiccraft:blocks/yew_planks",
-        "side": "mythiccraft:blocks/yew_planks"
+        "bottom": "mythiccraft:block/yew_planks",
+        "top": "mythiccraft:block/yew_planks",
+        "side": "mythiccraft:block/yew_planks"
     }
 }

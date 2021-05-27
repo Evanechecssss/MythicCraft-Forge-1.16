@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/pearlstone"
+        "all": "mythiccraft:block/pearlstone"
     }
 }

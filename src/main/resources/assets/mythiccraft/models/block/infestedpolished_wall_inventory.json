@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:blocks/infested_polished"
+        "wall": "mythiccraft:block/infested_polished"
     }
 }

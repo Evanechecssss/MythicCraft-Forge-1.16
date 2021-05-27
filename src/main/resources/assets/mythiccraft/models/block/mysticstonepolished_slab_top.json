@@ -1,8 +1,8 @@
 {
     "parent": "block/slab_top",
     "textures": {
-        "bottom": "mythiccraft:blocks/mysticstone_polished",
-        "top": "mythiccraft:blocks/mysticstone_polished",
-        "side": "mythiccraft:blocks/mysticstone_polished"
+        "bottom": "mythiccraft:block/mysticstone_polished",
+        "top": "mythiccraft:block/mysticstone_polished",
+        "side": "mythiccraft:block/mysticstone_polished"
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/blackthorn_planks",
+    "bottom": "mythiccraft:block/blackthorn_planks",
+    "top": "mythiccraft:block/blackthorn_planks"
+  }
+}

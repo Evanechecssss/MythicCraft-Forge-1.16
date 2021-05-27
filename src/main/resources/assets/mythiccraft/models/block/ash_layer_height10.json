@@ -1,7 +1,7 @@
 {   "parent": "block/thin_block",
     "textures": {
-        "particle": "mythiccraft:blocks/ash_block",
-        "texture": "mythiccraft:blocks/ash_block"
+        "particle": "mythiccraft:block/ash_block",
+        "texture": "mythiccraft:block/ash_block"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

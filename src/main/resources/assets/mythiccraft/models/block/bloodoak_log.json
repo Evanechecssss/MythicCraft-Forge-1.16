@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/bloodoak_log_top",
-        "side": "mythiccraft:blocks/bloodoak_log"
+        "end": "mythiccraft:block/bloodoak_log_top",
+        "side": "mythiccraft:block/bloodoak_log"
     }
 }

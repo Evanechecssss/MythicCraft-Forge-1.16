@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "mythiccraft:blocks/spanish_moss",
-        "vine": "mythiccraft:blocks/spanish_moss"
+        "particle": "mythiccraft:block/spanish_moss",
+        "vine": "mythiccraft:block/spanish_moss"
     },
     "elements": [
         {   "from": [ 0.8, 0, 0 ],

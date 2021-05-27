@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/pureglowstone_block"
+        "all": "mythiccraft:block/pureglowstone_block"
     }
 }

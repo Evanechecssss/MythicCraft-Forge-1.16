@@ -1,6 +1,6 @@
 {
     "parent": "block/torch_wall",
     "textures": {
-        "torch": "mythiccraft:blocks/infested_cobble"
+        "torch": "mythiccraft:block/infested_cobble"
     }
 }
