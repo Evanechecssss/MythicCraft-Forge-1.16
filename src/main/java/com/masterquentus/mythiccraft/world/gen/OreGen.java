@@ -6,10 +6,13 @@ package com.masterquentus.mythiccraft.world.gen;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.pattern.BlockMatcher;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.template.BlockMatchRuleTest;
 import net.minecraft.world.gen.feature.template.RuleTest;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidRangeConfig;
@@ -17,17 +20,15 @@ import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 
 public class OreGen {
+    public static final RuleTest ENDSTONE = new BlockMatchRuleTest(Blocks.END_STONE);
     public static void addFeaturesToBiomes(BiomeLoadingEvent event) {
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.VAMPIRIC_ORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.VAMPIRIC_NETHERORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.MOONSTONE_ORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.MOONSTONE_NETHERORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.SILVER_ORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.SILVER_NETHERORE.get(), 25, 23, 4, 9);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.MYTHICDIAMOND_ORE.get(), 12, 1, 4, 20);
-        addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NETHERRACK, BlockInit.MYTHICDIAMOND_NETHERORE.get(), 12, 1, 4, 20);
-
-        // TODO: also do DRAGONHEART_ORE, RUBY_ORE, SAPPHIRE_ORE, AMETHYST_ORE and nether varients
+        // im not checking the biome because stone/netherack/endstone only exist in thier respective dimension. This means the ores will also spawn in modded dimensions based on those blocks
+        // overworld and nether use the same height range but end ore spawn everywhere in endstone because height doesnt mean much to the void islands
+        for (BlockInit.OreType ore : BlockInit.OreType.values()){
+            addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NATURAL_STONE, ore.overworld.get(), ore.maxHeight, ore.minHeight, ore.veinSize, ore.veinsPerChunk);
+            addOreToBiome(event.getGeneration(), OreFeatureConfig.FillerBlockType.NETHERRACK, ore.nether.get(), ore.maxHeight, ore.minHeight, ore.veinSize, ore.veinsPerChunk);
+            addOreToBiome(event.getGeneration(), ENDSTONE, ore.end.get(), 256, 0, ore.veinSize, ore.veinsPerChunk);
+        }
     }
 
 

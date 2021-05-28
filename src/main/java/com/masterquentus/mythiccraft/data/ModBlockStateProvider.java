@@ -24,13 +24,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        MythicCraft.LOGGER.debug("!!! register ModBlockStateProvider !!!");
         BlockInit.WOOD_TYPES.forEach(this::createWoodStates);
         BlockInit.STONE_TYPES.forEach((stoneName, stoneType) -> {
             for (BlockInit.StoneVariation stoneVariation : BlockInit.StoneVariation.values()){
                 createStoneStates(stoneName, stoneType, stoneVariation);
             }
         });
+
+        for (BlockInit.OreType ore : BlockInit.OreType.values()){
+            simpleBlock(ore.overworld.get());
+            simpleBlock(ore.nether.get());
+            simpleBlock(ore.end.get());
+        }
     }
 
     private void createStoneStates(String stoneName, BlockInit.StoneType stoneType, BlockInit.StoneVariation stoneVariation) {
