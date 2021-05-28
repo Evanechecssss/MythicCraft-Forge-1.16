@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/charredcobble_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/charredcobble_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/charred_cobble"
+    }
+  }
+}

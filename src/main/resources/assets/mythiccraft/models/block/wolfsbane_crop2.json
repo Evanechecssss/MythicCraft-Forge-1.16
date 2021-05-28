@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/wolfsbane_crop_stage2"
+        "crop": "mythiccraft:block/wolfsbane_crop_stage2"
     }
 }

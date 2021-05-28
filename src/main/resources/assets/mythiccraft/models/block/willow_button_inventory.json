@@ -1,6 +1,6 @@
 {
     "parent": "block/button_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/willow_planks"
+        "texture": "mythiccraft:block/willow_planks"
     }
 }

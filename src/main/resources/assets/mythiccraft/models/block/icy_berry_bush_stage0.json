@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/icy_berry_bush_stage0"
+        "crop": "mythiccraft:block/icy_berry_bush_stage0"
     }
 }

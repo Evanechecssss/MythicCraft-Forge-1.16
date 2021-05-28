@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_orientable_trapdoor_bottom",
   "textures": {
-    "texture": "mythiccraft:blocks/elder_trapdoor"
+    "texture": "mythiccraft:block/elder_trapdoor"
   }
 }

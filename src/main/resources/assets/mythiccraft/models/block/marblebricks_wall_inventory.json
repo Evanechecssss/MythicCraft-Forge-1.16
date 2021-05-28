@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:blocks/marble_bricks"
+        "wall": "mythiccraft:block/marble_bricks"
     }
 }

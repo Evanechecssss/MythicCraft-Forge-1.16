@@ -17,6 +17,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.lang.reflect.Field;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -25,13 +26,9 @@ public class BlockInit {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
 
-
-	// ****** Wood Types ****** //
-	// to add a new type of wood just add its name to this array and make the assets
-	// TODO: data generators for models, land, blockstates, loot tables
-	// TODO: autogenerate blocks for stone varients below
+	//twisted, distorted
 	private static String[] woodTypes = {"bloodoak", "whiteoak", "silverwood", "witchwood", "alder", "hawthorn", "rowan", "willow", "beech", "ash",
-			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "distorted", "icy", "twisted"};
+			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "icy"};
 
 	public static class WoodType{
 		public final String name;
@@ -78,7 +75,46 @@ public class BlockInit {
 		}
 	}
 
+	private static String[] stoneTypes = {"icystone", "mysticstone", "pearlstone", "charred", "infested", "crimson", "marble"};
+
+	public enum StoneVariation {
+		STONE,COBBLE,BRICKS,POLISHED,CHISELED, CRACKED;
+
+		public String toString(){
+			switch(this) {
+				case STONE:
+					return "";
+				case COBBLE:
+					return "cobble";
+				case BRICKS:
+					return "bricks";
+				case POLISHED:
+					return "polished";
+				case CHISELED:
+					return "chisealed";
+				case CRACKED:
+					return "cracked";
+			}
+
+			return "ERROR_INVALID_STONE_TYPE";
+		}
+	}
+
+	public static class StoneType{
+		public final String name;
+		public HashMap<StoneVariation, Supplier<Block>> blocks = new HashMap<>();
+		public HashMap<StoneVariation, Supplier<Block>> stairs = new HashMap<>();
+		public HashMap<StoneVariation, Supplier<Block>> slabs = new HashMap<>();
+		public HashMap<StoneVariation, Supplier<Block>> buttons = new HashMap<>();
+		public HashMap<StoneVariation, Supplier<Block>> walls = new HashMap<>();
+
+		public StoneType(String name){
+			this.name = name;
+		}
+	}
+
 	public static Map<String, WoodType> WOOD_TYPES = new HashMap<>();
+	public static Map<String, StoneType> STONE_TYPES = new HashMap<>();
 	static {
 		for (String name : woodTypes){
 			ModTree tree = new ModTree(name);
@@ -103,7 +139,23 @@ public class BlockInit {
 			));
 		}
 
+		for (String name : stoneTypes){
+			StoneType stoneType = new StoneType(name);
+			for (StoneVariation variation : StoneVariation.values()){
+				String typeString = variation.toString();
+					if (variation == StoneVariation.STONE && (name == "crimson" || name == "charred" || name == "infested")){
+					typeString = "stone";
+				}
+				AbstractBlock.Properties props = Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1);
+				stoneType.blocks.put(variation, BLOCKS.register(name + (typeString.equals("") ? "" : "_" + typeString), () -> new Block(props)));
+				stoneType.stairs.put(variation, BLOCKS.register(name + typeString + "_stairs", () -> new StairsBlock(() -> BlockInit.STONE_TYPES.get(name).stairs.get(variation).get().defaultBlockState(), props)));
+				stoneType.slabs.put(variation, BLOCKS.register(name + typeString + "_slab", () -> new SlabBlock(props)));
+				stoneType.buttons.put(variation, BLOCKS.register(name + typeString + "_button", () -> new ModStoneButtonBlock(props)));
+				stoneType.walls.put(variation, BLOCKS.register(name + typeString + "_wall", () -> new WallBlock(props)));
+			}
 
+			STONE_TYPES.put(name, stoneType);
+		}
 	}
 
 	public static Block[] getAllCrates(){
@@ -311,132 +363,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
 			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f).sound(SoundType.STONE)
 							.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE = BLOCKS.register("icystone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE_COBBLE = BLOCKS.register("icystone_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE_BRICKS = BLOCKS.register("icystone_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE_POLISHED = BLOCKS.register("icystone_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE_CHISEALED = BLOCKS.register("icystone_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ICYSTONE_CRACKED = BLOCKS.register("icystone_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone = BLOCKS.register("mysticstone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone_cobble = BLOCKS.register("mysticstone_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone_bricks = BLOCKS.register("mysticstone_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone_polished = BLOCKS.register("mysticstone_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone_chisealed = BLOCKS.register("mysticstone_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> mysticstone_cracked = BLOCKS.register("mysticstone_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone = BLOCKS.register("pearlstone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone_cobble = BLOCKS.register("pearlstone_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone_bricks = BLOCKS.register("pearlstone_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone_polished = BLOCKS.register("pearlstone_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone_chisealed = BLOCKS.register("pearlstone_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> pearlstone_cracked = BLOCKS.register("pearlstone_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> charred_stone = BLOCKS.register("charred_stone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> charred_cobble = BLOCKS.register("charred_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> charred_bricks = BLOCKS.register("charred_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));;
-	public static final RegistryObject<Block> charred_polished = BLOCKS.register("charred_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> charred_chisealed = BLOCKS.register("charred_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> charred_cracked = BLOCKS.register("charred_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble = BLOCKS.register("marble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble_cobble = BLOCKS.register("marble_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble_bricks = BLOCKS.register("marble_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble_polished = BLOCKS.register("marble_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble_chisealed = BLOCKS.register("marble_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> marble_cracked = BLOCKS.register("marble_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> infested_stone = BLOCKS.register("infested_stone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> infested_cobble = BLOCKS.register("infested_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> infested_bricks = BLOCKS.register("infested_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> infested_polished = BLOCKS.register("infested_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> INFESTED_CHISEALED = BLOCKS.register("infested_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> INFESTED_CRACKED = BLOCKS.register("infested_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_STONE = BLOCKS.register("crimson_stone",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_COBBLE = BLOCKS.register("crimson_cobble",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_BRICKS = BLOCKS.register("crimson_bricks",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_POLISHED = BLOCKS.register("crimson_polished",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_CHISEALED = BLOCKS.register("crimson_chisealed",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> CRIMSON_CRACKED = BLOCKS.register("crimson_cracked",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(0.5f, 15.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+
+
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
 			() -> new SlimeBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).harvestLevel(1)));
 	public static final RegistryObject<Block> INFESTEDSLIME_BLOCK = BLOCKS.register("infestedslime_block",
@@ -557,390 +485,6 @@ public class BlockInit {
 					Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
 
 	// Mushrooms
-
-	// Stairs
-	public static final RegistryObject<Block> ICYSTONECOBBLE_STAIRS = BLOCKS.register("icystonecobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.ICYSTONE_COBBLE.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONEBRICKS_STAIRS = BLOCKS.register("icystonebricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.ICYSTONE_BRICKS.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONEPOLISHED_STAIRS = BLOCKS.register("icystonepolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.ICYSTONE_POLISHED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONECHISEALED_STAIRS = BLOCKS.register("icystonechisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.ICYSTONE_CHISEALED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONECRACKED_STAIRS = BLOCKS.register("icystonecracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.ICYSTONE_CRACKED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> mysticstone_stairs = BLOCKS.register("mysticstone_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonecobble_stairs = BLOCKS.register("mysticstonecobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone_cobble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonebricks_stairs = BLOCKS.register("mysticstonebricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone_bricks.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonepolished_stairs = BLOCKS.register("mysticstonepolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone_polished.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonechisealed_stairs = BLOCKS.register(
-			"mysticstonechisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone_chisealed.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonecracked_stairs = BLOCKS.register("mysticstonecracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.mysticstone_cracked.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> pearlstone_stairs = BLOCKS.register("pearlstone_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonecobble_stairs = BLOCKS.register("pearlstonecobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone_cobble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonebricks_stairs = BLOCKS.register("pearlstonebricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone_bricks.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonepolished_stairs = BLOCKS.register("pearlstonepolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone_polished.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonechisealed_stairs = BLOCKS.register("pearlstonechisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone_chisealed.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonecracked_stairs = BLOCKS.register("pearlstonecracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.pearlstone_cracked.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> charredstone_stairs = BLOCKS.register("charredstone_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_stone.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> charredcobble_stairs = BLOCKS.register("charredcobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_cobble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> charredbricks_stairs = BLOCKS.register("charredbricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_bricks.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> charredpolished_stairs = BLOCKS.register("charredpolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_polished.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> charredchisealed_stairs = BLOCKS.register("charredchisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_chisealed.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> charredcracked_stairs = BLOCKS.register("charredcracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.charred_cracked.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marble_stairs = BLOCKS.register("marble_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblecobble_stairs = BLOCKS.register("marblecobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble_cobble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblebricks_stairs = BLOCKS.register("marblebricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble_bricks.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblepolished_stairs = BLOCKS.register("marblepolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble_polished.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblechisealed_stairs = BLOCKS.register("marblechisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble_chisealed.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblecracked_stairs = BLOCKS.register("marblecracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.marble_cracked.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> infestedstone_stairs = BLOCKS.register("infestedstone_stairs",
-			() -> new StairsBlock(() -> BlockInit.infested_stone.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedcobble_stairs = BLOCKS.register("infestedcobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.infested_cobble.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedbricks_stairs = BLOCKS.register("infestedbricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.infested_bricks.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedpolished_stairs = BLOCKS.register("infestedpolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.infested_polished.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedchisealed_stairs = BLOCKS.register("infestedchisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.INFESTED_CHISEALED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedcracked_stairs = BLOCKS.register("infestedcracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.INFESTED_CRACKED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> crimsonstone_stairs = BLOCKS.register("crimsonstone_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_STONE.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsoncobble_stairs = BLOCKS.register("crimsoncobble_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_COBBLE.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonbricks_stairs = BLOCKS.register("crimsonbricks_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_BRICKS.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonpolished_stairs = BLOCKS.register("crimsonpolished_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_POLISHED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonchisealed_stairs = BLOCKS.register("crimsonchisealed_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_CHISEALED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsoncracked_stairs = BLOCKS.register("crimsoncracked_stairs",
-			() -> new StairsBlock(() -> BlockInit.CRIMSON_CRACKED.get().defaultBlockState(),
-					Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-
-	public static final RegistryObject<Block> ICYSTONE_SLAB = BLOCKS.register("icystone_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE.get())));
-	public static final RegistryObject<Block> ICYSTONECOBBLE_SLAB = BLOCKS.register("icystonecobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE_COBBLE.get())));
-	public static final RegistryObject<Block> ICYSTONEBRICKS_SLAB = BLOCKS.register("icystonebricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE_BRICKS.get())));
-	public static final RegistryObject<Block> ICYSTONEPOLISHED_SLAB = BLOCKS.register("icystonepolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE_POLISHED.get())));
-	public static final RegistryObject<Block> ICYSTONECHISEALED_SLAB = BLOCKS.register("icystonechisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE_CHISEALED.get())));
-	public static final RegistryObject<Block> ICYSTONECRACKED_SLAB = BLOCKS.register("icystonecracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.ICYSTONE_CRACKED.get())));
-	public static final RegistryObject<Block> mysticstone_slab = BLOCKS.register("mysticstone_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone.get())));
-	public static final RegistryObject<Block> mysticstonecobble_slab = BLOCKS.register("mysticstonecobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone_cobble.get())));
-	public static final RegistryObject<Block> mysticstonebricks_slab = BLOCKS.register("mysticstonebricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone_bricks.get())));
-	public static final RegistryObject<Block> mysticstonepolished_slab = BLOCKS.register("mysticstonepolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone_polished.get())));
-	public static final RegistryObject<Block> mysticstonechisealed_slab = BLOCKS.register("mysticstonechisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone_chisealed.get())));
-	public static final RegistryObject<Block> mysticstonecracked_slab = BLOCKS.register("mysticstonecracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.mysticstone_cracked.get())));
-	public static final RegistryObject<Block> pearlstone_slab = BLOCKS.register("pearlstone_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone.get())));
-	public static final RegistryObject<Block> pearlstonecobble_slab = BLOCKS.register("pearlstonecobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone_cobble.get())));
-	public static final RegistryObject<Block> pearlstonebricks_slab = BLOCKS.register("pearlstonebricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone_bricks.get())));
-	public static final RegistryObject<Block> pearlstonepolished_slab = BLOCKS.register("pearlstonepolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone_polished.get())));
-	public static final RegistryObject<Block> pearlstonechisealed_slab = BLOCKS.register("pearlstonechisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone_chisealed.get())));
-	public static final RegistryObject<Block> pearlstonecracked_slab = BLOCKS.register("pearlstonecracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.pearlstone_cracked.get())));
-	public static final RegistryObject<Block> charredstone_slab = BLOCKS.register("charredstone_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_stone.get())));
-	public static final RegistryObject<Block> charredcobble_slab = BLOCKS.register("charredcobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_cobble.get())));
-	public static final RegistryObject<Block> charredbricks_slab = BLOCKS.register("charredbricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_bricks.get())));
-	public static final RegistryObject<Block> charredpolished_slab = BLOCKS.register("charredpolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_polished.get())));
-	public static final RegistryObject<Block> charredchisealed_slab = BLOCKS.register("charredchisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_chisealed.get())));
-	public static final RegistryObject<Block> charredcracked_slab = BLOCKS.register("charredcracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.charred_cracked.get())));
-	public static final RegistryObject<Block> marble_slab = BLOCKS.register("marble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble.get())));
-	public static final RegistryObject<Block> marblecobble_slab = BLOCKS.register("marblecobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble_cobble.get())));
-	public static final RegistryObject<Block> marblebricks_slab = BLOCKS.register("marblebricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble_bricks.get())));
-	public static final RegistryObject<Block> marblepolished_slab = BLOCKS.register("marblepolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble_polished.get())));
-	public static final RegistryObject<Block> marblechisealed_slab = BLOCKS.register("marblechisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble_chisealed.get())));
-	public static final RegistryObject<Block> marblecracked_slab = BLOCKS.register("marblecracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.marble_cracked.get())));
-	public static final RegistryObject<Block> infestedstone_slab = BLOCKS.register("infestedstone_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.infested_stone.get())));
-	public static final RegistryObject<Block> infestedcobble_slab = BLOCKS.register("infestedcobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.infested_cobble.get())));
-	public static final RegistryObject<Block> infestedbricks_slab = BLOCKS.register("infestedbricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.infested_bricks.get())));
-	public static final RegistryObject<Block> infestedpolished_slab = BLOCKS.register("infestedpolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.infested_polished.get())));
-	public static final RegistryObject<Block> infestedchisealed_slab = BLOCKS.register("infestedchisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.INFESTED_CHISEALED.get())));
-	public static final RegistryObject<Block> infestedcracked_slab = BLOCKS.register("infestedcracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.INFESTED_CRACKED.get())));
-	public static final RegistryObject<Block> crimson_slab = BLOCKS.register("crimson_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_STONE.get())));
-	public static final RegistryObject<Block> crimsoncobble_slab = BLOCKS.register("crimsoncobble_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_COBBLE.get())));
-	public static final RegistryObject<Block> crimsonbricks_slab = BLOCKS.register("crimsonbricks_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_BRICKS.get())));
-	public static final RegistryObject<Block> crimsonpolished_slab = BLOCKS.register("crimsonpolished_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_POLISHED.get())));
-	public static final RegistryObject<Block> crimsonchisealed_slab = BLOCKS.register("crimsonchisealed_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_CHISEALED.get())));
-	public static final RegistryObject<Block> crimsoncracked_slab = BLOCKS.register("crimsoncracked_slab",
-			() -> new SlabBlock(Block.Properties.copy(BlockInit.CRIMSON_CRACKED.get())));
-
-	// Buttons
-	public static final RegistryObject<Block> ICYSTONE_BUTTON = BLOCKS.register("icystone_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONECOBBLE_BUTTON = BLOCKS.register("icystonecobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONEBRICKS_BUTTON = BLOCKS.register("icystonebricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONEPOLISHED_BUTTON = BLOCKS.register("icystonepolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONECHISEALED_BUTTON = BLOCKS.register("icystonechisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> ICYSTONECRACKED_BUTTON = BLOCKS.register("icystonecracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_LIGHT_BLUE)));
-	public static final RegistryObject<Block> mysticstone_button = BLOCKS.register("mysticstone_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonecobble_button = BLOCKS.register("mysticstonecobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonebricks_button = BLOCKS.register("mysticstonebricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonepolished_button = BLOCKS.register("mysticstonepolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonechisealed_button = BLOCKS.register(
-			"mysticstonechisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> mysticstonecracked_button = BLOCKS.register("mysticstonecracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> pearlstone_button = BLOCKS.register("pearlstone_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonecobble_button = BLOCKS.register("pearlstonecobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonebricks_button = BLOCKS.register("pearlstonebricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonepolished_button = BLOCKS.register("pearlstonepolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonechisealed_button = BLOCKS.register("pearlstonechisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> pearlstonecracked_button = BLOCKS.register("pearlstonecracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.TERRACOTTA_WHITE)));
-	public static final RegistryObject<Block> charredstone_button = BLOCKS.register("charredstone_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> charredcobble_button = BLOCKS.register("charredcobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> charredbricks_button = BLOCKS.register("charredbricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> charredpolished_button = BLOCKS.register("charredpolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> charredchisealed_button = BLOCKS.register("charredchisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> charredcracked_button = BLOCKS.register("charredcracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)));
-	public static final RegistryObject<Block> marble_button = BLOCKS.register("marble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblecobble_button = BLOCKS.register("marblecobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblebricks_button = BLOCKS.register("marblebricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblepolished_button = BLOCKS.register("marblepolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblechisealed_button = BLOCKS.register("marblechisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> marblecracked_button = BLOCKS.register("marblecracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_GRAY)));
-	public static final RegistryObject<Block> infestedstone_button = BLOCKS.register("infestedstone_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedcobble_button = BLOCKS.register("infestedcobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedbricks_button = BLOCKS.register("infestedbricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedpolished_button = BLOCKS.register("infestedpolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedchisealed_button = BLOCKS.register("infestedchisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> infestedcracked_button = BLOCKS.register("infestedcracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_PURPLE)));
-	public static final RegistryObject<Block> crimson_button = BLOCKS.register("crimson_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsoncobble_button = BLOCKS.register("crimsoncobble_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonbricks_button = BLOCKS.register("crimsonbricks_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonpolished_button = BLOCKS.register("crimsonpolished_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsonchisealed_button = BLOCKS.register("crimsonchisealed_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-	public static final RegistryObject<Block> crimsoncracked_button = BLOCKS.register("crimsoncracked_button",
-			() -> new ModStoneButtonBlock(Block.Properties.of(Material.STONE, MaterialColor.COLOR_RED)));
-
-	// Walls
-	public static final RegistryObject<WallBlock> icystone_wall = BLOCKS.register("icystone_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> icystonecobble_wall = BLOCKS.register("icystonecobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> icystonebricks_wall = BLOCKS.register("icystonebricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> icystonepolished_wall = BLOCKS.register("icystonepolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> icystonechisealed_wall = BLOCKS.register("icystonechisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> icystonecracked_wall = BLOCKS.register("icystonecracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstone_wall = BLOCKS.register("mysticstone_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstonecobble_wall = BLOCKS.register("mysticstonecobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstonebricks_wall = BLOCKS.register("mysticstonebricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstonepolished_wall = BLOCKS.register("mysticstonepolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstonechisealed_wall = BLOCKS
-			.register("mysticstonechisealed_wall", () -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> mysticstonecracked_wall = BLOCKS.register("mysticstonecracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstone_wall = BLOCKS.register("pearlstone_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstonecobble_wall = BLOCKS.register("pearlstonecobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstonebricks_wall = BLOCKS.register("pearlstonebricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstonepolished_wall = BLOCKS.register("pearlstonepolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstonechisealed_wall = BLOCKS.register("pearlstonechisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> pearlstonecracked_wall = BLOCKS.register("pearlstonecracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredstone_wall = BLOCKS.register("charredstone_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredcobble_wall = BLOCKS.register("charredcobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredbricks_wall = BLOCKS.register("charredbricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredpolished_wall = BLOCKS.register("charredpolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredchisealed_wall = BLOCKS.register("charredchisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> charredcracked_wall = BLOCKS.register("charredcracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marble_wall = BLOCKS.register("marble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marblecobble_wall = BLOCKS.register("marblecobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marblebricks_wall = BLOCKS.register("marblebricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marblepolished_wall = BLOCKS.register("marblepolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marblechisealed_wall = BLOCKS.register("marblechisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> marblecracked_wall = BLOCKS.register("marblecracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedstone_wall = BLOCKS.register("infested_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedcobble_wall = BLOCKS.register("infestedcobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedbricks_wall = BLOCKS.register("infestedbricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedpolished_wall = BLOCKS.register("infestedpolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedchisealed_wall = BLOCKS.register("infestedchisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> infestedcracked_wall = BLOCKS.register("infestedcracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsonstone_wall = BLOCKS.register("crimsonstone_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsoncobble_wall = BLOCKS.register("crimsoncobble_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsonbricks_wall = BLOCKS.register("crimsonbricks_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsonpolished_wall = BLOCKS.register("crimsonpolished_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsonchisealed_wall = BLOCKS.register("crimsonchisealed_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
-	public static final RegistryObject<WallBlock> crimsoncracked_wall = BLOCKS.register("crimsoncracked_wall",
-			() -> new WallBlock(Block.Properties.copy(Blocks.ANDESITE_WALL)));
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);

@@ -1,6 +1,6 @@
 {
     "parent": "block/button",
     "textures": {
-        "texture": "mythiccraft:blocks/witchhazel_planks"
+        "texture": "mythiccraft:block/witchhazel_planks"
     }
 }

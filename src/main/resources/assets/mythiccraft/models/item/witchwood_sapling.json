@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "mythiccraft:blocks/witchwood_sapling"
+        "layer0": "mythiccraft:block/witchwood_sapling"
     }
 }

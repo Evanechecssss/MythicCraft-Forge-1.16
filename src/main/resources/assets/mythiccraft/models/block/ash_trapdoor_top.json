@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_orientable_trapdoor_top",
   "textures": {
-    "texture": "mythiccraft:blocks/ash_trapdoor"
+    "texture": "mythiccraft:block/ash_trapdoor"
   }
 }

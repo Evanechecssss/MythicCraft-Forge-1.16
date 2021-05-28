@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "end": "mythiccraft:blocks/rosequartz_pillar_top",
-    "side": "mythiccraft:blocks/rosequartz_pillar"
+    "end": "mythiccraft:block/rosequartz_pillar_top",
+    "side": "mythiccraft:block/rosequartz_pillar"
   }
 }

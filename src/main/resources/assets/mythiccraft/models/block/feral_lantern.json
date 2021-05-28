@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_lantern",
   "textures": {
-    "lantern": "mythiccraft:blocks/feral_lantern"
+    "lantern": "mythiccraft:block/feral_lantern"
   }
 }

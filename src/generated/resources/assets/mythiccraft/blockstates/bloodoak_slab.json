@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/bloodoak_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/bloodoak_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/bloodoak_planks"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/mysticstone",
+    "bottom": "mythiccraft:block/mysticstone",
+    "top": "mythiccraft:block/mysticstone"
+  }
+}

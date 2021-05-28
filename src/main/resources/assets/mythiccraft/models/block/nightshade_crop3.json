@@ -2,6 +2,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/nightshade_crop_stage3"
+        "crop": "mythiccraft:block/nightshade_crop_stage3"
     }
 }

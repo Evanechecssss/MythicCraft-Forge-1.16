@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/mythicdiamond_ore"
+        "all": "mythiccraft:block/mythicdiamond_ore"
     }
 }

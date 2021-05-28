@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/silverwood_stripped_log_top",
-        "side": "mythiccraft:blocks/silverwood_stripped_log"
+        "end": "mythiccraft:block/silverwood_stripped_log_top",
+        "side": "mythiccraft:block/silverwood_stripped_log"
     }
 }

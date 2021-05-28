@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/hellebore_stage3"
+        "crop": "mythiccraft:block/hellebore_stage3"
     }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "mythiccraft:block/pearlstone_cracked",
+    "bottom": "mythiccraft:block/pearlstone_cracked",
+    "top": "mythiccraft:block/pearlstone_cracked"
+  }
+}

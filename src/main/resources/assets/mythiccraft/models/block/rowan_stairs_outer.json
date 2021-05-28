@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/rowan_planks",
-        "top": "mythiccraft:blocks/rowan_planks",
-        "side": "mythiccraft:blocks/rowan_planks"
+        "bottom": "mythiccraft:block/rowan_planks",
+        "top": "mythiccraft:block/rowan_planks",
+        "side": "mythiccraft:block/rowan_planks"
     }
 }

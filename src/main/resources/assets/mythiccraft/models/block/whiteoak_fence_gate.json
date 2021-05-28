@@ -1,6 +1,6 @@
 {
     "parent": "block/template_fence_gate",
     "textures": {
-        "texture": "mythiccraft:blocks/whiteoak_planks"
+        "texture": "mythiccraft:block/whiteoak_planks"
     }
 }

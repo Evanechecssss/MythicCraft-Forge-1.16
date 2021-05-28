@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "mythiccraft:block/bloodoak_stripped_log",
+    "end": "mythiccraft:block/bloodoak_stripped_log_top"
+  }
+}

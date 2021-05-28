@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/charredslime_block"
+        "all": "mythiccraft:block/charredslime_block"
     }
 }

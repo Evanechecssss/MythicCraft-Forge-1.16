@@ -1,6 +1,6 @@
 {
     "parent": "block/fence_post",
     "textures": {
-        "texture": "mythiccraft:blocks/cedar_planks"
+        "texture": "mythiccraft:block/cedar_planks"
     }
 }

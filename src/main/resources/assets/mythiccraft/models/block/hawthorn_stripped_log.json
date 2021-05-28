@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/hawthorn_stripped_log_top",
-        "side": "mythiccraft:blocks/hawthorn_stripped_log"
+        "end": "mythiccraft:block/hawthorn_stripped_log_top",
+        "side": "mythiccraft:block/hawthorn_stripped_log"
     }
 }

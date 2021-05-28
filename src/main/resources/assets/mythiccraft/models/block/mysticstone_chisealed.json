@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/mysticstone_chisealed"
+        "all": "mythiccraft:block/mysticstone_chisealed"
     }
 }

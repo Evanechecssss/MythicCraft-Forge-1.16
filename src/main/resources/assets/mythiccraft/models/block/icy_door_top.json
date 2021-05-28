@@ -1,7 +1,7 @@
 {
     "parent": "block/door_top",
     "textures": {
-        "bottom": "mythiccraft:blocks/icy_door_bottom",
-        "top": "mythiccraft:blocks/icy_door_top"
+        "bottom": "mythiccraft:block/icy_door_bottom",
+        "top": "mythiccraft:block/icy_door_top"
     }
 }

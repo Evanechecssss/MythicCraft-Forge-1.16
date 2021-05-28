@@ -1,6 +1,6 @@
 {
     "parent": "block/button_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/charred_cracked"
+        "texture": "mythiccraft:block/charred_cracked"
     }
 }

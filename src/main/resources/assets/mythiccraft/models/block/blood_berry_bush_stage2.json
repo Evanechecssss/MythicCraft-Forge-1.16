@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/blood_berry_bush_stage2"
+        "crop": "mythiccraft:block/blood_berry_bush_stage2"
     }
 }

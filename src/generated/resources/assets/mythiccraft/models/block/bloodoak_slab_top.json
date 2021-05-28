@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/bloodoak_planks",
+    "bottom": "mythiccraft:block/bloodoak_planks",
+    "top": "mythiccraft:block/bloodoak_planks"
+  }
+}

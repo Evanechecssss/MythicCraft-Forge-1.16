@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:blocks/charred_stone"
+        "wall": "mythiccraft:block/charred_stone"
     }
 }

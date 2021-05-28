@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/infested_soil"
+        "all": "mythiccraft:block/infested_soil"
     }
 }

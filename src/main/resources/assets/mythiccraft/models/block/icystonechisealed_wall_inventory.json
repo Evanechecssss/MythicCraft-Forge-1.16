@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:blocks/icystone_chisealed"
+        "wall": "mythiccraft:block/icystone_chisealed"
     }
 }

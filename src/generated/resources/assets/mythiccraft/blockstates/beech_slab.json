@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/beech_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/beech_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/beech_planks"
+    }
+  }
+}

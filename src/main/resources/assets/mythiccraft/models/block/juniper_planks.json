@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/juniper_planks"
+        "all": "mythiccraft:block/juniper_planks"
     }
 }

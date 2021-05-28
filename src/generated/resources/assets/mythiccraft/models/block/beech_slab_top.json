@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/beech_planks",
+    "bottom": "mythiccraft:block/beech_planks",
+    "top": "mythiccraft:block/beech_planks"
+  }
+}

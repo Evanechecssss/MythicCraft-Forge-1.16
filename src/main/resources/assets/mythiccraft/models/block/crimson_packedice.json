@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/crimson_packedice"
+        "all": "mythiccraft:block/crimson_packedice"
     }
 }

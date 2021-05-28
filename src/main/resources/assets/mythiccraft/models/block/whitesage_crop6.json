@@ -1,6 +1,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/whitesage_crop_stage6"
+        "crop": "mythiccraft:block/whitesage_crop_stage6"
     }
 }

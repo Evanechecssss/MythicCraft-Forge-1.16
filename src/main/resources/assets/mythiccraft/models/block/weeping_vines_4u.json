@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "mythiccraft:blocks/weeping_vines",
-        "vine": "mythiccraft:blocks/weeping_vines"
+        "particle": "mythiccraft:block/weeping_vines",
+        "vine": "mythiccraft:block/weeping_vines"
     },
     "elements": [
         {   "from": [ 0, 15.2, 0 ],

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_torch_wall",
   "textures": {
-    "torch": "mythiccraft:blocks/blood_torch"
+    "torch": "mythiccraft:block/blood_torch"
   }
 }

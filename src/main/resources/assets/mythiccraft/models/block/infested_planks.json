@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/infested_planks"
+        "all": "mythiccraft:block/infested_planks"
     }
 }

@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/elder_planks"
+        "all": "mythiccraft:block/elder_planks"
     }
 }

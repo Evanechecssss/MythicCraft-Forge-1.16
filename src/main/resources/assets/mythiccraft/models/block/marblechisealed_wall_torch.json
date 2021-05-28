@@ -1,6 +1,6 @@
 {
     "parent": "block/torch_wall",
     "textures": {
-        "torch": "mythiccraft:blocks/marble_chisealed"
+        "torch": "mythiccraft:block/marble_chisealed"
     }
 }

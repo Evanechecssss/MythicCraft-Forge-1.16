@@ -1,8 +1,8 @@
 {
     "parent": "block/inner_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/icy_planks",
-        "top": "mythiccraft:blocks/icy_planks",
-        "side": "mythiccraft:blocks/icy_planks"
+        "bottom": "mythiccraft:block/icy_planks",
+        "top": "mythiccraft:block/icy_planks",
+        "side": "mythiccraft:block/icy_planks"
     }
 }

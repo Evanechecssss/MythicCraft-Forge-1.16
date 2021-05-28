@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "side": "mythiccraft:block/infested_polished",
+    "bottom": "mythiccraft:block/infested_polished",
+    "top": "mythiccraft:block/infested_polished"
+  }
+}

@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/infested_stone",
-        "top": "mythiccraft:blocks/infested_stone",
-        "side": "mythiccraft:blocks/infested_stone"
+        "bottom": "mythiccraft:block/infested_stone",
+        "top": "mythiccraft:block/infested_stone",
+        "side": "mythiccraft:block/infested_stone"
     }
 }

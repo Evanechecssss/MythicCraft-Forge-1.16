@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "mythiccraft:block/yew_log",
+    "end": "mythiccraft:block/yew_log_top"
+  }
+}

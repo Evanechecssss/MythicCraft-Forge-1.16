@@ -2,7 +2,7 @@
 	"credit": "Made By Dino's Modeling",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "mythiccraft:blocks/pandors_box",
+		"0": "mythiccraft:block/pandors_box",
 		"particle": "block/oak_planks"
 	},
 	"elements": [

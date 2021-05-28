@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "mythiccraft:block/yew_slab_top"
+    },
+    "type=bottom": {
+      "model": "mythiccraft:block/yew_slab"
+    },
+    "type=double": {
+      "model": "mythiccraft:block/yew_planks"
+    }
+  }
+}

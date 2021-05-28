@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/juniper_planks",
+    "bottom": "mythiccraft:block/juniper_planks",
+    "top": "mythiccraft:block/juniper_planks"
+  }
+}

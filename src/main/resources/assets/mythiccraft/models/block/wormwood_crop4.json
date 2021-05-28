@@ -2,6 +2,6 @@
 {
     "parent": "block/crop",
     "textures": {
-        "crop": "mythiccraft:blocks/wormwood_crop_stage4"
+        "crop": "mythiccraft:block/wormwood_crop_stage4"
     }
 }

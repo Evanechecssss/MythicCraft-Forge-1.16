@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/silverwood_leaves"
+        "all": "mythiccraft:block/silverwood_leaves"
     }
 }

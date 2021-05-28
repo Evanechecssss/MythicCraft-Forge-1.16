@@ -1,6 +1,6 @@
 {
     "parent": "block/fence_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/beech_planks"
+        "texture": "mythiccraft:block/beech_planks"
     }
 }

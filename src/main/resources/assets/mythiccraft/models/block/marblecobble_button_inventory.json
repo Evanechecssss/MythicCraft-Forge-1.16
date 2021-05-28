@@ -1,6 +1,6 @@
 {
     "parent": "block/button_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/marble_cobble"
+        "texture": "mythiccraft:block/marble_cobble"
     }
 }

@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/icy_stripped_log_top",
-        "side": "mythiccraft:blocks/icy_stripped_log"
+        "end": "mythiccraft:block/icy_stripped_log_top",
+        "side": "mythiccraft:block/icy_stripped_log"
     }
 }

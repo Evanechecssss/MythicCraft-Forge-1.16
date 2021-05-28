@@ -2,6 +2,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/bloodoak_crate"
+        "all": "mythiccraft:block/bloodoak_crate"
     }
 }

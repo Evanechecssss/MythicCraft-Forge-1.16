@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/infested_log_top",
-        "side": "mythiccraft:blocks/infested_log"
+        "end": "mythiccraft:block/infested_log_top",
+        "side": "mythiccraft:block/infested_log"
     }
 }

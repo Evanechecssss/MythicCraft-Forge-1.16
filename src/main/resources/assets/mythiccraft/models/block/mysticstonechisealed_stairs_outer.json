@@ -2,8 +2,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "mythiccraft:blocks/mysticstone_chisealed",
-        "top": "mythiccraft:blocks/mysticstone_chisealed",
-        "side": "mythiccraft:blocks/mysticstone_chisealed"
+        "bottom": "mythiccraft:block/mysticstone_chisealed",
+        "top": "mythiccraft:block/mysticstone_chisealed",
+        "side": "mythiccraft:block/mysticstone_chisealed"
     }
 }

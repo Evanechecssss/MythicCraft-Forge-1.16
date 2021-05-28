@@ -1,6 +1,6 @@
 {
     "parent": "block/torch_wall",
     "textures": {
-        "torch": "mythiccraft:blocks/mysticstone_cracked"
+        "torch": "mythiccraft:block/mysticstone_cracked"
     }
 }

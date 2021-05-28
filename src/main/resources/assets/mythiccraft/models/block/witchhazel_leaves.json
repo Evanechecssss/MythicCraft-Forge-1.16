@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mythiccraft:blocks/witchhazel_leaves"
+        "all": "mythiccraft:block/witchhazel_leaves"
     }
 }

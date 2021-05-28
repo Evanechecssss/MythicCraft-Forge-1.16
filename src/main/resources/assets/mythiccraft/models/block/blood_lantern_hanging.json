@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_hanging_lantern",
   "textures": {
-    "lantern": "mythiccraft:blocks/blood_lantern"
+    "lantern": "mythiccraft:block/blood_lantern"
   }
 }

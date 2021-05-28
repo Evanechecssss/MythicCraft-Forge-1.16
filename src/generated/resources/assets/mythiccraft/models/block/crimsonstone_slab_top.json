@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "mythiccraft:block/crimson_stone",
+    "bottom": "mythiccraft:block/crimson_stone",
+    "top": "mythiccraft:block/crimson_stone"
+  }
+}

@@ -1,6 +1,6 @@
 {
     "parent": "block/torch_wall",
     "textures": {
-        "torch": "mythiccraft:blocks/pearlstone"
+        "torch": "mythiccraft:block/pearlstone"
     }
 }

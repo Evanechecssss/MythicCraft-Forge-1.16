@@ -1,7 +1,7 @@
 {
     "parent": "block/cube_column",
     "textures": {
-        "end": "mythiccraft:blocks/whiteoak_log_top",
-        "side": "mythiccraft:blocks/whiteoak_log"
+        "end": "mythiccraft:block/whiteoak_log_top",
+        "side": "mythiccraft:block/whiteoak_log"
     }
 }

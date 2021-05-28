@@ -1,6 +1,6 @@
 {
     "parent": "block/button_inventory",
     "textures": {
-        "texture": "mythiccraft:blocks/infested_chisealed"
+        "texture": "mythiccraft:block/infested_chisealed"
     }
 }

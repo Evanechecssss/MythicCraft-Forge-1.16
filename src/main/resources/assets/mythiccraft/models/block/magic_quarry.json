@@ -2,8 +2,8 @@
 	"credit": "Made By Dino's Modeling",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "mythiccraft:blocks/magic_quarry",
-		"particle": "mythiccraft:blocks/mythicdiamond_block"
+		"1": "mythiccraft:block/magic_quarry",
+		"particle": "mythiccraft:block/mythicdiamond_block"
 	},
 	"elements": [
 		{

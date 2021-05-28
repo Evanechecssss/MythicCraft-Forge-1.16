@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:blocks/love_torch"
+    "layer0": "mythiccraft:block/love_torch"
   }
 }
