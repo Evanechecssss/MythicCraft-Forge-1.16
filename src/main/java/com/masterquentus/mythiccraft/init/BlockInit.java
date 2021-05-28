@@ -17,7 +17,6 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.lang.reflect.Field;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -444,7 +443,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> DARK_GLOWSTONE = BLOCKS.register("dark_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) ->15)));
-
 	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register("blood_torch",
 			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
 					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));

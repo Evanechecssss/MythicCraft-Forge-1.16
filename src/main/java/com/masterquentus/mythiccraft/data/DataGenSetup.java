@@ -1,9 +1,6 @@
 package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.data.ModBlockModelProvider;
-import com.masterquentus.mythiccraft.data.ModBlockStateProvider;
-import com.masterquentus.mythiccraft.init.DimensionSetup;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

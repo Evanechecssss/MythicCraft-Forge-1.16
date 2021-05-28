@@ -9,7 +9,8 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBlockStateProvider extends BlockStateProvider {
-    private final ModBlockModelProvider blockModels;
+    @SuppressWarnings("unused")
+	private final ModBlockModelProvider blockModels;
 
     public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, MythicCraft.MOD_ID, exFileHelper);
