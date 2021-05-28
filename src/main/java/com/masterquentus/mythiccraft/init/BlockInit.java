@@ -55,6 +55,15 @@ public class BlockInit {
 		return crates;
 	}
 
+	public static Block[] getAllLanterns(){
+		Block[] lanterns = new Block[LanternType.values().length];
+		for (int i=0;i<LanternType.values().length;i++) {
+			lanterns[i] = LanternType.values()[i].block.get();
+		}
+
+		return lanterns;
+	}
+
 	// Blocks
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
 			() -> new Block(Block.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)

@@ -1,10 +1,7 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
-import com.masterquentus.mythiccraft.tileentity.MagicQuarryTileEntity;
-import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
-import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
+import com.masterquentus.mythiccraft.tileentity.*;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
@@ -26,5 +23,7 @@ public class ModTileEntityTypes {
 	public static final RegistryObject<TileEntityType<PedestalTileEntity>> pedestal_tier1 = TILE_ENTITY_TYPES.register(
 			"pedestal_tier1",
 			() -> TileEntityType.Builder.of(PedestalTileEntity::new, BlockInit.PEDESTAL_TIER1.get()).build(null));
+	public static final RegistryObject<TileEntityType<LanternTileEntity>> LANTERN_TILE = TILE_ENTITY_TYPES
+			.register("lantern", () -> TileEntityType.Builder.of(LanternTileEntity::new, BlockInit.getAllLanterns()).build(null));
 }
 
