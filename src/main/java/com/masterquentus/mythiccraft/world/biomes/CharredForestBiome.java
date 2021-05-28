@@ -1,6 +1,8 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
@@ -16,7 +18,7 @@ public class CharredForestBiome extends DragonBiome {
 	@Override
 	protected BiomeGenerationSettings.Builder getGenSettings() {
 		BiomeGenerationSettings.Builder worldGenSettings = super.getGenSettings();
-		BlockInit.WOOD_TYPES.get("charred").tree.addToBiome(worldGenSettings);
+		WoodType.CHARRED.tree.addToBiome(worldGenSettings);
 		return worldGenSettings;
 	}
 
@@ -42,7 +44,7 @@ public class CharredForestBiome extends DragonBiome {
 				SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 						defaultFluid, seaLevel, seed,
 						new SurfaceBuilderConfig(BlockInit.CHARRED_SOIL.get().defaultBlockState(),
-								BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(),
+								StoneType.CHARRED.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(),
 								BlockInit.ASH_BLOCK.get().defaultBlockState()));
 				
 			} else {
@@ -51,15 +53,15 @@ public class CharredForestBiome extends DragonBiome {
 						new SurfaceBuilderConfig(
 								i == 1 ? BlockInit.HOTASH_BLOCK.get().defaultBlockState()
 										: BlockInit.ASH_BLOCK.get().defaultBlockState(),
-								BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.COBBLE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+								StoneType.CHARRED.blocks.get(StoneType.StoneVariation.COBBLE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 			}
 
 			SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 					defaultFluid, seaLevel, seed,
 					new SurfaceBuilderConfig(
 							i == 1 ? BlockInit.ASH_BLOCK.get().defaultBlockState()
-									: BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.COBBLE).get().defaultBlockState(),
-							BlockInit.STONE_TYPES.get("charred").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+									: StoneType.CHARRED.blocks.get(StoneType.StoneVariation.COBBLE).get().defaultBlockState(),
+							StoneType.CHARRED.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 		}
 
 	}

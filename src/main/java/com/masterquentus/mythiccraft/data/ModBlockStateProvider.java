@@ -2,6 +2,9 @@ package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.OreType;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
@@ -24,21 +27,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        BlockInit.WOOD_TYPES.forEach(this::createWoodStates);
-        BlockInit.STONE_TYPES.forEach((stoneName, stoneType) -> {
-            for (BlockInit.StoneVariation stoneVariation : BlockInit.StoneVariation.values()){
-                createStoneStates(stoneName, stoneType, stoneVariation);
-            }
-        });
+        for (WoodType woodType : WoodType.values()){
+            this.createWoodStates(woodType.name().toLowerCase(), woodType);
+        }
 
-        for (BlockInit.OreType ore : BlockInit.OreType.values()){
+        for (StoneType stoneType : StoneType.values()){
+            for (StoneType.StoneVariation stoneVariation : StoneType.StoneVariation.values()){
+                createStoneStates(stoneType, stoneVariation);
+            }
+        }
+
+        for (OreType ore : OreType.values()){
+            simpleBlock(ore.block.get());
             simpleBlock(ore.overworld.get());
             simpleBlock(ore.nether.get());
             simpleBlock(ore.end.get());
         }
     }
 
-    private void createStoneStates(String stoneName, BlockInit.StoneType stoneType, BlockInit.StoneVariation stoneVariation) {
+    private void createStoneStates(StoneType stoneType, StoneType.StoneVariation stoneVariation) {
         Block base = stoneType.blocks.get(stoneVariation).get();
         simpleBlock(base);
         wallBlock((WallBlock) stoneType.walls.get(stoneVariation).get(), blockTexture(base));
@@ -47,7 +54,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
 
-    private void createWoodStates(String name, BlockInit.WoodType wood){
+    private void createWoodStates(String name, WoodType wood){
         simpleBlock(wood.plank.get());
         simpleBlock(wood.leaves.get());
 

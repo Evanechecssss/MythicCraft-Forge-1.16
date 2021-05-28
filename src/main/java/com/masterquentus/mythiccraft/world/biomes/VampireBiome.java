@@ -1,6 +1,7 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
@@ -34,8 +35,8 @@ public class VampireBiome extends ModBiome {
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH_2);
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_FOREST);
 
-		BlockInit.WOOD_TYPES.get("bloodoak").tree.addToBiome(worldGenSettings);
-		BlockInit.WOOD_TYPES.get("whiteoak").tree.addToBiome(worldGenSettings);
+		WoodType.BLOODOAK.tree.addToBiome(worldGenSettings);
+		WoodType.WHITEOAK.tree.addToBiome(worldGenSettings);
 
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.FOREST_FLOWER_TREES);
 		DefaultBiomeFeatures.addDefaultExtraVegetation(worldGenSettings);  // sugarcane + pumpkin

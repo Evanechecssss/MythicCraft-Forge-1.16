@@ -1,6 +1,7 @@
 package com.masterquentus.mythiccraft.world.feature;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.GenerationStage;
@@ -15,11 +16,11 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class ModTree extends Tree {
-    protected final String woodTypeName;
+    protected final WoodType woodType;
     protected static final TwoLayerFeature SIZE_TYPE = new TwoLayerFeature(1, 0, 1);
 
-    public ModTree(String woodTypeName){
-        this.woodTypeName = woodTypeName;
+    public ModTree(WoodType woodType){
+        this.woodType = woodType;
     }
 
     protected FoliagePlacer getFoliagePlacer(){
@@ -32,9 +33,8 @@ public class ModTree extends Tree {
 
     @Nullable
     protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random rand, boolean p_225546_2_) {
-        BlockInit.WoodType type = BlockInit.WOOD_TYPES.get(woodTypeName);
-        SimpleBlockStateProvider logs = new SimpleBlockStateProvider(type.log.get().defaultBlockState());
-        SimpleBlockStateProvider leaves = new SimpleBlockStateProvider(type.leaves.get().defaultBlockState());
+        SimpleBlockStateProvider logs = new SimpleBlockStateProvider(this.woodType.log.get().defaultBlockState());
+        SimpleBlockStateProvider leaves = new SimpleBlockStateProvider(this.woodType.leaves.get().defaultBlockState());
         return Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(logs, leaves, this.getFoliagePlacer(), this.getTrunkPlacer(), SIZE_TYPE).ignoreVines().build()));
     }
 

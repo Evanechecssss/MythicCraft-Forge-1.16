@@ -12,6 +12,8 @@ import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 
+import com.masterquentus.mythiccraft.init.auto.LanternType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -49,10 +51,11 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
 
-		// Sapling
-		BlockInit.WOOD_TYPES.forEach((name, wood) -> {
+		// Sapling & Door
+		for (WoodType wood : WoodType.values()){
 			RenderTypeLookup.setRenderLayer(wood.sapling.get(), RenderType.cutout());
-		});
+			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
+		}
 
 		// Crops
 		RenderTypeLookup.setRenderLayer(BlockInit.vervain_crop.get(), RenderType.cutout());
@@ -90,11 +93,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FERAL_TORCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LOVE_TORCH.get(), RenderType.cutout());
 
-		// Doors
-		BlockInit.WOOD_TYPES.forEach((name, type) -> {
-			RenderTypeLookup.setRenderLayer(type.door.get(), RenderType.cutout());
-		});
-
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CHARREDSLIME_BLOCK.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.CONGEALED_BLOOD.get(), RenderType.translucent());
@@ -114,17 +112,10 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.BLOOD_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.SILVER_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.UNDEAD_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.LIFE_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.FERAL_LANTERN.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.LOVE_LANTERN.get(), RenderType.cutout());
+
+		for (LanternType lantern : LanternType.values()){
+			RenderTypeLookup.setRenderLayer(lantern.block.get(), RenderType.cutout());
+		}
 		RenderTypeLookup.setRenderLayer(BlockInit.BLOODY_ROSE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WEEPING_VINES.get(), RenderType.cutout());

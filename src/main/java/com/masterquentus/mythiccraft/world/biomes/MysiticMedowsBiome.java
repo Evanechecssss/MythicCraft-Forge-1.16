@@ -1,6 +1,8 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -35,8 +37,8 @@ public class MysiticMedowsBiome extends ModBiome {
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH_2);
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_FOREST);
 
-		BlockInit.WOOD_TYPES.get("silverwood").tree.addToBiome(worldGenSettings);
-		BlockInit.WOOD_TYPES.get("bloodoak").tree.addToBiome(worldGenSettings);
+		WoodType.SILVERWOOD.tree.addToBiome(worldGenSettings);
+		WoodType.BLOODOAK.tree.addToBiome(worldGenSettings);
 
 		DefaultBiomeFeatures.addGiantTaigaVegetation(worldGenSettings);
 		DefaultBiomeFeatures.addTaigaTrees(worldGenSettings);
@@ -57,6 +59,6 @@ public class MysiticMedowsBiome extends ModBiome {
 	 */
 	protected ConfiguredSurfaceBuilder<?> getSurface() {
 		return SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(Blocks.GRASS.defaultBlockState(),
-				BlockInit.STONE_TYPES.get("mysticstone").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(), Blocks.CLAY.defaultBlockState()));
+				StoneType.MYSTICSTONE.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(), Blocks.CLAY.defaultBlockState()));
 	}
 }

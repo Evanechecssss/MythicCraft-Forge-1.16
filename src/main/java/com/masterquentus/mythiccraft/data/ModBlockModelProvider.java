@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -13,11 +14,6 @@ public class ModBlockModelProvider extends BlockModelProvider {
 
     @Override
     protected void registerModels() {
-        BlockInit.WOOD_TYPES.forEach(this::createWoodModels);
-    }
-
-
-    private void createWoodModels(String name, BlockInit.WoodType wood){
 
     }
 }

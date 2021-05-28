@@ -1,6 +1,8 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
@@ -24,8 +26,8 @@ public class CrimsonFrostBiome extends ModBiome {
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH_2);
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_FOREST);
 
-		BlockInit.WOOD_TYPES.get("silverwood").tree.addToBiome(worldGenSettings);
-		BlockInit.WOOD_TYPES.get("bloodoak").tree.addToBiome(worldGenSettings);
+		WoodType.SILVERWOOD.tree.addToBiome(worldGenSettings);
+		WoodType.BLOODOAK.tree.addToBiome(worldGenSettings);
 
 		return worldGenSettings;
 	}
@@ -35,7 +37,7 @@ public class CrimsonFrostBiome extends ModBiome {
 		// whats passed into .configured does nothing here. hange the apply method below instead
 		// todo: have a blank config for clarity
 		return new CrimsonFrostBiome.CrimsonFrostBiomeSurfaceBuilder().configured(new SurfaceBuilderConfig(BlockInit.CRIMSON_ICE.get().defaultBlockState(),
-				BlockInit.CRIMSON_PACKEDICE.get().defaultBlockState(), BlockInit.STONE_TYPES.get("crimson").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState()));
+				BlockInit.CRIMSON_PACKEDICE.get().defaultBlockState(), StoneType.CRIMSON.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState()));
 	}
 
 	@Override
@@ -68,14 +70,14 @@ public class CrimsonFrostBiome extends ModBiome {
 						defaultFluid, seaLevel, seed,
 						new SurfaceBuilderConfig(BlockInit.CRIMSON_ICE.get().defaultBlockState(),
 								BlockInit.CRIMSON_PACKEDICE.get().defaultBlockState(),
-								BlockInit.STONE_TYPES.get("crimson").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState()));
+								StoneType.CRIMSON.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState()));
 			} else {
 				SurfaceBuilder.DEFAULT.apply(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock,
 						defaultFluid, seaLevel, seed,
 						new SurfaceBuilderConfig(
 								i == 1 ? BlockInit.CRIMSON_PACKEDICE.get().defaultBlockState()
-										: BlockInit.STONE_TYPES.get("crimson").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(),
-								BlockInit.STONE_TYPES.get("crimson").blocks.get(BlockInit.StoneVariation.STONE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
+										: StoneType.CRIMSON.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(),
+								StoneType.CRIMSON.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(), Blocks.GRAVEL.defaultBlockState()));
 			}
 		}
 

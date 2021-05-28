@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.init.*;
+import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.objects.blocks.*;
 import com.masterquentus.mythiccraft.world.gen.OreGen;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -67,7 +68,7 @@ public class MythicCraft {
 				.map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock))
 				.forEach(block -> {
-					final Item.Properties properties = new Item.Properties().tab(MythicCraftItems.instance);
+					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
 					final BlockItem blockItem = new BlockItem(block, properties);
 					blockItem.setRegistryName(block.getRegistryName());
 					registry.register(blockItem);
@@ -122,8 +123,7 @@ public class MythicCraft {
 
 		@Override
 		public ItemStack makeIcon() {
-			return new ItemStack(BlockInit.MYTHICDIAMOND_BLOCK.get());
-
+			return new ItemStack(OreType.MYTHICDIAMOND.block.get());
 		}
 	}
 }

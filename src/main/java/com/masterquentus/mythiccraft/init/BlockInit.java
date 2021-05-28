@@ -1,6 +1,10 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
+import com.masterquentus.mythiccraft.init.auto.LanternType;
+import com.masterquentus.mythiccraft.init.auto.OreType;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.*;
 import com.masterquentus.mythiccraft.world.feature.*;
@@ -18,200 +22,34 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.*;
-import java.util.function.Supplier;
 
 public class BlockInit {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
 
-	//twisted, distorted
-	private static String[] woodTypes = {"bloodoak", "whiteoak", "silverwood", "witchwood", "alder", "hawthorn", "rowan", "willow", "beech", "ash",
-			"blackthorn", "cedar", "elder", "juniper", "witchhazel", "yew", "infested", "charred", "icy"};
-
-	public static class WoodType{
-		public final String name;
-		public final Supplier<Block> log;
-		public final Supplier<Block> wood;
-		public final Supplier<Block> strippedLog;
-		public final Supplier<Block> strippedWood;
-		public final Supplier<Block> plank;
-		public final Supplier<Block> leaves;
-		public final Supplier<Block> door;
-		public final Supplier<Block> crate;
-		public final Supplier<Block> trapdoor;
-		public final Supplier<Block> stairs;
-		public final Supplier<Block> slab;
-		public final Supplier<Block> button;
-		public final Supplier<Block> pressureplate;
-		public final Supplier<Block> fence;
-		public final Supplier<Block> gate;
-		public final Supplier<Block> sapling;
-		public final ModTree tree;
-
-		public WoodType(String name, Supplier<Block> log, Supplier<Block> strippedLog, Supplier<Block> wood, Supplier<Block> strippedWood,
-						Supplier<Block> plank, Supplier<Block> leaves, Supplier<Block> door, Supplier<Block> crate, Supplier<Block> trapdoor,
-						Supplier<Block> stairs, Supplier<Block> slab, Supplier<Block> button, Supplier<Block> pressureplate,
-						Supplier<Block> fence, Supplier<Block> gate, Supplier<Block> sapling, ModTree tree){
-			this.name = name;
-			this.log = log;
-			this.strippedLog = strippedLog;
-			this.wood = wood;
-			this.strippedWood = strippedWood;
-			this.plank = plank;
-			this.leaves = leaves;
-			this.door = door;
-			this.crate = crate;
-			this.trapdoor = trapdoor;
-			this.stairs = stairs;
-			this.slab = slab;
-			this.button = button;
-			this.pressureplate = pressureplate;
-			this.fence = fence;
-			this.gate = gate;
-			this.sapling = sapling;
-			this.tree = tree;
-		}
-	}
-
-	private static String[] stoneTypes = {"icystone", "mysticstone", "pearlstone", "charred", "infested", "crimson", "marble"};
-
-	public enum StoneVariation {
-		STONE,COBBLE,BRICKS,POLISHED,CHISELED, CRACKED;
-
-		public String toString(){
-			switch(this) {
-				case STONE:
-					return "";
-				case COBBLE:
-					return "cobble";
-				case BRICKS:
-					return "bricks";
-				case POLISHED:
-					return "polished";
-				case CHISELED:
-					return "chisealed";
-				case CRACKED:
-					return "cracked";
-			}
-
-			return "ERROR_INVALID_STONE_TYPE";
-		}
-	}
-
-	public static class StoneType{
-		public final String name;
-		public HashMap<StoneVariation, Supplier<Block>> blocks = new HashMap<>();
-		public HashMap<StoneVariation, Supplier<Block>> stairs = new HashMap<>();
-		public HashMap<StoneVariation, Supplier<Block>> slabs = new HashMap<>();
-		public HashMap<StoneVariation, Supplier<Block>> buttons = new HashMap<>();
-		public HashMap<StoneVariation, Supplier<Block>> walls = new HashMap<>();
-
-		public StoneType(String name){
-			this.name = name;
-		}
-	}
-
-
-	// TODO: constructor should include ore gen info like rarity, vein size, height
-	// you'll have to set the right maxHeight, minHeight, veinSize, veinsPerChunk for everything. idk what you want
-	public enum OreType{
-		VAMPIRIC(3, 15, 1, 50, 10, 4, 10),
-		MYTHICDIAMOND(3, 15, 1, 50, 10, 4, 10),
-		SILVER(3, 15, 2, 50, 10, 4, 10),
-		DRAGONHEART(0.5F, 15, 2, 50, 10, 4, 10),
-		BLOODSTONE(3, 15, 2, 50, 10, 4, 10),
-		MOONSTONE(0.5F, 15, 2, 50, 10, 4, 10),
-		ROSEQUARTZ(0.5F, 15, 2, 50, 10, 4, 10),
-		RUBY(3, 15, 2, 50, 10, 4, 10),
-		SAPPHIRE(3, 15, 2, 50, 10, 4, 10),
-		AMETHYST(3, 15, 2, 50, 10, 4, 10),
-		SALT(3, 15, 2, 50, 10, 4, 10),
-		MAGICAL(3, 15, 2, 50, 10, 4, 10),
-		CRYSTAL(3, 15, 2, 50, 10, 4, 10),
-		FROSTSTEEL(3, 15, 2, 50, 10, 4, 10);
-
-		public final float mineTime;
-		public final int blastResist;
-		public final int harvestLevel;
-		public final int maxHeight;
-		public final int minHeight;
-		public final int veinSize;
-		public final int veinsPerChunk;
-		public Supplier<Block> overworld;
-		public Supplier<Block> nether;
-		public Supplier<Block> end;
-		OreType(float mineTime, int blastResist, int harvestLevel, int maxHeight, int minHeight, int veinSize, int veinsPerChunk){
-			this.mineTime = mineTime;
-			this.blastResist = blastResist;
-			this.harvestLevel = harvestLevel;
-			this.maxHeight = maxHeight;
-			this.minHeight = minHeight;
-			this.veinSize = veinSize;
-			this.veinsPerChunk = veinsPerChunk;
-		}
-	}
-
-	public static Map<String, WoodType> WOOD_TYPES = new HashMap<>();
-	public static Map<String, StoneType> STONE_TYPES = new HashMap<>();
 	static {
-		for (String name : woodTypes){
-			ModTree tree = new ModTree(name);
-			WOOD_TYPES.put(name, new WoodType(name,
-					BLOCKS.register(name + "_log", () -> new ModLogBlock(MaterialColor.COLOR_RED, false)),
-					BLOCKS.register(name + "_stripped_log", () -> new ModLogBlock(MaterialColor.COLOR_RED, true)),
-					BLOCKS.register(name + "_wood", () -> new ModLogBlock(MaterialColor.COLOR_RED, false)),
-					BLOCKS.register(name + "_stripped_wood", () -> new ModLogBlock(MaterialColor.COLOR_RED, true)),
-					BLOCKS.register(name + "_planks", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS))),
-					BLOCKS.register(name + "_leaves", () -> new LeavesBlock(Block.Properties.copy(Blocks.OAK_LEAVES))),
-					BLOCKS.register(name + "_door", () -> new ModDoor(Block.Properties.copy(Blocks.OAK_LEAVES))),
-					BLOCKS.register(name + "_crate", () -> new CrateBlock(Block.Properties.copy(Blocks.BARREL))),
-					BLOCKS.register(name + "_trapdoor", () -> new ModTrapDoor(Block.Properties.copy(Blocks.OAK_TRAPDOOR))),
-					BLOCKS.register(name + "_stairs", () -> new StairsBlock(() -> BlockInit.WOOD_TYPES.get(name).plank.get().defaultBlockState(), Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
-					BLOCKS.register(name + "_slab", () -> new SlabBlock(Block.Properties.copy(BlockInit.WOOD_TYPES.get(name).plank.get()))),
-					BLOCKS.register(name + "_button", () -> new ModWoodButtonBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
-					BLOCKS.register(name + "_pressureplate", () -> new ModWoodPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
-					BLOCKS.register(name + "_fence", () -> new FenceBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED))),
-					BLOCKS.register(name + "_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE))),
-					BLOCKS.register(name + "_sapling", () -> new SaplingBlock(tree, Block.Properties.copy(Blocks.OAK_SAPLING))),
-					tree
-			));
+		for (WoodType woodType : WoodType.values()){
+			woodType.register(BLOCKS);
 		}
 
-		for (String name : stoneTypes){
-			StoneType stoneType = new StoneType(name);
-			for (StoneVariation variation : StoneVariation.values()){
-				String typeString = variation.toString();
-					if (variation == StoneVariation.STONE && (name == "crimson" || name == "charred" || name == "infested")){
-					typeString = "stone";
-				}
-				AbstractBlock.Properties props = Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1);
-				stoneType.blocks.put(variation, BLOCKS.register(name + (typeString.equals("") ? "" : "_" + typeString), () -> new Block(props)));
-				stoneType.stairs.put(variation, BLOCKS.register(name + typeString + "_stairs", () -> new StairsBlock(() -> BlockInit.STONE_TYPES.get(name).stairs.get(variation).get().defaultBlockState(), props)));
-				stoneType.slabs.put(variation, BLOCKS.register(name + typeString + "_slab", () -> new SlabBlock(props)));
-				stoneType.buttons.put(variation, BLOCKS.register(name + typeString + "_button", () -> new ModStoneButtonBlock(props)));
-				stoneType.walls.put(variation, BLOCKS.register(name + typeString + "_wall", () -> new WallBlock(props)));
-			}
-
-			STONE_TYPES.put(name, stoneType);
+		for (StoneType stoneType : StoneType.values()){
+			stoneType.register(BLOCKS);
 		}
 
-		for (OreType ore : OreType.values()){
-			Block.Properties props = Block.Properties.of(Material.STONE).strength(ore.mineTime, ore.blastResist).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(ore.harvestLevel);
-			ore.overworld = BLOCKS.register(ore.name().toLowerCase() + "_ore", () -> new Block(props));
-			ore.nether = BLOCKS.register(ore.name().toLowerCase() + "_netherore", () -> new Block(props));
-			ore.nether = BLOCKS.register(ore.name().toLowerCase() + "_endore", () -> new Block(props));
+		for (OreType oreType : OreType.values()){
+			oreType.register(BLOCKS);
+		}
+
+		for (LanternType lantern : LanternType.values()){
+			lantern.block = BLOCKS.register(lantern.name().toLowerCase() + "_lantern", () -> new ModLanternBlock(lantern));
 		}
 	}
 
 	public static Block[] getAllCrates(){
-		List<WoodType> types = new ArrayList<>();
-		WOOD_TYPES.forEach((string, type) -> {
-			types.add(type);
-		});
-		Block[] crates = new Block[BlockInit.WOOD_TYPES.size()];
-		for (int i=0;i<BlockInit.WOOD_TYPES.size();i++) {
-			crates[i] = types.get(i).crate.get();
+		Block[] crates = new Block[WoodType.values().length];
+		for (int i=0;i<WoodType.values().length;i++) {
+			crates[i] = WoodType.values()[i].crate.get();
 		}
 
 		return crates;
@@ -236,45 +74,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
 			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.GRAVEL)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
-	public static final RegistryObject<Block> VAMPIRIC_BLOCK = BLOCKS.register("vampiric_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> SILVER_BLOCK = BLOCKS.register("silver_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> MYTHICDIAMOND_BLOCK = BLOCKS.register("mythicdiamond_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> DRAGONHEART_BLOCK = BLOCKS.register("dragonheart_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> BLOODSTONE_BLOCK = BLOCKS.register("bloodstone_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> MOONSTONE_BLOCK = BLOCKS.register("moonstone_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
 			() -> new Block(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f)
 					.sound(SoundType.SLIME_BLOCK).harvestLevel(1)));
-	public static final RegistryObject<Block> SAPPHIRE_BLOCK = BLOCKS.register("sapphire_block",
-			() -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> RUBY_BLOCK = BLOCKS.register("ruby_block",
-			() -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> AMETHYST_BLOCK = BLOCKS.register("amethyst_block",
-			() -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> SALT_BLOCK = BLOCKS.register("salt_block",
-			() -> new Block(Block.Properties.copy(Blocks.RED_SAND).strength(5.0f, 30.0f)
-					.sound(SoundType.SAND).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> FROSTSTEEL_BLOCK = BLOCKS.register("froststeel_block",
-			() -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.GLASS).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> ROSEQUARTZ_BLOCK = BLOCKS.register("rosequartz_block",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_CHISELED = BLOCKS.register("rosequartz_chiseled",
 			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
 					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
@@ -329,42 +132,6 @@ public class BlockInit {
 					.sound(SoundType.GLASS).noOcclusion()));
 
 	// Lanterns/Glowstone/Torches
-	public static final RegistryObject<Block> BLOOD_LANTERN = BLOCKS.register("blood_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> SILVER_LANTERN = BLOCKS.register("silver_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> SOUL_LANTERN = BLOCKS.register("soul_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> UNDEAD_LANTERN = BLOCKS.register("undead_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> MYSTIC_LANTERN = BLOCKS.register("mystic_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> ENDER_LANTERN = BLOCKS.register("ender_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> FAIRY_LANTERN = BLOCKS.register("fairy_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> PIXIE_LANTERN = BLOCKS.register("pixie_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> LIFE_LANTERN = BLOCKS.register("life_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> FERAL_LANTERN = BLOCKS.register("feral_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> LOVE_LANTERN = BLOCKS.register("love_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> KRAKEN_LANTERN = BLOCKS.register("kraken_lantern",
-			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
-					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
 	public static final RegistryObject<Block> PURE_GLOWSTONE = BLOCKS.register("pure_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) ->15)));
