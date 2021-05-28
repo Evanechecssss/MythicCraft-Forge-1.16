@@ -437,13 +437,17 @@ public class BlockInit {
 	public static final RegistryObject<Block> LOVE_LANTERN = BLOCKS.register("love_lantern",
 			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
 					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
+	public static final RegistryObject<Block> KRAKEN_LANTERN = BLOCKS.register("kraken_lantern",
+			() -> new LanternBlock(Block.Properties.copy(Blocks.LANTERN).strength(0.3f, 0.2f)
+					.sound(SoundType.LANTERN).lightLevel((state) ->15)));
 	public static final RegistryObject<Block> PURE_GLOWSTONE = BLOCKS.register("pure_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) ->15)));
 	public static final RegistryObject<Block> DARK_GLOWSTONE = BLOCKS.register("dark_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register("blood_torch",
+	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register(
+			"blood_torch",
 			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
 					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
 	public static final RegistryObject<Block> SILVER_TORCH = BLOCKS.register("silver_torch",

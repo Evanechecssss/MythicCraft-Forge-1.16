@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "mythiccraft:block/kraken_lantern"
+    },
+    "hanging=true": {
+      "model": "mythiccraft:block/kraken_lantern_hanging"
+    }
+  }
+}
