@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.world.gen;
 
-import com.masterquentus.mythiccraft.init.auto.OreType;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.GenerationStage;

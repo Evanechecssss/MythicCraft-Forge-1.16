@@ -1,8 +1,6 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.auto.StoneType;
-import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;

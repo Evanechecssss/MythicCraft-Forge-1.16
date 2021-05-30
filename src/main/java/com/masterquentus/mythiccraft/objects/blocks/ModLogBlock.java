@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
