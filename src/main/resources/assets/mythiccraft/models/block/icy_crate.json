@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:block/icy_crate",
+        "side": "mythiccraft:block/icy_crate_bottom"
+    }
+}
