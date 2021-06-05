@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.init.*;
+import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.objects.blocks.*;
 import com.masterquentus.mythiccraft.world.gen.OreGen;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;

@@ -12,6 +12,9 @@ import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 
+import com.masterquentus.mythiccraft.init.auto.LanternType;
+import com.masterquentus.mythiccraft.init.auto.WoodType;
+
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;

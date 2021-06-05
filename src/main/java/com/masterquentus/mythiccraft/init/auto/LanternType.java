@@ -1,8 +1,12 @@
 package com.masterquentus.mythiccraft.init.auto;
 
+import com.masterquentus.mythiccraft.entities.FairyEntity;
 import net.minecraft.block.Block;
+import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.monster.EndermanEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -16,28 +20,44 @@ import java.util.function.Supplier;
 
 public enum LanternType {
     BLOOD("attracts vampires", (pos, world) -> {
-
+        // vampires dont exist...
     }),
     UNDEAD("attracts undead", (pos, world) -> {
-
+        if (world.getGameTime() % 20 != 0) return;
+        Predicate<Entity> check = (e) -> e instanceof MobEntity && ((MobEntity)e).getMobType() == CreatureAttribute.UNDEAD;
+        for (Entity target : getEntities(7, pos, world, check)){
+            ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+        }
     }),
     SILVER("attracts werewolves", (pos, world) -> {
-
+        // werewolves dont exist...
     }),
     SOUL("ensnares mobs", (pos, world) -> {
-
+        if (world.getGameTime() % 20 != 0) return;
+        Predicate<Entity> check = (e) -> e instanceof MobEntity;
+        for (Entity target : getEntities(7, pos, world, check)){
+            ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+        }
     }),
     ENDER("attracts endermen", (pos, world) -> {
-
+        if (world.getGameTime() % 20 != 0) return;
+        Predicate<Entity> check = (e) -> e instanceof EndermanEntity;
+        for (Entity target : getEntities(7, pos, world, check)){
+            ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+        }
     }),
     MYSTIC("attracts magical creatures", (pos, world) -> {
-
+        // idk which are magical
     }),
     FAIRY("attracts fairies", (pos, world) -> {
-
+        if (world.getGameTime() % 20 != 0) return;
+        Predicate<Entity> check = (e) -> e instanceof FairyEntity;
+        for (Entity target : getEntities(7, pos, world, check)){
+            ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+        }
     }),
     PIXIE("attracts pixies", (pos, world) -> {
-
+        // pixies dont exist
     }),
     LIFE("heals players", (pos, world) -> {
         if (world.getGameTime() % 100 != 0) return;
@@ -61,7 +81,7 @@ public enum LanternType {
         }
     }),
     KRAKEN("attracts krakens", (pos, world) -> {
-
+        // krakens dont exist
     });
 
     public final String description;

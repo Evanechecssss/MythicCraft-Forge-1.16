@@ -17,6 +17,8 @@ import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
+import com.masterquentus.mythiccraft.init.auto.WoodType;
+
 import java.util.Random;
 
 public class CrimsonFrostBiome extends ModBiome {

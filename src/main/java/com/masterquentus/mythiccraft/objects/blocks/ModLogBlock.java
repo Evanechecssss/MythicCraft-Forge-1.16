@@ -12,6 +12,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
+import com.masterquentus.mythiccraft.init.auto.WoodType;
+
 
 public class ModLogBlock extends RotatedPillarBlock {
     private final boolean isStripped;

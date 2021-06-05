@@ -1,6 +1,11 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
+import com.masterquentus.mythiccraft.init.auto.LanternType;
+import com.masterquentus.mythiccraft.init.auto.OreType;
+
+import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.*;
 import com.masterquentus.mythiccraft.world.feature.*;

@@ -2,6 +2,10 @@ package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.auto.OreType;
+import com.masterquentus.mythiccraft.init.auto.StoneType;
+
+import com.masterquentus.mythiccraft.init.auto.WoodType;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
