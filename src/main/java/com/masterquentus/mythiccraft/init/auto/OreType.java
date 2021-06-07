@@ -1,8 +1,10 @@
 package com.masterquentus.mythiccraft.init.auto;
 
+import com.masterquentus.mythiccraft.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.registries.DeferredRegister;
 
@@ -11,20 +13,20 @@ import java.util.function.Supplier;
 // you'll have to set the right maxHeight, minHeight, veinSize, veinsPerChunk for everything. idk what you want
 // if you want nether and overworld ores to have different heights / rarities, you'll have to add more parameters to the enum
 public enum OreType {
-    VAMPIRIC(3, 15, 1, 50, 10, 4, 10),
-    MYTHICDIAMOND(3, 15, 1, 50, 10, 4, 10),
-    SILVER(3, 15, 2, 50, 10, 4, 10),
-    DRAGONHEART(0.5F, 15, 2, 50, 10, 4, 10),
-    BLOODSTONE(3, 15, 2, 50, 10, 4, 10),
-    MOONSTONE(0.5F, 15, 2, 50, 10, 4, 10),
-    ROSEQUARTZ(0.5F, 15, 2, 50, 10, 4, 10),
-    RUBY(3, 15, 2, 50, 10, 4, 10),
-    SAPPHIRE(3, 15, 2, 50, 10, 4, 10),
-    AMETHYST(3, 15, 2, 50, 10, 4, 10),
-    SALT(3, 15, 2, 50, 10, 4, 10),
-    MAGICAL(3, 15, 2, 50, 10, 4, 10),
-    CRYSTAL(3, 15, 2, 50, 10, 4, 10),
-    FROSTSTEEL(3, 15, 2, 50, 10, 4, 10);
+    VAMPIRIC(ItemInit.VAMPIRIC_GEM, 3, 15, 1, 50, 10, 4, 10),
+    MYTHICDIAMOND(ItemInit.MYTHIC_DIAMOND, 3, 15, 1, 50, 10, 4, 10),
+    SILVER(null, 3, 15, 2, 50, 10, 4, 10),
+    DRAGONHEART(null, 0.5F, 15, 2, 50, 10, 4, 10),
+    BLOODSTONE(null, 3, 15, 2, 50, 10, 4, 10),
+    MOONSTONE(null, 0.5F, 15, 2, 50, 10, 4, 10),
+    ROSEQUARTZ(ItemInit.ROSE_QUARTZ, 0.5F, 15, 2, 50, 10, 4, 10),
+    RUBY(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
+    SAPPHIRE(ItemInit.SAPPHIRE, 3, 15, 2, 50, 10, 4, 10),
+    AMETHYST(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
+    SALT(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
+    MAGICAL(null, 3, 15, 2, 50, 10, 4, 10),
+    CRYSTAL(null, 3, 15, 2, 50, 10, 4, 10),
+    FROSTSTEEL(null, 3, 15, 2, 50, 10, 4, 10);
 
     public final float mineTime;
     public final int blastResist;
@@ -37,7 +39,8 @@ public enum OreType {
     public Supplier<Block> overworld;
     public Supplier<Block> nether;
     public Supplier<Block> end;
-    OreType(float mineTime, int blastResist, int harvestLevel, int maxHeight, int minHeight, int veinSize, int veinsPerChunk){
+    public Supplier<Item> fortunableDrop;
+    OreType(Supplier<Item> drop, float mineTime, int blastResist, int harvestLevel, int maxHeight, int minHeight, int veinSize, int veinsPerChunk){
         this.mineTime = mineTime;
         this.blastResist = blastResist;
         this.harvestLevel = harvestLevel;
@@ -45,6 +48,7 @@ public enum OreType {
         this.minHeight = minHeight;
         this.veinSize = veinSize;
         this.veinsPerChunk = veinsPerChunk;
+        this.fortunableDrop = drop;
     }
 
     public void register(DeferredRegister<Block> blockRegistry) {

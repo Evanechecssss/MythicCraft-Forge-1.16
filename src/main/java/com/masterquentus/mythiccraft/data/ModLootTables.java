@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.data.loot.BlockLootTables;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootParameterSets;
 import net.minecraft.loot.LootTable;
 import net.minecraft.util.ResourceLocation;
@@ -57,9 +58,24 @@ public class ModLootTables extends BlockLootTables {
 
         for (OreType ore : OreType.values()){
             this.dropSelf(ore.block.get());
-            this.dropSelf(ore.overworld.get());
-            this.dropSelf(ore.nether.get());
-            this.dropSelf(ore.end.get());
+
+            if (ore.fortunableDrop == null) {
+                this.dropSelf(ore.overworld.get());
+                this.dropSelf(ore.nether.get());
+                this.dropSelf(ore.end.get());
+            } else {
+                this.add(ore.overworld.get(), (p_241170_0_) -> {
+                    return createOreDrop(p_241170_0_, ore.fortunableDrop.get());
+                });
+                this.add(ore.nether.get(), (p_241170_0_) -> {
+                    return createOreDrop(p_241170_0_, ore.fortunableDrop.get());
+                });
+                this.add(ore.end.get(), (p_241170_0_) -> {
+                    return createOreDrop(p_241170_0_, ore.fortunableDrop.get());
+                });
+            }
+
+
         }
 
         for (LanternType lantern : LanternType.values()){
@@ -69,16 +85,16 @@ public class ModLootTables extends BlockLootTables {
 
     // temp. so validation doesnt break todo: loot tables for all blocks
     Set<Block> known = new HashSet<>();
+
     @Override
-    public void dropSelf(Block block) {
-        super.dropSelf(block);
+    protected void add(Block block, LootTable.Builder loot) {
+        super.add(block, loot);
         known.add(block);
     }
 
-
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.getRegistryName().getNamespace().equals(MythicCraft.MOD_ID) && (block instanceof CrateBlock || block instanceof LeavesBlock || known.contains(block))).collect(Collectors.toList());
+        return ForgeRegistries.BLOCKS.getValues().stream().filter(block -> block.getRegistryName().getNamespace().equals(MythicCraft.MOD_ID) && known.contains(block)).collect(Collectors.toList());
     }
 
 }
