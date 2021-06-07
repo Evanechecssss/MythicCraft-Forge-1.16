@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.world.feature;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.biome.BiomeGenerationSettings;
 import net.minecraft.world.gen.GenerationStage;
@@ -16,10 +15,10 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class ModTree extends Tree {
-    protected final WoodType woodType;
+    protected final WoodTypes woodType;
     protected static final TwoLayerFeature SIZE_TYPE = new TwoLayerFeature(1, 0, 1);
 
-    public ModTree(WoodType woodType){
+    public ModTree(WoodTypes woodType){
         this.woodType = woodType;
     }
 

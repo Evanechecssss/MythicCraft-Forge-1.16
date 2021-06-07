@@ -1,11 +1,10 @@
 package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import net.minecraft.block.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        for (WoodType woodType : WoodType.values()){
+        for (WoodTypes woodType : WoodTypes.values()){
             this.createWoodStates(woodType.name().toLowerCase(), woodType);
         }
 
@@ -55,18 +54,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
 
-    private void createWoodStates(String name, WoodType wood){
+    private void createWoodStates(String name, WoodTypes wood){
         simpleBlock(wood.plank.get());
         simpleBlock(wood.leaves.get());
+        simpleBlock(wood.wood.get());
+        simpleBlock(wood.strippedWood.get());
 
         fenceBlock((FenceBlock) wood.fence.get(), blockTexture(wood.plank.get()));
         fenceGateBlock((FenceGateBlock) wood.gate.get(), blockTexture(wood.plank.get()));
         slabBlock((SlabBlock) wood.slab.get(), blockTexture(wood.plank.get()), blockTexture(wood.plank.get()));
         stairsBlock((StairsBlock) wood.stairs.get(), blockTexture(wood.plank.get()));
+        trapdoorBlock((TrapDoorBlock) wood.trapdoor.get(), blockTexture(wood.plank.get()), true);
 
         // log
         axisBlock((RotatedPillarBlock) wood.log.get(), extend("block/" + name, "_log"), extend("block/" + name, "_log_top"));
         axisBlock((RotatedPillarBlock) wood.strippedLog.get(), extend("block/" + name, "_stripped_log"), extend("block/" + name, "_stripped_log_top"));
+
     }
 
     private ResourceLocation extend(String prefix, String suffix) {

@@ -4,14 +4,12 @@ import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.OreType;
 
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.*;
-import com.masterquentus.mythiccraft.world.feature.*;
 
 import net.minecraft.block.*;
-import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
@@ -22,15 +20,13 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import java.util.*;
-
 public class BlockInit {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
 
 	static {
-		for (WoodType woodType : WoodType.values()){
+		for (WoodTypes woodType : WoodTypes.values()){
 			woodType.register(BLOCKS);
 		}
 
@@ -48,9 +44,9 @@ public class BlockInit {
 	}
 
 	public static Block[] getAllCrates(){
-		Block[] crates = new Block[WoodType.values().length];
-		for (int i=0;i<WoodType.values().length;i++) {
-			crates[i] = WoodType.values()[i].crate.get();
+		Block[] crates = new Block[WoodTypes.values().length];
+		for (int i = 0; i< WoodTypes.values().length; i++) {
+			crates[i] = WoodTypes.values()[i].crate.get();
 		}
 
 		return crates;

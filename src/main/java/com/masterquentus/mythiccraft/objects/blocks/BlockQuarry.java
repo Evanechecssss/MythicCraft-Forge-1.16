@@ -117,11 +117,6 @@ public class BlockQuarry extends Block {
 		builder.add(FACING);
 	}
 
-	@SuppressWarnings("unused")
-	private LightningBoltEntity LightningBoltEntity(World worldIn, int x, int y, int z, boolean b) {
-		return null;
-	}
-
 	@Override
 	public boolean hasTileEntity(BlockState state) {
 		return true;

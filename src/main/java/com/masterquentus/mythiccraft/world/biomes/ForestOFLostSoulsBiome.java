@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.world.biomes;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -26,8 +25,8 @@ public class ForestOFLostSoulsBiome extends ModBiome {
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_DEAD_BUSH_2);
 		worldGenSettings.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Features.PATCH_GRASS_FOREST);
 
-		WoodType.WITCHWOOD.tree.addToBiome(worldGenSettings);
-		WoodType.WILLOW.tree.addToBiome(worldGenSettings);
+		WoodTypes.WITCHWOOD.tree.addToBiome(worldGenSettings);
+		WoodTypes.WILLOW.tree.addToBiome(worldGenSettings);
 
 		return worldGenSettings;
 	}

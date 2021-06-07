@@ -13,7 +13,7 @@ import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 
 import com.masterquentus.mythiccraft.init.auto.LanternType;
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
@@ -53,7 +53,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
 
 		// Sapling & Door
-		for (WoodType wood : WoodType.values()){
+		for (WoodTypes wood : WoodTypes.values()){
 			RenderTypeLookup.setRenderLayer(wood.sapling.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
 		}

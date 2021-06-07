@@ -11,7 +11,7 @@ import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 
 import java.util.Random;
 
@@ -19,7 +19,7 @@ public class CharredForestBiome extends DragonBiome {
 	@Override
 	protected BiomeGenerationSettings.Builder getGenSettings() {
 		BiomeGenerationSettings.Builder worldGenSettings = super.getGenSettings();
-		WoodType.CHARRED.tree.addToBiome(worldGenSettings);
+		WoodTypes.CHARRED.tree.addToBiome(worldGenSettings);
 		return worldGenSettings;
 	}
 

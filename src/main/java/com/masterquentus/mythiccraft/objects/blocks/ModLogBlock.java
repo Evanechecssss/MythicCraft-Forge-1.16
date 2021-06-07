@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -12,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.World;
 
-import com.masterquentus.mythiccraft.init.auto.WoodType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 
 
 public class ModLogBlock extends RotatedPillarBlock {
@@ -43,7 +42,7 @@ public class ModLogBlock extends RotatedPillarBlock {
     }
 
     protected Block getStripped(){
-        for (WoodType type : WoodType.values()){
+        for (WoodTypes type : WoodTypes.values()){
             if (this == type.log.get()) return type.strippedLog.get();
             if (this == type.wood.get()) return type.strippedWood.get();
         }
