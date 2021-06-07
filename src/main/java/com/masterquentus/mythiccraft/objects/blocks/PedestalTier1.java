@@ -3,24 +3,44 @@ package com.masterquentus.mythiccraft.objects.blocks;
 import java.util.stream.Stream;
 
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
+import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 
 public class PedestalTier1 extends Block {
+
+
+	@Override
+	public ActionResultType use(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult ray) {
+		if (!world.isClientSide() && hand == Hand.MAIN_HAND){
+			ItemStack stack = player.getItemInHand(hand);
+			PedestalTileEntity tile = (PedestalTileEntity) world.getBlockEntity(pos);
+			player.setItemInHand(hand, tile.getItem());
+			tile.setItem(stack);
+		}
+
+		return ActionResultType.SUCCESS;
+	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 

@@ -8,10 +8,12 @@ import com.masterquentus.mythiccraft.client.entity.render.LilithEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
 import com.masterquentus.mythiccraft.client.gui.*;
+import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 
+import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 
@@ -20,6 +22,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
@@ -51,6 +54,8 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
+
+		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
 		// Sapling & Door
 		for (WoodTypes wood : WoodTypes.values()){
