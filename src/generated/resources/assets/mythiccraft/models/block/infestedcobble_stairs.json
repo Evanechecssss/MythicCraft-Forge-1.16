@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "mythiccraft:block/infested_cobble",
+    "bottom": "mythiccraft:block/infested_cobble",
+    "top": "mythiccraft:block/infested_cobble"
+  }
+}

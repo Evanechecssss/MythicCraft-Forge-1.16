@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "mythiccraft:block/crimson_cracked",
+    "bottom": "mythiccraft:block/crimson_cracked",
+    "top": "mythiccraft:block/crimson_cracked"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "mythiccraft:block/infested_cracked",
+    "bottom": "mythiccraft:block/infested_cracked",
+    "top": "mythiccraft:block/infested_cracked"
+  }
+}

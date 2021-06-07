@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.container;
 
+import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -76,6 +77,7 @@ public class CrateContainer extends Container {
 		Slot slot = this.slots.get(index);
 		if(slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
+			MythicCraft.LOGGER.debug(itemstack1);
 			itemstack = itemstack1.copy();
 			if(index < 36) {
 				if(this.moveItemStackTo(itemstack, 36, this.slots.size(), true)) {
@@ -87,9 +89,8 @@ public class CrateContainer extends Container {
 			
 			if(itemstack1.isEmpty()) {
 				slot.set(ItemStack.EMPTY);
-			} else {
-				slot.setChanged();
 			}
+			slot.setChanged();
 		}
 		
 		return itemstack;

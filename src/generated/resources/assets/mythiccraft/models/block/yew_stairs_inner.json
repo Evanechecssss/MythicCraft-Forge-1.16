@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "side": "mythiccraft:block/yew_planks",
+    "bottom": "mythiccraft:block/yew_planks",
+    "top": "mythiccraft:block/yew_planks"
+  }
+}

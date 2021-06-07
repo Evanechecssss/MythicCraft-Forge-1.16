@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "side": "mythiccraft:block/charred_cracked",
+    "bottom": "mythiccraft:block/charred_cracked",
+    "top": "mythiccraft:block/charred_cracked"
+  }
+}

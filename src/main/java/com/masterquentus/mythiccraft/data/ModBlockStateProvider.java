@@ -38,10 +38,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         }
 
         for (OreType ore : OreType.values()){
-            simpleBlock(ore.block.get());
+            // some dont have textures
+            // simpleBlock(ore.block.get());
             simpleBlock(ore.overworld.get());
-            simpleBlock(ore.nether.get());
-            simpleBlock(ore.end.get());
+            // simpleBlock(ore.nether.get());
+            // simpleBlock(ore.end.get());
+            
+            // end + nether: frost steel
         }
     }
 
@@ -57,8 +60,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void createWoodStates(String name, WoodTypes wood){
         simpleBlock(wood.plank.get());
         simpleBlock(wood.leaves.get());
-        simpleBlock(wood.wood.get());
-        simpleBlock(wood.strippedWood.get());
+        // dont have textures yet
+        // simpleBlock(wood.wood.get());
+        // simpleBlock(wood.strippedWood.get());
+
+        // white oak, witch wood
+        // simpleBlock(wood.crate.get());
 
         fenceBlock((FenceBlock) wood.fence.get(), blockTexture(wood.plank.get()));
         fenceGateBlock((FenceGateBlock) wood.gate.get(), blockTexture(wood.plank.get()));

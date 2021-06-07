@@ -14,10 +14,16 @@ public class DataGenSetup {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
-        gen.addProvider(new ModBlockModelProvider(gen, existingFileHelper));
-        gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
+        if (event.includeClient()){
+            MythicCraft.LOGGER.debug("!!! gather data client !!!");
+            gen.addProvider(new ModBlockModelProvider(gen, existingFileHelper));
+            gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
+        }
 
-        MythicCraft.LOGGER.debug("!!! gather data !!!");
+        if (event.includeServer()){
+            MythicCraft.LOGGER.debug("!!! gather data server !!!");
+            gen.addProvider(new ModLootProvider(gen));
+        }
 
         // gen.addProvider(new DimensionSetup(gen));
     }

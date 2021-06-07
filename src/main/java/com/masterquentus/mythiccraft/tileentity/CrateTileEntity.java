@@ -179,4 +179,16 @@ public class CrateTileEntity extends LockableLootTileEntity {
 			itemHandler.invalidate();
 		}
 	}
+
+	public CompoundNBT saveToTag(CompoundNBT p_190580_1_) {
+		if (!this.trySaveLootTable(p_190580_1_)) {
+			NonNullList<ItemStack> heldItems = NonNullList.withSize(this.items.getSlots(), ItemStack.EMPTY);
+			for (int i=0;i<this.items.getSlots();i++){
+				heldItems.add(i, this.items.getStackInSlot(i));
+			}
+			ItemStackHelper.saveAllItems(p_190580_1_, heldItems, false);
+		}
+
+		return p_190580_1_;
+	}
 }
