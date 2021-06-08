@@ -1,12 +1,7 @@
 package com.masterquentus.mythiccraft.util;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.client.entity.render.BasiliskEntityRender;
-import com.masterquentus.mythiccraft.client.entity.render.FairyEntityRender;
-import com.masterquentus.mythiccraft.client.entity.render.GoblinEntityRender;
-import com.masterquentus.mythiccraft.client.entity.render.LilithEntityRender;
-import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
-import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.*;
 import com.masterquentus.mythiccraft.client.gui.*;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
@@ -137,6 +132,7 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.SIREN_ENTITY.get(), SirenEntityRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FAIRY_ENTITY.get(), FairyEntityRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LILITH_ENTITY.get(), LilithEntityRender::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(), MobSummonProjectileRenderer::new);
 
 	}
 }

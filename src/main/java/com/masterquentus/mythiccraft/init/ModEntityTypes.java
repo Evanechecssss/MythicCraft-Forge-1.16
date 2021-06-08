@@ -1,12 +1,7 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.entities.BasiliskEntity;
-import com.masterquentus.mythiccraft.entities.FairyEntity;
-import com.masterquentus.mythiccraft.entities.GoblinEntity;
-import com.masterquentus.mythiccraft.entities.LilithEntity;
-import com.masterquentus.mythiccraft.entities.SirenEntity;
-import com.masterquentus.mythiccraft.entities.UnicornEntity;
+import com.masterquentus.mythiccraft.entities.*;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
@@ -41,4 +36,9 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<LilithEntity>> LILITH_ENTITY = ENTITY_TYPES.register("lilith_entity",
 			() -> EntityType.Builder.<LilithEntity>of(LilithEntity::new, EntityClassification.CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "lilith_entity").toString()));
+
+	public static final RegistryObject<EntityType<MobSummonProjectile>> MOB_SUMMON = ENTITY_TYPES.register("mob_summon",
+			() -> EntityType.Builder.<MobSummonProjectile>of(MobSummonProjectile::new, EntityClassification.MISC)
+					.sized(0.5F, 0.5F).build(new ResourceLocation(MythicCraft.MOD_ID, "mob_summon").toString()));
+
 }

@@ -28,6 +28,9 @@ public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
 			MythicCraft.MOD_ID);
 
+	public static final RegistryObject<Item> TEST_ITEM = ITEMS.register("testitem",
+			() -> new ProjectileTest(new Item.Properties().tab(MythicCraftItems.instance)));
+
 	// Items
 	public static final RegistryObject<Item> VAMPIRIC_GEM = ITEMS.register("vampiric_gem",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
