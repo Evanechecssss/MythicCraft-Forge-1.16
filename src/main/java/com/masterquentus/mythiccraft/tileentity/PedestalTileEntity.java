@@ -3,14 +3,12 @@ package com.masterquentus.mythiccraft.tileentity;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.util.Constants;
 
 public class PedestalTileEntity extends TileEntity {

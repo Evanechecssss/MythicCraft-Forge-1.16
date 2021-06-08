@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.init.auto;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.objects.blocks.ModStoneButtonBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
