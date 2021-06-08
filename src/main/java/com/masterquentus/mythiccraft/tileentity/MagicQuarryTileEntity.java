@@ -40,9 +40,10 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 
 	@Override
 	public void tick() {
-		if (!initialized) init();
+		if (!initialized)
+			init();
 
-		if (!active){
+		if (!active) {
 			int power = this.calcPowerLevel();
 			active = power > 0;
 			delay = 100 * (1 - (power / 20));
@@ -55,7 +56,7 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 				delay = 100 * (1 - (power / 20));
 
 				tick = 0;
-				if (active && y > 2){
+				if (active && y > 2) {
 					execute();
 				}
 			}
@@ -94,16 +95,16 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 			level.levelEvent(2001, pos, Block.getId(blockstate));
 			if (dropBlock) {
 				TileEntity tileentity = blockstate.hasTileEntity() ? level.getBlockEntity(pos) : null;
-				Block.dropResources(blockstate, level, this.worldPosition.offset(0, 1.5, 0), tileentity, entity, ItemStack.EMPTY);
+				Block.dropResources(blockstate, level, this.worldPosition.offset(0, 1.5, 0), tileentity, entity,
+						ItemStack.EMPTY);
 			}
 			return level.setBlock(pos, ifluidstate.createLegacyBlock(), 3);
 		}
 	}
 
 	/*
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {
-		return worldIn.getBlockState(pos.below()).canOcclude();
-	}
+	 * public boolean isValidPosition(BlockState state, IWorldReader worldIn,
+	 * BlockPos pos) { return worldIn.getBlockState(pos.below()).canOcclude(); }
 	 */
 
 	@Override
@@ -128,23 +129,25 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 		init();
 	}
 
-
-	private int calcPowerLevel(){
+	private int calcPowerLevel() {
 		int total = 0;
 		List<Item> heldItems = new ArrayList<>();
-		for (int d=0;d<4;d++){
+		for (int d = 0; d < 4; d++) {
 			Direction dir = Direction.from2DDataValue(d);
 			BlockPos pos = this.worldPosition.relative(dir);
 			BlockState state = this.level.getBlockState(pos);
 
-			if (!(state.getBlock() instanceof PedestalBlock)) return 0;
+			if (!(state.getBlock() instanceof PedestalBlock))
+				return 0;
 
-			total += ((PedestalBlock)state.getBlock()).getTier();
+			total += ((PedestalBlock) state.getBlock()).getTier();
 			PedestalTileEntity tile = (PedestalTileEntity) this.level.getBlockEntity(pos);
 			heldItems.add(tile.getItem().getItem());
 		}
 
-		boolean hasCorrectRunes = heldItems.remove(ItemInit.earth_rune.get()) && heldItems.remove(ItemInit.green_rune.get()) && heldItems.remove(ItemInit.green_rune.get())&& heldItems.remove(ItemInit.earth_rune.get());
+		boolean hasCorrectRunes = heldItems.remove(ItemInit.earth_rune.get())
+				&& heldItems.remove(ItemInit.green_rune.get()) && heldItems.remove(ItemInit.green_rune.get())
+				&& heldItems.remove(ItemInit.earth_rune.get());
 		return hasCorrectRunes ? total : 0;
 	}
 }
