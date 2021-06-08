@@ -44,7 +44,7 @@ public enum WoodTypes {
         this.strippedWood = blockRegistry.register(name + "_stripped_wood", () -> new ModLogBlock(MaterialColor.COLOR_RED, true));
         this.plank = blockRegistry.register(name + "_planks", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
         this.leaves = blockRegistry.register(name + "_leaves", () -> new LeavesBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
-        this.door = blockRegistry.register(name + "_door", () -> new ModDoor(Block.Properties.copy(Blocks.OAK_LEAVES)));
+        this.door = blockRegistry.register(name + "_door", () -> new ModDoor(Block.Properties.copy(Blocks.OAK_DOOR)));
         this.crate = blockRegistry.register(name + "_crate", () -> new CrateBlock(Block.Properties.copy(Blocks.BARREL)));
         this.trapdoor = blockRegistry.register(name + "_trapdoor", () -> new ModTrapDoor(Block.Properties.copy(Blocks.OAK_TRAPDOOR)));
         this.stairs = blockRegistry.register(name + "_stairs", () -> new StairsBlock(() -> this.plank.get().defaultBlockState(), Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)));
