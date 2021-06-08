@@ -13,14 +13,14 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     @SuppressWarnings("unused")
-	private final ModBlockModelProvider blockModels;
+	private final ModItemModelProvider blockModels;
 
     public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, MythicCraft.MOD_ID, exFileHelper);
         MythicCraft.LOGGER.debug("!!! ModBlockStateProvider !!!");
 
 
-        this.blockModels = new ModBlockModelProvider(gen, exFileHelper) {
+        this.blockModels = new ModItemModelProvider(gen, exFileHelper) {
             @Override protected void registerModels() {}
         };
     }

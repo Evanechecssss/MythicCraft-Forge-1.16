@@ -20,6 +20,8 @@ public class CrateContainer extends Container {
 	@SuppressWarnings("unused")
 	private final IWorldPosCallable canInteractWithCallable;
 
+	int NUM_ROWS = 4;
+
 	public CrateContainer(final int windowId, final PlayerInventory playerInventory, final CrateTileEntity tileEntity) {
 		super(ModContainerTypes.ALDER_CRATE.get(), windowId);
 		this.tileEntity = tileEntity;
@@ -29,7 +31,7 @@ public class CrateContainer extends Container {
 		int startX = 8;
 		int startY = 18;
 		int slotSizePlus2 = 18;
-		for (int row = 0; row < 4; ++row) {
+		for (int row = 0; row < NUM_ROWS; ++row) {
 			for (int column = 0; column < 9; ++column) {
 				this.addSlot(new Slot(tileEntity, (row * 9) + column, startX + (column * slotSizePlus2), startY + (row * slotSizePlus2)));
 			}
@@ -70,7 +72,8 @@ public class CrateContainer extends Container {
 		// todo: check dist and instenceof cratetilenentity
 		// return stillValid(canInteractWithCallable, playerIn, BlockInit.ALDER_CRATE.get());
 	}
-	
+
+
 	@Override
 	public ItemStack quickMoveStack(PlayerEntity playerIn, int index) {
 		ItemStack itemstack = ItemStack.EMPTY;
@@ -79,20 +82,25 @@ public class CrateContainer extends Container {
 			ItemStack itemstack1 = slot.getItem();
 			MythicCraft.LOGGER.debug(itemstack1);
 			itemstack = itemstack1.copy();
-			if(index < 36) {
-				if(this.moveItemStackTo(itemstack, 36, this.slots.size(), true)) {
+			if(index < (NUM_ROWS * 9)) {
+				if(this.moveItemStackTo(itemstack, (NUM_ROWS * 9), this.slots.size(), true)) {
+					MythicCraft.LOGGER.debug(1);
+					slot.set(ItemStack.EMPTY); // i really shouldn't need this. idk whats going on
 					return ItemStack.EMPTY;
 				}
-			} else if (!this.moveItemStackTo(itemstack1, 0, 36, false)) {
+			} else if (!this.moveItemStackTo(itemstack1, 0, (NUM_ROWS * 9), false)) {
+				MythicCraft.LOGGER.debug(2);
 				return ItemStack.EMPTY;
 			}
 			
 			if(itemstack1.isEmpty()) {
 				slot.set(ItemStack.EMPTY);
+			} else {
+				slot.setChanged();
 			}
-			slot.setChanged();
 		}
-		
+
+		MythicCraft.LOGGER.debug(3);
 		return itemstack;
 	}
 	

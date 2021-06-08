@@ -16,7 +16,7 @@ public class DataGenSetup {
 
         if (event.includeClient()){
             MythicCraft.LOGGER.debug("!!! gather data client !!!");
-            gen.addProvider(new ModBlockModelProvider(gen, existingFileHelper));
+            gen.addProvider(new ModItemModelProvider(gen, existingFileHelper));
             gen.addProvider(new ModBlockStateProvider(gen, existingFileHelper));
         }
 
