@@ -27,7 +27,13 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class PedestalTier1 extends Block {
+public class PedestalBlock extends Block {
+	int tier;
+	public PedestalBlock(int tier, Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
+		this.tier = tier;
+	}
 
 
 	@Override
@@ -43,6 +49,8 @@ public class PedestalTier1 extends Block {
 	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
+
+	// todo: different shapes by tier
 
 	private static final VoxelShape SHAPE_N = Stream
 			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
@@ -84,12 +92,6 @@ public class PedestalTier1 extends Block {
 			.reduce((v1, v2) -> {
 				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
-
-	public PedestalTier1(Properties properties) {
-		super(properties);
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
-
-	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -137,5 +139,9 @@ public class PedestalTier1 extends Block {
 	@Override
 	public BlockRenderType getRenderShape(BlockState iBlockState) {
 		return BlockRenderType.MODEL;
+	}
+
+	public int getTier() {
+		return this.tier;
 	}
 }

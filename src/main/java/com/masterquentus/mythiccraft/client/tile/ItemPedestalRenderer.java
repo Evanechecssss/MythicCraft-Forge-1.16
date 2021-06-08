@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.client.tile;
 
+import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
@@ -21,7 +22,9 @@ public class ItemPedestalRenderer extends TileEntityRenderer<PedestalTileEntity>
         ItemStack stack = tile.getItem();
         if (!stack.isEmpty()) {
             matrixStackIn.pushPose();
-            matrixStackIn.translate(0.5D, 2D, 0.5D);
+            int tier = ((PedestalBlock)tile.getBlockState().getBlock()).getTier();
+            double shift = tier >= 4 ? 1.5D : 2.5D;
+            matrixStackIn.translate(0.5D, shift, 0.5D);
             matrixStackIn.scale(0.5F,0.5F,0.5F);
             float spin = (tile.getLevel().getDayTime() + partialTicks) / 30.0F;
             matrixStackIn.mulPose(Vector3f.YP.rotation(spin));

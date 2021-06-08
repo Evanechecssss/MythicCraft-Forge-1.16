@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
@@ -7,7 +8,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.tileentity.TileEntity;
@@ -18,9 +21,20 @@ import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
 
 public class BlockQuarry extends Block {
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack p_190948_1_, @Nullable IBlockReader p_190948_2_, List<ITextComponent> tooltop, ITooltipFlag p_190948_4_) {
+		super.appendHoverText(p_190948_1_, p_190948_2_, tooltop, p_190948_4_);
+		tooltop.add(new StringTextComponent("to activate, surround with pedestals holding 2 green runes & 2 earth runes"));
+	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 

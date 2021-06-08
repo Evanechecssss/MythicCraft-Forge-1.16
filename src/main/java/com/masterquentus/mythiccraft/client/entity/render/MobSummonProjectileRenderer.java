@@ -4,6 +4,7 @@ import com.masterquentus.mythiccraft.entities.MobSummonProjectile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -17,9 +18,9 @@ public class MobSummonProjectileRenderer extends EntityRenderer<MobSummonProject
     }
 
     @Override
-    public void render(MobSummonProjectile projectile, float p_225623_2_, float ticks, MatrixStack matrixStack, IRenderTypeBuffer p_225623_5_, int p_225623_6_) {
+    public void render(MobSummonProjectile projectile, float yaw, float ticks, MatrixStack matrixStack, IRenderTypeBuffer p_225623_5_, int p_225623_6_) {
         matrixStack.pushPose();
-        
+
         Entity entity = projectile.getOrCreateDisplayEntity();
         if (entity != null) {
             // spin around like in a mob spawner
@@ -33,7 +34,8 @@ public class MobSummonProjectileRenderer extends EntityRenderer<MobSummonProject
             matrixStack.scale(f, f, f);
 
             // actually render it
-            Minecraft.getInstance().getEntityRenderDispatcher().render(entity, 0.0D, 0.0D, 0.0D, 0.0F, ticks, matrixStack, p_225623_5_, OverlayTexture.NO_OVERLAY);
+            int lightColor = WorldRenderer.getLightColor(projectile.level, projectile.blockPosition());
+            Minecraft.getInstance().getEntityRenderDispatcher().render(entity, 0.0D, 0.0D, 0.0D, 0.0F, ticks, matrixStack, p_225623_5_, lightColor);
         }
 
         matrixStack.popPose();

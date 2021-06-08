@@ -22,7 +22,8 @@ public class ModTileEntityTypes {
 			() -> TileEntityType.Builder.of(MagicQuarryTileEntity::new, BlockInit.magic_quarry.get()).build(null));
 	public static final RegistryObject<TileEntityType<PedestalTileEntity>> pedestal_tier1 = TILE_ENTITY_TYPES.register(
 			"pedestal_tier1",
-			() -> TileEntityType.Builder.of(PedestalTileEntity::new, BlockInit.PEDESTAL_TIER1.get()).build(null));
+			() -> TileEntityType.Builder.of(PedestalTileEntity::new, BlockInit.PEDESTAL_TIER1.get(), BlockInit.PEDESTAL_TIER2.get(), BlockInit.PEDESTAL_TIER3.get(), BlockInit.PEDESTAL_TIER4.get(), BlockInit.PEDESTAL_TIER5.get(), BlockInit.PEDESTAL_TIER6.get()).build(null));
+
 	public static final RegistryObject<TileEntityType<LanternTileEntity>> LANTERN_TILE = TILE_ENTITY_TYPES
 			.register("lantern", () -> TileEntityType.Builder.of(LanternTileEntity::new, BlockInit.getAllLanterns()).build(null));
 }

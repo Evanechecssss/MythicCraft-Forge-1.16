@@ -230,26 +230,23 @@ public class BlockInit {
 
 	// i think the voxel shapes for all tiers are the same so they're all using one class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",
-			() -> new PedestalTier1(
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(1, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER2 = BLOCKS.register("pedestal_tier2",
-			() -> new PedestalTier1(
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(2, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
-			() -> new PedestalTier1(
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(3, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
-			() -> new PedestalTier1(
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(4, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5", () -> new Block(
+	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5", () -> new PedestalBlock(5,
 			Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6", () -> new Block(
+	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6", () -> new PedestalBlock(6,
 			Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
 					.sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().lightLevel((s) -> 15)));
