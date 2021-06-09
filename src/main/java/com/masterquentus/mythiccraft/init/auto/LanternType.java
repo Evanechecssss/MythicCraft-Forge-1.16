@@ -19,69 +19,76 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public enum LanternType {
-    BLOOD("attracts vampires", (pos, world) -> {
+    BLOOD("Attracts Vampires", (pos, world) -> {
         // vampires dont exist...
     }),
-    UNDEAD("attracts undead", (pos, world) -> {
+    UNDEAD("Attracts Undead", (pos, world) -> {
         if (world.getGameTime() % 20 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof MobEntity && ((MobEntity)e).getMobType() == CreatureAttribute.UNDEAD;
         for (Entity target : getEntities(7, pos, world, check)){
             ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+            // Will Attract All Mobs
         }
     }),
-    SILVER("attracts werewolves", (pos, world) -> {
+    SILVER("Attracts Werewolves", (pos, world) -> {
         // werewolves dont exist...
     }),
-    SOUL("ensnares mobs", (pos, world) -> {
+    SOUL("Ensnares Mobs", (pos, world) -> {
         if (world.getGameTime() % 20 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof MobEntity;
         for (Entity target : getEntities(7, pos, world, check)){
             ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+            // Will Keep Mobs From Leaving
         }
     }),
-    ENDER("attracts endermen", (pos, world) -> {
+    ENDER("Attracts Endermen", (pos, world) -> {
         if (world.getGameTime() % 20 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof EndermanEntity;
         for (Entity target : getEntities(7, pos, world, check)){
             ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
+            // Will Keep Enderman From Teleporting As Well
         }
     }),
-    MYSTIC("attracts magical creatures", (pos, world) -> {
+    MYSTIC("Attracts Magical Creatures", (pos, world) -> {
         // idk which are magical
+    	//Will Do Something Diffrent
     }),
-    FAIRY("attracts fairies", (pos, world) -> {
+    FAIRY("Attracts Fairies", (pos, world) -> {
         if (world.getGameTime() % 20 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof FairyEntity;
         for (Entity target : getEntities(7, pos, world, check)){
             ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
         }
     }),
-    PIXIE("attracts pixies", (pos, world) -> {
+    PIXIE("Attracts Pixies", (pos, world) -> {
         // pixies dont exist
     }),
-    LIFE("heals players", (pos, world) -> {
+    LIFE("Heals Players", (pos, world) -> {
         if (world.getGameTime() % 100 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof PlayerEntity;
         for (Entity player : getEntities(5, pos, world, check)){
             ((LivingEntity)player).heal(2);
         }
     }),
-    LOVE("breeds mobs", (pos, world) -> {
+    LOVE("Breeds Mobs", (pos, world) -> {
         if (world.getGameTime() % 100 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof AnimalEntity && ((AnimalEntity)e).canFallInLove() && ((AnimalEntity)e).getAge() == 0;
         for (Entity animal : getEntities(5, pos, world, check)){
             ((AnimalEntity)animal).setInLove(null);
+            // Attracts Mobs As Well
         }
     }),
-    FERAL("hurts mobs", (pos, world) -> {
+    FERAL("Hurts Mobs", (pos, world) -> {
         if (world.getGameTime() % 100 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof LivingEntity && !(e instanceof PlayerEntity);
         for (Entity mob : getEntities(5, pos, world, check)){
-            mob.hurt(DamageSource.MAGIC, 2);
+            mob.hurt(DamageSource.MAGIC, 4);
+            // Attract And Damage Mobs
         }
     }),
-    KRAKEN("attracts krakens", (pos, world) -> {
+    KRAKEN("Attracts Krakens", (pos, world) -> {
         // krakens dont exist
+    	// A Ocean Will Have To Be Near By
     });
 
     public final String description;

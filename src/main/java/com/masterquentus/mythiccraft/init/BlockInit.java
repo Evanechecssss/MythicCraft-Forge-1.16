@@ -26,35 +26,36 @@ public class BlockInit {
 			MythicCraft.MOD_ID);
 
 	static {
-		for (WoodTypes woodType : WoodTypes.values()){
+		for (WoodTypes woodType : WoodTypes.values()) {
 			woodType.register(BLOCKS);
 		}
 
-		for (StoneType stoneType : StoneType.values()){
+		for (StoneType stoneType : StoneType.values()) {
 			stoneType.register(BLOCKS);
 		}
 
-		for (OreType oreType : OreType.values()){
+		for (OreType oreType : OreType.values()) {
 			oreType.register(BLOCKS);
 		}
 
-		for (LanternType lantern : LanternType.values()){
-			lantern.block = BLOCKS.register(lantern.name().toLowerCase() + "_lantern", () -> new ModLanternBlock(lantern));
+		for (LanternType lantern : LanternType.values()) {
+			lantern.block = BLOCKS.register(lantern.name().toLowerCase() + "_lantern",
+					() -> new ModLanternBlock(lantern));
 		}
 	}
 
-	public static Block[] getAllCrates(){
+	public static Block[] getAllCrates() {
 		Block[] crates = new Block[WoodTypes.values().length];
-		for (int i = 0; i< WoodTypes.values().length; i++) {
+		for (int i = 0; i < WoodTypes.values().length; i++) {
 			crates[i] = WoodTypes.values()[i].crate.get();
 		}
 
 		return crates;
 	}
 
-	public static Block[] getAllLanterns(){
+	public static Block[] getAllLanterns() {
 		Block[] lanterns = new Block[LanternType.values().length];
-		for (int i=0;i<LanternType.values().length;i++) {
+		for (int i = 0; i < LanternType.values().length; i++) {
 			lanterns[i] = LanternType.values()[i].block.get();
 		}
 
@@ -78,25 +79,24 @@ public class BlockInit {
 			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_RED).sound(SoundType.GRAVEL)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.GRAVEL)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
 
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
-			() -> new Block(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.SLIME_BLOCK).harvestLevel(1)));
+			() -> new Block(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f).sound(SoundType.SLIME_BLOCK)
+					.harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_CHISELED = BLOCKS.register("rosequartz_chiseled",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_SMOOTH = BLOCKS.register("rosequartz_smooth",
-			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_PILLAR = BLOCKS.register("rosequartz_pillar",
 			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_PILLAR).strength(5.0f, 30.0f)
-							.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f).sound(SoundType.STONE)
-							.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-
+			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f)
+					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
 			() -> new SlimeBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).harvestLevel(1)));
@@ -106,78 +106,74 @@ public class BlockInit {
 			() -> new Block(Block.Properties.copy(Blocks.RED_SAND).harvestTool(ToolType.SHOVEL).harvestLevel(1)));
 	public static final RegistryObject<Block> HOTASH_BLOCK = BLOCKS.register("hotash_block",
 			() -> new Block(Block.Properties.copy(Blocks.RED_SAND)));
-	public static final RegistryObject<Block> ASH_LAYER = BLOCKS.register("ash_layer", () -> new ModLayer(
-			Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer", () -> new ModLayer(
-			Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall", () -> new Block(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> ASH_LAYER = BLOCKS.register("ash_layer",
+			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
+	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer",
+			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
+	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
 
 	// Transparent Blocks
-	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice",
-			() -> new ModIceBlock(Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).friction(0.98f)));
-	public static final RegistryObject<Block> CRIMSON_PACKEDICE = BLOCKS.register("crimson_packedice",
-			() -> new Block(Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).friction(0.98f)));
-	public static final RegistryObject<Block> BLACK_ICE = BLOCKS.register("black_ice",
-			() -> new ModIceBlock(Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).friction(0.98f)));
+	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
+			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
+	public static final RegistryObject<Block> CRIMSON_PACKEDICE = BLOCKS.register("crimson_packedice", () -> new Block(
+			Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
+	public static final RegistryObject<Block> BLACK_ICE = BLOCKS.register("black_ice", () -> new ModIceBlock(
+			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
 	public static final RegistryObject<Block> BLACK_PACKEDICE = BLOCKS.register("black_packedice",
-			() -> new Block(Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).friction(0.98f).speedFactor(0.7f).randomTicks().noOcclusion()));
+			() -> new Block(Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS)
+					.friction(0.98f).speedFactor(0.7f).randomTicks().noOcclusion()));
 	public static final RegistryObject<Block> PIXIE_GLASS = BLOCKS.register("pixie_glass", () -> new Block(
 			Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> FAIRY_GLASS = BLOCKS.register("fairy_glass", () -> new Block(
 			Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> PIXIE_GLASS_PANE = BLOCKS.register("pixie_glass_pane",
-			() -> new ModPaneBlock(Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).noOcclusion()));
+			() -> new ModPaneBlock(
+					Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> FAIRY_GLASS_PANE = BLOCKS.register("fairy_glass_pane",
-			() -> new ModPaneBlock(Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f)
-					.sound(SoundType.GLASS).noOcclusion()));
+			() -> new ModPaneBlock(
+					Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f).sound(SoundType.GLASS).noOcclusion()));
 
 	// Lanterns/Glowstone/Torches
 	public static final RegistryObject<Block> PURE_GLOWSTONE = BLOCKS.register("pure_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
-					.sound(SoundType.GLASS).lightLevel((state) ->15)));
+					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
 	public static final RegistryObject<Block> DARK_GLOWSTONE = BLOCKS.register("dark_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
-					.sound(SoundType.GLASS).lightLevel((state) ->15)));
-	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register(
-			"blood_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> SILVER_TORCH = BLOCKS.register("silver_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> SOUL_TORCH = BLOCKS.register("soul_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> UNDEAD_TORCH = BLOCKS.register("undead_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> MYSTIC_TORCH = BLOCKS.register("mystic_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> ENDER_TORCH = BLOCKS.register("ender_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> FAIRY_TORCH = BLOCKS.register("fairy_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> PIXIE_TORCH = BLOCKS.register("pixie_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> LIFE_TORCH = BLOCKS.register("life_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> FERAL_TORCH = BLOCKS.register("feral_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
-	public static final RegistryObject<Block> LOVE_TORCH = BLOCKS.register("love_torch",
-			() -> new TorchBlock(Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f)
-					.sound(SoundType.WOOD).lightLevel((state) ->15), ParticleTypes.FLAME));
+					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
+	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register("blood_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> SILVER_TORCH = BLOCKS.register("silver_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> SOUL_TORCH = BLOCKS.register("soul_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> UNDEAD_TORCH = BLOCKS.register("undead_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> MYSTIC_TORCH = BLOCKS.register("mystic_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> ENDER_TORCH = BLOCKS.register("ender_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> FAIRY_TORCH = BLOCKS.register("fairy_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> PIXIE_TORCH = BLOCKS.register("pixie_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> LIFE_TORCH = BLOCKS.register("life_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> FERAL_TORCH = BLOCKS.register("feral_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
+	public static final RegistryObject<Block> LOVE_TORCH = BLOCKS.register("love_torch", () -> new TorchBlock(
+			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
+			ParticleTypes.FLAME));
 
 	// PLANT
 	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
@@ -202,9 +198,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> waterartichoke_crop = BLOCKS.register("waterartichoke_crop",
 			() -> new WaterartichokeCrop(Block.Properties.copy(Blocks.WHEAT)));
 
-	private static RegistryObject<Block> createCrop(String registryName, RegistryObject<Item> seeds){
-		return BLOCKS.register(registryName,
-				() -> new ModCropBlock(Block.Properties.copy(Blocks.WHEAT), seeds));
+	private static RegistryObject<Block> createCrop(String registryName, RegistryObject<Item> seeds) {
+		return BLOCKS.register(registryName, () -> new ModCropBlock(Block.Properties.copy(Blocks.WHEAT), seeds));
 	}
 
 	// PLANT
@@ -222,30 +217,38 @@ public class BlockInit {
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
 			Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> pandors_box_open = BLOCKS.register("pandors_box_open",
-			() -> new PandorsBoxOpen(
-					Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
 			() -> new BlockQuarry(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
+	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
+			() -> new BlockMagicMirror(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 
-
-	// i think the voxel shapes for all tiers are the same so they're all using one class
+	// i think the voxel shapes for all tiers are the same so they're all using one
+	// class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",
-			() -> new PedestalBlock(1, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(1,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER2 = BLOCKS.register("pedestal_tier2",
-			() -> new PedestalBlock(2, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(2,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
-			() -> new PedestalBlock(3, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(3,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
-			() -> new PedestalBlock(4, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(4,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5", () -> new PedestalBlock(5,
-			Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5",
+			() -> new PedestalBlock(5,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
-	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6", () -> new PedestalBlock(6,
-			Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6",
+			() -> new PedestalBlock(6,
+					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
@@ -261,19 +264,19 @@ public class BlockInit {
 			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SILVER_BERRY_BUSH = NO_ITEM_BLOCK.register("silver_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission()
-					.randomTicks().sound(SoundType.SWEET_BERRY_BUSH)));
+			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> CHARRED_BERRY_BUSH = NO_ITEM_BLOCK.register("charred_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission()
-					.randomTicks().sound(SoundType.SWEET_BERRY_BUSH)));
+			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SOUL_BERRY_BUSH = NO_ITEM_BLOCK.register("soul_berry_bush",
 			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> INFESTED_BERRY_BUSH = NO_ITEM_BLOCK.register("infested_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission()
-					.randomTicks().sound(SoundType.SWEET_BERRY_BUSH)));
+			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> MYSTIC_BERRY_BUSH = NO_ITEM_BLOCK.register("mystic_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission()
-					.randomTicks().sound(SoundType.SWEET_BERRY_BUSH)));
+			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+					.sound(SoundType.SWEET_BERRY_BUSH)));
 
 }
