@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
+import com.masterquentus.mythiccraft.util.ModVoxelShapes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -33,63 +34,10 @@ public class BlockQuarry extends Block {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack p_190948_1_, @Nullable IBlockReader p_190948_2_, List<ITextComponent> tooltop, ITooltipFlag p_190948_4_) {
 		super.appendHoverText(p_190948_1_, p_190948_2_, tooltop, p_190948_4_);
-		tooltop.add(new StringTextComponent("to activate, surround with pedestals holding 2 green runes & 2 earth runes"));
+		tooltop.add(new StringTextComponent("to activate, place pedestals holding 2 green runes & 2 earth runes on the 4th diagonal block"));
 	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
-
-	private static final VoxelShape SHAPE_N = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
-			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_W = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
-			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_S = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
-			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_E = Stream.of(Block.box(0, 16.5, 0, 16, 27.5, 16),
-			Block.box(7, 2.45672, 7, 9, 15.54328, 9), Block.box(4.7039, 8, 7, 11.2961, 10, 9),
-			Block.box(7, 8, 4.7039, 9, 10, 11.2961),
-			Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
-			Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
-			Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
-			Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
-			Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
-			Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
-			Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9),
-			Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703)).reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
 
 	public BlockQuarry(Properties properties) {
 		super(properties);
@@ -99,18 +47,7 @@ public class BlockQuarry extends Block {
 
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch (state.getValue(FACING)) {
-		case NORTH:
-			return SHAPE_N;
-		case SOUTH:
-			return SHAPE_S;
-		case EAST:
-			return SHAPE_E;
-		case WEST:
-			return SHAPE_W;
-		default:
-			return SHAPE_N;
-		}
+		return ModVoxelShapes.QUARRY;
 	}
 
 	@Override

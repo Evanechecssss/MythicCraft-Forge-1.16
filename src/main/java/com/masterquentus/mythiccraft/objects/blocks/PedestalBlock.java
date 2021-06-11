@@ -4,6 +4,7 @@ import java.util.stream.Stream;
 
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
+import com.masterquentus.mythiccraft.util.ModVoxelShapes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -50,63 +51,9 @@ public class PedestalBlock extends Block {
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
-	// todo: different shapes by tier
-
-	private static final VoxelShape SHAPE_N = Stream
-			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
-					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
-					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
-					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
-					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
-					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
-			.reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_W = Stream
-			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
-					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
-					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
-					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
-					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
-					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
-			.reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_S = Stream
-			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
-					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
-					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
-					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
-					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
-					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
-			.reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-	private static final VoxelShape SHAPE_E = Stream
-			.of(Block.box(1, 1, 1, 5, 15, 15), Block.box(0, 15, 0, 5, 16, 16),
-					Block.box(0, 0, 0, 5, 1, 16), Block.box(5, 1, 1, 11, 15, 5),
-					Block.box(5, 15, 0, 11, 16, 5), Block.box(5, 0, 0, 11, 1, 5),
-					Block.box(5, 1, 11, 11, 15, 15), Block.box(5, 15, 11, 11, 16, 16),
-					Block.box(5, 0, 11, 11, 1, 16), Block.box(11, 1, 1, 15, 15, 15),
-					Block.box(11, 15, 0, 16, 16, 16), Block.box(11, 0, 0, 16, 1, 16))
-			.reduce((v1, v2) -> {
-				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
-			}).get();
-
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-		switch (state.getValue(FACING)) {
-		case NORTH:
-			return SHAPE_N;
-		case SOUTH:
-			return SHAPE_S;
-		case EAST:
-			return SHAPE_E;
-		case WEST:
-			return SHAPE_W;
-		default:
-			return SHAPE_N;
-		}
+		return ModVoxelShapes.getPedistalShape(this.tier);
 	}
 
 	@Override

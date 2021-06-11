@@ -23,7 +23,7 @@ public class ItemPedestalRenderer extends TileEntityRenderer<PedestalTileEntity>
         if (!stack.isEmpty()) {
             matrixStackIn.pushPose();
             int tier = ((PedestalBlock)tile.getBlockState().getBlock()).getTier();
-            double shift = tier >= 4 ? 1.5D : 2.5D;
+            double shift = tier < 4 ? 1.5D : 2.5D;
             matrixStackIn.translate(0.5D, shift, 0.5D);
             matrixStackIn.scale(0.5F,0.5F,0.5F);
             float spin = (tile.getLevel().getDayTime() + partialTicks) / 30.0F;

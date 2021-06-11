@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.tileentity;
 
 import javax.annotation.Nullable;
 
+import com.google.common.collect.ImmutableList;
 import com.masterquentus.mythiccraft.init.ItemInit;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
@@ -132,9 +133,8 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 	private int calcPowerLevel() {
 		int total = 0;
 		List<Item> heldItems = new ArrayList<>();
-		for (int d = 0; d < 4; d++) {
-			Direction dir = Direction.from2DDataValue(d);
-			BlockPos pos = this.worldPosition.relative(dir);
+		List<BlockPos> pedestals = ImmutableList.of(this.worldPosition.north(4).east(4), this.worldPosition.north(4).west(4), this.worldPosition.south(4).east(4), this.worldPosition.south(4).west(4));
+		for (BlockPos pos : pedestals) {
 			BlockState state = this.level.getBlockState(pos);
 
 			if (!(state.getBlock() instanceof PedestalBlock))
