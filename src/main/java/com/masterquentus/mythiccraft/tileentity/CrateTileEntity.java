@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.tileentity;
 
+import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.container.CrateContainer;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.objects.blocks.CrateBlock;
@@ -183,8 +184,10 @@ public class CrateTileEntity extends LockableLootTileEntity {
 	public CompoundNBT saveToTag(CompoundNBT p_190580_1_) {
 		if (!this.trySaveLootTable(p_190580_1_)) {
 			NonNullList<ItemStack> heldItems = NonNullList.withSize(this.items.getSlots(), ItemStack.EMPTY);
+			MythicCraft.LOGGER.debug(heldItems);
 			for (int i=0;i<this.items.getSlots();i++){
-				heldItems.add(i, this.items.getStackInSlot(i));
+				MythicCraft.LOGGER.debug(this.items.getStackInSlot(i));
+				heldItems.set(i, this.items.getStackInSlot(i));
 			}
 			ItemStackHelper.saveAllItems(p_190580_1_, heldItems, false);
 		}

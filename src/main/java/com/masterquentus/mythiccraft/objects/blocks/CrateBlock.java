@@ -43,13 +43,13 @@ public class CrateBlock extends Block {
 			if(tile instanceof CrateTileEntity) {
 				worldIn.playSound(player, pos, SoundEvents.BARREL_OPEN, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
 				NetworkHooks.openGui((ServerPlayerEntity)player, (CrateTileEntity)tile, pos);
-				return ActionResultType.SUCCESS;
 			}
 		}
-		
-		return ActionResultType.FAIL;
+
+		return ActionResultType.SUCCESS;
 	}
-	
+
+	/*
 	@Override
 	public void onRemove(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if(state.getBlock() != newState.getBlock()) {
@@ -59,6 +59,8 @@ public class CrateBlock extends Block {
 			}
 		}
 	}
+
+	 */
 
 
 	@Override

@@ -22,23 +22,24 @@ public enum LanternType {
     BLOOD("Attracts Vampires", (pos, world) -> {
         // vampires dont exist...
     }),
-    UNDEAD("Attracts Undead", (pos, world) -> {
+    UNDEAD("Attracts All Mobs", (pos, world) -> {
         if (world.getGameTime() % 20 != 0) return;
-        Predicate<Entity> check = (e) -> e instanceof MobEntity && ((MobEntity)e).getMobType() == CreatureAttribute.UNDEAD;
+        Predicate<Entity> check = (e) -> e instanceof MobEntity; // && ((MobEntity)e).getMobType() == CreatureAttribute.UNDEAD;
         for (Entity target : getEntities(7, pos, world, check)){
             ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
-            // Will Attract All Mobs
         }
     }),
     SILVER("Attracts Werewolves", (pos, world) -> {
         // werewolves dont exist...
     }),
     SOUL("Ensnares Mobs", (pos, world) -> {
-        if (world.getGameTime() % 20 != 0) return;
-        Predicate<Entity> check = (e) -> e instanceof MobEntity;
-        for (Entity target : getEntities(7, pos, world, check)){
-            ((MobEntity)target).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
-            // Will Keep Mobs From Leaving
+        if (world.getGameTime() % 10 != 0) return;
+        int range = 7;
+        AxisAlignedBB box = new AxisAlignedBB(pos.offset(range, range, range), pos.offset(-range, -range, -range));
+        for (Entity target : world.getEntities((Entity)null, box, (e) -> e instanceof MobEntity)){
+            BlockPos goingTo = ((MobEntity)target).getNavigation().getTargetPos();
+            boolean isInBox = box.contains(goingTo.getX() + 0.5, goingTo.getY() + 0.5, goingTo.getZ() + 0.5);
+            if (!isInBox) ((MobEntity)target).getNavigation().stop();
         }
     }),
     ENDER("Attracts Endermen", (pos, world) -> {
@@ -71,19 +72,19 @@ public enum LanternType {
         }
     }),
     LOVE("Breeds Mobs", (pos, world) -> {
-        if (world.getGameTime() % 100 != 0) return;
-        Predicate<Entity> check = (e) -> e instanceof AnimalEntity && ((AnimalEntity)e).canFallInLove() && ((AnimalEntity)e).getAge() == 0;
+        if (world.getGameTime() % 20 != 0) return;
+        Predicate<Entity> check = (e) -> e instanceof AnimalEntity;
         for (Entity animal : getEntities(5, pos, world, check)){
-            ((AnimalEntity)animal).setInLove(null);
-            // Attracts Mobs As Well
+            if (((AnimalEntity)animal).canFallInLove() && ((AnimalEntity)animal).getAge() == 0) ((AnimalEntity)animal).setInLove(null);
+            ((MobEntity)animal).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
         }
     }),
-    FERAL("Hurts Mobs", (pos, world) -> {
-        if (world.getGameTime() % 100 != 0) return;
+    FERAL("Hurts and Attracts Mobs", (pos, world) -> {
+        if (world.getGameTime() % 20 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof LivingEntity && !(e instanceof PlayerEntity);
         for (Entity mob : getEntities(5, pos, world, check)){
-            mob.hurt(DamageSource.MAGIC, 4);
-            // Attract And Damage Mobs
+            mob.hurt(DamageSource.MAGIC, 1);
+            ((MobEntity)mob).getNavigation().moveTo(pos.getX(), pos.getY(), pos.getZ(), 1);
         }
     }),
     KRAKEN("Attracts Krakens", (pos, world) -> {
