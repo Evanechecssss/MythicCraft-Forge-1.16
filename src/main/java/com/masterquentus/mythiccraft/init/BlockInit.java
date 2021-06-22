@@ -81,7 +81,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
 			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
-
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
 			() -> new Block(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f).sound(SoundType.SLIME_BLOCK)
 					.harvestLevel(1)));
@@ -97,7 +96,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
 			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f)
 					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
 			() -> new SlimeBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).harvestLevel(1)));
 	public static final RegistryObject<Block> INFESTEDSLIME_BLOCK = BLOCKS.register("infestedslime_block",
@@ -112,6 +110,10 @@ public class BlockInit {
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> DRIED_LIVING_KELP_BLOCK = BLOCKS.register("dried_living_kelp_block",
+			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)));
+	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
@@ -181,6 +183,7 @@ public class BlockInit {
 					Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
 
 	// Mushrooms
+	// Want To Add Blood Mushroom
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
@@ -190,7 +193,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> belladonna_crop = createCrop("belladonna_crop", ItemInit.belladnna_seeds);
 	public static final RegistryObject<Block> mandrake_crop = createCrop("mandrake_crop", ItemInit.mandrake_seeds);
 	public static final RegistryObject<Block> foxgloves_crop = createCrop("foxgloves_crop", ItemInit.foxgloves_seeds);
-	public static final RegistryObject<Block> nightshade_crop = createCrop("nightshade_crop", ItemInit.nightshade_seeds);
+	public static final RegistryObject<Block> nightshade_crop = createCrop("nightshade_crop",
+			ItemInit.nightshade_seeds);
 	public static final RegistryObject<Block> hellebore_crop = createCrop("hellebore_crop", ItemInit.hellebore_seeds);
 	public static final RegistryObject<Block> whitesage_crop = createCrop("whitesage_crop", ItemInit.whitesage_seeds);
 	public static final RegistryObject<Block> snowbell_crop = createCrop("snowbell_crop", ItemInit.snowbell_seeds);
@@ -223,6 +227,8 @@ public class BlockInit {
 			() -> new BlockQuarry(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new BlockMagicMirror(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
+			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
 	// class

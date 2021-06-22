@@ -37,13 +37,14 @@ public class MythicCraft {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "mythiccraft";
-	// public static final ResourceLocation Unerworld_Dim_Type = new ResourceLocation(MOD_ID, "underworld");
+	// public static final ResourceLocation Unerworld_Dim_Type = new
+	// ResourceLocation(MOD_ID, "underworld");
 
 	public MythicCraft() {
 		GeckoLib.initialize();
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setup);
-		
+
 		ItemInit.ITEMS.register(modEventBus);
 		FluidInit.FLUIDS.register(modEventBus);
 		BlockInit.BLOCKS.register(modEventBus);
@@ -61,13 +62,11 @@ public class MythicCraft {
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();
 
-		BlockInit.BLOCKS.getEntries().stream()
-				.filter(block -> !(block.get() instanceof HellFireBlock))
+		BlockInit.BLOCKS.getEntries().stream().filter(block -> !(block.get() instanceof HellFireBlock))
 				.filter(block -> !(block.get() instanceof ModCropBlock))
 				.filter(block -> !(block.get() instanceof WaterartichokeCrop))
-				.map(RegistryObject::get)
-				.filter(block -> !(block instanceof FlowingFluidBlock))
-				.forEach(block -> {
+				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
+				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {
 					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
 					final BlockItem blockItem = new BlockItem(block, properties);
 					blockItem.setRegistryName(block.getRegistryName());
@@ -78,7 +77,7 @@ public class MythicCraft {
 	}
 
 	@SubscribeEvent
-	public static void mobAttributes(EntityAttributeCreationEvent event){
+	public static void mobAttributes(EntityAttributeCreationEvent event) {
 		event.put(ModEntityTypes.BASILISK_ENTITY.get(), BasiliskEntity.createAttributes().build());
 		event.put(ModEntityTypes.FAIRY_ENTITY.get(), FairyEntity.createAttributes().build());
 		event.put(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntity.createAttributes().build());
@@ -98,8 +97,7 @@ public class MythicCraft {
 	}
 
 	public static class MythicCraftItems extends ItemGroup {
-		public static final MythicCraftItems instance = new MythicCraftItems(ItemGroup.TABS.length,
-				"mythiccraftitems");
+		public static final MythicCraftItems instance = new MythicCraftItems(ItemGroup.TABS.length, "mythiccraftitems");
 
 		private MythicCraftItems(int index, String label) {
 			super(index, label);

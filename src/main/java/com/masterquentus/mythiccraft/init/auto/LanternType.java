@@ -2,7 +2,6 @@ package com.masterquentus.mythiccraft.init.auto;
 
 import com.masterquentus.mythiccraft.entities.FairyEntity;
 import net.minecraft.block.Block;
-import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;

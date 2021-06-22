@@ -18,7 +18,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.ArrayList;
@@ -133,7 +132,9 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 	private int calcPowerLevel() {
 		int total = 0;
 		List<Item> heldItems = new ArrayList<>();
-		List<BlockPos> pedestals = ImmutableList.of(this.worldPosition.north(4).east(4), this.worldPosition.north(4).west(4), this.worldPosition.south(4).east(4), this.worldPosition.south(4).west(4));
+		List<BlockPos> pedestals = ImmutableList.of(this.worldPosition.north(4).east(4),
+				this.worldPosition.north(4).west(4), this.worldPosition.south(4).east(4),
+				this.worldPosition.south(4).west(4));
 		for (BlockPos pos : pedestals) {
 			BlockState state = this.level.getBlockState(pos);
 

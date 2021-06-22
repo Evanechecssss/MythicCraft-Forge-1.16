@@ -12,10 +12,7 @@ import java.util.function.Supplier;
 public enum WoodTypes {
     BLOODOAK, WHITEOAK, SILVERWOOD, WITCHWOOD, ALDER, HAWTHORN, ROWAN,
     WILLOW, BEECH, ASH, BLACKTHORN, CEDAR, ELDER, JUNIPER, WITCHHAZEL,
-    YEW, INFESTED, CHARRED, ICY;
-
-    // i took out these two because they dont have all textures which crashes data gen
-    // twisted, distorted
+    YEW, INFESTED, CHARRED, ICY, TWISTED, DISTORTED;
 
     public Supplier<Block> log;
     public Supplier<Block> wood;

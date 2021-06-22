@@ -2,7 +2,6 @@ package com.masterquentus.mythiccraft.objects.items;
 
 import java.util.List;
 
-import com.masterquentus.mythiccraft.init.ItemInit;
 import com.masterquentus.mythiccraft.util.helpers.KeybordHelper;
 
 import net.minecraft.client.util.ITooltipFlag;

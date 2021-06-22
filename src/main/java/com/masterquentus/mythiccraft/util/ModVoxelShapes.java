@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.util;
 
 import com.google.common.collect.ImmutableList;
-import com.masterquentus.mythiccraft.MythicCraft;
 import net.minecraft.block.Block;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;

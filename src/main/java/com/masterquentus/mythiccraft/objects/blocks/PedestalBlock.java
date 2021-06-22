@@ -1,7 +1,5 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
-import java.util.stream.Stream;
-
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
 import com.masterquentus.mythiccraft.util.ModVoxelShapes;
@@ -21,10 +19,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.IBooleanFunction;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
