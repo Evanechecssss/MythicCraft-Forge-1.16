@@ -228,7 +228,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new BlockMagicMirror(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
-			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
+	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_block",
+			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
 	// class

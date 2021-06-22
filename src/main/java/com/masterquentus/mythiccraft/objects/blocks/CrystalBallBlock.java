@@ -13,10 +13,10 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Rotation;
 import net.minecraft.world.IBlockReader;
 
-public class CrystalBall extends Block 
+public class CrystalBallBlock extends Block 
 {
 
-	public CrystalBall(Properties p_i48440_1_) {
+	public CrystalBallBlock(Properties p_i48440_1_) {
 		super(p_i48440_1_);
 	}
 
