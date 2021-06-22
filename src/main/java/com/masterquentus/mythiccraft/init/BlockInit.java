@@ -216,6 +216,10 @@ public class BlockInit {
 					Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()));
 	public static final RegistryObject<Block> LIVING_KELP = BLOCKS.register("living_kelp",
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()));
+	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
+			() -> new SugarCaneBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
+	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
+			() -> new SugarCaneBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
 
 	// Special blocks
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
@@ -229,7 +233,7 @@ public class BlockInit {
 			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
 			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
-	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_block",
+	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
 			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
