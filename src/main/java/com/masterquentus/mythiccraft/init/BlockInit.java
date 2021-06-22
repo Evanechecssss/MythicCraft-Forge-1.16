@@ -210,6 +210,8 @@ public class BlockInit {
 
 	// Mushrooms
 	// Want To Add Blood Mushroom
+	
+	//Trophies
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
