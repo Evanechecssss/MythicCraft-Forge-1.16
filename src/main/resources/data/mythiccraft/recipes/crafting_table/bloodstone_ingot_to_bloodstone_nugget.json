@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "m"
+    ],
+    "key": {
+        "m": {
+            "item": "mythiccraft:bloodstone_ingot"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:bloodstone_nugget",
+        "count": 9
+    }
+}

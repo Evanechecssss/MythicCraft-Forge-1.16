@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        },
+        {
+            "item": "mythiccraft:dragonheart_nugget"
+        }
+    ],
+    "result": {
+        "item": "mythiccraft:dragonheart_ingot",
+        "count": 1
+    }
+}

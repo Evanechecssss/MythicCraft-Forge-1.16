@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#G#",
+        "gMg",
+        "#G#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sandstone"
+        },
+        "G": {
+            "item": "minecraft:gold_block"
+        },
+        "g": {
+            "item": "minecraft:gold_ingot"
+        },
+        "M": {
+            "item": "mythiccraft:pedestal_tier2"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pedestal_tier3",
+        "count": 1
+    }
+}

@@ -26,7 +26,7 @@ public class MagicMirrorBlock extends Block
 	
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection());
 		
 	}
 	
@@ -34,6 +34,7 @@ public class MagicMirrorBlock extends Block
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.setValue(FACING, rot.rotate(state.getValue(FACING)));
 	}
+	
 	
 	@Override
 	protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {

@@ -214,28 +214,30 @@ public class BlockInit {
 	// Want To Add Blood Mushroom
 
 	// Trophies
-	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> DEATH_TROPHY = BLOCKS.register("death_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> DEATH_TROPHY = BLOCKS.register("death_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 	public static final RegistryObject<Block> MIRROR_DEMON_TROPHY = BLOCKS.register("mirror_demon_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> KRAKEN_TROPHY = BLOCKS.register("kraken_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> PRIDE_TROPHY = BLOCKS.register("pride_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> ENVY_TROPHY = BLOCKS.register("envy_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0)));
+	public static final RegistryObject<Block> KRAKEN_TROPHY = BLOCKS.register("kraken_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> PRIDE_TROPHY = BLOCKS.register("pride_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> ENVY_TROPHY = BLOCKS.register("envy_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 	public static final RegistryObject<Block> GLUTTONY_TROPHY = BLOCKS.register("gluttony_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> LUST_TROPHY = BLOCKS.register("lust_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> WRATH_TROPHY = BLOCKS.register("wrath_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> GREED_TROPHY = BLOCKS.register("greed_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
-	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy",
-			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0)));
+	public static final RegistryObject<Block> LUST_TROPHY = BLOCKS.register("lust_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> WRATH_TROPHY = BLOCKS.register("wrath_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> GREED_TROPHY = BLOCKS.register("greed_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy", () -> new TrophyBlock(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
@@ -280,44 +282,48 @@ public class BlockInit {
 			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
-			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
+			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
-			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
-			() -> new StatueOfBrokenCursesBlock(
-					Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
+			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
-			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> BROKEN_CRYSTAL_BALL = BLOCKS.register("broken_crystal_ball",
-			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
-	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
-			() -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK)));
+			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer", () -> new MobSlayerBlock(
+			Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
 	// class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",
-			() -> new PedestalBlock(1,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(1, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER2 = BLOCKS.register("pedestal_tier2",
-			() -> new PedestalBlock(2,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(2, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
-			() -> new PedestalBlock(3,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(3, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
-			() -> new PedestalBlock(4,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(4, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5",
-			() -> new PedestalBlock(5,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(5, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6",
-			() -> new PedestalBlock(6,
-					Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)));
+			() -> new PedestalBlock(6, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)

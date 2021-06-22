@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#C#",
+        "#D#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sandstone"
+        },
+        "C": {
+            "item": "minecraft:cut_sandstone"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pedestal_tier1",
+        "count": 1
+    }
+}

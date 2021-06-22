@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#D#",
+        "RMR",
+        "#D#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:sandstone"
+        },
+        "D": {
+            "item": "minecraft:diamond_block"
+        },
+        "R": {
+            "item": "minecraft:diamond"
+        },
+        "M": {
+            "item": "mythiccraft:pedestal_tier3"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pedestal_tier4",
+        "count": 1
+    }
+}
