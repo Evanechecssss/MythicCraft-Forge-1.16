@@ -25,6 +25,7 @@ import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
 import com.masterquentus.mythiccraft.objects.blocks.QuarryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
+import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
 
@@ -137,7 +138,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> DRIED_LIVING_KELP_BLOCK = BLOCKS.register("dried_living_kelp_block",
-			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)));
+			() -> new Block(
+					Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
 
@@ -210,8 +212,30 @@ public class BlockInit {
 
 	// Mushrooms
 	// Want To Add Blood Mushroom
-	
-	//Trophies
+
+	// Trophies
+	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> DEATH_TROPHY = BLOCKS.register("death_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> MIRROR_DEMON_TROPHY = BLOCKS.register("mirror_demon_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> KRAKEN_TROPHY = BLOCKS.register("kraken_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> PRIDE_TROPHY = BLOCKS.register("pride_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> ENVY_TROPHY = BLOCKS.register("envy_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> GLUTTONY_TROPHY = BLOCKS.register("gluttony_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> LUST_TROPHY = BLOCKS.register("lust_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> WRATH_TROPHY = BLOCKS.register("wrath_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> GREED_TROPHY = BLOCKS.register("greed_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
+	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE)));
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
@@ -260,13 +284,14 @@ public class BlockInit {
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
-			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
+			() -> new StatueOfBrokenCursesBlock(
+					Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
 			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> BROKEN_CRYSTAL_BALL = BLOCKS.register("broken_crystal_ball",
 			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
-            () -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK)));
+			() -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK)));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
 	// class
