@@ -226,7 +226,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
 			() -> new BlockQuarry(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
-			() -> new BlockMagicMirror(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
 			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_block",

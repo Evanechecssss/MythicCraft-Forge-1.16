@@ -14,10 +14,10 @@ import net.minecraft.state.StateContainer.Builder;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Rotation;
 import net.minecraft.world.IBlockReader;
-public class BlockMagicMirror extends Block 
+public class MagicMirrorBlock extends Block 
 {
 
-	public BlockMagicMirror(Properties p_i48440_1_) {
+	public MagicMirrorBlock(Properties p_i48440_1_) {
 		super(p_i48440_1_);
 	}
 

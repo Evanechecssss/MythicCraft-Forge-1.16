@@ -112,6 +112,8 @@ public class ItemInit {
 			() -> new VampriricItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> daylight_ring = ITEMS.register("daylight_ring",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MOON_CHARM = ITEMS.register("moon_charm",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wolfsbane = ITEMS.register("wolfsbane",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> vervain = ITEMS.register("vervain",
@@ -521,16 +523,14 @@ public class ItemInit {
 
 	// Tools
 	public static final RegistryObject<SwordItem> vampiric_sword = ITEMS.register("vampiric_sword",
-			() -> new SwordItem(ModItemTiers.VAMPIRIC, 2, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new SwordItem(ModItemTiers.VAMPIRIC, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> vampiric_pickaxe = ITEMS.register("vampiric_pickaxe",
 			() -> new PickaxeItem(ModItemTiers.VAMPIRIC, 2, 5.0f,
 					new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> vampiric_shovel = ITEMS.register("vampiric_shovel",
-			() -> new ShovelItem(ModItemTiers.VAMPIRIC, 2, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new ShovelItem(ModItemTiers.VAMPIRIC, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<AxeItem> vampiric_axe = ITEMS.register("vampiric_axe",
 			() -> new AxeItem(ModItemTiers.VAMPIRIC, 11, 3.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -542,8 +542,7 @@ public class ItemInit {
 			() -> new SwordItem(ModItemTiers.SILVER, 7, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> silver_pickaxe = ITEMS.register("silver_pickaxe",
-			() -> new PickaxeItem(ModItemTiers.SILVER, 4, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new PickaxeItem(ModItemTiers.SILVER, 4, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> silver_shovel = ITEMS.register("silver_shovel",
 			() -> new ShovelItem(ModItemTiers.SILVER, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -592,7 +591,7 @@ public class ItemInit {
 
 	public static final RegistryObject<HoeItem> dragonheart_hoe = ITEMS.register("dragonheart_hoe",
 			() -> new HoeItem(ModItemTiers.DRAGONHEART, 1, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
-	
+
 	public static final RegistryObject<SwordItem> FROSTSTEEL_SWORD = ITEMS.register("froststeel_sword",
 			() -> new SwordItem(ModItemTiers.FROSTSTEEL, 7, 5.0f,
 					new Item.Properties().tab(MythicCraftItems.instance)));
@@ -606,8 +605,7 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<AxeItem> FROSTSTEEL_AXE = ITEMS.register("froststeel_axe",
-			() -> new AxeItem(ModItemTiers.FROSTSTEEL, 11, 3.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new AxeItem(ModItemTiers.FROSTSTEEL, 11, 3.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<HoeItem> FROSTSTEEL_HOE = ITEMS.register("froststeel_hoe",
 			() -> new HoeItem(ModItemTiers.FROSTSTEEL, 1, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -628,16 +626,14 @@ public class ItemInit {
 			() -> new HoeItem(ModItemTiers.RUBY, 1, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<SwordItem> sapphire_sword = ITEMS.register("sapphire_sword",
-			() -> new SwordItem(ModItemTiers.SAPPHIRE, 7, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new SwordItem(ModItemTiers.SAPPHIRE, 7, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> sapphire_pickaxe = ITEMS.register("sapphire_pickaxe",
 			() -> new PickaxeItem(ModItemTiers.SAPPHIRE, 4, 5.0f,
 					new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> sapphire_shovel = ITEMS.register("sapphire_shovel",
-			() -> new ShovelItem(ModItemTiers.SAPPHIRE, 2, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new ShovelItem(ModItemTiers.SAPPHIRE, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<AxeItem> sapphire_axe = ITEMS.register("sapphire_axe",
 			() -> new AxeItem(ModItemTiers.SAPPHIRE, 11, 3.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -646,16 +642,14 @@ public class ItemInit {
 			() -> new HoeItem(ModItemTiers.SAPPHIRE, 1, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<SwordItem> amethyst_sword = ITEMS.register("amethyst_sword",
-			() -> new SwordItem(ModItemTiers.AMETHYST, 7, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new SwordItem(ModItemTiers.AMETHYST, 7, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> amethyst_pickaxe = ITEMS.register("amethyst_pickaxe",
 			() -> new PickaxeItem(ModItemTiers.AMETHYST, 4, 5.0f,
 					new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> amethyst_shovel = ITEMS.register("amethyst_shovel",
-			() -> new ShovelItem(ModItemTiers.AMETHYST, 2, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new ShovelItem(ModItemTiers.AMETHYST, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<AxeItem> amethyst_axe = ITEMS.register("amethyst_axe",
 			() -> new AxeItem(ModItemTiers.AMETHYST, 11, 3.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -667,12 +661,10 @@ public class ItemInit {
 			() -> new SwordItem(ModItemTiers.ANCIENT, 7, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<PickaxeItem> ancient_pickaxe = ITEMS.register("ancient_pickaxe",
-			() -> new PickaxeItem(ModItemTiers.ANCIENT, 4, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new PickaxeItem(ModItemTiers.ANCIENT, 4, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<ShovelItem> ancient_shovel = ITEMS.register("ancient_shovel",
-			() -> new ShovelItem(ModItemTiers.ANCIENT, 2, 5.0f,
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new ShovelItem(ModItemTiers.ANCIENT, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	public static final RegistryObject<AxeItem> ancient_axe = ITEMS.register("ancient_axe",
 			() -> new AxeItem(ModItemTiers.ANCIENT, 11, 3.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -680,8 +672,7 @@ public class ItemInit {
 	public static final RegistryObject<HoeItem> ancient_hoe = ITEMS.register("ancient_hoe",
 			() -> new HoeItem(ModItemTiers.ANCIENT, -1, -1, new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> FLINT_AND_HELLFIRE = ITEMS.register("flint_and_hellfire",
-			() -> new FlintAndHellFireItem(
-					new Item.Properties().tab(MythicCraftItems.instance).defaultDurability(60)));
+			() -> new FlintAndHellFireItem(new Item.Properties().tab(MythicCraftItems.instance).defaultDurability(60)));
 
 	// Fuel
 	public static final RegistryObject<WoodAshItem> WOOD_ASH = ITEMS.register("wood_ash",
@@ -699,8 +690,8 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)
 					.food(new Food.Builder().meat().nutrition(3).saturationMod(1.2f).build())));
 	public static final RegistryObject<Item> COOKED_WOLF_MEAT = ITEMS.register("cooked_wolf_meat",
-			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).food(new Food.Builder().nutrition(8)
-					.saturationMod(1.2f).build())));
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)
+					.food(new Food.Builder().nutrition(8).saturationMod(1.2f).build())));
 	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> BLOOD_BERRY = ITEMS.register("blood_berry",
 			() -> new BlockItem(BlockInit.BLOOD_BERRY_BUSH.get(),
@@ -759,30 +750,24 @@ public class ItemInit {
 	public static final RegistryObject<Item> vervain_seeds = ITEMS.register("vervain_seeds",
 			() -> new BlockItem(BlockInit.vervain_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wolfsbane_seeds = ITEMS.register("wolfsbane_seeds",
-			() -> new BlockItem(BlockInit.wolfsbane_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.wolfsbane_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> garlic_seeds = ITEMS.register("garlic_seeds",
 			() -> new BlockItem(BlockInit.garlic_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)
 					.food(new Food.Builder().nutrition(2).saturationMod(0.4f).build())));
 	public static final RegistryObject<Item> belladnna_seeds = ITEMS.register("belladnna_seeds",
-			() -> new BlockItem(BlockInit.belladonna_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.belladonna_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> mandrake_seeds = ITEMS.register("mandrake_seeds",
 			() -> new BlockItem(BlockInit.mandrake_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> foxgloves_seeds = ITEMS.register("foxgloves_seeds",
-			() -> new BlockItem(BlockInit.foxgloves_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.foxgloves_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wormwood_seeds = ITEMS.register("wormwood_seeds",
 			() -> new BlockItem(BlockInit.wormwood_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> nightshade_seeds = ITEMS.register("nightshade_seeds",
-			() -> new BlockItem(BlockInit.nightshade_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.nightshade_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> hellebore_seeds = ITEMS.register("hellebore_seeds",
-			() -> new BlockItem(BlockInit.hellebore_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.hellebore_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> whitesage_seeds = ITEMS.register("whitesage_seeds",
-			() -> new BlockItem(BlockInit.whitesage_crop.get(),
-					new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.whitesage_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> waterartichoke_seeds = ITEMS.register("waterartichoke_seeds",
 			() -> new WaterCropItem(BlockInit.waterartichoke_crop.get(),
 					new Item.Properties().tab(MythicCraftItems.instance)));
