@@ -26,7 +26,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nullable;
 
-public class BlockQuarry extends Block {
+public class QuarryBlock extends Block {
 	@OnlyIn(Dist.CLIENT)
 	public void appendHoverText(ItemStack p_190948_1_, @Nullable IBlockReader p_190948_2_, List<ITextComponent> tooltop, ITooltipFlag p_190948_4_) {
 		super.appendHoverText(p_190948_1_, p_190948_2_, tooltop, p_190948_4_);
@@ -35,7 +35,7 @@ public class BlockQuarry extends Block {
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
 
-	public BlockQuarry(Properties properties) {
+	public QuarryBlock(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 

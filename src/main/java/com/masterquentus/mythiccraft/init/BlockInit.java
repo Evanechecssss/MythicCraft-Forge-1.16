@@ -3,13 +3,39 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.OreType;
-
-import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
+import com.masterquentus.mythiccraft.init.auto.WoodTypes;
+import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
+import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
+import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModBerryBushBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModGrassBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModLanternBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModLayer;
+import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
+import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
+import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
+import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
+import com.masterquentus.mythiccraft.objects.blocks.QuarryBlock;
+import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
-import com.masterquentus.mythiccraft.objects.blocks.*;
+import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SlimeBlock;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.TorchBlock;
+import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
@@ -217,9 +243,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> LIVING_KELP = BLOCKS.register("living_kelp",
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()));
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
-			() -> new SugarCaneBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
+			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
-			() -> new SugarCaneBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
+			() -> new EnderBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
 
 	// Special blocks
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
@@ -228,13 +254,17 @@ public class BlockInit {
 			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
-			() -> new BlockQuarry(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
+			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
 			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
 			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+	public static final RegistryObject<Block> BROKEN_CRYSTAL_BALL = BLOCKS.register("broken_crystal_ball",
+			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()));
+	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+            () -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK)));
 
 	// i think the voxel shapes for all tiers are the same so they're all using one
 	// class

@@ -32,20 +32,19 @@ public class ModVoxelShapes {
     }
 
     public static final VoxelShape QUARRY = Stream.of(
-            Block.box(7, 2.74, 5.31, 9, 8.74, 7.31),
-            Block.box(0, 17, 0, 16, 28, 16),
-            Block.box(7, 2.45, 7, 9, 15.54, 9),
-            Block.box(4.70, 8, 7, 11.29, 10, 9),
-            Block.box(7, 8, 4.70, 9, 10, 11.2961),
-            Block.box(8.68, 10, 7, 10.68, 16, 9),
-            Block.box(7, 10, 8.68, 9, 16, 10.68),
-            Block.box(5.31, 10, 7, 7.31, 16, 9),
-            Block.box(7, 10, 5.31, 9, 16, 7.33),
-            Block.box(8.68, 1.99, 7, 10.68, 8, 9),
-            Block.box(7, 2, 8.68, 9, 8, 10.68),
-            Block.box(5.31, 2, 7, 7.31, 8, 9)
-            // Block.box(0, 0, 0, 16, 29, 16)
-    ).reduce(VoxelShapes::or).get();
+    		Block.box(7, 1.99584, 5.31703, 9, 7.99584, 7.31703),
+    		Block.box(0, 17, 0, 16, 28, 16),
+    		Block.box(7, 2.45672, 7, 9, 15.54328, 9),
+    		Block.box(4.7039, 8, 7, 11.2961, 10, 9),
+    		Block.box(7, 8, 4.7039, 9, 10, 11.2961),
+    		Block.box(8.68297, 10.00416, 7, 10.68297, 16.00416, 9),
+    		Block.box(7, 10.00416, 8.68297, 9, 16.00416, 10.68297),
+    		Block.box(5.31703, 10.00416, 7, 7.31703, 16.00416, 9),
+    		Block.box(7, 10.00416, 5.31703, 9, 16.00416, 7.31703),
+    		Block.box(8.68297, 1.99584, 7, 10.68297, 7.99584, 9),
+    		Block.box(7, 1.99584, 8.68297, 9, 7.99584, 10.68297),
+    		Block.box(5.31703, 1.99584, 7, 7.31703, 7.99584, 9)
+    		).reduce(VoxelShapes::or).get();
     
     public static List<VoxelShape> PEDESTAL = ImmutableList.of(
         Stream.of(
@@ -61,7 +60,6 @@ public class ModVoxelShapes {
                 Block.box(5, 0, 11, 11, 1, 16),
                 Block.box(11, 1, 1, 15, 15, 15),
                 Block.box(11, 15, 0, 16, 16, 16)
-                // Block.box(0, 0, 0, 16, 17, 16)
         ).reduce((v1, v2) -> {return VoxelShapes.join(v1, v2, IBooleanFunction.OR);}).get(),
         Stream.of(
                 Block.box(5, 1, 5, 11, 1, 11),
@@ -82,7 +80,6 @@ public class ModVoxelShapes {
                 Block.box(11, 15, 0, 16, 16, 16),
                 Block.box(11, 0, 0, 16, 1, 16),
                 Block.box(5, 15, 5, 11, 15, 11)
-                // Block.box(0, 0, 0, 16, 16, 16)
         ).reduce((v1, v2) -> {return VoxelShapes.join(v1, v2, IBooleanFunction.OR);}).get(),
         Stream.of(
                 Block.box(3, 2, 2, 13, 3, 3),
@@ -115,7 +112,6 @@ public class ModVoxelShapes {
                 Block.box(3, 13, 13, 13, 14, 14),
                 Block.box(3, 2, 13, 13, 3, 14),
                 Block.box(3, 13, 2, 13, 14, 3)
-               // Block.box(-2, 0, -2, 18, 17, 18)
         ).reduce((v1, v2) -> {return VoxelShapes.join(v1, v2, IBooleanFunction.OR);}).get(),
         Stream.of(
                 Block.box(13, 2, 3, 14, 3, 13),
@@ -155,7 +151,6 @@ public class ModVoxelShapes {
                 Block.box(3, 2, 13, 13, 3, 14),
                 Block.box(2, 2, 3, 3, 3, 13),
                 Block.box(3, 2, 2, 13, 3, 3)
-                // Block.box(-4, 0, -4, 20, 28, 20)
         ).reduce((v1, v2) -> {return VoxelShapes.join(v1, v2, IBooleanFunction.OR);}).get()
     );
 
