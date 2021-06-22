@@ -3,6 +3,7 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import com.masterquentus.mythiccraft.tileentity.LanternTileEntity;
+import com.masterquentus.mythiccraft.tileentity.MagicMirrorTileEntity;
 import com.masterquentus.mythiccraft.tileentity.MagicQuarryTileEntity;
 import com.masterquentus.mythiccraft.tileentity.MobSlayerTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
@@ -37,4 +38,7 @@ public class ModTileEntityTypes {
 
 	public static final RegistryObject<TileEntityType<MobSlayerTileEntity>> MOB_SLAYER = TILE_ENTITY_TYPES.register(
 			"mob_slayer", () -> TileEntityType.Builder.of(MobSlayerTileEntity::new, BlockInit.MOB_SLAYER.get()).build(null));
+	
+	public static final RegistryObject<TileEntityType<MagicMirrorTileEntity>> MAGIC_MIRROR = TILE_ENTITY_TYPES.register(
+			"magic_mirror", () -> TileEntityType.Builder.of(MagicMirrorTileEntity::new, BlockInit.MAGIC_MIRROR.get()).build(null));
 }

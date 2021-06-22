@@ -48,7 +48,7 @@ public class MagicMirrorBlock extends Block
 	
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return ModTileEntityTypes.pandors_box.get().create();
+		return ModTileEntityTypes.MAGIC_MIRROR.get().create();
 	}
 	
 	@Override

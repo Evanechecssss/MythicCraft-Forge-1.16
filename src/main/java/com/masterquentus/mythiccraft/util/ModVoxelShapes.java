@@ -111,7 +111,8 @@ public class ModVoxelShapes {
 				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 
-	public static VoxelShape MAGIC_MIRROR = Stream.of(Block.box(8.5, -14, 0, 10.5, 20, 2),
+	public static VoxelShape MAGIC_MIRROR = Stream
+			.of(Block.box(8.5, -14, 0, 10.5, 20, 2),
 			Block.box(8.75, 20.5, 5.75, 10.25, 21, 10.25), Block.box(9.25, -7, 2, 9.75, 18, 14),
 			Block.box(9.25, 18, 3, 9.75, 19, 13), Block.box(9.25, -8, 3, 9.75, -7, 13),
 			Block.box(9.25, 19, 5, 9.75, 20, 11), Block.box(9.25, -9, 5, 9.75, -8, 11),
