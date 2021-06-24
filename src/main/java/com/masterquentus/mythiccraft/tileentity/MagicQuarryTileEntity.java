@@ -59,6 +59,7 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 				if (active && y > 2) {
 					execute();
 				}
+
 			}
 		}
 	}

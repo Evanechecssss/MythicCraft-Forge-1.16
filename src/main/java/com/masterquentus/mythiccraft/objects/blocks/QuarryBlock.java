@@ -28,9 +28,11 @@ import javax.annotation.Nullable;
 
 public class QuarryBlock extends Block {
 	@OnlyIn(Dist.CLIENT)
-	public void appendHoverText(ItemStack p_190948_1_, @Nullable IBlockReader p_190948_2_, List<ITextComponent> tooltop, ITooltipFlag p_190948_4_) {
+	public void appendHoverText(ItemStack p_190948_1_, @Nullable IBlockReader p_190948_2_, List<ITextComponent> tooltop,
+			ITooltipFlag p_190948_4_) {
 		super.appendHoverText(p_190948_1_, p_190948_2_, tooltop, p_190948_4_);
-		tooltop.add(new StringTextComponent("to activate, place pedestals holding 2 green runes & 2 earth runes on the 4th diagonal block"));
+		tooltop.add(new StringTextComponent(
+				"To Activate, Place Pedestals Holding 2 Green Runes & 2 Earth Runes On The 4th Diagonal Block"));
 	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;

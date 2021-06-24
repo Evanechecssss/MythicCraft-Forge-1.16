@@ -1,54 +1,74 @@
 {
-  "type": "minecraft:entity",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
+	"type": "minecraft:entity",
+    "pools": [
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 0.0,
-                "max": 2.0,
-                "type": "minecraft:uniform"
-              }
+            "rolls": {
+                "min": 1,
+                "max": 10
             },
-            {
-              "function": "minecraft:looting_enchant",
-              "count": {
-                "min": 0.0,
-                "max": 1.0
-              }
-            }
-          ],
-          "name": "mythiccraft:vampiric_gem"
+            "entries": [
+                {
+                    "type": "item",
+                    "weight": 10,
+					"type": "minecraft:item",
+                    "name": "mythiccraft:vampiric_gem",
+                    "quality": 10,
+                    "conditions": [
+                        {
+                            "condition": "random_chance_with_looting",
+                            "chance": 4.1,
+                            "looting_multiplier": 3.01
+                        }
+                    ],
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 3,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 5,
+					"type": "minecraft:item",
+                    "name": "mythiccraft:lilith_trophy",
+                    "quality": 1,
+                    "conditions": [
+                        {
+                            "condition": "killed_by_player"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+					"type": "minecraft:item",
+                    "name": "mythiccraft:contract_lilith",
+                    "quality": 1,
+                    "conditions": [
+                        {
+                            "condition": "killed_by_player"
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "weight": 3,
+					"type": "minecraft:item",
+                    "name": "mythiccraft:lilith_bloodbottle",
+                    "quality": 1
+                }
+            ]
         }
-      ]
-    },
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "mythiccraft:lilith_bloodbottle"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "mythiccraft:contract_lilith"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:killed_by_player"
-        },
-        {
-          "condition": "minecraft:random_chance_with_looting",
-          "chance": 0.025,
-          "looting_multiplier": 0.10
-        }
-      ]
-    }
-  ]
+    ]
 }

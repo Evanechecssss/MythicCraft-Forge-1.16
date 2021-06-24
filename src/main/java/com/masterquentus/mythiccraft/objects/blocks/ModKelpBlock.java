@@ -15,7 +15,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.server.ServerWorld;
 
 public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
-	public ModKelpBlock(Properties properties) {
+	public ModKelpBlock(AbstractBlock.Properties properties) {
 		super(properties);
 	}
 
@@ -32,7 +32,8 @@ public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
 	   }
 
 	   public ItemStack getCloneItemStack(IBlockReader worldIn, BlockPos pos, BlockState state) {
-	      return new ItemStack(BlockInit.LIVING_KELP.get());
+	      return new ItemStack(BlockInit.LIVING_KELP_PLANT.get());
+	      
 	   }
 
 	  protected AbstractTopPlantBlock getHeadBlock() {

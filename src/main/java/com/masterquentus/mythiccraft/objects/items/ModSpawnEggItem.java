@@ -22,6 +22,7 @@ import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 public class ModSpawnEggItem extends SpawnEggItem {
 	
 	protected static final List<ModSpawnEggItem> UNADDED_EGGS = new ArrayList<ModSpawnEggItem>();
+	
 	private final Lazy<? extends EntityType<?>> entityTypeSupplier;
 	
 	public ModSpawnEggItem(final NonNullSupplier<? extends EntityType<?>> entityTypeSupplier, final int primaryColor, final int secondaryColor,final Item.Properties properties) {

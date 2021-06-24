@@ -8,6 +8,7 @@ import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
@@ -205,39 +206,50 @@ public class BlockInit {
 			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
 			ParticleTypes.FLAME));
 
-	// PLANT
+	// PLANTS
 	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
 			() -> new FlowerBlock(Effects.NIGHT_VISION, 5,
 					Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
+	public static final RegistryObject<Block> GRASSPER = BLOCKS.register("grassper",
+			() -> new GrassperBlock(Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
 
 	// Mushrooms
 	// Want To Add Blood Mushroom
 
 	// Trophies
-	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> DEATH_TROPHY = BLOCKS.register("death_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> DEATH_TROPHY = BLOCKS.register("death_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
 	public static final RegistryObject<Block> MIRROR_DEMON_TROPHY = BLOCKS.register("mirror_demon_trophy",
 			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(0)));
-	public static final RegistryObject<Block> KRAKEN_TROPHY = BLOCKS.register("kraken_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> PRIDE_TROPHY = BLOCKS.register("pride_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> ENVY_TROPHY = BLOCKS.register("envy_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> KRAKEN_TROPHY = BLOCKS.register("kraken_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> PRIDE_TROPHY = BLOCKS.register("pride_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> ENVY_TROPHY = BLOCKS.register("envy_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
 	public static final RegistryObject<Block> GLUTTONY_TROPHY = BLOCKS.register("gluttony_trophy",
 			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(0)));
-	public static final RegistryObject<Block> LUST_TROPHY = BLOCKS.register("lust_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> WRATH_TROPHY = BLOCKS.register("wrath_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> GREED_TROPHY = BLOCKS.register("greed_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy", () -> new TrophyBlock(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> LUST_TROPHY = BLOCKS.register("lust_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> WRATH_TROPHY = BLOCKS.register("wrath_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> GREED_TROPHY = BLOCKS.register("greed_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
+	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy",
+			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).noOcclusion()));
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
@@ -266,14 +278,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> SPANISH_MOSS = BLOCKS.register("spanish_moss",
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> LIVING_KELP_TOP = BLOCKS.register("living_kelp_top",
-			() -> new ModKelpTopBlock(
-					Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()));
-	public static final RegistryObject<Block> LIVING_KELP = BLOCKS.register("living_kelp",
-			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()));
+			() -> new ModKelpTopBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
+					.noCollission().lightLevel((state) -> 12)));
+	public static final RegistryObject<Block> LIVING_KELP_PLANT = BLOCKS.register("living_kelp_plant",
+			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
+					.noCollission().lightLevel((state) -> 12)));
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
-			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
+			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
-			() -> new EnderBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE)));
+			() -> new EnderBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 
 	// Special blocks
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
@@ -327,7 +340,7 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
-					.sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().lightLevel((s) -> 15)));
+					.sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().lightLevel((state) -> 15)));
 
 	public static final DeferredRegister<Block> NO_ITEM_BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);

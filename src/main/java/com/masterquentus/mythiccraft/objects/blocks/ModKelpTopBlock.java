@@ -17,10 +17,14 @@ public class ModKelpTopBlock extends KelpTopBlock implements IGrowable {
 		super(builder);
 
 	}
+	
+	public boolean canGrowInto(BlockState p_230334_1_) {
+	      return p_230334_1_.is(Blocks.WATER);
+	   }
 
     @Override
     protected Block getBodyBlock() {
-        return BlockInit.LIVING_KELP.get();
+        return BlockInit.LIVING_KELP_PLANT.get();
     }
 
 

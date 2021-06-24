@@ -53,7 +53,7 @@ public class ClientEventBusSubscriber {
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
 		// Sapling & Door
-		for (WoodTypes wood : WoodTypes.values()){
+		for (WoodTypes wood : WoodTypes.values()) {
 			RenderTypeLookup.setRenderLayer(wood.sapling.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
 		}
@@ -78,7 +78,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_BERRY_BUSH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_BERRY_BUSH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_BERRY_BUSH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 
 		// Torches
@@ -107,14 +107,16 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_GLASS_PANE.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS_PANE.get(), RenderType.translucent());
-		
+
 		// Mic
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.cutout());
 
-		for (LanternType lantern : LanternType.values()){
+		for (LanternType lantern : LanternType.values()) {
 			RenderTypeLookup.setRenderLayer(lantern.block.get(), RenderType.cutout());
 		}
 		RenderTypeLookup.setRenderLayer(BlockInit.BLOODY_ROSE.get(), RenderType.cutout());
@@ -122,7 +124,9 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.WEEPING_VINES.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.pandors_box_open.get(), RenderType.cutout());
-
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());
 
 		// Entities
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntityRender::new);
@@ -132,7 +136,8 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.SIREN_ENTITY.get(), SirenEntityRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.FAIRY_ENTITY.get(), FairyEntityRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LILITH_ENTITY.get(), LilithEntityRender::new);
-		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(), MobSummonProjectileRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(),
+				MobSummonProjectileRenderer::new);
 
 	}
 }
