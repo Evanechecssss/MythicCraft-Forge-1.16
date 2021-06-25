@@ -3,9 +3,10 @@ package com.masterquentus.mythiccraft.objects.blocks;
 
 import java.util.Random;
 
+import com.masterquentus.mythiccraft.init.BlockInit;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -32,7 +33,7 @@ public class EnderBrambleBlock extends Block {
 	   public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random rand) {
 	       BlockState above = world.getBlockState(pos.above());
 	       if (above.isAir()){
-	           world.setBlockAndUpdate(pos.above(), Blocks.CACTUS.defaultBlockState());
+	    	   world.setBlockAndUpdate(pos.above(), BlockInit.ENDER_BRAMBLE.get().defaultBlockState());
 	       }
 	   }
 }

@@ -11,34 +11,30 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
+
+
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '1.0'
 group = 'com.masterquentus.mythiccraft'
-archivesBaseName = 'mythic_craft'
+archivesBaseName = 'mimic'
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-   
+
     mappings channel: 'official', version: '1.16.5'
-    
-
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
+   
     runs {
         client {
             workingDirectory project.file('run')
-
-	    property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', project.file('build/createSrgToMcp/output.srg')
-
+           
             property 'forge.logging.markers', 'REGISTRIES'
 
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                mythiccraft {
+                mimic {
                     source sourceSets.main
                 }
             }
@@ -52,7 +48,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                mythiccraft {
+                examplemod {
                     source sourceSets.main
                 }
             }
@@ -65,10 +61,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'mythiccraft', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                mythiccraft {
+                examplemod {
                     source sourceSets.main
                 }
             }
@@ -79,29 +75,27 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven { url 'https://repo.repsy.io/mvn/gandiber/geckolib' }
     maven { url 'https://maven.blamejared.com' }
-    maven { url 'https://dvs1.progwml6.com/files/maven' }
-    maven { url "https://www.cursemaven.com"
     maven { url "https://dvs1.progwml6.com/files/maven/" }
-	maven { url "https://modmaven.k-4u.nl"
+    maven { url "https://modmaven.k-4u.nl" }
+    maven { url "https://www.cursemaven.com" }
 }
 
 dependencies {
   
     minecraft 'net.minecraftforge:forge:1.16.5-36.1.0'
-
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.36')
-
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.16.5:3.0.19')
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-51:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-51")
     
     // JEI Dependencies
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
-
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.4.90")
+    
     runtimeOnly fg.deobf("curse.maven:mousetweaks-60089:3202662") // Mouse Tweaks
+
+}
 
 jar {
     manifest {

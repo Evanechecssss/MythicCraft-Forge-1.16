@@ -93,6 +93,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIFE_TORCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.FERAL_TORCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LOVE_TORCH.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
 
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CHARREDSLIME_BLOCK.get(), RenderType.translucent());
