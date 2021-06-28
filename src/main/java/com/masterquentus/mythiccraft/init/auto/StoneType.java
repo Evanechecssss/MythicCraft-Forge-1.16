@@ -23,7 +23,8 @@ public enum StoneType {
 		for (StoneType.StoneVariation variation : StoneType.StoneVariation.values()) {
 			String typeString = variation.toString();
 			if (variation == StoneType.StoneVariation.STONE && (name.equals("crimson") || name.equals("charred")
-					|| name.equals("infested") || name.equals("icystone") || name.equals("marble"))) {
+					|| name.equals("infested") || name.equals("icystone") || name.equals("marble")
+					|| name.equals("pearlstone") || name.equals("mysticstone"))) {
 				typeString = "stone";
 			}
 			AbstractBlock.Properties props = Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)
