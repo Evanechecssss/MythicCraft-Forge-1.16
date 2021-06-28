@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " ##",
+        " ##"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:pureglowstone_dust"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pure_glowstone",
+        "count": 1
+    }
+}

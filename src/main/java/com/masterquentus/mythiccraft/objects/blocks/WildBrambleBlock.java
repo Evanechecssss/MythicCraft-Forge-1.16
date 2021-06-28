@@ -8,6 +8,7 @@ import com.masterquentus.mythiccraft.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.SugarCaneBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.state.IntegerProperty;
@@ -22,7 +23,7 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class WildBrambleBlock extends Block implements net.minecraftforge.common.IPlantable{
+public class WildBrambleBlock extends SugarCaneBlock implements net.minecraftforge.common.IPlantable{
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_15;
 	   public static final VoxelShape COLLISION_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 15.0D, 15.0D);
 	   public static final VoxelShape OUTLINE_SHAPE = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
@@ -67,6 +68,7 @@ public class WildBrambleBlock extends Block implements net.minecraftforge.common
 		           world.setBlockAndUpdate(pos.above(), BlockInit.WILD_BRAMBLE.get().defaultBlockState());
 		       }
 	   }
+	   
 
 
 	   @Override

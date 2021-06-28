@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:vampric_gem"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:vampric_block",
+        "count": 1
+    }
+}

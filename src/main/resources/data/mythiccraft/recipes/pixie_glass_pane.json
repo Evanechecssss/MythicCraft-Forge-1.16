@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:pixie_glass"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:pixie_glass_pane",
+        "count": 1
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " s ",
+        " # ",
+        " # "
+    ],
+    "key": {
+        "s": {
+            "item": "mythiccraft:sapphire"
+        },
+        "#": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:sapphire_shovel",
+        "count": 1
+    }
+}

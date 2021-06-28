@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " a ",
+        " # ",
+        " # "
+    ],
+    "key": {
+        "a": {
+            "item": "mythiccraft:amethyst"
+        },
+        "#": {
+            "tag": "forge:rods/wooden"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:amethyst_shovel",
+        "count": 1
+    }
+}

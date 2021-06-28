@@ -52,10 +52,12 @@ public class ClientEventBusSubscriber {
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
-		// Sapling & Door
+		// Sapling, Door, Trapdoor, & Leaves
 		for (WoodTypes wood : WoodTypes.values()) {
 			RenderTypeLookup.setRenderLayer(wood.sapling.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(wood.leaves.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(wood.trapdoor.get(), RenderType.cutout());
 		}
 
 		// Crops
@@ -117,6 +119,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.cutout());
+		
 
 		for (LanternType lantern : LanternType.values()) {
 			RenderTypeLookup.setRenderLayer(lantern.block.get(), RenderType.cutout());

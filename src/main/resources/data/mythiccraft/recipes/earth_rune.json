@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mythiccraft:blank_rune"
+        },
+        {
+            "item": "minecraft:dirt"
+        }
+    ],
+    "result": {
+        "item": "mythiccraft:earth_rune",
+        "count": 1
+    }
+}

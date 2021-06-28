@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " ##",
+        " ##"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:blackstone_cobble"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:blackstone_polished",
+        "count": 4
+    }
+}

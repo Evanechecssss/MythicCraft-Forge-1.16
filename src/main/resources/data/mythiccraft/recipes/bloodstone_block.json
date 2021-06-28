@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:bloodstone_ingot"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:bloodstone_block",
+        "count": 1
+    }
+}

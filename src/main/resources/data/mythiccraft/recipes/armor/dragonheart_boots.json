@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "# #",
+        "# #"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:dragonheart_ingot"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:dragonheart_boots",
+        "count": 1
+    }
+}

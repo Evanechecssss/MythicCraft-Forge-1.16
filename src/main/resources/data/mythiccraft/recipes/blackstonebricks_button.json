@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mythiccraft:blackstone_bricks"
+        }
+    ],
+    "result": {
+        "item": "mythiccraft:blackstonebricks_button",
+        "count": 1
+    }
+}

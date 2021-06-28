@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "###",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:moonstone"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:moonstone_block",
+        "count": 1
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        " ##",
+        " ##"
+    ],
+    "key": {
+        "#": {
+            "item": "mythiccraft:blackstone_slab"
+        }
+    },
+    "result": {
+        "item": "mythiccraft:blackstone_chisealed",
+        "count": 1
+    }
+}
