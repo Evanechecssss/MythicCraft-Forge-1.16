@@ -32,7 +32,7 @@ public enum StoneType {
 			this.blocks.put(variation, blockRegistry.register(name + (typeString.equals("") ? "" : "_" + typeString),
 					() -> new Block(props)));
 			this.stairs.put(variation, blockRegistry.register(name + typeString + "_stairs",
-					() -> new StairsBlock(() -> this.stairs.get(variation).get().defaultBlockState(), props)));
+					() -> new StairsBlock(() -> this.blocks.get(variation).get().defaultBlockState(), props)));
 			this.slabs.put(variation, blockRegistry.register(name + typeString + "_slab", () -> new SlabBlock(props)));
 			this.buttons.put(variation,
 					blockRegistry.register(name + typeString + "_button", () -> new ModStoneButtonBlock(props)));
