@@ -1,7 +1,7 @@
+  
 {
-    "parent": "block/cube_column",
+    "parent": "block/cube_all",
     "textures": {
-        "end": "mythiccraft:block/infested_crate",
-        "side": "mythiccraft:block/infested_crate_bottom"
+        "all": "mythiccraft:block/infested_crate"
     }
 }

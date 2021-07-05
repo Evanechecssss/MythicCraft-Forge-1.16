@@ -1,7 +1,5 @@
 {
     "variants": {
-        "axis=y":  { "model": "mythiccraft:block/icy_crate" },
-        "axis=z":   { "model": "mythiccraft:block/icy_crate", "x": 90 },
-        "axis=x":   { "model": "mythiccraft:block/icy_crate", "x": 90, "y": 90 }
+        "": { "model": "mythiccraft:block/icy_crate" }
     }
 }

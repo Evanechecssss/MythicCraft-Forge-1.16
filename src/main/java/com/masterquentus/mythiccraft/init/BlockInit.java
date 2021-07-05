@@ -138,7 +138,7 @@ public class BlockInit {
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
-	public static final RegistryObject<Block> DRIED_LIVING_KELP_BLOCK = BLOCKS.register("dried_living_kelp_block",
+	public static final RegistryObject<Block> LIVING_KELP_BLOCK = BLOCKS.register("living_kelp_block",
 			() -> new Block(
 					Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",

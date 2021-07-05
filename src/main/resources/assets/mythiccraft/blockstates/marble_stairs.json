@@ -23,7 +23,7 @@
         "facing=east,half=top,shape=straight":  { "model": "mythiccraft:block/marble_stairs", "x": 180, "uvlock": true },
         "facing=west,half=top,shape=straight":  { "model": "mythiccraft:block/marble_stairs", "x": 180, "y": 180, "uvlock": true },
         "facing=south,half=top,shape=straight": { "model": "mythiccraft:block/marble_stairs", "x": 180, "y": 90, "uvlock": true },
-        "facing=north,half=top,shape=straight": { "model": "mythiccraft:block/marble_stairs", "x": 180, "y": 270, "uvlock": true },
+        "facing=north,half=top,shape=straight": { "model": "mythiccraft:block/marblestairs", "x": 180, "y": 270, "uvlock": true },
         "facing=east,half=top,shape=outer_right":  { "model": "mythiccraft:block/marble_stairs_outer", "x": 180, "y": 90, "uvlock": true },
         "facing=west,half=top,shape=outer_right":  { "model": "mythiccraft:block/marble_stairs_outer", "x": 180, "y": 270, "uvlock": true },
         "facing=south,half=top,shape=outer_right": { "model": "mythiccraft:block/marble_stairs_outer", "x": 180, "y": 180, "uvlock": true },

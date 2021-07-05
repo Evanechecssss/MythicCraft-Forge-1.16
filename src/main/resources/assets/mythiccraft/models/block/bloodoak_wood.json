@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:block/bloodoak_wood_top",
+        "side": "mythiccraft:block/bloodoak_wood"
+    }
+}
