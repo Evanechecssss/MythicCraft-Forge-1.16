@@ -83,18 +83,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 
-		// Torches
-		RenderTypeLookup.setRenderLayer(BlockInit.BLOOD_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.SILVER_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.UNDEAD_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.LIFE_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.FERAL_TORCH.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.LOVE_TORCH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
 

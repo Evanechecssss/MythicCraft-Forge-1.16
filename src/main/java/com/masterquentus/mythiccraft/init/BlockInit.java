@@ -172,40 +172,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> DARK_GLOWSTONE = BLOCKS.register("dark_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
-	public static final RegistryObject<Block> BLOOD_TORCH = BLOCKS.register("blood_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> SILVER_TORCH = BLOCKS.register("silver_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> SOUL_TORCH = BLOCKS.register("soul_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> UNDEAD_TORCH = BLOCKS.register("undead_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> MYSTIC_TORCH = BLOCKS.register("mystic_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> ENDER_TORCH = BLOCKS.register("ender_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> FAIRY_TORCH = BLOCKS.register("fairy_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> PIXIE_TORCH = BLOCKS.register("pixie_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> LIFE_TORCH = BLOCKS.register("life_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> FERAL_TORCH = BLOCKS.register("feral_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-	public static final RegistryObject<Block> LOVE_TORCH = BLOCKS.register("love_torch", () -> new TorchBlock(
-			Block.Properties.copy(Blocks.TORCH).strength(0.3f, 0.2f).sound(SoundType.WOOD).lightLevel((state) -> 15),
-			ParticleTypes.FLAME));
-
+	
 	// PLANTS
 	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
 			() -> new FlowerBlock(Effects.NIGHT_VISION, 5,
