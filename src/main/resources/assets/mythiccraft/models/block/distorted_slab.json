@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mythiccraft:block/distorted_planks",
+        "top": "mythiccraft:block/distorted_planks",
+        "side": "mythiccraft:block/distorted_planks"
+    }
+}

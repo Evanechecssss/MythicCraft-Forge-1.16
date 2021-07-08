@@ -60,12 +60,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     private void createWoodStates(String name, WoodTypes wood){
         simpleBlock(wood.plank.get());
         simpleBlock(wood.leaves.get());
-        // dont have textures yet
-        // simpleBlock(wood.wood.get());
-        // simpleBlock(wood.strippedWood.get());
-
-        // white oak, witch wood
-        // simpleBlock(wood.crate.get());
+        simpleBlock(wood.wood.get());
+        simpleBlock(wood.strippedWood.get());
+        simpleBlock(wood.crate.get());
 
         fenceBlock((FenceBlock) wood.fence.get(), blockTexture(wood.plank.get()));
         fenceGateBlock((FenceGateBlock) wood.gate.get(), blockTexture(wood.plank.get()));

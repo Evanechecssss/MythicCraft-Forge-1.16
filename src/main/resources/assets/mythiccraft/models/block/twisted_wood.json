@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:block/twisted_wood_top",
+        "side": "mythiccraft:block/twisted_wood"
+    }
+}

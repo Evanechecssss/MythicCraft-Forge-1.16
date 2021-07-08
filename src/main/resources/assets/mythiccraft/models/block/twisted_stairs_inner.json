@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "mythiccraft:block/twisted_planks",
+        "top": "mythiccraft:block/twisted_planks",
+        "side": "mythiccraft:block/twisted_planks"
+    }
+}

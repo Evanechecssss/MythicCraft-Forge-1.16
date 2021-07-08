@@ -19,6 +19,9 @@
 		"mythiccraft:yew_leaves",
 		"mythiccraft:infested_leaves",
 		"mythiccraft:charred_leaves",
-		"mythiccraft:icy_leaves"
+		"mythiccraft:icy_leaves",
+		"mythiccraft:twisted_leaves"
+		"mythiccraft:distorted_leaves"
+		
 	]
 }
