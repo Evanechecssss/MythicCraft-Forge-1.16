@@ -82,7 +82,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_BERRY_BUSH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
-
+		RenderTypeLookup.setRenderLayer(BlockInit.GRASSPER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
 
@@ -107,7 +107,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER4.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER5.get(), RenderType.cutout());
-		
 
 		for (LanternType lantern : LanternType.values()) {
 			RenderTypeLookup.setRenderLayer(lantern.block.get(), RenderType.cutout());

@@ -19,24 +19,24 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class FluidInit {
 
 	public static final ResourceLocation BLOOD_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/blood_still");
+			"block/blood_still");
 	public static final ResourceLocation BLOOD_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/blood_flowing");
+			"block/blood_flowing");
 	public static final ResourceLocation ECTOPLASM_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/ectoplasm_still");
+			"block/ectoplasm_still");
 	public static final ResourceLocation ECTOPLASM_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/ectoplasm_flowing");
+			"block/ectoplasm_flowing");
 	public static final ResourceLocation INFESTEDGOO_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/infestedgoo_still");
+			"block/infestedgoo_still");
 	public static final ResourceLocation INFESTEDGOO_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/infestedgoo_flowing");
+			"block/infestedgoo_flowing");
 
 	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/blood_overlay");
+			"block/blood_overlay");
 	public static final ResourceLocation ECTOPLASM_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/ectoplasm_overlay");
+			"block/ectoplasm_overlay");
 	public static final ResourceLocation INFESTEDGOO_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"blocks/infestedgoo_overlay");
+			"block/infestedgoo_overlay");
 
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
 			MythicCraft.MOD_ID);

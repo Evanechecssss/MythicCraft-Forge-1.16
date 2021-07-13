@@ -113,6 +113,8 @@
 	//Food
 	"item.mythiccraft.raw_kraken": "Raw Kraken",
 	"item.mythiccraft.cooked_kraken": "Cooked Kraken",
+	"item.mythiccraft.raw_wolf_meat": "Raw Wolf Meat",
+	"item.mythiccraft.cooked_wolf_meat": "Cooked Wolf Meat",
 	"block.mythiccraft.blood_berry_bush": "Blood Berry",
 	"block.mythiccraft.silver_berry_bush": "Silver Berry",
 	"block.mythiccraft.charred_berry_bush": "Charred Berry",
@@ -253,7 +255,7 @@
 	"block.mythiccraft.marblepolished_wall": "Polished Marble Wall",
 	"block.mythiccraft.marblechisealed_wall": "Chiseled Marble Wall",
 	"block.mythiccraft.marblecracked_wall": "Cracked Marble Wall",
-	"block.mythiccraft.marblestone_button": "Marble Button",
+	"block.mythiccraft.marble_button": "Marble Button",
 	"block.mythiccraft.marblecobble_button": "Marble Cobblestone Button",
 	"block.mythiccraft.marblebricks_button": "Marble Bricks Button",
 	"block.mythiccraft.marblepolished_button": "Polished Marble Button",
@@ -734,7 +736,7 @@
 	"block.mythiccraft.infestedpolished_slab": "Polished Infested Slab",
 	"block.mythiccraft.infestedchisealed_slab": "Chiseled Infested Slab",
 	"block.mythiccraft.infestedcracked_slab": "Cracked Infested Slab",
-	"block.mythiccraft.infested_wall": "Infestedstone Wall",
+	"block.mythiccraft.infestedstone_wall": "Infestedstone Wall",
 	"block.mythiccraft.infestedcobble_wall": "Infested Cobblestone Wall",
 	"block.mythiccraft.infestedbricks_wall": "Infested Bricks Wall",
 	"block.mythiccraft.infestedpolished_wall": "Polished Infested Wall",
@@ -746,7 +748,7 @@
 	"block.mythiccraft.crimsonpolished_stairs": "Polished Crimson Stairs",
 	"block.mythiccraft.crimsonchisealed_stairs": "Chiseled Crimson Stairs",
 	"block.mythiccraft.crimsoncracked_stairs": "Cracked Crimson Stairs",
-	"block.mythiccraft.crimson_slab": "Crimsonstone Slab",
+	"block.mythiccraft.crimsonstone_slab": "Crimsonstone Slab",
 	"block.mythiccraft.crimsoncobble_slab": "Crimson Cobblestone Slab",
 	"block.mythiccraft.crimsonbricks_slab": "Crimson Bricks Slab",
 	"block.mythiccraft.crimsonpolished_slab": "Polished Crimson Slab",
@@ -1007,6 +1009,11 @@
 	
 	//Entities
 	"entity.mythiccraft.lilith_entity": "Lilith",
+	
+	//Fluids
+	"fluid.mythiccraft.blood_fluid": "Blood",
+	"fluid.mythiccraft.ectoplasm_fluid": "Ectoplasm",
+	"fluid.mythiccraft.infestedgoo_fluid": "InfestedGoo",
 	
 	//Creative tab
 	"itemGroup.mythiccraftitems": "MythicCraft Items",

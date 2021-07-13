@@ -1,4 +1,3 @@
-  
 {
-  "parent": "minecraft:block/icystone_wall_inventory"
+  "parent": "mythiccraft:block/icystone_wall_inventory"
 }

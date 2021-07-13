@@ -2,7 +2,7 @@
     "parent": "block/slab",
     "textures": {
         "bottom": "mythiccraft:block/marble",
-        "top": "mythiccraft:block/marble_stone",
-        "side": "mythiccraft:block/marble_stone"
+        "top": "mythiccraft:block/marble",
+        "side": "mythiccraft:block/marble"
     }
 }

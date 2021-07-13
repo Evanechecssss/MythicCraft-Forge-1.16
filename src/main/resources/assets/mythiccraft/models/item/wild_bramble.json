@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:items/wild_bramble"
+    "layer0": "mythiccraft:block/wild_bramble"
   }
 }

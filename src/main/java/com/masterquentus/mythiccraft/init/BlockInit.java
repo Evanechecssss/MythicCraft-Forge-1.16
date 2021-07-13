@@ -36,12 +36,10 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.TorchBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -139,8 +137,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
 	public static final RegistryObject<Block> LIVING_KELP_BLOCK = BLOCKS.register("living_kelp_block",
-			() -> new Block(
-					Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)));
+			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)
+					.lightLevel((state) -> 13)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
 
@@ -172,7 +170,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> DARK_GLOWSTONE = BLOCKS.register("dark_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
-	
+
 	// PLANTS
 	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
 			() -> new FlowerBlock(Effects.NIGHT_VISION, 5,
@@ -246,10 +244,10 @@ public class BlockInit {
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> LIVING_KELP_TOP = BLOCKS.register("living_kelp_top",
 			() -> new ModKelpTopBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
-					.noCollission().lightLevel((state) -> 12)));
+					.noCollission().lightLevel((state) -> 15)));
 	public static final RegistryObject<Block> LIVING_KELP_PLANT = BLOCKS.register("living_kelp_plant",
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
-					.noCollission().lightLevel((state) -> 12)));
+					.noCollission().lightLevel((state) -> 15)));
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
 			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
