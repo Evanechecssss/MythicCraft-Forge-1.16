@@ -1,0 +1,9 @@
+  
+{
+    "variants": {
+        "facing=north": { "model": "mythiccraft:block/broken_crystal_ball" },
+        "facing=south": { "model": "mythiccraft:block/broken_crystal_ball", "y": 180 },
+        "facing=west":  { "model": "mythiccraft:block/broken_crystal_ball", "y": 270 },
+        "facing=east":  { "model": "mythiccraft:block/broken_crystal_ball", "y": 90 }
+    }
+}

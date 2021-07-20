@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mythiccraft:block/statue_of_broken_curses",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mythiccraft:block/statue_of_broken_curses"
+    },
+    "facing=south": {
+      "model": "mythiccraft:block/statue_of_broken_curses",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mythiccraft:block/statue_of_broken_curses",
+      "y": 270
+    }
+  }
+}
