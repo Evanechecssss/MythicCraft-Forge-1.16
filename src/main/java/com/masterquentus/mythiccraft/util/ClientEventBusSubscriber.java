@@ -58,6 +58,29 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.leaves.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.trapdoor.get(), RenderType.cutout());
+			
+			//Pots
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BLOODOAK_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WHITEOAK_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SILVERWOOD_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WITCHWOOD_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ALDER_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_HAWTHORN_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ROWAN_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WILLOW_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BEECH_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ASH_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BLACKTHORN_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_CEDAR_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ELDER_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_JUNIPER_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WITCHHAZEL_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_YEW_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_INFESTED_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_CHARRED_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ICY_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_TWISTED_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_DISTORTED_SAPLING.get(), RenderType.cutout());
 		}
 
 		// Crops
@@ -83,8 +106,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GRASSPER.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
 
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CHARREDSLIME_BLOCK.get(), RenderType.translucent());
@@ -112,9 +133,31 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(lantern.block.get(), RenderType.cutout());
 		}
 		RenderTypeLookup.setRenderLayer(BlockInit.BLOODY_ROSE.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BLOODY_ROSE.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.GlOW_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_GlOW_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BONE_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BONE_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.FIRE_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_FIRE_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.PRICKLY_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_PRICKLY_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SCORCHED_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SCORCHED_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.EMBER_MOSS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_GLOWING.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_MEDIUM.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_SMALL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.FIRE_FLOWER.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.WISPY_COTTON.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.GLINT_WEED.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.HELL_FIRE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WEEPING_VINES.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.pandors_box_open.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());

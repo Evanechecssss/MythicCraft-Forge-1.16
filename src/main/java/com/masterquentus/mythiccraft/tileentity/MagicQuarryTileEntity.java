@@ -56,7 +56,7 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 				delay = 100 * (1 - (power / 20));
 
 				tick = 0;
-				if (active && y > 2) {
+				if (active && y > 1) {
 					execute();
 				}
 
@@ -75,7 +75,7 @@ public class MagicQuarryTileEntity extends TileEntity implements ITickableTileEn
 	private void execute() {
 		int index = 0;
 		Block[] blocksRemoved = new Block[9];
-		for (int x = 0; x < 3; x++) {
+		for (int x = 0; x < 1; x++) {
 			for (int z = 0; z < 3; z++) {
 				BlockPos posToBreak = new BlockPos(this.x + x, this.y, this.z + z);
 				blocksRemoved[index] = this.level.getBlockState(posToBreak).getBlock();

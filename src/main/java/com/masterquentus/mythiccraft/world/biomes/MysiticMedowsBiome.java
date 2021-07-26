@@ -45,7 +45,7 @@ public class MysiticMedowsBiome extends ModBiome {
 
 		return worldGenSettings;
 	}
-
+	
 	/* // todo: find modern equivilent. im too lazy to deal with it right now
 		this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.SWEET_BERRY_BUSH_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
 		this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DefaultBiomeFeatures.BLUE_ORCHID_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
@@ -57,7 +57,7 @@ public class MysiticMedowsBiome extends ModBiome {
 
 	 */
 	protected ConfiguredSurfaceBuilder<?> getSurface() {
-		return SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(Blocks.GRASS.defaultBlockState(),
+		return SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.defaultBlockState(),
 				StoneType.MYSTICSTONE.blocks.get(StoneType.StoneVariation.STONE).get().defaultBlockState(), Blocks.CLAY.defaultBlockState()));
 	}
 }

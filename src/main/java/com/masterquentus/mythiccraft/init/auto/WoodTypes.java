@@ -1,13 +1,27 @@
 package com.masterquentus.mythiccraft.init.auto;
 
-import com.masterquentus.mythiccraft.objects.blocks.*;
+import java.util.function.Supplier;
+
+import com.masterquentus.mythiccraft.objects.blocks.CrateBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModDoor;
+import com.masterquentus.mythiccraft.objects.blocks.ModLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModTrapDoor;
+import com.masterquentus.mythiccraft.objects.blocks.ModWoodButtonBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModWoodPressurePlateBlock;
 import com.masterquentus.mythiccraft.world.feature.ModTree;
-import net.minecraft.block.*;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.SaplingBlock;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
-
-import java.util.function.Supplier;
 
 public enum WoodTypes {
 	BLOODOAK, WHITEOAK, SILVERWOOD, WITCHWOOD, ALDER, HAWTHORN, ROWAN, WILLOW, BEECH, ASH, BLACKTHORN, CEDAR, ELDER,
@@ -29,6 +43,10 @@ public enum WoodTypes {
 	public Supplier<Block> fence;
 	public Supplier<Block> gate;
 	public Supplier<Block> sapling;
+	public Supplier<Block> sign;
+	public Supplier<Block> wallsign;
+	public Supplier<Block> boat;
+	public Supplier<Block> chest;
 	public ModTree tree;
 
 	public void register(DeferredRegister<Block> blockRegistry) {
@@ -65,5 +83,15 @@ public enum WoodTypes {
 				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE)));
 		this.sapling = blockRegistry.register(name + "_sapling",
 				() -> new SaplingBlock(this.tree, Block.Properties.copy(Blocks.OAK_SAPLING)));
+		//this.chest = blockRegistry.register(name + "_chest",
+				//() -> new ModChestBlock(Block.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD), () -> {
+				     // return TileEntityType.CHEST;
+		//this.sign = blockRegistry.register(name + "_sign",
+				//() -> new StandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission()
+						//.strength(1.0F).sound(SoundType.WOOD), WoodType.ACACIA));
+		//this.wallsign = blockRegistry.register(name + "_wallsign",
+				//() -> new WallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission()
+						//.strength(1.0F).sound(SoundType.WOOD), WoodType.ACACIA));
+		
+				};
 	}
-}

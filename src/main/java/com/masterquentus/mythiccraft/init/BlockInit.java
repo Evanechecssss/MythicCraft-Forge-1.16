@@ -6,7 +6,9 @@ import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
@@ -33,6 +35,10 @@ import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.block.GrassBlock;
+import net.minecraft.block.HugeMushroomBlock;
+import net.minecraft.block.MushroomBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
@@ -40,6 +46,7 @@ import net.minecraft.block.VineBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -77,6 +84,16 @@ public class BlockInit {
 		}
 
 		return crates;
+	}
+
+	public static Block[] getAllChest() {
+		Block[] chest = new Block[WoodTypes.values().length];
+		for (int i = 0; i < WoodTypes.values().length; i++) {
+			chest[i] = WoodTypes.values()[i].chest.get();
+		}
+
+		return chest;
+
 	}
 
 	public static Block[] getAllLanterns() {
@@ -141,6 +158,8 @@ public class BlockInit {
 					.lightLevel((state) -> 13)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
+	public static final RegistryObject<Block> EMBER_BLOCK = BLOCKS.register("ember_block", () -> new Block(
+			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.STONE).lightLevel((state) -> 15)));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
@@ -171,15 +190,7 @@ public class BlockInit {
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
 
-	// PLANTS
-	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
-			() -> new FlowerBlock(Effects.NIGHT_VISION, 5,
-					Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
-	public static final RegistryObject<Block> GRASSPER = BLOCKS.register("grassper",
-			() -> new GrassperBlock(Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
-
 	// Mushrooms
-	// Want To Add Blood Mushroom
 
 	// Trophies
 	public static final RegistryObject<Block> LILITH_TROPHY = BLOCKS.register("lilith_trophy",
@@ -237,11 +248,57 @@ public class BlockInit {
 		return BLOCKS.register(registryName, () -> new ModCropBlock(Block.Properties.copy(Blocks.WHEAT), seeds));
 	}
 
-	// PLANT
+	// Plants
+	public static final RegistryObject<Block> BLOODY_ROSE = BLOCKS.register("bloody_rose",
+			() -> new FlowerBlock(Effects.HUNGER, 5,
+					Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_BLOODY_ROSE = BLOCKS.register("potted_bloody_rose",
+			() -> new FlowerPotBlock(BlockInit.BLOODY_ROSE.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> GlOW_FLOWER = BLOCKS.register("glow_flower",
+			() -> new FlowerBlock(Effects.NIGHT_VISION, 5, Block.Properties.copy(Blocks.DANDELION).strength(0.3f, 0.2f)
+					.sound(SoundType.VINE).lightLevel((state) -> 10)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_GlOW_FLOWER = BLOCKS.register("potted_glow_flower",
+			() -> new FlowerPotBlock(BlockInit.GlOW_FLOWER.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> BONE_FLOWER = BLOCKS.register("bone_flower", () -> new FlowerBlock(
+			Effects.BLINDNESS, 5,
+			Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE).lightLevel((state) -> 10)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_BONE_FLOWER = BLOCKS.register("potted_bone_flower",
+			() -> new FlowerPotBlock(BlockInit.BONE_FLOWER.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> FIRE_FLOWER = BLOCKS.register("fire_flower", () -> new FlowerBlock(
+			Effects.FIRE_RESISTANCE, 5,
+			Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE).lightLevel((state) -> 10)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_FIRE_FLOWER = BLOCKS.register("potted_fire_flower",
+			() -> new FlowerPotBlock(BlockInit.FIRE_FLOWER.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> PRICKLY_FLOWER = BLOCKS.register("prickly_flower", () -> new FlowerBlock(
+			Effects.DAMAGE_BOOST, 5,
+			Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE).lightLevel((state) -> 10)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_PRICKLY_FLOWER = BLOCKS.register("potted_prickly_flower",
+			() -> new FlowerPotBlock(BlockInit.PRICKLY_FLOWER.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> SCORCHED_FLOWER = BLOCKS.register("scorched_flower",
+			() -> new FlowerBlock(Effects.DIG_SPEED, 5, Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f)
+					.sound(SoundType.VINE).lightLevel((state) -> 10)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_SCORCHED_FLOWER = BLOCKS.register("potted_scorched_flower",
+			() -> new FlowerPotBlock(BlockInit.SCORCHED_FLOWER.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	public static final RegistryObject<Block> GRASSPER = BLOCKS.register("grassper",
+			() -> new GrassperBlock(Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE)));
 	public static final RegistryObject<Block> WEEPING_VINES = BLOCKS.register("weeping_vines",
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> SPANISH_MOSS = BLOCKS.register("spanish_moss",
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
+	public static final RegistryObject<Block> EMBER_MOSS = BLOCKS.register("ember_moss",
+			() -> new EmberMossBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> LIVING_KELP_TOP = BLOCKS.register("living_kelp_top",
 			() -> new ModKelpTopBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
 					.noCollission().lightLevel((state) -> 15)));
@@ -251,7 +308,104 @@ public class BlockInit {
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
 			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
-			() -> new EnderBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
+			() -> new EnderBrambleBlock(
+					Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission().harvestTool(ToolType.AXE)));
+	public static final RegistryObject<Block> SCORCHED_GRASS_SMALL = BLOCKS.register("scorched_grass_small",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> SCORCHED_GRASS = BLOCKS.register("scorched_grass",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> SCORCHED_GRASS_MEDIUM = BLOCKS.register("scorched_grass_medium",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+	public static final RegistryObject<Block> SCORCHED_GRASS_GLOWING = BLOCKS.register("scorched_grass_glowing",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+	public static final RegistryObject<Block> GLINT_WEED = BLOCKS.register("glint_weed",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+	public static final RegistryObject<Block> WISPY_COTTON = BLOCKS.register("wispy_cotton",
+			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_BLOODOAK_SAPLING = BLOCKS.register("potted_bloodoak_sapling",
+			() -> new FlowerPotBlock(WoodTypes.BLOODOAK.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_WHITEOAK_SAPLING = BLOCKS.register("potted_whiteoak_sapling",
+			() -> new FlowerPotBlock(WoodTypes.WHITEOAK.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_SILVERWOOD_SAPLING = BLOCKS.register("potted_silverwood_sapling",
+			() -> new FlowerPotBlock(WoodTypes.SILVERWOOD.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_WITCHWOOD_SAPLING = BLOCKS.register("potted_witchwood_sapling",
+			() -> new FlowerPotBlock(WoodTypes.WITCHWOOD.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_ALDER_SAPLING = BLOCKS.register("potted_alder_sapling",
+			() -> new FlowerPotBlock(WoodTypes.ALDER.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_HAWTHORN_SAPLING = BLOCKS.register("potted_hawthorn_sapling",
+			() -> new FlowerPotBlock(WoodTypes.HAWTHORN.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_ROWAN_SAPLING = BLOCKS.register("potted_rowan_sapling",
+			() -> new FlowerPotBlock(WoodTypes.ROWAN.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_WILLOW_SAPLING = BLOCKS.register("potted_willow_sapling",
+			() -> new FlowerPotBlock(WoodTypes.WILLOW.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_BEECH_SAPLING = BLOCKS.register("potted_beech_sapling",
+			() -> new FlowerPotBlock(WoodTypes.BEECH.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_ASH_SAPLING = BLOCKS.register("potted_ash_sapling",
+			() -> new FlowerPotBlock(WoodTypes.ASH.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_BLACKTHORN_SAPLING = BLOCKS.register("potted_blackthorn_sapling",
+			() -> new FlowerPotBlock(WoodTypes.BLACKTHORN.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_CEDAR_SAPLING = BLOCKS.register("potted_cedar_sapling",
+			() -> new FlowerPotBlock(WoodTypes.CEDAR.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_ELDER_SAPLING = BLOCKS.register("potted_elder_sapling",
+			() -> new FlowerPotBlock(WoodTypes.ELDER.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_JUNIPER_SAPLING = BLOCKS.register("potted_juniper_sapling",
+			() -> new FlowerPotBlock(WoodTypes.JUNIPER.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_WITCHHAZEL_SAPLING = BLOCKS.register("potted_witchhazel_sapling",
+			() -> new FlowerPotBlock(WoodTypes.WITCHHAZEL.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_YEW_SAPLING = BLOCKS.register("potted_yew_sapling",
+			() -> new FlowerPotBlock(WoodTypes.YEW.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_INFESTED_SAPLING = BLOCKS.register("potted_infested_sapling",
+			() -> new FlowerPotBlock(WoodTypes.INFESTED.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_CHARRED_SAPLING = BLOCKS.register("potted_charred_sapling",
+			() -> new FlowerPotBlock(WoodTypes.CHARRED.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_ICY_SAPLING = BLOCKS.register("potted_icy_sapling",
+			() -> new FlowerPotBlock(WoodTypes.ICY.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_TWISTED_SAPLING = BLOCKS.register("potted_twisted_sapling",
+			() -> new FlowerPotBlock(WoodTypes.TWISTED.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_DISTORTED_SAPLING = BLOCKS.register("potted_distorted_sapling",
+			() -> new FlowerPotBlock(WoodTypes.DISTORTED.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 
 	// Special blocks
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
@@ -330,5 +484,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> MYSTIC_BERRY_BUSH = NO_ITEM_BLOCK.register("mystic_berry_bush",
 			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
+	public static final RegistryObject<Block> CINDER_FRUIT_PLANT = NO_ITEM_BLOCK.register("cinder_fruit_plant",
+			() -> new CinderPlantBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+					.sound(SoundType.SWEET_BERRY_BUSH).lightLevel((state) -> 13), ParticleTypes.SMOKE));
 
 }

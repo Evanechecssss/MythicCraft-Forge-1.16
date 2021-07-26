@@ -519,8 +519,6 @@ public class ItemInit {
 	public static final RegistryObject<Item> DRAGONBONE_BOW = ITEMS.register("dragonbone_bow",
 			() -> new DragonBoneBow(new Item.Properties().tab(MythicCraftItems.instance).durability(500)));
 
-	// Trident
-
 	// Tools
 	public static final RegistryObject<SwordItem> vampiric_sword = ITEMS.register("vampiric_sword",
 			() -> new SwordItem(ModItemTiers.VAMPIRIC, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
@@ -742,9 +740,20 @@ public class ItemInit {
 							.food(new Food.Builder().alwaysEat().nutrition(2).saturationMod(0.4f)
 									.effect(new EffectInstance(Effects.LUCK, 3000, 5), 0.7f)
 									.effect(new EffectInstance(Effects.BLINDNESS, 6000, 5), 0.7f).build())));
-	public static final RegistryObject<Item> blood_apple = ITEMS.register("blood_apple",
+	public static final RegistryObject<Item> BLOOD_APPLE = ITEMS.register("blood_apple",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)
 					.food(new Food.Builder().nutrition(4).saturationMod(0.5f).build())));
+	public static final RegistryObject<Item> JUNIPER_BERRY = ITEMS.register("juniper_berry",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)
+					.food(new Food.Builder().nutrition(4).saturationMod(0.5f).build())));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Item> CINDER_FRUIT = ITEMS.register("cinder_fruit",
+			() -> new BlockItem(BlockInit.CINDER_FRUIT_PLANT.get(),
+					new Item.Properties().tab(MythicCraftItems.instance)
+							.food(new Food.Builder().alwaysEat().nutrition(2).saturationMod(0.4f)
+									.effect(new EffectInstance(Effects.WEAKNESS, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.DIG_SLOWDOWN, 3000, 5), 0.7f)
+									.effect(new EffectInstance(Effects.FIRE_RESISTANCE, 2000, 5), 0.7f).build())));
 
 	// Plants
 	public static final RegistryObject<Item> vervain_seeds = ITEMS.register("vervain_seeds",

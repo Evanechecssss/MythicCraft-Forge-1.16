@@ -34,6 +34,27 @@ public class ModContainerTypes {
 	public static final RegistryObject<ContainerType<CrateContainer>> TWISTED_CRATE = createContainer("twisted_crate");
 	public static final RegistryObject<ContainerType<CrateContainer>> WITCHHAZEL_CRATE = createContainer("witchhazel_crate");
 	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CRATE = createContainer("hawthorn_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> BLOODOAK_CHEST = createContainer("bloodoak_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> WHITEOAK_CHEST = createContainer("whiteoak_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> SILVERWOOD_CHEST = createContainer("silverwood_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> WITCHWOOD_CHEST = createContainer("witchwood_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> ALDER_CHEST = createContainer("alder_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> ROWAN_CHEST = createContainer("rowan_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> WILLOW_CHEST = createContainer("willow_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> BEECH_CHEST = createContainer("beech_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> ASH_CHEST = createContainer("ash_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> BLACKTHORN_CHEST = createContainer("blackthorn_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> CEDAR_CHEST = createContainer("cedar_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> CHEST = createContainer("elder_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> JUNIPER_CHEST = createContainer("juniper_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> YEW_CHEST = createContainer("yew_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> INFESTED_CHEST = createContainer("infested_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> CHARRED_CHEST = createContainer("charred_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> ICY_CHEST = createContainer("icy_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> DISTORTED_CHEST = createContainer("distorted_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> TWISTED_CHEST = createContainer("twisted_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> WITCHHAZEL_CHEST = createContainer("witchhazel_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CHEST = createContainer("hawthorn_chest");
 
 	public static final RegistryObject<ContainerType<CrateContainer>> createContainer(String registryName){
 		return CONTAINER_TYPES.register(registryName, () -> IForgeContainerType.create(CrateContainer::new));
