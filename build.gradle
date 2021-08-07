@@ -126,7 +126,7 @@ repositories {
     maven { url 'https://maven.blamejared.com' }
     maven { url 'https://dvs1.progwml6.com/files/maven' }
     maven { url "https://modmaven.k-4u.nl" }
-    //maven { url = "https://maven.theillusivec4.top/" }
+    maven { url = "https://maven.theillusivec4.top/" }
     //maven { url "https://www.cursemaven.com" }
 }
 
@@ -148,8 +148,8 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.6.4.90")
     
     //Curios Dependencies
-    //runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${1.16.5-4.0.5.2}")
-    //compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${1.16.5-4.0.5.2}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.0.5.2")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.5-4.0.5.2:api")
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

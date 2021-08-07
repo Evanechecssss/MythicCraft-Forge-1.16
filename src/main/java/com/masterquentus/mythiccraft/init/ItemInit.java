@@ -2,7 +2,13 @@ package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
-import com.masterquentus.mythiccraft.objects.items.*;
+import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
+import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
+import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
+import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
+import com.masterquentus.mythiccraft.objects.items.VampriricItem;
+import com.masterquentus.mythiccraft.objects.items.WaterCropItem;
+import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
 import com.masterquentus.mythiccraft.util.enums.ModArmorMaterials;
 import com.masterquentus.mythiccraft.util.enums.ModItemTiers;
 
@@ -813,5 +819,14 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+
+	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,
+			MythicCraft.MOD_ID);
+
+	// public static final RegistryObject<Item> BLOODOAK_SIGN =
+	// NO_BLOCK_ITEM.register("bloodoak_sign",
+	// () -> new SignItem((new Item.Properties()).stacksTo(16),
+	// WoodTypes.BLOODOAK.sign.get(),
+	// WoodTypes.BLOODOAK.wallsign.get()));
 
 }

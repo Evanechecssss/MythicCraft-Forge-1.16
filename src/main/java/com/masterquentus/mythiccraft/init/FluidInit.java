@@ -18,8 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class FluidInit {
 
-	public static final ResourceLocation BLOOD_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"block/blood_still");
+	public static final ResourceLocation BLOOD_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID, "block/blood_still");
 	public static final ResourceLocation BLOOD_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/blood_flowing");
 	public static final ResourceLocation ECTOPLASM_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
@@ -30,7 +29,6 @@ public class FluidInit {
 			"block/infestedgoo_still");
 	public static final ResourceLocation INFESTEDGOO_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/infestedgoo_flowing");
-
 	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/blood_overlay");
 	public static final ResourceLocation ECTOPLASM_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
@@ -72,12 +70,12 @@ public class FluidInit {
 							.bucket(() -> ItemInit.ectoplasm_bucket.get());
 
 	public static final RegistryObject<FlowingFluidBlock> BLOOD_BLOCK = BlockInit.BLOCKS.register("blood",
-			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(), Block.Properties.of(Material.WATER)
-					.noCollission().strength(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(),
+					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
 	public static final RegistryObject<FlowingFluidBlock> ECTOPLASM_BLOCK = BlockInit.BLOCKS.register("ectoplasm",
-			() -> new FlowingFluidBlock(() -> FluidInit.ECTOPLASM_FLUID.get(), Block.Properties.of(Material.WATER)
-					.noCollission().strength(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.ECTOPLASM_FLUID.get(),
+					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
 	public static final RegistryObject<FlowingFluidBlock> INFESTEDGOO_BLOCK = BlockInit.BLOCKS.register("infestedgoo",
-			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(), Block.Properties.of(Material.WATER)
-					.noCollission().strength(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(),
+					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
 }

@@ -39,8 +39,6 @@ public class MythicCraft {
 
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "mythiccraft";
-	// public static final ResourceLocation Unerworld_Dim_Type = new
-	// ResourceLocation(MOD_ID, "underworld");
 
 	public MythicCraft() {
 		GeckoLib.initialize();

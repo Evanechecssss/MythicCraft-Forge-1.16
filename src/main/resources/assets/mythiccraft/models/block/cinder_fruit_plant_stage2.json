@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "mythiccraft:block/cinder_fruit_plant_stage2"
+    }
+}

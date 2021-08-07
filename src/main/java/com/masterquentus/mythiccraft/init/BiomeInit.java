@@ -55,30 +55,10 @@ public class BiomeInit {
 			() -> new ForestOFLostSoulsBiome().create(new Biome.Builder().precipitation(RainType.RAIN).scale(0.5F)
 					.temperature(0.5F).biomeCategory(Category.FOREST).downfall(3.5F).depth(0.12F)));
 
-	// this is just the same ??
 	public static final RegistryObject<Biome> WEEPINGWITCHFOREST = BIOMES.register("weepingwitch_forest",
 			() -> new ForestOFLostSoulsBiome().create(new Biome.Builder().precipitation(RainType.RAIN).scale(0.5F)
 					.temperature(0.5F).biomeCategory(Category.FOREST).downfall(3.5F).depth(0.12F)));
 
-	/*  // this isnt how you do this anymore
-	public static void registerBiomes() {
-		registerBiome(VAMPIREBIOME.get(), Type.DEAD, Type.DENSE);
-		registerBiome(MISTICMEDDOWSBIOME.get(), Type.MAGICAL, Type.DENSE);
-		registerBiome(CHARREDFORESTBIOME.get(), Type.FOREST, Type.DRY);
-		registerBiome(INFESTEDFORESTBIOME.get(), Type.FOREST, Type.DENSE);
-		registerBiome(DRAGONBIOME.get(), Type.MAGICAL, Type.DENSE);
-		registerBiome(CRIMSON_FROST.get(), Type.MAGICAL, Type.COLD);
-		registerBiome(WEEPINGWITCHFOREST.get(), Type.MAGICAL, Type.WET);
-		registerBiome(FORESTOFLOSTSOULS.get(), Type.MAGICAL, Type.FOREST);
-	}
-
-	private static void registerBiome(Biome biome, Type... types) {
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, 2));
-		BiomeDictionary.addTypes(biome, types);
-		BiomeManager.addSpawnBiome(biome);
-	}
-
-	 */
 
 	@SubscribeEvent
 	public static void onloadbiome(BiomeLoadingEvent event){

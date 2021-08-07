@@ -28,6 +28,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
@@ -121,6 +122,11 @@ public class CinderPlantBlock extends SweetBerryBushBlock implements IGrowable
 		      p_180655_2_.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
 		      p_180655_2_.addParticle(this.flameParticle, d0, d1, d2, 0.0D, 0.0D, 0.0D);
 		      
+		}
+		
+		@Override
+		public boolean isFireSource(BlockState state, IWorldReader world, BlockPos pos, Direction side) {
+			return super.isFireSource(state, world, pos, side);
 		}
 	   
 	   @Override

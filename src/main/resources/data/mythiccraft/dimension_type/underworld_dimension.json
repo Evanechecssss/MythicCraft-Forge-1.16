@@ -1,0 +1,18 @@
+{
+  "name": "mythiccraft:underworld_dimension",
+  "ultrawarm": true,
+  "natural": false,
+  "piglin_safe": true,
+  "respawn_anchor_works": true,
+  "bed_works": true,
+  "has_raids": false,
+  "has_skylight": true,
+  "has_ceiling": false,
+  "coordinate_scale": 8,
+  "ambient_light": 0.1,
+  "fixed_time": 18000,
+  "logical_height": 128,
+  "effects": "minecraft:the_nether",
+  "infiniburn": "minecraft:infiniburn_nether"
+}
+

@@ -13,20 +13,20 @@ import java.util.function.Supplier;
 // you'll have to set the right maxHeight, minHeight, veinSize, veinsPerChunk for everything. idk what you want
 // if you want nether and overworld ores to have different heights / rarities, you'll have to add more parameters to the enum
 public enum OreType {
-	VAMPIRIC(ItemInit.VAMPIRIC_GEM, 2, 15, 1, 50, 10, 4, 10),
-	MYTHICDIAMOND(ItemInit.MYTHIC_DIAMOND, 3, 15, 1, 50, 10, 4, 10), 
+	VAMPIRIC(ItemInit.VAMPIRIC_GEM, 2, 15, 1, 50, 10, 4, 7),
+	MYTHICDIAMOND(ItemInit.MYTHIC_DIAMOND, 3, 15, 1, 50, 10, 4, 3), 
 	SILVER(null, 2, 15, 2, 50, 10, 4, 10),
-	DRAGONHEART(null, 0.5F, 15, 2, 50, 10, 4, 10), 
+	DRAGONHEART(null, 0.5F, 15, 2, 50, 10, 4, 4), 
 	BLOODSTONE(null, 3, 15, 2, 50, 10, 4, 10),
-	MOONSTONE(ItemInit.moonstone, 0.5F, 15, 2, 50, 10, 4, 10),
-	ROSEQUARTZ(ItemInit.ROSE_QUARTZ, 0.5F, 15, 2, 50, 10, 4, 10), 
-	RUBY(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
-	SAPPHIRE(ItemInit.SAPPHIRE, 3, 15, 2, 50, 10, 4, 10), 
-	AMETHYST(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
+	MOONSTONE(ItemInit.moonstone, 0.5F, 15, 2, 50, 10, 4, 4),
+	ROSEQUARTZ(ItemInit.ROSE_QUARTZ, 0.5F, 15, 2, 50, 10, 4, 4), 
+	RUBY(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 5),
+	SAPPHIRE(ItemInit.SAPPHIRE, 3, 15, 2, 50, 10, 4, 5), 
+	AMETHYST(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 5),
 	SALT(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
-	MAGICAL(ItemInit.magical_dust, 3, 15, 2, 50, 10, 4, 10),
-	CRYSTAL(ItemInit.magic_crystal, 3, 15, 2, 50, 10, 4, 10), 
-	FROSTSTEEL(null, 3, 15, 2, 50, 10, 4, 10);
+	MAGICAL(ItemInit.magical_dust, 3, 15, 2, 50, 10, 4, 5),
+	CRYSTAL(ItemInit.magic_crystal, 3, 15, 2, 50, 10, 4, 6), 
+	FROSTSTEEL(null, 3, 15, 2, 50, 10, 4, 5);
 
 	public final float mineTime;
 	public final int blastResist;

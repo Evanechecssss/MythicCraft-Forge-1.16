@@ -103,6 +103,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SOUL_BERRY_BUSH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_BERRY_BUSH.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_BERRY_BUSH.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CINDER_FRUIT_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GRASSPER.get(), RenderType.cutout());
@@ -141,7 +142,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FIRE_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_FIRE_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.PRICKLY_FLOWER.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_PRICKLY_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SCORCHED_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SCORCHED_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.EMBER_MOSS.get(), RenderType.cutout());

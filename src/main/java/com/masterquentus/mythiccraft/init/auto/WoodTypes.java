@@ -21,6 +21,7 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 
 public enum WoodTypes {
@@ -45,6 +46,7 @@ public enum WoodTypes {
 	public Supplier<Block> sapling;
 	public Supplier<Block> sign;
 	public Supplier<Block> wallsign;
+	public Supplier<Item> signitem;
 	public Supplier<Block> boat;
 	public Supplier<Block> chest;
 	public ModTree tree;
@@ -83,9 +85,6 @@ public enum WoodTypes {
 				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE)));
 		this.sapling = blockRegistry.register(name + "_sapling",
 				() -> new SaplingBlock(this.tree, Block.Properties.copy(Blocks.OAK_SAPLING)));
-		//this.chest = blockRegistry.register(name + "_chest",
-				//() -> new ModChestBlock(Block.Properties.of(Material.WOOD).strength(2.5F).sound(SoundType.WOOD), () -> {
-				     // return TileEntityType.CHEST;
 		//this.sign = blockRegistry.register(name + "_sign",
 				//() -> new StandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission()
 						//.strength(1.0F).sound(SoundType.WOOD), WoodType.ACACIA));

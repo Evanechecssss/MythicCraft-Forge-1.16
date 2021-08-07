@@ -10,6 +10,7 @@ import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.GlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
@@ -37,8 +38,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.GrassBlock;
-import net.minecraft.block.HugeMushroomBlock;
-import net.minecraft.block.MushroomBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
@@ -151,8 +150,8 @@ public class BlockInit {
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer",
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
-			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)));
+	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall", () -> new Block(
+			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE).noOcclusion()));
 	public static final RegistryObject<Block> LIVING_KELP_BLOCK = BLOCKS.register("living_kelp_block",
 			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)
 					.lightLevel((state) -> 13)));
@@ -240,7 +239,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> hellebore_crop = createCrop("hellebore_crop", ItemInit.hellebore_seeds);
 	public static final RegistryObject<Block> whitesage_crop = createCrop("whitesage_crop", ItemInit.whitesage_seeds);
 	public static final RegistryObject<Block> snowbell_crop = createCrop("snowbell_crop", ItemInit.snowbell_seeds);
-
 	public static final RegistryObject<Block> waterartichoke_crop = BLOCKS.register("waterartichoke_crop",
 			() -> new WaterartichokeCrop(Block.Properties.copy(Blocks.WHEAT)));
 
@@ -280,10 +278,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> PRICKLY_FLOWER = BLOCKS.register("prickly_flower", () -> new FlowerBlock(
 			Effects.DAMAGE_BOOST, 5,
 			Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f).sound(SoundType.VINE).lightLevel((state) -> 10)));
-	@SuppressWarnings("deprecation")
-	public static final RegistryObject<Block> POTTED_PRICKLY_FLOWER = BLOCKS.register("potted_prickly_flower",
-			() -> new FlowerPotBlock(BlockInit.PRICKLY_FLOWER.get(),
-					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 	public static final RegistryObject<Block> SCORCHED_FLOWER = BLOCKS.register("scorched_flower",
 			() -> new FlowerBlock(Effects.DIG_SPEED, 5, Block.Properties.copy(Blocks.POPPY).strength(0.3f, 0.2f)
 					.sound(SoundType.VINE).lightLevel((state) -> 10)));
@@ -317,7 +311,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> SCORCHED_GRASS_MEDIUM = BLOCKS.register("scorched_grass_medium",
 			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
 	public static final RegistryObject<Block> SCORCHED_GRASS_GLOWING = BLOCKS.register("scorched_grass_glowing",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+			() -> new GlowingScorchedGrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
 	public static final RegistryObject<Block> GLINT_WEED = BLOCKS.register("glint_weed",
 			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
 	public static final RegistryObject<Block> WISPY_COTTON = BLOCKS.register("wispy_cotton",
@@ -458,7 +452,7 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
-					.sound(SoundType.HONEY_BLOCK).noCollission().noOcclusion().lightLevel((state) -> 15)));
+					.sound(SoundType.HONEY_BLOCK).noOcclusion().lightLevel((state) -> 15)));
 
 	public static final DeferredRegister<Block> NO_ITEM_BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS,
 			MythicCraft.MOD_ID);
@@ -487,5 +481,4 @@ public class BlockInit {
 	public static final RegistryObject<Block> CINDER_FRUIT_PLANT = NO_ITEM_BLOCK.register("cinder_fruit_plant",
 			() -> new CinderPlantBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH).lightLevel((state) -> 13), ParticleTypes.SMOKE));
-
 }
