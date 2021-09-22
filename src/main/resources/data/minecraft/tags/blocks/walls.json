@@ -42,6 +42,12 @@
 		"mythiccraft:marblebricks_wall",
 		"mythiccraft:marblepolished_wall",
 		"mythiccraft:marblechisealed_wall",
-		"mythiccraft:marblecracked_wall"
+		"mythiccraft:marblecracked_wall",
+		"mythiccraft:crimson_sandstone_wall",
+		"mythiccraft:icy_sandstone_wall",
+		"mythiccraft:black_sandstone_wall",
+		"mythiccraft:pixie_sandstone_wall",
+		"mythiccraft:fairy_sandstone_wall",
+		"mythiccraft:ember_sandstone_wall"
   	]
 }

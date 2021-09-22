@@ -1,0 +1,140 @@
+{
+  "variants": {
+    "pickles=1,waterlogged=false": [
+      {
+        "model": "mythiccraft:block/dead_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/dead_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/dead_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/dead_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=1,waterlogged=true": [
+      {
+        "model": "mythiccraft:block/sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=2,waterlogged=false": [
+      {
+        "model": "mythiccraft:block/two_dead_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/two_dead_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/two_dead_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/two_dead_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=2,waterlogged=true": [
+      {
+        "model": "mythiccraft:block/two_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/two_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/two_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/two_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=3,waterlogged=false": [
+      {
+        "model": "mythiccraft:block/three_dead_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/three_dead_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/three_dead_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/three_dead_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=3,waterlogged=true": [
+      {
+        "model": "mythiccraft:block/three_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/three_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/three_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/three_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=4,waterlogged=false": [
+      {
+        "model": "mythiccraft:block/four_dead_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/four_dead_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/four_dead_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/four_dead_sea_candles",
+        "y": 270
+      }
+    ],
+    "pickles=4,waterlogged=true": [
+      {
+        "model": "mythiccraft:block/four_sea_candles"
+      },
+      {
+        "model": "mythiccraft:block/four_sea_candles",
+        "y": 90
+      },
+      {
+        "model": "mythiccraft:block/four_sea_candles",
+        "y": 180
+      },
+      {
+        "model": "mythiccraft:block/four_sea_candles",
+        "y": 270
+      }
+    ]
+  }
+}

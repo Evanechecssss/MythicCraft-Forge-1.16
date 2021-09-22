@@ -55,6 +55,7 @@ public class ModContainerTypes {
 	public static final RegistryObject<ContainerType<CrateContainer>> TWISTED_CHEST = createContainer("twisted_chest");
 	public static final RegistryObject<ContainerType<CrateContainer>> WITCHHAZEL_CHEST = createContainer("witchhazel_chest");
 	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CHEST = createContainer("hawthorn_chest");
+	//public static final RegistryObject<ContainerType<CrateContainer>> WITCHES_OVEN = createContainer("witches_oven");
 
 	public static final RegistryObject<ContainerType<CrateContainer>> createContainer(String registryName){
 		return CONTAINER_TYPES.register(registryName, () -> IForgeContainerType.create(CrateContainer::new));

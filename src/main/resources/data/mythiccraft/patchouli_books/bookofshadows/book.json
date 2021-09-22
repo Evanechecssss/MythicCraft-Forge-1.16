@@ -1,7 +1,7 @@
   
 {
   "name": "Book Of Shadows",
-  "landing_text": "Welcome to the help book for MythicCraft",
+  "landing_text": "First iteration of the book",
   "version": 1,
   "model": "mythiccraft:shadow_book",
   "creative_tab": "mythiccraftitems"

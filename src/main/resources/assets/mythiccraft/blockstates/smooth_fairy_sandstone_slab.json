@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/smooth_fairy_sandstone_slab" },
+        "type=top": { "model": "mythiccraft:block/smooth_fairy_sandstone_slab_top" },
+        "type=double": { "model": "mythiccraft:block/smooth_fairy_sandstone" }
+    }
+}

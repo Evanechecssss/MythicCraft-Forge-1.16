@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 // if you want nether and overworld ores to have different heights / rarities, you'll have to add more parameters to the enum
 public enum OreType {
 	VAMPIRIC(ItemInit.VAMPIRIC_GEM, 2, 15, 1, 50, 10, 4, 7),
-	MYTHICDIAMOND(ItemInit.MYTHIC_DIAMOND, 3, 15, 1, 50, 10, 4, 3), 
+	MYTHICDIAMOND(ItemInit.MYTHIC_DIAMOND, 3, 12, 1, 12, 10, 4, 3), 
 	SILVER(null, 2, 15, 2, 50, 10, 4, 10),
 	DRAGONHEART(null, 0.5F, 15, 2, 50, 10, 4, 4), 
 	BLOODSTONE(null, 3, 15, 2, 50, 10, 4, 10),
@@ -23,7 +23,7 @@ public enum OreType {
 	RUBY(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 5),
 	SAPPHIRE(ItemInit.SAPPHIRE, 3, 15, 2, 50, 10, 4, 5), 
 	AMETHYST(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 5),
-	SALT(ItemInit.AMETHYST, 3, 15, 2, 50, 10, 4, 10),
+	SALT(ItemInit.salt, 3, 15, 2, 50, 10, 4, 10),
 	MAGICAL(ItemInit.magical_dust, 3, 15, 2, 50, 10, 4, 5),
 	CRYSTAL(ItemInit.magic_crystal, 3, 15, 2, 50, 10, 4, 6), 
 	FROSTSTEEL(null, 3, 15, 2, 50, 10, 4, 5);

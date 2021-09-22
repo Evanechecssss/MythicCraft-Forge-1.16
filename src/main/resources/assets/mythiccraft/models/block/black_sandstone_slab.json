@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mythiccraft:block/black_sandstone",
+        "top": "mythiccraft:block/black_sandstone",
+        "side": "mythiccraft:block/black_sandstone"
+    }
+}

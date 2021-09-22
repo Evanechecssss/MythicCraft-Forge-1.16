@@ -55,6 +55,12 @@ public enum ModItemTiers implements IItemTier {
 	ANCIENT(2, 550, 5.0F, 6.5F, 15, () -> {
 		return Ingredient.of(ItemInit.dragonscale_black.get());
 		
+		
+	}),
+	
+	ARTHANA(2, 550, 5.0F, 6.5F, 15, () -> {
+		return Ingredient.of(ItemInit.AMETHYST.get());
+		
 	});
 
 	private final int harvestLevel;

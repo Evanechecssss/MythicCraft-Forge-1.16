@@ -9,7 +9,6 @@ import com.masterquentus.mythiccraft.tileentity.MagicQuarryTileEntity;
 import com.masterquentus.mythiccraft.tileentity.MobSlayerTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
-
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -47,4 +46,7 @@ public class ModTileEntityTypes {
 
 	public static final RegistryObject<TileEntityType<GrassperTileEntity>> GRASSPER = TILE_ENTITY_TYPES.register(
 			"grassper", () -> TileEntityType.Builder.of(GrassperTileEntity::new, BlockInit.GRASSPER.get()).build(null));
+	
+	//public static final RegistryObject<TileEntityType<WitchesOvenTileEntity>> WITCHES_OVEN = TILE_ENTITY_TYPES.register(
+			//"witches_oven", () -> TileEntityType.Builder.of(WitchesOvenTileEntity::new, BlockInit.WITCHES_OVEN.get()).build(null));
 }

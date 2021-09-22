@@ -52,7 +52,7 @@ public class MythicCraft {
 		ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
-
+		
 		BiomeInit.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::addFeaturesToBiomes);
 		MinecraftForge.EVENT_BUS.register(this);

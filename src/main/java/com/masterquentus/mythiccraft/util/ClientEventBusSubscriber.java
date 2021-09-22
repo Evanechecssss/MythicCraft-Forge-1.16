@@ -121,6 +121,12 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.PIXIE_GLASS_PANE.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(BlockInit.FAIRY_GLASS_PANE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_GLASS.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_GLASS_PANE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_GLASS.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_GLASS_PANE.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EMBER_GLASS.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(BlockInit.EMBER_GLASS_PANE.get(), RenderType.translucent());
 
 		// Mic
 		RenderTypeLookup.setRenderLayer(BlockInit.PEDESTAL_TIER3.get(), RenderType.translucent());
