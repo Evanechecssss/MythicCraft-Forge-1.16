@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mythiccraft:block/tall_mystic_grass_bottom"
+    },
+    "half=upper": {
+      "model": "mythiccraft:block/tall_mystic_grass_top"
+    }
+  }
+}

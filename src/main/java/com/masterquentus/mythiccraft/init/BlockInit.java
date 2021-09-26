@@ -10,6 +10,7 @@ import com.masterquentus.mythiccraft.objects.blocks.BloodyRose;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DoubbleGlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderCactusBlock;
@@ -21,7 +22,6 @@ import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModBloodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
@@ -40,6 +40,7 @@ import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.GlassBlock;
@@ -118,24 +119,39 @@ public class BlockInit {
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
 			() -> new Block(Block.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(3).requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> CHARRED_GRASS_BLOCK = BLOCKS.register("charred_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> CHARRED_SOIL = BLOCKS.register("charred_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).sound(SoundType.SAND)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> INFESTED_GRASS_BLOCK = BLOCKS.register("infested_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> INFESTED_SOIL = BLOCKS.register("infested_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_MAGENTA)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_PURPLE).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> MYSTIC_GRASS_BLOCK = BLOCKS.register("mystic_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> MYSTIC_SOIL = BLOCKS.register("mystic_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_MAGENTA)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_PURPLE).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> BLOODLY_GRASS_BLOCK = BLOCKS.register("bloodly_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_RED).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> BLOODLY_SOIL = BLOCKS.register("bloodly_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_RED).sound(SoundType.GRAVEL)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_RED).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> DEEP_GRASS_BLOCK = BLOCKS.register("deep_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
 	public static final RegistryObject<Block> CURSED_SOIL = BLOCKS.register("cursed_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
 			() -> new ModBloodBlock(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f)
 					.sound(SoundType.SLIME_BLOCK).speedFactor(0.4F).jumpFactor(0.5F).noOcclusion().instabreak()));
@@ -495,16 +511,60 @@ public class BlockInit {
 	public static final RegistryObject<Block> SCORCHED_GRASS_SMALL = BLOCKS.register("scorched_grass_small",
 			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_SCORCHED_GRASS_SMALL = BLOCKS.register("tall_scorched_grass_small",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS = BLOCKS.register("tall_scorched_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS = BLOCKS.register("scorched_grass",
 			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_MEDIUM = BLOCKS.register("scorched_grass_medium",
 			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS_MEDIUM = BLOCKS.register("tall_scorched_grass_medium",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_GLOWING = BLOCKS.register("scorched_grass_glowing",
 			() -> new GlowingScorchedGrassBlock(
 					Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
 							.lightLevel((state) -> 10).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS_GLOWING = BLOCKS.register(
+			"tall_scorched_grass_glowing",
+			() -> new DoubbleGlowingScorchedGrassBlock(
+					Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+							.lightLevel((state) -> 10).noCollission().instabreak()));
+	public static final RegistryObject<Block> INFESTED_GRASS = BLOCKS.register("infested_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_INFESTED_GRASS = BLOCKS.register("tall_infested_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> CHARRED_GRASS = BLOCKS.register("charred_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_CHARRED_GRASS = BLOCKS.register("tall_charred_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_GRASS = BLOCKS.register("bloodly_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_BLOODLY_GRASS = BLOCKS.register("tall_bloodly_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> MYSTIC_GRASS = BLOCKS.register("mystic_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_MYSTIC_GRASS = BLOCKS.register("tall_mystic_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> DEEP_GRASS = BLOCKS.register("deep_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_DEEP_GRASS = BLOCKS.register("tall_deep_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> GLINT_WEED = BLOCKS.register("glint_weed",
 			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRASS).lightLevel((state) -> 10).noCollission().instabreak()));
