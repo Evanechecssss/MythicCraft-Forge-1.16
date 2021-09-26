@@ -10,6 +10,7 @@ import com.masterquentus.mythiccraft.objects.blocks.BloodyRose;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
 import com.masterquentus.mythiccraft.objects.blocks.DoubbleGlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
@@ -686,11 +687,14 @@ public class BlockInit {
 	public static final RegistryObject<Block> BROKEN_CRYSTAL_BALL = BLOCKS.register("broken_crystal_ball",
 			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer", () -> new MobSlayerBlock(
-			Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
+	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+			() -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).sound(SoundType.FUNGUS)));
 	public static final RegistryObject<Block> AMETHYST_CHIMES = BLOCKS.register("amethyst_chimes",
 			() -> new AmethystChimesBlock(Block.Properties.copy(Blocks.IRON_BLOCK).harvestTool(ToolType.PICKAXE)
-					.harvestLevel(1).requiresCorrectToolForDrops()));
+					.harvestLevel(1).requiresCorrectToolForDrops().sound(SoundType.GLASS)));
+	public static final RegistryObject<Block> DEMON_HEART = BLOCKS.register("demon_heart", () -> new DemonHeartBlock(
+			Block.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WET_GRASS).harvestLevel(0)));
 	// public static final RegistryObject<Block> WITCHES_OVEN =
 	// BLOCKS.register("witches_oven", () -> new WitchesOven(
 	// Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
