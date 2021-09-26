@@ -3,10 +3,8 @@ package com.masterquentus.mythiccraft.objects.blocks;
 import java.util.Random;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.FireBlock;
 import net.minecraft.block.GrassBlock;
 import net.minecraft.block.IGrowable;
-import net.minecraft.block.VineBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.particles.ParticleTypes;
@@ -17,7 +15,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class EmberMossBlock extends FireBlock implements IGrowable {
+public class EmberMossBlock extends GrassBlock implements IGrowable {
 
 	public EmberMossBlock(Properties p_i48303_1_) {
 		super(p_i48303_1_);

@@ -49,6 +49,7 @@ import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
@@ -116,7 +117,7 @@ public class BlockInit {
 	// Blocks
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
 			() -> new Block(Block.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
-					.harvestLevel(3)));
+					.harvestLevel(3).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CHARRED_SOIL = BLOCKS.register("charred_soil",
 			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).sound(SoundType.SAND)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
@@ -132,21 +133,26 @@ public class BlockInit {
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
 			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK)
 					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+	public static final RegistryObject<Block> CURSED_SOIL = BLOCKS.register("cursed_soil",
+			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
 			() -> new ModBloodBlock(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f)
 					.sound(SoundType.SLIME_BLOCK).speedFactor(0.4F).jumpFactor(0.5F).noOcclusion().instabreak()));
 	public static final RegistryObject<Block> ROSEQUARTZ_CHISELED = BLOCKS.register("rosequartz_chiseled",
 			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_SMOOTH = BLOCKS.register("rosequartz_smooth",
 			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_PILLAR = BLOCKS.register("rosequartz_pillar",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_PILLAR).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new RotatedPillarBlock(
+					Block.Properties.copy(Blocks.QUARTZ_PILLAR).strength(5.0f, 30.0f).sound(SoundType.STONE)
+							.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new RotatedPillarBlock(
+					Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f).sound(SoundType.STONE)
+							.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
 			() -> new ModSlimeBlock(
 					Block.Properties.copy(Blocks.SLIME_BLOCK).friction(0.8F).noOcclusion().instabreak()));
@@ -161,15 +167,18 @@ public class BlockInit {
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer",
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall", () -> new Block(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE).noOcclusion()));
+	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)
+					.noOcclusion().requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> LIVING_KELP_BLOCK = BLOCKS.register("living_kelp_block",
 			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)
 					.lightLevel((state) -> 13)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
-			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
-	public static final RegistryObject<Block> EMBER_BLOCK = BLOCKS.register("ember_block", () -> new Block(
-			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.STONE).lightLevel((state) -> 15)));
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)
+					.requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> EMBER_BLOCK = BLOCKS.register("ember_block",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.STONE)
+					.lightLevel((state) -> 15).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CRIMSON_SAND = BLOCKS.register("crimson_sand",
 			() -> new SandBlock(14406560, Block.Properties.copy(Blocks.SAND).sound(SoundType.SAND)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(1).strength(0.5F)));
@@ -484,17 +493,24 @@ public class BlockInit {
 			() -> new EnderBrambleBlock(
 					Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission().harvestTool(ToolType.AXE)));
 	public static final RegistryObject<Block> SCORCHED_GRASS_SMALL = BLOCKS.register("scorched_grass_small",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS = BLOCKS.register("scorched_grass",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_MEDIUM = BLOCKS.register("scorched_grass_medium",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_GLOWING = BLOCKS.register("scorched_grass_glowing",
-			() -> new GlowingScorchedGrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+			() -> new GlowingScorchedGrassBlock(
+					Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+							.lightLevel((state) -> 10).noCollission().instabreak()));
 	public static final RegistryObject<Block> GLINT_WEED = BLOCKS.register("glint_weed",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).lightLevel((state) -> 10).noCollission().instabreak()));
 	public static final RegistryObject<Block> WISPY_COTTON = BLOCKS.register("wispy_cotton",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> ENDER_CACTUS = BLOCKS.register("ender_cactus",
 			() -> new EnderCactusBlock(Block.Properties.copy(Blocks.CACTUS).randomTicks().harvestTool(ToolType.AXE)));
 	public static final RegistryObject<Block> SEA_CANDLES = BLOCKS.register("sea_candles", () -> new SeaCandlesBlock(
@@ -589,20 +605,21 @@ public class BlockInit {
 					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 
 	// Special blocks
-	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
-			Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box",
+			() -> new PandorsBox(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> pandors_box_open = BLOCKS.register("pandors_box_open",
 			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
 			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
 			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
 			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
@@ -611,35 +628,37 @@ public class BlockInit {
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer", () -> new MobSlayerBlock(
 			Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> AMETHYST_CHIMES = BLOCKS.register("amethyst_chimes", () -> new AmethystChimesBlock(
-			Block.Properties.copy(Blocks.IRON_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	//public static final RegistryObject<Block> WITCHES_OVEN = BLOCKS.register("witches_oven", () -> new WitchesOven(
-			//Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> AMETHYST_CHIMES = BLOCKS.register("amethyst_chimes",
+			() -> new AmethystChimesBlock(Block.Properties.copy(Blocks.IRON_BLOCK).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).requiresCorrectToolForDrops()));
+	// public static final RegistryObject<Block> WITCHES_OVEN =
+	// BLOCKS.register("witches_oven", () -> new WitchesOven(
+	// Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 
 	// class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",
 			() -> new PedestalBlock(1, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER2 = BLOCKS.register("pedestal_tier2",
 			() -> new PedestalBlock(2, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
 			() -> new PedestalBlock(3, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
 			() -> new PedestalBlock(4, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5",
 			() -> new PedestalBlock(5, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6",
 			() -> new PedestalBlock(6, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
