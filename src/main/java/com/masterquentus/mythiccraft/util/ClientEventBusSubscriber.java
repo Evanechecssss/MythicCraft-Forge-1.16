@@ -15,6 +15,7 @@ import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -58,8 +59,8 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.leaves.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.trapdoor.get(), RenderType.cutout());
-			
-			//Pots
+
+			// Pots
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BLOODOAK_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WHITEOAK_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SILVERWOOD_SAPLING.get(), RenderType.cutout());
@@ -181,6 +182,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());
+
+		//ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
 
 		// Entities
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntityRender::new);

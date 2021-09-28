@@ -268,6 +268,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> MUTANDIS_EXTREMIS = ITEMS.register("mutandis_extremis",
 			() -> new MutandisItem(new Item.Properties().tab(MythicCraftItems.instance)));
 
+	// Signs
+
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));

@@ -39,6 +39,7 @@ import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DoublePlantBlock;
@@ -430,6 +431,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy",
 			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(0).noOcclusion()));
+
+	// Signs
 
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);

@@ -27,14 +27,6 @@ public class EmberMossBlock extends GrassBlock implements IGrowable {
 		return false;
 	}
 
-	public void stepOn(World p_176199_1_, BlockPos p_176199_2_, Entity p_176199_3_) {
-		if (!p_176199_3_.fireImmune() && p_176199_3_ instanceof LivingEntity) {
-			p_176199_3_.hurt(DamageSource.IN_FIRE, 1.0F);
-		}
-
-		super.stepOn(p_176199_1_, p_176199_2_, p_176199_3_);
-	}
-
 	@Override
 	public boolean isBonemealSuccess(World p_180670_1_, Random p_180670_2_, BlockPos p_180670_3_,
 			BlockState p_180670_4_) {
@@ -46,10 +38,11 @@ public class EmberMossBlock extends GrassBlock implements IGrowable {
 			BlockState p_225535_4_) {
 
 	}
-
-	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
-		entityIn.setSecondsOnFire(10);
+	
+	public void entityInside(BlockState state, World p_196262_2_, BlockPos pos, Entity p_196262_4_) {
+	      p_196262_4_.hurt(DamageSource.IN_FIRE, 1.0F);
 	}
+
 
 	@Override
 	public void catchFire(BlockState state, World world, BlockPos pos, Direction face, LivingEntity igniter) {

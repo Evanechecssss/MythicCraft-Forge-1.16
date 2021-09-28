@@ -18,10 +18,10 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.SlabBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 
 public enum WoodTypes {
@@ -46,7 +46,7 @@ public enum WoodTypes {
 	public Supplier<Block> sapling;
 	public Supplier<Block> sign;
 	public Supplier<Block> wallsign;
-	public Supplier<Item> signitem;
+	public Supplier<Block> bookshelf;
 	public Supplier<Block> boat;
 	public Supplier<Block> chest;
 	public ModTree tree;
@@ -85,12 +85,8 @@ public enum WoodTypes {
 				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE)));
 		this.sapling = blockRegistry.register(name + "_sapling",
 				() -> new SaplingBlock(this.tree, Block.Properties.copy(Blocks.OAK_SAPLING)));
-		//this.sign = blockRegistry.register(name + "_sign",
-				//() -> new StandingSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission()
-						//.strength(1.0F).sound(SoundType.WOOD), WoodType.ACACIA));
-		//this.wallsign = blockRegistry.register(name + "_wallsign",
-				//() -> new WallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission()
-						//.strength(1.0F).sound(SoundType.WOOD), WoodType.ACACIA));
-		
-				};
-	}
+		this.bookshelf = blockRegistry.register(name + "_bookshelf",
+				() -> new Block(Block.Properties.copy(Blocks.BOOKSHELF).sound(SoundType.WOOD)));
+
+	};
+}
