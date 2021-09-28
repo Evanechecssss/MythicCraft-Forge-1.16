@@ -182,8 +182,28 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
+		
 
-		//ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
+		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
+		// SignTileEntityRenderer::new);
 
 		// Entities
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntityRender::new);

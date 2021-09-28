@@ -42,6 +42,13 @@ import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CoralBlock;
+import net.minecraft.block.CoralFanBlock;
+import net.minecraft.block.CoralFinBlock;
+import net.minecraft.block.CoralPlantBlock;
+import net.minecraft.block.CoralWallFanBlock;
+import net.minecraft.block.DeadCoralPlantBlock;
+import net.minecraft.block.DeadCoralWallFanBlock;
 import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.FlowerPotBlock;
@@ -507,6 +514,69 @@ public class BlockInit {
 	public static final RegistryObject<Block> LIVING_KELP_PLANT = BLOCKS.register("living_kelp_plant",
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
 					.noCollission().lightLevel((state) -> 15)));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL = BLOCKS.register("dead_livingcoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL = BLOCKS.register("livingcoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_LIVING_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_BLOCK = BLOCKS.register("dead_livingcoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> LIVING_CORAL_BLOCK = BLOCKS.register("livingcoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_LIVING_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_FAN = BLOCKS.register("dead_livingcoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL_FAN = BLOCKS.register("livingcoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_LIVING_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_WALL_FAN = BLOCKS.register("dead_livingcoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL_WALL_FAN = BLOCKS.register("livingcoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL = BLOCKS.register("dead_bloodlycoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL = BLOCKS.register("bloodlycoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_BLOODLY_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_BLOCK = BLOCKS.register("dead_bloodlycoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> BLOODLY_CORAL_BLOCK = BLOCKS.register("bloodlycoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_BLOODLY_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_FAN = BLOCKS.register("dead_bloodlycoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL_FAN = BLOCKS.register("bloodlycoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_WALL_FAN = BLOCKS
+			.register("dead_bloodlycoral_wall_fan", () -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL_WALL_FAN = BLOCKS.register("bloodlycoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL = BLOCKS.register("dead_twilightcoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL = BLOCKS.register("twilightcoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_TWILIGHT_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_BLOCK = BLOCKS.register("dead_twilightcoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_BLOCK = BLOCKS.register("twilightcoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_TWILIGHT_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_FAN = BLOCKS.register("dead_twilightcoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_FAN = BLOCKS.register("twilightcoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_WALL_FAN = BLOCKS
+			.register("dead_twilightcoral_wall_fan", () -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_WALL_FAN = BLOCKS.register("twilightcoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
 			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",

@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 
+import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.WallSignBlock;
@@ -67,6 +68,7 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof WallSignBlock))
 				.filter(block -> !(block.get() instanceof WaterartichokeCrop))
 				.filter(block -> !(block.get() instanceof FlowerPotBlock))
+				.filter(block -> !(block.get() instanceof CoralFanBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {
 					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
