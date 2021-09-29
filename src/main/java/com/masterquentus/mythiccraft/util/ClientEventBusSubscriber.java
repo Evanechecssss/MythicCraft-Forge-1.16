@@ -50,9 +50,9 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
-		
-		//ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
-                //SignTileEntityRenderer::new);
+
+		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
+		// SignTileEntityRenderer::new);
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
@@ -204,7 +204,24 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
-		
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL.get(), RenderType.cutout());
 
 		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
 		// SignTileEntityRenderer::new);
