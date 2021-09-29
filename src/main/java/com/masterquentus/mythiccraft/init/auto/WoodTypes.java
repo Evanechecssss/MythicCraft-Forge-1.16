@@ -5,7 +5,9 @@ import java.util.function.Supplier;
 import com.masterquentus.mythiccraft.objects.blocks.CrateBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModDoor;
 import com.masterquentus.mythiccraft.objects.blocks.ModLogBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModTrapDoor;
+import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModWoodButtonBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModWoodPressurePlateBlock;
 import com.masterquentus.mythiccraft.world.feature.ModTree;
@@ -20,6 +22,9 @@ import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
+import net.minecraft.block.StandingSignBlock;
+import net.minecraft.block.WallSignBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -85,6 +90,10 @@ public enum WoodTypes {
 				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE)));
 		this.sapling = blockRegistry.register(name + "_sapling",
 				() -> new SaplingBlock(this.tree, Block.Properties.copy(Blocks.OAK_SAPLING)));
+		//this.sign = blockRegistry.register(name + "_sign",
+				//() -> new ModStandingSignBlock(Block.Properties.copy(Blocks.ACACIA_SIGN).sound(SoundType.WOOD), (WoodType) wood));
+		//this.wallsign = blockRegistry.register(name + "_wallsign",
+				//() -> new ModWallSignBlock(Block.Properties.copy(Blocks.ACACIA_SIGN).sound(SoundType.WOOD), (WoodType) wood));
 		this.bookshelf = blockRegistry.register(name + "_bookshelf",
 				() -> new Block(Block.Properties.copy(Blocks.BOOKSHELF).sound(SoundType.WOOD)));
 

@@ -16,6 +16,7 @@ import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
+import net.minecraft.block.StandingSignBlock;
 import net.minecraft.block.WallSignBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -68,6 +69,8 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof WallSignBlock))
 				.filter(block -> !(block.get() instanceof WaterartichokeCrop))
 				.filter(block -> !(block.get() instanceof FlowerPotBlock))
+				.filter(block -> !(block.get() instanceof ModStandingSignBlock))
+				.filter(block -> !(block.get() instanceof ModWallSignBlock))
 				.filter(block -> !(block.get() instanceof CoralFanBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {

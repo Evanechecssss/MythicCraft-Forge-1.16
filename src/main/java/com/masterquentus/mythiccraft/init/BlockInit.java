@@ -439,8 +439,6 @@ public class BlockInit {
 			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(0).noOcclusion()));
 
-	// Signs
-
 	// Crops
 	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
 	public static final RegistryObject<Block> wormwood_crop = createCrop("wormwood_crop", ItemInit.wormwood_seeds);
@@ -515,7 +513,7 @@ public class BlockInit {
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
 					.noCollission().lightLevel((state) -> 15)));
 	public static final RegistryObject<Block> DEAD_LIVING_CORAL = BLOCKS.register("dead_livingcoral",
-			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak()));
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
 	public static final RegistryObject<Block> LIVING_CORAL = BLOCKS.register("livingcoral",
 			() -> new CoralPlantBlock(BlockInit.DEAD_LIVING_CORAL.get(),
 					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
@@ -536,7 +534,7 @@ public class BlockInit {
 			() -> new CoralWallFanBlock(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
 					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
 	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL = BLOCKS.register("dead_bloodlycoral",
-			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak()));
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
 	public static final RegistryObject<Block> BLOODLY_CORAL = BLOCKS.register("bloodlycoral",
 			() -> new CoralPlantBlock(BlockInit.DEAD_BLOODLY_CORAL.get(),
 					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));

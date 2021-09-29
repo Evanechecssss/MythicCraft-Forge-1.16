@@ -50,6 +50,9 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
+		
+		//ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
+                //SignTileEntityRenderer::new);
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
@@ -82,6 +85,7 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ICY_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_TWISTED_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_DISTORTED_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.SEA_CANDLES.get(), RenderType.cutout());
 		}
 
 		// Crops
