@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import com.masterquentus.mythiccraft.tileentity.GrassperTileEntity;
 import com.masterquentus.mythiccraft.tileentity.LanternTileEntity;
@@ -11,8 +10,6 @@ import com.masterquentus.mythiccraft.tileentity.MobSlayerTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
 
-import net.minecraft.block.WoodType;
-import net.minecraft.tileentity.SignTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
