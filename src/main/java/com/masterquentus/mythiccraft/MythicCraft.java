@@ -1,18 +1,15 @@
 package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
 import com.masterquentus.mythiccraft.init.*;
 import com.masterquentus.mythiccraft.init.auto.OreType;
-import com.masterquentus.mythiccraft.objects.blocks.*;
-import com.masterquentus.mythiccraft.world.gen.OreGen;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-
+import com.masterquentus.mythiccraft.world.gen.OreGen;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.WallSignBlock;
@@ -23,6 +20,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -30,6 +29,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -86,6 +87,7 @@ public class MythicCraft {
 		event.put(ModEntityTypes.LILITH_ENTITY.get(), LilithEntity.createAttributes().build());
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
+		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

@@ -2,32 +2,11 @@ package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
-import com.masterquentus.mythiccraft.objects.items.AnointingPasteItem;
-import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
-import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
-import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.objects.items.MutandisItem;
-import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
-import com.masterquentus.mythiccraft.objects.items.TagLockKitItem;
-import com.masterquentus.mythiccraft.objects.items.TotemOfTeleportationItem;
-import com.masterquentus.mythiccraft.objects.items.VampriricItem;
-import com.masterquentus.mythiccraft.objects.items.WaterCropItem;
-import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
+import com.masterquentus.mythiccraft.objects.items.*;
 import com.masterquentus.mythiccraft.util.enums.ModArmorMaterials;
 import com.masterquentus.mythiccraft.util.enums.ModItemTiers;
-
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Food;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.HorseArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
@@ -884,6 +863,10 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+
+	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x95BFA7, 0x8AB5BF,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 
 	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,
