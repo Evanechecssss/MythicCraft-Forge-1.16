@@ -138,6 +138,14 @@
 	"item.mythiccraft.totem_of_teleportation": "Totem Of Teleportation",
 	"item.mythiccraft.mutandis": "Mutandis",
 	"item.mythiccraft.mutandis_extremis": "Mutandis Extremis",
+	"item.mythiccraft.goblinite_nugget": "Goblinite Nugget",
+	"item.mythiccraft.goblinite_ingot": "Goblinite Ingot",
+	"item.mythiccraft.goblinite_dust": "Goblinite Dust",
+	"item.mythiccraft.ent_twig": "Ent Twig",
+	"item.mythiccraft.mutating_sprig": "Mutating Sprig",
+	"item.mythiccraft.mystic_branch": "Mystic Branch",
+	"item.mythiccraft.quicklime": "Quicklime",
+	"item.mythiccraft.gypsum": "Gypsum",
 	
 	//Food
 	"item.mythiccraft.raw_kraken": "Raw Kraken",
@@ -203,7 +211,7 @@
 	"block.mythiccraft.rosequartz_smooth": "Rosequartz Smooth",
 	"block.mythiccraft.rosequartz_pillar": "Rosequartz Pillar",
 	"block.mythiccraft.rosequartz_bricks": "Rosequartz Bricks",
-	"block.mythiccraft.icy_stone": "Icystone",
+	"block.mythiccraft.icystone": "Icystone",
 	"block.mythiccraft.icystone_cobble": "Icystone Cobblestone",
 	"block.mythiccraft.icystone_bricks": "Icystone Bricks",
 	"block.mythiccraft.icystone_polished": "Polished Icystone",
@@ -921,7 +929,7 @@
 	"block.mythiccraft.chiseled_black_sandstone": "Chisled Black Sandstone",
 	"block.mythiccraft.cut_black_sandstone": "Cut Black Sandstone",
 	"block.mythiccraft.smooth_black_sandstone": "Smooth Black Sandstone",
-	"block.mythiccraft.black_sandstone_slab": "Icy Sandstone Slab",
+	"block.mythiccraft.black_sandstone_slab": "Black Sandstone Slab",
 	"block.mythiccraft.smooth_black_sandstone_slab": "Black Sandstone Slab",
 	"block.mythiccraft.black_sandstone_wall": "Black Sandstone Wall",
 	"block.mythiccraft.pixie_sandstone": "Pixie Sandstone",
@@ -1021,6 +1029,18 @@
 	"block.mythiccraft.dragoncoral_fan": "Dragon Coral Fan",
 	"block.mythiccraft.dead_dragoncoral_wall_fan": "Dead Dragon Coral Wall Fan",
 	"block.mythiccraft.dragoncoral_wall_fan": "Dragon Coral Wall Fan",
+	"block.mythiccraft.crimson_sandstone_stairs": "Crimson Sandstone Stairs",
+	"block.mythiccraft.smooth_crimson_sandstone_stairs": "Smooth Crimson Sandstone Stairs",
+	"block.mythiccraft.icy_sandstone_stairs": "Icy Sandstone Stairs",
+	"block.mythiccraft.smooth_icy_sandstone_stairs": "Smooth Icy Sandstone Stairs",
+	"block.mythiccraft.black_sandstone_stairs": "Black Sandstone Stairs",
+	"block.mythiccraft.smooth_black_sandstone_stairs": "Smooth Black Sandstone Stairs",
+	"block.mythiccraft.pixie_sandstone_stairs": "Pixie Sandstone Stairs",
+	"block.mythiccraft.smooth_pixie_sandstone_stairs": "Smooth Pixie Sandstone Stairs",
+	"block.mythiccraft.fairy_sandstone_stairs": "Fairy Sandstone Stairs",
+	"block.mythiccraft.smooth_fairy_sandstone_stairs": "Smooth Fairy Sandstone Stairs",
+	"block.mythiccraft.ember_sandstone_stairs": "Ember Sandstone Stairs",
+	"block.mythiccraft.smooth_ember_sandstone_stairs": "Smooth Ember Sandstone Stairs",
 	
 	//Tools
 	"item.mythiccraft.vampiric_sword": "Vampiric Sword",
@@ -1203,6 +1223,9 @@
 	
 	//Entities
 	"entity.mythiccraft.lilith_entity": "Lilith",
+	"entity.mythiccraft.goblin_entity": "Goblin",
+	"entity.mythiccraft.basilisk_entity": "Basilisk",
+	"entity.mythiccraft.fairy_entity": "Fairy",
 	
 	//Fluids
 	"fluid.mythiccraft.blood_fluid": "Blood",

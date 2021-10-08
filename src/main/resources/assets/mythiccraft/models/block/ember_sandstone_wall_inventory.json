@@ -1,6 +1,6 @@
 {
     "parent": "block/wall_inventory",
     "textures": {
-        "wall": "mythiccraft:block/ember_sandstone_wall"
+        "wall": "mythiccraft:block/ember_sandstone"
     }
 }

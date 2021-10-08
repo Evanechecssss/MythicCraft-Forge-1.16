@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:block/smooth_pixie_sandstone",
+        "top": "mythiccraft:block/smooth_pixie_sandstone",
+        "side": "mythiccraft:block/smooth_pixie_sandstone"
+    }
+}

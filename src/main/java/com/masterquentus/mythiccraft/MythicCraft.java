@@ -4,6 +4,7 @@ import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.init.*;
 import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.objects.blocks.*;
+import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
 import com.masterquentus.mythiccraft.world.gen.OreGen;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -44,6 +45,7 @@ public class MythicCraft {
 
 	public MythicCraft() {
 		GeckoLib.initialize();
+		StructuresInit.setupStructures();
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setup);
 
@@ -54,7 +56,7 @@ public class MythicCraft {
 		ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
-		
+		StructuresInit.STRUCTURES.register(modEventBus);
 		BiomeInit.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::addFeaturesToBiomes);
 		MinecraftForge.EVENT_BUS.register(this);

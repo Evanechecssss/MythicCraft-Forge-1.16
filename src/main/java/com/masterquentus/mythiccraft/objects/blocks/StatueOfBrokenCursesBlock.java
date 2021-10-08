@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
+
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 
 import net.minecraft.block.Block;
@@ -14,6 +15,8 @@ import net.minecraft.util.Rotation;
 import net.minecraft.world.IBlockReader;
 
 public class StatueOfBrokenCursesBlock extends Block 
+
+
 {
 
 	public StatueOfBrokenCursesBlock(Properties p_i48440_1_) {

@@ -18,7 +18,7 @@
       }
     ],
     "snowy=true": {
-      "model": "mythiccraft:block/deep_grass_block_snow"
+      "model": "mythiccraft:block/deep_grass_block"
     }
   }
 }

@@ -1,0 +1,27 @@
+{
+	"replace": false,
+	"values": [
+		"mythiccraft:bloodoak_leaves",
+		"mythiccraft:whiteoak_leaves",
+		"mythiccraft:silverwood_leaves",
+		"mythiccraft:witchwood_leaves",
+		"mythiccraft:alder_leaves",
+		"mythiccraft:hawthorn_leaves",
+		"mythiccraft:rowan_leaves",
+		"mythiccraft:willow_leaves",
+		"mythiccraft:beech_leaves",
+		"mythiccraft:ash_leaves",
+		"mythiccraft:blackthorn_leaves",
+		"mythiccraft:cedar_leaves",
+		"mythiccraft:elder_leaves",
+		"mythiccraft:juniper_leaves",
+		"mythiccraft:witchhazel_leaves",
+		"mythiccraft:yew_leaves",
+		"mythiccraft:infested_leaves",
+		"mythiccraft:charred_leaves",
+		"mythiccraft:icy_leaves",
+		"mythiccraft:twisted_leaves",
+		"mythiccraft:distorted_leaves"
+		
+	]
+}

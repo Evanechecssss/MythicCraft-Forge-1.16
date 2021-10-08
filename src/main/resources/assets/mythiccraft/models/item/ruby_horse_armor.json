@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:item/ruby_horse_armor"
+    "layer0": "mythiccraft:items/ruby_horse_armor"
   }
 }

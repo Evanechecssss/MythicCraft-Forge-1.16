@@ -5,6 +5,7 @@ import com.masterquentus.mythiccraft.client.entity.render.*;
 import com.masterquentus.mythiccraft.client.gui.*;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.FluidInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 
@@ -173,6 +174,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.TAll_MYSTIC_GRASS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DEEP_GRASS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.TAll_DEEP_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_CHARRED_GRASS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.FIRE_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WISPY_COTTON.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GLINT_WEED.get(), RenderType.cutout());
@@ -221,6 +223,24 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL_WALL_FAN.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_CACTUS.get(), RenderType.cutout());
+		
+		
+		RenderTypeLookup.setRenderLayer(BlockInit.DEEP_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CHARRED_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_GRASS_BLOCK.get(), RenderType.cutout());
+		
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLOWING.get(), RenderType.translucent());
 
 		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
 		// SignTileEntityRenderer::new);

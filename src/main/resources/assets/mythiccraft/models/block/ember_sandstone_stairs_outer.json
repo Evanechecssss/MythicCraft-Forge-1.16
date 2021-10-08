@@ -1,0 +1,9 @@
+  
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "mythiccraft:block/ember_sandstone",
+        "top": "mythiccraft:block/ember_sandstone",
+        "side": "mythiccraft:block/ember_sandstone"
+    }
+}

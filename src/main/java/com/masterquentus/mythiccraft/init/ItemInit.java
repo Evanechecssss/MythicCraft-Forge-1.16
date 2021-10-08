@@ -71,6 +71,12 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> AMETHYST = ITEMS.register("amethyst",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_DUST = ITEMS.register("goblinite_dust",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_NUGGET = ITEMS.register("goblinite_nugget",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_INGOT = ITEMS.register("goblinite_ingot",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> PUREGLOWSTONE_DUST = ITEMS.register("pureglowstone_dust",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DARKGLOWSTONE_DUST = ITEMS.register("darkglowstone_dust",
@@ -269,6 +275,16 @@ public class ItemInit {
 			() -> new MutandisItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> MUTANDIS_EXTREMIS = ITEMS.register("mutandis_extremis",
 			() -> new MutandisItem(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> ENT_TWIG = ITEMS.register("ent_twig",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MUTATING_SPRIG = ITEMS.register("mutating_sprig",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MYSTIC_BRANCH = ITEMS.register("mystic_branch",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> QUICK_LIME = ITEMS.register("quicklime",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GYPSUM = ITEMS.register("gypsum",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DEAD_LIVING_CORAL_FAN_ITEM = ITEMS.register("dead_livingcoral_fan",
 			() -> new WallOrFloorItem(BlockInit.DEAD_LIVING_CORAL_FAN.get(), BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
 					new Item.Properties().tab(MythicCraftBlocks.instance)));
@@ -297,15 +313,13 @@ public class ItemInit {
 			() -> new WallOrFloorItem(BlockInit.CRIMSON_CORAL_FAN.get(), BlockInit.CRIMSON_CORAL_WALL_FAN.get(),
 					new Item.Properties().tab(MythicCraftBlocks.instance)));
 	public static final RegistryObject<Item> DEAD_ICY_CORAL_FAN_ITEM = ITEMS.register("dead_icy_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_ICY_CORAL_FAN.get(),
-					BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
+			() -> new WallOrFloorItem(BlockInit.DEAD_ICY_CORAL_FAN.get(), BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
 					new Item.Properties().tab(MythicCraftBlocks.instance)));
 	public static final RegistryObject<Item> ICY_CORAL_FAN_ITEM = ITEMS.register("icy_fan",
 			() -> new WallOrFloorItem(BlockInit.ICY_CORAL_FAN.get(), BlockInit.ICY_CORAL_WALL_FAN.get(),
 					new Item.Properties().tab(MythicCraftBlocks.instance)));
 	public static final RegistryObject<Item> DEAD_DRAGON_CORAL_FAN_ITEM = ITEMS.register("dead_dragon_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_DRAGON_CORAL_FAN.get(),
-					BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
+			() -> new WallOrFloorItem(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
 					new Item.Properties().tab(MythicCraftBlocks.instance)));
 	public static final RegistryObject<Item> DRAGON_CORAL_FAN_ITEM = ITEMS.register("dragon_fan",
 			() -> new WallOrFloorItem(BlockInit.DRAGON_CORAL_FAN.get(), BlockInit.DRAGON_CORAL_WALL_FAN.get(),

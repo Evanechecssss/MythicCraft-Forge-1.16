@@ -54,18 +54,21 @@ public class FluidInit {
 
 	public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> BLOOD_FLUID.get(), () -> BLOOD_FLOWING.get(),
-			FluidAttributes.builder(BLOOD_STILL_RL, BLOOD_FLOWING_RL).density(7).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.HONEY_BLOCK_BREAK).overlay(BLOOD_OVERLAY_RL))
-							.block(() -> FluidInit.BLOOD_BLOCK.get()).bucket(() -> ItemInit.blood_bucket.get());
+			FluidAttributes.builder(BLOOD_STILL_RL, BLOOD_FLOWING_RL).density(10).viscosity(5).luminosity(2)
+					.sound(SoundEvents.HONEY_BLOCK_PLACE).overlay(BLOOD_OVERLAY_RL)).slopeFindDistance(2)
+							.levelDecreasePerBlock(2).block(() -> FluidInit.BLOOD_BLOCK.get())
+							.bucket(() -> ItemInit.blood_bucket.get());
 	public static final ForgeFlowingFluid.Properties ECTOPLASM_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> ECTOPLASM_FLUID.get(), () -> ECTOPLASM_FLOWING.get(),
-			FluidAttributes.builder(ECTOPLASM_STILL_RL, ECTOPLASM_FLOWING_RL).density(3).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.BEEHIVE_DRIP).overlay(ECTOPLASM_OVERLAY_RL))
-							.block(() -> FluidInit.ECTOPLASM_BLOCK.get()).bucket(() -> ItemInit.ectoplasm_bucket.get());
+			FluidAttributes.builder(ECTOPLASM_STILL_RL, ECTOPLASM_FLOWING_RL).density(15).viscosity(6).luminosity(5)
+					.rarity(Rarity.UNCOMMON).sound(SoundEvents.BEEHIVE_DRIP).overlay(ECTOPLASM_OVERLAY_RL))
+							.slopeFindDistance(5).levelDecreasePerBlock(4).block(() -> FluidInit.ECTOPLASM_BLOCK.get())
+							.bucket(() -> ItemInit.ectoplasm_bucket.get());
 	public static final ForgeFlowingFluid.Properties INFESTEDGOO_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> INFESTEDGOO_FLUID.get(), () -> INFESTEDGOO_FLOWING.get(),
-			FluidAttributes.builder(INFESTEDGOO_STILL_RL, INFESTEDGOO_FLOWING_RL).density(9).rarity(Rarity.UNCOMMON)
-					.sound(SoundEvents.BEEHIVE_DRIP).overlay(INFESTEDGOO_OVERLAY_RL))
+			FluidAttributes.builder(INFESTEDGOO_STILL_RL, INFESTEDGOO_FLOWING_RL).density(15).viscosity(6).luminosity(5)
+					.rarity(Rarity.UNCOMMON).sound(SoundEvents.BEEHIVE_DRIP).overlay(INFESTEDGOO_OVERLAY_RL))
+							.slopeFindDistance(5).levelDecreasePerBlock(4)
 							.block(() -> FluidInit.INFESTEDGOO_BLOCK.get())
 							.bucket(() -> ItemInit.ectoplasm_bucket.get());
 
@@ -78,4 +81,5 @@ public class FluidInit {
 	public static final RegistryObject<FlowingFluidBlock> INFESTEDGOO_BLOCK = BlockInit.BLOCKS.register("infestedgoo",
 			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(),
 					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
+
 }

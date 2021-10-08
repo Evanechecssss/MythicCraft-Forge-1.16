@@ -59,6 +59,7 @@ import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.WallBlock;
@@ -210,6 +211,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> CRIMSON_SANDSTONE = BLOCKS.register("crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> CRIMSON_SANDSTONE_STAIRS = BLOCKS.register("crimson_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.CRIMSON_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_CRIMSON_SANDSTONE = BLOCKS.register("chiseled_crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -219,6 +224,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_CRIMSON_SANDSTONE = BLOCKS.register("smooth_crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_CRIMSON_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_crimson_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_CRIMSON_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CRIMSON_SANDSTONE_SLAB = BLOCKS.register("crimson_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -235,6 +245,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> ICY_SANDSTONE = BLOCKS.register("icy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> ICY_SANDSTONE_STAIRS = BLOCKS.register("icy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.ICY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_ICY_SANDSTONE = BLOCKS.register("chiseled_icy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -250,6 +264,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_ICY_SANDSTONE_SLAB = BLOCKS.register("smooth_icy_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_STONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_ICY_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_icy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_ICY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> ICY_SANDSTONE_WALL = BLOCKS.register("icy_sandstone_wall",
 			() -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -259,6 +278,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> BLACK_SANDSTONE = BLOCKS.register("black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> BLACK_SANDSTONE_STAIRS = BLOCKS.register("black_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.BLACK_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_BLACK_SANDSTONE = BLOCKS.register("chiseled_black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -268,6 +291,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE = BLOCKS.register("smooth_black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_black_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_BLACK_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> BLACK_SANDSTONE_SLAB = BLOCKS.register("black_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -284,6 +312,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> PIXIE_SANDSTONE = BLOCKS.register("pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> PIXIE_SANDSTONE_STAIRS = BLOCKS.register("pixie_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.PIXIE_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_PIXIE_SANDSTONE = BLOCKS.register("chiseled_pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -293,6 +325,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_PIXIE_SANDSTONE = BLOCKS.register("smooth_pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_PIXIE_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_pixie_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_PIXIE_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> PIXIE_SANDSTONE_SLAB = BLOCKS.register("pixie_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -309,6 +346,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> FAIRY_SANDSTONE = BLOCKS.register("fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> FAIRY_SANDSTONE_STAIRS = BLOCKS.register("fairy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.FAIRY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_FAIRY_SANDSTONE = BLOCKS.register("chiseled_fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -318,6 +359,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_FAIRY_SANDSTONE = BLOCKS.register("smooth_fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_FAIRY_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_fairy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_FAIRY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> FAIRY_SANDSTONE_SLAB = BLOCKS.register("fairy_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -334,6 +380,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> EMBER_SANDSTONE = BLOCKS.register("ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> EMBER_SANDSTONE_STAIRS = BLOCKS.register("ember_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.EMBER_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_EMBER_SANDSTONE = BLOCKS.register("chiseled_ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -343,6 +393,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_EMBER_SANDSTONE = BLOCKS.register("smooth_ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_EMBER_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_ember_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_EMBER_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> EMBER_SANDSTONE_SLAB = BLOCKS.register("ember_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -611,8 +666,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> ICY_CORAL_FAN = BLOCKS.register("icycoral_fan",
 			() -> new CoralFinBlock(BlockInit.DEAD_ICY_CORAL_FAN.get(),
 					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
-	public static final RegistryObject<Block> DEAD_ICY_CORAL_WALL_FAN = BLOCKS
-			.register("dead_icycoral_wall_fan", () -> new DeadCoralWallFanBlock(
+	public static final RegistryObject<Block> DEAD_ICY_CORAL_WALL_FAN = BLOCKS.register("dead_icycoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
 					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
 	public static final RegistryObject<Block> ICY_CORAL_WALL_FAN = BLOCKS.register("icycoral_wall_fan",
 			() -> new CoralWallFanBlock(BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
@@ -632,8 +687,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> DRAGON_CORAL_FAN = BLOCKS.register("dragoncoral_fan",
 			() -> new CoralFinBlock(BlockInit.DEAD_DRAGON_CORAL_FAN.get(),
 					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
-	public static final RegistryObject<Block> DEAD_DRAGON_CORAL_WALL_FAN = BLOCKS
-			.register("dead_dragoncoral_wall_fan", () -> new DeadCoralWallFanBlock(
+	public static final RegistryObject<Block> DEAD_DRAGON_CORAL_WALL_FAN = BLOCKS.register("dead_dragoncoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
 					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
 	public static final RegistryObject<Block> DRAGON_CORAL_WALL_FAN = BLOCKS.register("dragoncoral_wall_fan",
 			() -> new CoralWallFanBlock(BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
