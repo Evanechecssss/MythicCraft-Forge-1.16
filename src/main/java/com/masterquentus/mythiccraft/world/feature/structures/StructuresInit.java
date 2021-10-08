@@ -25,7 +25,7 @@ public class StructuresInit {
 			GoblinHutStructure::new);
 
 	public static void setupStructures() {
-		setupMapSpacingAndLand(GOBLIN_HUT.get(), new StructureSeparationSettings(100, 50, 1234567890), true);
+		setupMapSpacingAndLand(GOBLIN_HUT.get(), new StructureSeparationSettings(10, 5, 1234567890), true);
 
 	}
 

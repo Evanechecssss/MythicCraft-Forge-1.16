@@ -7,8 +7,6 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-
 import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
@@ -16,11 +14,6 @@ import java.util.function.Supplier;
 import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
 
 public class StructureGenerationInit {
-	@SubscribeEvent
-	public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
-		StructureGenerationInit.generateStructures(event);
-
-	}
 
 	public static void generateStructures(final BiomeLoadingEvent event) {
 		RegistryKey<Biome> key = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());

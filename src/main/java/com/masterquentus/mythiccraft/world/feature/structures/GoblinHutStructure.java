@@ -70,7 +70,7 @@ public class GoblinHutStructure extends Structure<NoFeatureConfig> {
 
 			JigsawManager.addPieces(dynamicRegistryManager,
 					new VillageConfig(() -> dynamicRegistryManager.registryOrThrow(Registry.TEMPLATE_POOL_REGISTRY)
-							.get(new ResourceLocation(MythicCraft.MOD_ID, "goblinhut/start_pool")), 10),
+							.get(new ResourceLocation(MythicCraft.MOD_ID, "goblin_hut/start_pool")), 10),
 					AbstractVillagePiece::new, chunkGenerator, templateManagerIn, centerPos, this.pieces, this.random,
 					false, true);
 			

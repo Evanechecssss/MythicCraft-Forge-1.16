@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.world;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
+import com.masterquentus.mythiccraft.world.gen.StructureGenerationInit;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -27,7 +28,9 @@ import java.util.Map;
 public class WorldEventsInit {
 	
 	@SubscribeEvent
-    public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
+	public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
+		StructureGenerationInit.generateStructures(event);
+		
 		
 	}
 	
