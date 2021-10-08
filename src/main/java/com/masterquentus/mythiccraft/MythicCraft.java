@@ -17,7 +17,6 @@ import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
-import net.minecraft.block.StandingSignBlock;
 import net.minecraft.block.WallSignBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
@@ -45,7 +44,6 @@ public class MythicCraft {
 
 	public MythicCraft() {
 		GeckoLib.initialize();
-		StructuresInit.setupStructures();
 		final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		modEventBus.addListener(this::setup);
 
@@ -96,7 +94,9 @@ public class MythicCraft {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-
+		event.enqueueWork(() -> {
+            StructuresInit.setupStructures();
+        });
 	}
 
 	@SubscribeEvent

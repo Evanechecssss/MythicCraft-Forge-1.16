@@ -43,7 +43,6 @@ public class WildBrambleBlock extends SugarCaneBlock implements net.minecraftfor
 		   public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random rand) {
 		       BlockState above = world.getBlockState(pos.above());
 		       if (above.isAir()){
-		           world.setBlockAndUpdate(pos.above(), BlockInit.WILD_BRAMBLE.get().defaultBlockState());
 		           int i;
 		           for(i = 1; world.getBlockState(pos.below(i)).is(this); ++i) {
 		       }
