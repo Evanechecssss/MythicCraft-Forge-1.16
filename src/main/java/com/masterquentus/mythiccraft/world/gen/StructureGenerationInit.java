@@ -17,19 +17,19 @@ import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
 
 public class StructureGenerationInit {
 	@SubscribeEvent
-    public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
-        StructureGenerationInit.generateStructures(event);
-		
-		}
+	public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
+		StructureGenerationInit.generateStructures(event);
+
+	}
 
 	public static void generateStructures(final BiomeLoadingEvent event) {
-        RegistryKey<Biome> key = RegistryKey.getOrCreateKey(Registry.BIOME_KEY, event.getName());
-        Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
+		RegistryKey<Biome> key = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
+		Set<BiomeDictionary.Type> types = BiomeDictionary.getTypes(key);
 
-        if(types.contains(BiomeDictionary.Type.PLAINS)) {
-            List<Supplier<StructureFeature<?, ?>>> structures = event.getGeneration().getStructures();
+		if (types.contains(BiomeDictionary.Type.PLAINS)) {
+			List<Supplier<StructureFeature<?, ?>>> structures = event.getGeneration().getStructures();
 
-            structures.add(() -> StructuresInit.GOBLIN_HUT.get().withConfiguration(IFeatureConfig.NONE));
-        }
-    }
+			structures.add(() -> StructuresInit.GOBLIN_HUT.get().configured(IFeatureConfig.NONE));
+		}
+	}
 }
