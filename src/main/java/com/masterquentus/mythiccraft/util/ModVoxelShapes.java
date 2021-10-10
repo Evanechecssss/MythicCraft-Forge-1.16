@@ -139,9 +139,5 @@ public class ModVoxelShapes {
 				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 
-	public static VoxelShape STATUE_OF_BOKEN_CURSES = Stream
-			.of(Block.box(0, -16, 0, 16, -10, 16), Block.box(0, -12, 0, 16, -4, 16), Block.box(1, -4, 2, 14, 4, 15),
-					Block.box(3, 4, 3, 13, 10, 14), Block.box(3, 10, -1, 13, 30, 12), Block.box(-2, 10, -2, 3, 18, 9),
-					Block.box(13, 10, -3, 18, 17, 8))
-			.reduce((v1, v2) -> VoxelShapes.join(v1, v2, IBooleanFunction.OR)).get();
+	
 }

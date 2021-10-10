@@ -1,21 +1,29 @@
 package com.masterquentus.mythiccraft.util;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.client.entity.render.*;
-import com.masterquentus.mythiccraft.client.gui.*;
+import com.masterquentus.mythiccraft.client.entity.render.BasiliskEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.FairyEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.GoblinEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.LilithEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.MobSummonProjectileRenderer;
+import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
+import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
+import com.masterquentus.mythiccraft.client.gui.CrateScreen;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.FluidInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
-
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
+import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -224,14 +232,13 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_CACTUS.get(), RenderType.cutout());
-		
-		
+
 		RenderTypeLookup.setRenderLayer(BlockInit.DEEP_GRASS_BLOCK.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_GRASS_BLOCK.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.CHARRED_GRASS_BLOCK.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_GRASS_BLOCK.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_GRASS_BLOCK.get(), RenderType.cutout());
-		
+
 		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLUID.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_BLOCK.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLOWING.get(), RenderType.translucent());
@@ -242,8 +249,29 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_BLOCK.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLOWING.get(), RenderType.translucent());
 
-		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
-		// SignTileEntityRenderer::new);
+		Atlases.addWoodType(WoodTypesInit.BLOOD_OAK);
+		Atlases.addWoodType(WoodTypesInit.WHITE_OAK);
+		Atlases.addWoodType(WoodTypesInit.SILVER_WOOD);
+		Atlases.addWoodType(WoodTypesInit.WITCH_WOOD);
+		Atlases.addWoodType(WoodTypesInit.ALDER);
+		Atlases.addWoodType(WoodTypesInit.HAWTHORN);
+		Atlases.addWoodType(WoodTypesInit.ROWAN);
+		Atlases.addWoodType(WoodTypesInit.WILLOW);
+		Atlases.addWoodType(WoodTypesInit.BEECH);
+		Atlases.addWoodType(WoodTypesInit.ASH);
+		Atlases.addWoodType(WoodTypesInit.BLACKTHORN);
+		Atlases.addWoodType(WoodTypesInit.CEDAR);
+		Atlases.addWoodType(WoodTypesInit.ELDER);
+		Atlases.addWoodType(WoodTypesInit.JUNIPER);
+		Atlases.addWoodType(WoodTypesInit.WITCHHAZEL);
+		Atlases.addWoodType(WoodTypesInit.YEW);
+		Atlases.addWoodType(WoodTypesInit.INFESTED);
+		Atlases.addWoodType(WoodTypesInit.CHARRED);
+		Atlases.addWoodType(WoodTypesInit.ICY);
+		Atlases.addWoodType(WoodTypesInit.TWISTED);
+		Atlases.addWoodType(WoodTypesInit.DISTORTED);
+
+		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
 
 		// Entities
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GOBLIN_ENTITY.get(), GoblinEntityRender::new);

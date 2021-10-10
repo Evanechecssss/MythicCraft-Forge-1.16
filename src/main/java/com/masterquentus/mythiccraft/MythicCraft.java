@@ -18,6 +18,7 @@ import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.WallSignBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -96,6 +97,27 @@ public class MythicCraft {
 	private void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
             StructuresInit.setupStructures();
+            WoodType.register(WoodTypesInit.BLOOD_OAK);
+            WoodType.register(WoodTypesInit.WHITE_OAK);
+            WoodType.register(WoodTypesInit.SILVER_WOOD);
+            WoodType.register(WoodTypesInit.WITCH_WOOD);
+            WoodType.register(WoodTypesInit.ALDER);
+            WoodType.register(WoodTypesInit.HAWTHORN);
+            WoodType.register(WoodTypesInit.ROWAN);
+            WoodType.register(WoodTypesInit.WILLOW);
+            WoodType.register(WoodTypesInit.BEECH);
+            WoodType.register(WoodTypesInit.ASH);
+            WoodType.register(WoodTypesInit.BLACKTHORN);
+            WoodType.register(WoodTypesInit.CEDAR);
+            WoodType.register(WoodTypesInit.ELDER);
+            WoodType.register(WoodTypesInit.JUNIPER);
+            WoodType.register(WoodTypesInit.WITCHHAZEL);
+            WoodType.register(WoodTypesInit.YEW);
+            WoodType.register(WoodTypesInit.INFESTED);
+            WoodType.register(WoodTypesInit.CHARRED);
+            WoodType.register(WoodTypesInit.ICY);
+            WoodType.register(WoodTypesInit.TWISTED);
+            WoodType.register(WoodTypesInit.DISTORTED);
         });
 	}
 

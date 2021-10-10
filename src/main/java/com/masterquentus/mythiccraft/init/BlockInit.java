@@ -30,6 +30,8 @@ import com.masterquentus.mythiccraft.objects.blocks.ModLanternBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModLayer;
 import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModSlimeBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
@@ -39,7 +41,9 @@ import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CoralBlock;
@@ -157,8 +161,8 @@ public class BlockInit {
 			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
-			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.GRAVEL)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(0).strength(1.5F)));
 	public static final RegistryObject<Block> CURSED_SOIL = BLOCKS.register("cursed_soil",
 			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F).requiresCorrectToolForDrops()));
@@ -412,6 +416,94 @@ public class BlockInit {
 			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS).friction(0.98f)));
 	public static final RegistryObject<Block> CRIMSON_MAGMA = BLOCKS.register("crimson_magma", () -> new MagmaBlock(
 			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS)));
+	public static final RegistryObject<Block> BLOODOAK_SIGN = BLOCKS.register("bloodoak_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+	public static final RegistryObject<Block> BLOODOAK_WALL_SIGN = BLOCKS.register("bloodoak_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+	public static final RegistryObject<Block> WHITE_OAK_SIGN = BLOCKS.register("whiteoak_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+	public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = BLOCKS.register("whiteoak_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+	public static final RegistryObject<Block> SILVER_WOOD_SIGN = BLOCKS.register("silverwood_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.SILVER_WOOD));
+	public static final RegistryObject<Block> SILVER_WOOD_WALL_SIGN = BLOCKS.register("silverwood_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.SILVER_WOOD));
+	public static final RegistryObject<Block> WITCH_WOOD_SIGN = BLOCKS.register("witchwood_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.WITCH_WOOD));
+	public static final RegistryObject<Block> WITCH_WOOD_WALL_SIGN = BLOCKS.register("witchwood_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCH_WOOD));
+	public static final RegistryObject<Block> ALDER_SIGN = BLOCKS.register("alder_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+	public static final RegistryObject<Block> ALDER_WALL_SIGN = BLOCKS.register("alder_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+	public static final RegistryObject<Block> HAWTHORN_SIGN = BLOCKS.register("hawthorn_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
+	public static final RegistryObject<Block> HAWTHORN_WALL_SIGN = BLOCKS.register("hawthorn_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
+	public static final RegistryObject<Block> ROWAN_SIGN = BLOCKS.register("rowan_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+	public static final RegistryObject<Block> ROWAN_WALL_SIGN = BLOCKS.register("rowan_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+	public static final RegistryObject<Block> WILLOW_SIGN = BLOCKS.register("willow_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
+	public static final RegistryObject<Block> WILLOW_WALL_SIGN = BLOCKS.register("willow_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
+	public static final RegistryObject<Block> BEECH_SIGN = BLOCKS.register("beech_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
+	public static final RegistryObject<Block> BEECH_WALL_SIGN = BLOCKS.register("beech_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
+	public static final RegistryObject<Block> ASH_SIGN = BLOCKS.register("ash_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+	public static final RegistryObject<Block> ASH_WALL_SIGN = BLOCKS.register("ash_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+	public static final RegistryObject<Block> BLACKTHORN_SIGN = BLOCKS.register("blackthorn_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.BLACKTHORN));
+	public static final RegistryObject<Block> BLACKTHORN_WALL_SIGN = BLOCKS.register("blackthorn_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLACKTHORN));
+	public static final RegistryObject<Block> CEDAR_SIGN = BLOCKS.register("cedar_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
+	public static final RegistryObject<Block> CEDAR_WALL_SIGN = BLOCKS.register("cedar_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
+	public static final RegistryObject<Block> ELDER_SIGN = BLOCKS.register("elder_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+	public static final RegistryObject<Block> ELDER_WALL_SIGN = BLOCKS.register("elder_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+	public static final RegistryObject<Block> JUNIPER_SIGN = BLOCKS.register("juniper_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+	public static final RegistryObject<Block> JUNIPER_WALL_SIGN = BLOCKS.register("juniper_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+	public static final RegistryObject<Block> WITCHHAZEL_SIGN = BLOCKS.register("witchhazel_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.WITCHHAZEL));
+	public static final RegistryObject<Block> WITCHHAZEL_WALL_SIGN = BLOCKS.register("witchhazel_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCHHAZEL));
+	public static final RegistryObject<Block> YEW_SIGN = BLOCKS.register("yew_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+	public static final RegistryObject<Block> YEW_WALL_SIGN = BLOCKS.register("yew_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+	public static final RegistryObject<Block> INFESTED_SIGN = BLOCKS.register("infested_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+	public static final RegistryObject<Block> INFESTED_WALL_SIGN = BLOCKS.register("infested_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+	public static final RegistryObject<Block> CHARRED_SIGN = BLOCKS.register("charred_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
+	public static final RegistryObject<Block> CHARRED_WALL_SIGN = BLOCKS.register("charred_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
+	public static final RegistryObject<Block> ICY_SIGN = BLOCKS.register("icy_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+	public static final RegistryObject<Block> ICY_WALL_SIGN = BLOCKS.register("icy_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+	public static final RegistryObject<Block> TWISTED_SIGN = BLOCKS.register("twisted_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+	public static final RegistryObject<Block> TWISTED_WALL_SIGN = BLOCKS.register("twisted_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+	public static final RegistryObject<Block> DISTORTED_SIGN = BLOCKS.register("distorted_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+	public static final RegistryObject<Block> DISTORTED_WALL_SIGN = BLOCKS.register("distorted_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
