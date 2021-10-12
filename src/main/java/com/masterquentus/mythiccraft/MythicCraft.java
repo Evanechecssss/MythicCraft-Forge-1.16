@@ -29,12 +29,15 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
 import software.bernie.geckolib3.GeckoLib;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -98,29 +101,33 @@ public class MythicCraft {
 
 	private void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-            StructuresInit.setupStructures();
-            WoodType.register(WoodTypesInit.BLOOD_OAK);
-            WoodType.register(WoodTypesInit.WHITE_OAK);
-            WoodType.register(WoodTypesInit.SILVER_WOOD);
-            WoodType.register(WoodTypesInit.WITCH_WOOD);
-            WoodType.register(WoodTypesInit.ALDER);
-            WoodType.register(WoodTypesInit.HAWTHORN);
-            WoodType.register(WoodTypesInit.ROWAN);
-            WoodType.register(WoodTypesInit.WILLOW);
-            WoodType.register(WoodTypesInit.BEECH);
-            WoodType.register(WoodTypesInit.ASH);
-            WoodType.register(WoodTypesInit.BLACKTHORN);
-            WoodType.register(WoodTypesInit.CEDAR);
-            WoodType.register(WoodTypesInit.ELDER);
-            WoodType.register(WoodTypesInit.JUNIPER);
-            WoodType.register(WoodTypesInit.WITCHHAZEL);
-            WoodType.register(WoodTypesInit.YEW);
-            WoodType.register(WoodTypesInit.INFESTED);
-            WoodType.register(WoodTypesInit.CHARRED);
-            WoodType.register(WoodTypesInit.ICY);
-            WoodType.register(WoodTypesInit.TWISTED);
-            WoodType.register(WoodTypesInit.DISTORTED);
-        });
+			StructuresInit.setupStructures();
+			WoodType.register(WoodTypesInit.BLOOD_OAK);
+			WoodType.register(WoodTypesInit.WHITE_OAK);
+			WoodType.register(WoodTypesInit.SILVER_WOOD);
+			WoodType.register(WoodTypesInit.WITCH_WOOD);
+			WoodType.register(WoodTypesInit.ALDER);
+			WoodType.register(WoodTypesInit.HAWTHORN);
+			WoodType.register(WoodTypesInit.ROWAN);
+			WoodType.register(WoodTypesInit.WILLOW);
+			WoodType.register(WoodTypesInit.BEECH);
+			WoodType.register(WoodTypesInit.ASH);
+			WoodType.register(WoodTypesInit.BLACKTHORN);
+			WoodType.register(WoodTypesInit.CEDAR);
+			WoodType.register(WoodTypesInit.ELDER);
+			WoodType.register(WoodTypesInit.JUNIPER);
+			WoodType.register(WoodTypesInit.WITCHHAZEL);
+			WoodType.register(WoodTypesInit.YEW);
+			WoodType.register(WoodTypesInit.INFESTED);
+			WoodType.register(WoodTypesInit.CHARRED);
+			WoodType.register(WoodTypesInit.ICY);
+			WoodType.register(WoodTypesInit.TWISTED);
+			WoodType.register(WoodTypesInit.DISTORTED);
+			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+					() -> SlotTypePreset.CHARM.getMessageBuilder().build());
+			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+					() -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
+		});
 	}
 
 	@SubscribeEvent

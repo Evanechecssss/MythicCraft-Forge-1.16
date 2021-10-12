@@ -61,8 +61,6 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.WITCHES_OVEN_CONTAINER.get(), WitchesOvenScreen::new);
 
-		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
-		// SignTileEntityRenderer::new);
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 

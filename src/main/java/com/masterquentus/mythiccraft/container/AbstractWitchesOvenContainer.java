@@ -53,9 +53,9 @@ public abstract class AbstractWitchesOvenContainer extends RecipeBookContainer<I
 
         this.addSlot(new Slot(furnaceInventory, 0, 56, 17));
         this.addSlot(new Slot(furnaceInventory, 1, 56, 53));
-        //this.addSlot(new Slot(furnaceInventory, 0, 83, 53));
-        //this.addSlot(new FurnaceResultSlot(playerInventory.player, furnaceInventory, 2, 118, 21));
-        this.addSlot(new FurnaceResultSlot(playerInventory.player, furnaceInventory, 2, 118, 53));
+        this.addSlot(new Slot(furnaceInventory, 2, 83, 53));
+        this.addSlot(new FurnaceResultSlot(playerInventory.player, furnaceInventory, 3, 118, 21));
+        this.addSlot(new FurnaceResultSlot(playerInventory.player, furnaceInventory, 4, 118, 53));
 
 		for (int i = 0; i < 3; ++i) {
 			for (int j = 0; j < 9; ++j) {

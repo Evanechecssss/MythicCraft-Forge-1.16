@@ -8,6 +8,7 @@ import com.masterquentus.mythiccraft.objects.items.AnointingPasteItem;
 import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
 import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
+import com.masterquentus.mythiccraft.objects.items.MoonCharmItem;
 import com.masterquentus.mythiccraft.objects.items.MutandisItem;
 import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
 import com.masterquentus.mythiccraft.objects.items.TagLockKitItem;
@@ -134,7 +135,7 @@ public class ItemInit {
 	public static final RegistryObject<Item> daylight_ring = ITEMS.register("daylight_ring",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> MOON_CHARM = ITEMS.register("moon_charm",
-			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new MoonCharmItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wolfsbane = ITEMS.register("wolfsbane",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> vervain = ITEMS.register("vervain",
