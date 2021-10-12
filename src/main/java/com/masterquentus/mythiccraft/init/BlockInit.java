@@ -41,6 +41,7 @@ import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchesOvenBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 
 import net.minecraft.block.AbstractBlock;
@@ -976,9 +977,9 @@ public class BlockInit {
 					.harvestLevel(1).requiresCorrectToolForDrops().sound(SoundType.GLASS)));
 	public static final RegistryObject<Block> DEMON_HEART = BLOCKS.register("demon_heart", () -> new DemonHeartBlock(
 			Block.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WET_GRASS).harvestLevel(0)));
-	// public static final RegistryObject<Block> WITCHES_OVEN =
-	// BLOCKS.register("witches_oven", () -> new WitchesOven(
-	// Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> WITCHES_OVEN = BLOCKS.register("witches_oven",
+			() -> new WitchesOvenBlock(Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
 	// class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",

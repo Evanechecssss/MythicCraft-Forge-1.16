@@ -1054,7 +1054,6 @@
 	"block.mythiccraft.smooth_fairy_sandstone_stairs": "Smooth Fairy Sandstone Stairs",
 	"block.mythiccraft.ember_sandstone_stairs": "Ember Sandstone Stairs",
 	"block.mythiccraft.smooth_ember_sandstone_stairs": "Smooth Ember Sandstone Stairs",
-	
 	"block.mythiccraft.bloodoak_sign": "Bloodoak Sign",
 	"block.mythiccraft.bloodoak_wall_sign": "Bloodoak Wall Sign",
 	"block.mythiccraft.whiteoak_sign": "Whiteoak Sign",
@@ -1097,6 +1096,7 @@
 	"block.mythiccraft.twisted_wall_sign": "Twisted Wall Sign",
 	"block.mythiccraft.distorted_sign": "Distorted Sign",
 	"block.mythiccraft.distorted_wall_sign": "Distorted Wall Sign",
+	"block.mythiccraft.witches_oven": "Witches Oven",
 	
 	//Tools
 	"item.mythiccraft.vampiric_sword": "Vampiric Sword",
@@ -1298,6 +1298,9 @@
 	"container.icy_crate": "Icy Crate",
 	"container.distorted_crate": "Distorted Crate",
 	"container.twisted_crate": "Twisted Crate",
+	
+	//Tile
+	"tile.mythiccraft.witchesoven": "Witches Oven",
 	
 	//Entities
 	"entity.mythiccraft.lilith_entity": "Lilith",

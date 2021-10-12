@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
+import com.masterquentus.mythiccraft.objects.items.crafting.ModRecipeSerializers;
 
 import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
@@ -54,6 +55,7 @@ public class MythicCraft {
 		BlockInit.NO_ITEM_BLOCK.register(modEventBus);
 		ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
+		ModRecipeSerializers.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
 		StructuresInit.STRUCTURES.register(modEventBus);
 		BiomeInit.BIOMES.register(modEventBus);

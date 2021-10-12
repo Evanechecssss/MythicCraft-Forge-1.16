@@ -9,6 +9,7 @@ import com.masterquentus.mythiccraft.client.entity.render.MobSummonProjectileRen
 import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
 import com.masterquentus.mythiccraft.client.gui.CrateScreen;
+import com.masterquentus.mythiccraft.client.gui.WitchesOvenScreen;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.FluidInit;
@@ -58,6 +59,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.WITCHES_OVEN_CONTAINER.get(), WitchesOvenScreen::new);
 
 		// ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(),
 		// SignTileEntityRenderer::new);

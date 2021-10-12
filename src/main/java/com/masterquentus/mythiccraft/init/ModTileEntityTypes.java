@@ -1,7 +1,6 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.tileentity.CrateTileEntity;
 import com.masterquentus.mythiccraft.tileentity.GrassperTileEntity;
 import com.masterquentus.mythiccraft.tileentity.LanternTileEntity;
@@ -11,8 +10,8 @@ import com.masterquentus.mythiccraft.tileentity.MobSlayerTileEntity;
 import com.masterquentus.mythiccraft.tileentity.ModSignTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PandorsBoxTileEntity;
 import com.masterquentus.mythiccraft.tileentity.PedestalTileEntity;
+import com.masterquentus.mythiccraft.tileentity.WithchesOvenTileEntity;
 
-import net.minecraft.tileentity.SignTileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,6 +49,9 @@ public class ModTileEntityTypes {
 
 	public static final RegistryObject<TileEntityType<GrassperTileEntity>> GRASSPER = TILE_ENTITY_TYPES.register(
 			"grassper", () -> TileEntityType.Builder.of(GrassperTileEntity::new, BlockInit.GRASSPER.get()).build(null));
+	
+	public static final RegistryObject<TileEntityType<WithchesOvenTileEntity>> WITCHESOVEN_TILE = TILE_ENTITY_TYPES.register(
+			"witchesoven_tile", () -> TileEntityType.Builder.of(WithchesOvenTileEntity::new, BlockInit.WITCHES_OVEN.get()).build(null));
 
 	public static final RegistryObject<TileEntityType<ModSignTileEntity>> SIGN_TILE_ENTITY = TILE_ENTITY_TYPES.register(
 			"sign",
@@ -71,8 +73,4 @@ public class ModTileEntityTypes {
 					BlockInit.TWISTED_SIGN.get(), BlockInit.TWISTED_WALL_SIGN.get(), BlockInit.DISTORTED_SIGN.get(),
 					BlockInit.DISTORTED_WALL_SIGN.get()).build(null));
 
-	// public static final RegistryObject<TileEntityType<WitchesOvenTileEntity>>
-	// WITCHES_OVEN = TILE_ENTITY_TYPES.register(
-	// "witches_oven", () -> TileEntityType.Builder.of(WitchesOvenTileEntity::new,
-	// BlockInit.WITCHES_OVEN.get()).build(null));
 }
