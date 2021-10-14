@@ -3,7 +3,6 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftBlocks;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
-import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.items.AnointingPasteItem;
 import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
 import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
@@ -416,6 +415,9 @@ public class ItemInit {
 	public static final RegistryObject<Item> DISTORTED_SIGN = ITEMS.register("distorted_sign",
 			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.DISTORTED_SIGN.get(),
 					BlockInit.DISTORTED_WALL_SIGN.get()));
+	public static final RegistryObject<Item> HELLBARK_SIGN = ITEMS.register("hellbark_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.HELLBARK_SIGN.get(),
+					BlockInit.HELLBARK_WALL_SIGN.get()));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
@@ -1003,6 +1005,8 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> snowbell_seeds = ITEMS.register("snowbell_seeds",
 			() -> new BlockItem(BlockInit.snowbell_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> LIVING_KELP_ITEM = ITEMS.register("living_kelp_item",
+			() -> new BlockItem(BlockInit.LIVING_KELP_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Fluids Bucket
 	public static final RegistryObject<BucketItem> blood_bucket = ITEMS.register("blood_bucket",

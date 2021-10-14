@@ -41,5 +41,7 @@ public class WoodTypesInit {
 			.create(new ResourceLocation(MythicCraft.MOD_ID, "twisted").toString());
 	public static final WoodType DISTORTED = WoodType
 			.create(new ResourceLocation(MythicCraft.MOD_ID, "distorted").toString());
+	public static final WoodType HELLBARK = WoodType
+			.create(new ResourceLocation(MythicCraft.MOD_ID, "hellbark").toString());
 
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/witchhazel_planks",
+    "side": "mythiccraft:block/witchhazel_bookshelf"
+  }
+}

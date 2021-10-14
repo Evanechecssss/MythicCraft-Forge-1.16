@@ -71,6 +71,7 @@ public class ModTileEntityTypes {
 					BlockInit.INFESTED_SIGN.get(), BlockInit.INFESTED_WALL_SIGN.get(), BlockInit.CHARRED_SIGN.get(),
 					BlockInit.CHARRED_WALL_SIGN.get(), BlockInit.ICY_SIGN.get(), BlockInit.ICY_WALL_SIGN.get(),
 					BlockInit.TWISTED_SIGN.get(), BlockInit.TWISTED_WALL_SIGN.get(), BlockInit.DISTORTED_SIGN.get(),
-					BlockInit.DISTORTED_WALL_SIGN.get()).build(null));
+					BlockInit.DISTORTED_WALL_SIGN.get(), BlockInit.HELLBARK_SIGN.get(),
+					BlockInit.HELLBARK_WALL_SIGN.get()).build(null));
 
 }

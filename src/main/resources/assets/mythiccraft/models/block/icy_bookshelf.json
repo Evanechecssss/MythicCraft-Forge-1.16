@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/icy_planks",
+    "side": "mythiccraft:block/icy_bookshelf"
+  }
+}

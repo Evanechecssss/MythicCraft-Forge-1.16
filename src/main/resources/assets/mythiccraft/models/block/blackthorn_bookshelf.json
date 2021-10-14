@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/blackthorn_planks",
+    "side": "mythiccraft:block/blackthorn_bookshelf"
+  }
+}

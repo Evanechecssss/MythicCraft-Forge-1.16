@@ -6,8 +6,10 @@ import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.AmethystChimesBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BloodBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.BloodyRose;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CharredBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
 import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
@@ -18,9 +20,10 @@ import com.masterquentus.mythiccraft.objects.blocks.EnderCactusBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
+import com.masterquentus.mythiccraft.objects.blocks.IcyBerryBlock;
+import com.masterquentus.mythiccraft.objects.blocks.InfestedBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModBloodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
@@ -32,11 +35,14 @@ import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModSlimeBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
+import com.masterquentus.mythiccraft.objects.blocks.MysticBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
 import com.masterquentus.mythiccraft.objects.blocks.QuarryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SeaCandlesBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SilverBerryBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SoulBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
@@ -505,6 +511,10 @@ public class BlockInit {
 			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
 	public static final RegistryObject<Block> DISTORTED_WALL_SIGN = BLOCKS.register("distorted_wall_sign",
 			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+	public static final RegistryObject<Block> HELLBARK_SIGN = BLOCKS.register("hellbark_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
+	public static final RegistryObject<Block> HELLBARK_WALL_SIGN = BLOCKS.register("hellbark_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
@@ -946,6 +956,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> POTTED_DISTORTED_SAPLING = BLOCKS.register("potted_distorted_sapling",
 			() -> new FlowerPotBlock(WoodTypes.DISTORTED.sapling.get(),
 					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_HELLBARK_SAPLING = BLOCKS.register("potted_hellbark_sapling",
+			() -> new FlowerPotBlock(WoodTypes.HELLBARK.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 
 	// Special blocks
 	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box",
@@ -1014,25 +1028,25 @@ public class BlockInit {
 			MythicCraft.MOD_ID);
 
 	public static final RegistryObject<Block> ICY_BERRY_BUSH = NO_ITEM_BLOCK.register("icy_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new IcyBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> BLOOD_BERRY_BUSH = NO_ITEM_BLOCK.register("blood_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new BloodBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SILVER_BERRY_BUSH = NO_ITEM_BLOCK.register("silver_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new SilverBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> CHARRED_BERRY_BUSH = NO_ITEM_BLOCK.register("charred_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new CharredBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SOUL_BERRY_BUSH = NO_ITEM_BLOCK.register("soul_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new SoulBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> INFESTED_BERRY_BUSH = NO_ITEM_BLOCK.register("infested_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new InfestedBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> MYSTIC_BERRY_BUSH = NO_ITEM_BLOCK.register("mystic_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new MysticBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> CINDER_FRUIT_PLANT = NO_ITEM_BLOCK.register("cinder_fruit_plant",
 			() -> new CinderPlantBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()

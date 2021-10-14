@@ -46,6 +46,8 @@ public class ModContainerTypes {
 			"witchhazel_crate");
 	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CRATE = createContainer(
 			"hawthorn_crate");
+	public static final RegistryObject<ContainerType<CrateContainer>> HELLBARK_CRATE = createContainer(
+			"hellbark_crate");
 	public static final RegistryObject<ContainerType<CrateContainer>> BLOODOAK_CHEST = createContainer(
 			"bloodoak_chest");
 	public static final RegistryObject<ContainerType<CrateContainer>> WHITEOAK_CHEST = createContainer(

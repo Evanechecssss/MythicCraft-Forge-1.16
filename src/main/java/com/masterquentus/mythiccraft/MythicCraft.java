@@ -1,19 +1,34 @@
 package com.masterquentus.mythiccraft;
 
-import com.masterquentus.mythiccraft.entities.*;
-import com.masterquentus.mythiccraft.init.*;
-import com.masterquentus.mythiccraft.init.auto.OreType;
-import com.masterquentus.mythiccraft.objects.blocks.*;
-import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
-import com.masterquentus.mythiccraft.world.gen.OreGen;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.eventbus.api.EventPriority;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.masterquentus.mythiccraft.entities.BasiliskEntity;
+import com.masterquentus.mythiccraft.entities.FairyEntity;
+import com.masterquentus.mythiccraft.entities.GoblinEntity;
+import com.masterquentus.mythiccraft.entities.LilithEntity;
+import com.masterquentus.mythiccraft.entities.SirenEntity;
+import com.masterquentus.mythiccraft.entities.UnicornEntity;
+import com.masterquentus.mythiccraft.init.BiomeInit;
+import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.FluidInit;
+import com.masterquentus.mythiccraft.init.ItemInit;
+import com.masterquentus.mythiccraft.init.ModContainerTypes;
+import com.masterquentus.mythiccraft.init.ModEntityTypes;
+import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
+import com.masterquentus.mythiccraft.init.auto.OreType;
+import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
+import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import com.masterquentus.mythiccraft.objects.items.crafting.ModRecipeSerializers;
+import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
+import com.masterquentus.mythiccraft.world.gen.OreGen;
 
 import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
@@ -27,6 +42,8 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -78,6 +95,7 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof ModStandingSignBlock))
 				.filter(block -> !(block.get() instanceof ModWallSignBlock))
 				.filter(block -> !(block.get() instanceof CoralFanBlock))
+				.filter(block -> !(block.get() instanceof ModKelpTopBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {
 					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
@@ -123,6 +141,7 @@ public class MythicCraft {
 			WoodType.register(WoodTypesInit.ICY);
 			WoodType.register(WoodTypesInit.TWISTED);
 			WoodType.register(WoodTypesInit.DISTORTED);
+			WoodType.register(WoodTypesInit.HELLBARK);
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
 					() -> SlotTypePreset.CHARM.getMessageBuilder().build());
 			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,

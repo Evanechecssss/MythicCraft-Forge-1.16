@@ -1,6 +1,9 @@
 package com.masterquentus.mythiccraft.objects.blocks;
 
+import java.util.Random;
+
 import com.masterquentus.mythiccraft.init.ItemInit;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.IGrowable;
@@ -23,15 +26,13 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-import java.util.Random;
-
-public class ModBerryBushBlock extends SweetBerryBushBlock implements IGrowable
+public class CharredBerryBlock extends SweetBerryBushBlock implements IGrowable
 {
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 	   private static final VoxelShape field_220126_b = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
 	   private static final VoxelShape field_220127_c = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 16.0D, 15.0D);
 
-	   public ModBerryBushBlock(Properties properties) {
+	   public CharredBerryBlock(Properties properties) {
 	      super(properties);
 	      this.registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
 	   }
@@ -97,6 +98,10 @@ public class ModBerryBushBlock extends SweetBerryBushBlock implements IGrowable
 	      p_225535_1_.setBlock(p_225535_3_, p_225535_4_.setValue(AGE, Integer.valueOf(i)), 2);
 	   }
 	   
-	   
+	   @Override
+		public ItemStack getCloneItemStack(IBlockReader p_1854731, BlockPos p_1854732, BlockState p_1854733) {
+			return new ItemStack(ItemInit.charred_berry.get());
+
+		}
 	   
 	}

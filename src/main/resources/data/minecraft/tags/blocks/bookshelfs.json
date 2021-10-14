@@ -1,0 +1,27 @@
+{
+	"replace": false,
+	"values": [
+		"mythiccraft:bloodoak_bookshelf",
+		"mythiccraft:whiteoak_bookshelf",
+		"mythiccraft:silverwood_bookshelf",
+		"mythiccraft:witchwood_bookshelf",
+		"mythiccraft:alder_bookshelf",
+		"mythiccraft:hawthorn_bookshelf",
+		"mythiccraft:rowan_bookshelf",
+		"mythiccraft:willow_bookshelf",
+		"mythiccraft:beech_bookshelf",
+		"mythiccraft:ash_bookshelf",
+		"mythiccraft:blackthorn_bookshelf",
+		"mythiccraft:cedar_bookshelf",
+		"mythiccraft:elder_bookshelf",
+		"mythiccraft:juniper_bookshelf",
+		"mythiccraft:witchhazel_bookshelf",
+		"mythiccraft:yew_bookshelf",
+		"mythiccraft:infested_bookshelf",
+		"mythiccraft:charred_bookshelf",
+		"mythiccraft:icy_bookshelf",
+		"mythiccraft:twisted_bookshelf",
+		"mythiccraft:distorted_bookshelf"
+		
+	]
+}

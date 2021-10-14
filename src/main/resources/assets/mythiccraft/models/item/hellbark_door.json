@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:items/living_kelp_top"
+    "layer0": "mythiccraft:items/hellbark_door"
   }
 }

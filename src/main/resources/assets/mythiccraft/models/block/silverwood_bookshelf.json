@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/silverwood_planks",
+    "side": "mythiccraft:block/silverwood_bookshelf"
+  }
+}

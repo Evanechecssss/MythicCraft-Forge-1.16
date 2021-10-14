@@ -1,0 +1,8 @@
+
+{
+    "variants": {
+        "type=bottom": { "model": "mythiccraft:block/hellbark_slab" },
+        "type=top": { "model": "mythiccraft:block/hellbark_slab_top" },
+        "type=double": { "model": "mythiccraft:block/hellbark_planks" }
+    }
+}

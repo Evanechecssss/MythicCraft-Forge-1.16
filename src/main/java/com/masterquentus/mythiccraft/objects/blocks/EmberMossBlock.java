@@ -40,14 +40,17 @@ public class EmberMossBlock extends GrassBlock implements IGrowable {
 	}
 	
 	public void entityInside(BlockState state, World p_196262_2_, BlockPos pos, Entity p_196262_4_) {
-	      p_196262_4_.hurt(DamageSource.IN_FIRE, 1.0F);
+		p_196262_4_.hurt(DamageSource.IN_FIRE, 1.0F);
 	}
 
-
 	@Override
-	public void catchFire(BlockState state, World world, BlockPos pos, Direction face, LivingEntity igniter) {
-		super.catchFire(state, world, pos, face, igniter);
-
+    public void stepOn(World worldIn, BlockPos pos, Entity entityIn) {
+        HellFireBlock.lightEntityOnFire(entityIn, 5);
+        super.stepOn(worldIn, pos, entityIn);
+    }
+	
+	public void onEntityCollision(BlockState state, World worldIn, BlockPos pos, Entity entityIn) {
+		entityIn.setSecondsOnFire(10);
 	}
 
 	@Override
@@ -59,4 +62,5 @@ public class EmberMossBlock extends GrassBlock implements IGrowable {
 		}
 		super.animateTick(stateIn, worldIn, pos, rand);
 	}
+
 }
