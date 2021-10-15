@@ -1007,6 +1007,8 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.snowbell_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> LIVING_KELP_ITEM = ITEMS.register("living_kelp_item",
 			() -> new BlockItem(BlockInit.LIVING_KELP_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> DEMON_HEART_ITEM = ITEMS.register("demon_heart_item",
+			() -> new BlockItem(BlockInit.DEMON_HEART.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Fluids Bucket
 	public static final RegistryObject<BucketItem> blood_bucket = ITEMS.register("blood_bucket",

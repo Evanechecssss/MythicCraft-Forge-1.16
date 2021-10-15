@@ -17,6 +17,7 @@ import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.OreType;
+import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
@@ -96,6 +97,7 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof ModWallSignBlock))
 				.filter(block -> !(block.get() instanceof CoralFanBlock))
 				.filter(block -> !(block.get() instanceof ModKelpTopBlock))
+				.filter(block -> !(block.get() instanceof DemonHeartBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {
 					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
