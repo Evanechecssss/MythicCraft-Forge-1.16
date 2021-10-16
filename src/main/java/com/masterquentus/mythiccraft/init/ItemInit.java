@@ -353,71 +353,71 @@ public class ItemInit {
 
 	// Signs
 	public static final RegistryObject<Item> BLOODOAK_SIGN = ITEMS.register("bloodoak_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.BLOODOAK_SIGN.get(),
-					BlockInit.BLOODOAK_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BLOODOAK_SIGN.get(), BlockInit.BLOODOAK_WALL_SIGN.get()));
 	public static final RegistryObject<Item> WHITEOAK_SIGN = ITEMS.register("whiteoak_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.WHITE_OAK_SIGN.get(),
-					BlockInit.WHITE_OAK_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WHITE_OAK_SIGN.get(), BlockInit.WHITE_OAK_WALL_SIGN.get()));
 	public static final RegistryObject<Item> SILVERWOOD_SIGN = ITEMS.register("silverwood_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.SILVER_WOOD_SIGN.get(),
-					BlockInit.SILVER_WOOD_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.SILVER_WOOD_SIGN.get(), BlockInit.SILVER_WOOD_WALL_SIGN.get()));
 	public static final RegistryObject<Item> WITCH_WOOD_SIGN = ITEMS.register("witchwood_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.WITCH_WOOD_SIGN.get(),
-					BlockInit.WITCH_WOOD_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WITCH_WOOD_SIGN.get(), BlockInit.WITCH_WOOD_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ALDER_SIGN = ITEMS.register("alder_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.ALDER_SIGN.get(),
-					BlockInit.ALDER_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ALDER_SIGN.get(), BlockInit.ALDER_WALL_SIGN.get()));
 	public static final RegistryObject<Item> HAWTHORN_SIGN = ITEMS.register("hawthorn_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.HAWTHORN_SIGN.get(),
-					BlockInit.HAWTHORN_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.HAWTHORN_SIGN.get(), BlockInit.HAWTHORN_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ROWAN_SIGN = ITEMS.register("rowan_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.ROWAN_SIGN.get(),
-					BlockInit.ROWAN_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ROWAN_SIGN.get(), BlockInit.ROWAN_WALL_SIGN.get()));
 	public static final RegistryObject<Item> WILLOW_SIGN = ITEMS.register("willow_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.WILLOW_SIGN.get(),
-					BlockInit.WILLOW_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WILLOW_SIGN.get(), BlockInit.WILLOW_WALL_SIGN.get()));
 	public static final RegistryObject<Item> BEECH_SIGN = ITEMS.register("beech_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.BEECH_SIGN.get(),
-					BlockInit.BEECH_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BEECH_SIGN.get(), BlockInit.BEECH_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ASH_SIGN = ITEMS.register("ash_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.ASH_SIGN.get(),
-					BlockInit.ASH_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ASH_SIGN.get(), BlockInit.ASH_WALL_SIGN.get()));
 	public static final RegistryObject<Item> BLACKTHORN_SIGN = ITEMS.register("blackthorn_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.BLACKTHORN_SIGN.get(),
-					BlockInit.BLACKTHORN_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BLACKTHORN_SIGN.get(), BlockInit.BLACKTHORN_WALL_SIGN.get()));
 	public static final RegistryObject<Item> CEDAR_SIGN = ITEMS.register("cedar_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.CEDAR_SIGN.get(),
-					BlockInit.CEDAR_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.CEDAR_SIGN.get(), BlockInit.CEDAR_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ELDER_SIGN = ITEMS.register("elder_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.ELDER_SIGN.get(),
-					BlockInit.ELDER_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ELDER_SIGN.get(), BlockInit.ELDER_WALL_SIGN.get()));
 	public static final RegistryObject<Item> JUNIPER_SIGN = ITEMS.register("juniper_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.JUNIPER_SIGN.get(),
-					BlockInit.JUNIPER_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.JUNIPER_SIGN.get(), BlockInit.JUNIPER_WALL_SIGN.get()));
 	public static final RegistryObject<Item> WITCHHAZEL_SIGN = ITEMS.register("witchhazel_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.WITCHHAZEL_SIGN.get(),
-					BlockInit.WITCHHAZEL_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WITCHHAZEL_SIGN.get(), BlockInit.WITCHHAZEL_WALL_SIGN.get()));
 	public static final RegistryObject<Item> YEW_SIGN = ITEMS.register("yew_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.YEW_SIGN.get(),
-					BlockInit.YEW_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.YEW_SIGN.get(), BlockInit.YEW_WALL_SIGN.get()));
 	public static final RegistryObject<Item> INFESTED_SIGN = ITEMS.register("infested_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.INFESTED_SIGN.get(),
-					BlockInit.INFESTED_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.INFESTED_SIGN.get(), BlockInit.INFESTED_WALL_SIGN.get()));
 	public static final RegistryObject<Item> CHARRED_SIGN = ITEMS.register("charred_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.CHARRED_SIGN.get(),
-					BlockInit.CHARRED_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.CHARRED_SIGN.get(), BlockInit.CHARRED_WALL_SIGN.get()));
 	public static final RegistryObject<Item> ICY_SIGN = ITEMS.register("icy_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.ICY_SIGN.get(),
-					BlockInit.ICY_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ICY_SIGN.get(), BlockInit.ICY_WALL_SIGN.get()));
 	public static final RegistryObject<Item> TWISTED_SIGN = ITEMS.register("twisted_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.TWISTED_SIGN.get(),
-					BlockInit.TWISTED_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.TWISTED_SIGN.get(), BlockInit.TWISTED_WALL_SIGN.get()));
 	public static final RegistryObject<Item> DISTORTED_SIGN = ITEMS.register("distorted_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.DISTORTED_SIGN.get(),
-					BlockInit.DISTORTED_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.DISTORTED_SIGN.get(), BlockInit.DISTORTED_WALL_SIGN.get()));
 	public static final RegistryObject<Item> HELLBARK_SIGN = ITEMS.register("hellbark_sign",
-			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance), BlockInit.HELLBARK_SIGN.get(),
-					BlockInit.HELLBARK_WALL_SIGN.get()));
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.HELLBARK_SIGN.get(), BlockInit.HELLBARK_WALL_SIGN.get()));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
@@ -1019,6 +1019,12 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
 	public static final RegistryObject<BucketItem> infestedgoo_bucket = ITEMS.register("infestedgoo_bucket",
 			() -> new BucketItem(() -> FluidInit.INFESTEDGOO_FLUID.get(),
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<BucketItem> DARK_WATER_BUCKET = ITEMS.register("dark_water_bucket",
+			() -> new BucketItem(() -> FluidInit.DARK_WATER_FLUID.get(),
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<BucketItem> MANA_BUCKET = ITEMS.register("mana_bucket",
+			() -> new BucketItem(() -> FluidInit.MANA_FLUID.get(),
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
 
 	// SpawnEggs

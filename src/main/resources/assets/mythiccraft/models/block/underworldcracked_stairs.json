@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "mythiccraft:block/underworld_cracked",
+        "top": "mythiccraft:block/underworld_cracked",
+        "side": "mythiccraft:block/underworld_cracked"
+    }
+}

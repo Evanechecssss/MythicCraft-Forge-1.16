@@ -29,12 +29,24 @@ public class FluidInit {
 			"block/infestedgoo_still");
 	public static final ResourceLocation INFESTEDGOO_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/infestedgoo_flowing");
+	public static final ResourceLocation DARK_WATER_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/dark_water_still");
+	public static final ResourceLocation DARK_WATER_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/dark_water_flowing");
+	public static final ResourceLocation MANA_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/mana_still");
+	public static final ResourceLocation MANA_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/mana_flowing");
 	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/blood_overlay");
 	public static final ResourceLocation ECTOPLASM_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/ectoplasm_overlay");
 	public static final ResourceLocation INFESTEDGOO_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/infestedgoo_overlay");
+	public static final ResourceLocation DARK_WATER_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/dark_water_overlay");
+	public static final ResourceLocation MANA_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
+			"block/mana_overlay");
 
 	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS,
 			MythicCraft.MOD_ID);
@@ -51,6 +63,14 @@ public class FluidInit {
 			() -> new ForgeFlowingFluid.Source(FluidInit.INFESTEDGOO_PROPERTIES));
 	public static final RegistryObject<FlowingFluid> INFESTEDGOO_FLOWING = FLUIDS.register("infestedgoo_flowing",
 			() -> new ForgeFlowingFluid.Flowing(FluidInit.INFESTEDGOO_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> DARK_WATER_FLUID = FLUIDS.register("dark_water_fluid",
+			() -> new ForgeFlowingFluid.Source(FluidInit.DARK_WATER_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> DARK_WATER_FLOWING = FLUIDS.register("dark_water_flowing",
+			() -> new ForgeFlowingFluid.Flowing(FluidInit.DARK_WATER_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> MANA_FLUID = FLUIDS.register("mana_fluid",
+			() -> new ForgeFlowingFluid.Source(FluidInit.MANA_PROPERTIES));
+	public static final RegistryObject<FlowingFluid> MANA_FLOWING = FLUIDS.register("mana_flowing",
+			() -> new ForgeFlowingFluid.Flowing(FluidInit.MANA_PROPERTIES));
 
 	public static final ForgeFlowingFluid.Properties BLOOD_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> BLOOD_FLUID.get(), () -> BLOOD_FLOWING.get(),
@@ -71,6 +91,18 @@ public class FluidInit {
 							.slopeFindDistance(5).levelDecreasePerBlock(4)
 							.block(() -> FluidInit.INFESTEDGOO_BLOCK.get())
 							.bucket(() -> ItemInit.ectoplasm_bucket.get());
+	public static final ForgeFlowingFluid.Properties DARK_WATER_PROPERTIES = new ForgeFlowingFluid.Properties(
+			() -> DARK_WATER_FLUID.get(), () -> DARK_WATER_FLOWING.get(),
+			FluidAttributes.builder(DARK_WATER_STILL_RL, DARK_WATER_FLOWING_RL).density(10).viscosity(5).luminosity(2)
+					.sound(SoundEvents.WATER_AMBIENT).overlay(DARK_WATER_OVERLAY_RL)).slopeFindDistance(2)
+							.levelDecreasePerBlock(2).block(() -> FluidInit.DARK_WATER_BLOCK.get())
+							.bucket(() -> ItemInit.DARK_WATER_BUCKET.get());
+	public static final ForgeFlowingFluid.Properties MANA_PROPERTIES = new ForgeFlowingFluid.Properties(
+			() -> MANA_FLUID.get(), () -> MANA_FLOWING.get(),
+			FluidAttributes.builder(MANA_STILL_RL, MANA_FLOWING_RL).density(10).viscosity(5).luminosity(2)
+					.sound(SoundEvents.WATER_AMBIENT).overlay(MANA_OVERLAY_RL)).slopeFindDistance(2)
+							.levelDecreasePerBlock(2).block(() -> FluidInit.MANA_BLOCK.get())
+							.bucket(() -> ItemInit.MANA_BUCKET.get());
 
 	public static final RegistryObject<FlowingFluidBlock> BLOOD_BLOCK = BlockInit.BLOCKS.register("blood",
 			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(),
@@ -80,6 +112,12 @@ public class FluidInit {
 					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
 	public static final RegistryObject<FlowingFluidBlock> INFESTEDGOO_BLOCK = BlockInit.BLOCKS.register("infestedgoo",
 			() -> new FlowingFluidBlock(() -> FluidInit.INFESTEDGOO_FLUID.get(),
+					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
+	public static final RegistryObject<FlowingFluidBlock> DARK_WATER_BLOCK = BlockInit.BLOCKS.register("dark_water",
+			() -> new FlowingFluidBlock(() -> FluidInit.DARK_WATER_FLUID.get(),
+					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
+	public static final RegistryObject<FlowingFluidBlock> MANA_BLOCK = BlockInit.BLOCKS.register("mana",
+			() -> new FlowingFluidBlock(() -> FluidInit.MANA_FLUID.get(),
 					Block.Properties.of(Material.WATER).noCollission().strength(100.0f).noDrops()));
 
 }

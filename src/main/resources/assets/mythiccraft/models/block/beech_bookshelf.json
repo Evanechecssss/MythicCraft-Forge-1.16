@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "mythiccraft:block/ash_planks",
-    "side": "mythiccraft:block/ash_bookshelf"
+    "end": "mythiccraft:block/beech_planks",
+    "side": "mythiccraft:block/beech_bookshelf"
   }
 }

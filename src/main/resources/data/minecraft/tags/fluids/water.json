@@ -2,6 +2,12 @@
 	"replace": false,
 	"values": [
 		"mythiccraft:blood_flowing",
-		"mythiccraft:blood_fluid"
+		"mythiccraft:blood_fluid",
+		"mythiccraft:dark_water_flowing",
+		"mythiccraft:dark_water_fluid",
+		"mythiccraft:infestedgoo_flowing",
+		"mythiccraft:infestedgoo_fluid",
+		"mythiccraft:mana_flowing",
+		"mythiccraft:mana_fluid"
 	]
 }

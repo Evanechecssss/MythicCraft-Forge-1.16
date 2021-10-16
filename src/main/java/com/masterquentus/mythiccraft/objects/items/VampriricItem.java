@@ -68,7 +68,7 @@ public class VampriricItem extends Item implements ICurioItem {
 
 				if (random.nextFloat() > 0.6f) {
 					stack.hurtAndBreak(1, player, p -> CuriosApi.getCuriosHelper()
-							.onBrokenCurio(SlotTypePreset.CHARM.getIdentifier(), index, p));
+							.onBrokenCurio(SlotTypePreset.RING.getIdentifier(), index, p));
 				}
 			}
 

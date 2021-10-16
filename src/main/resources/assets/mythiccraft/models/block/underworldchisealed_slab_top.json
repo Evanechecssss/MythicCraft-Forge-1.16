@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab_top",
+    "textures": {
+        "bottom": "mythiccraft:block/underworld_chisealed",
+        "top": "mythiccraft:block/underworld_chisealed",
+        "side": "mythiccraft:block/underworld_chisealed"
+    }
+}

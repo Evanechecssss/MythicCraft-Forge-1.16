@@ -252,6 +252,12 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLUID.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_BLOCK.get(), RenderType.translucent());
 		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_FLOWING.get(), RenderType.translucent());
 
 		Atlases.addWoodType(WoodTypesInit.BLOOD_OAK);
 		Atlases.addWoodType(WoodTypesInit.WHITE_OAK);
