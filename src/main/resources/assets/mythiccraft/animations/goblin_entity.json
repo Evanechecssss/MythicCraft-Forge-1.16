@@ -1,0 +1,111 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.goblin.walk": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"body": {
+					"position": [0, "math.cos(query.anim_time*360)/2.5-0.5", 0]
+				},
+				"head": {
+					"rotation": ["-math.cos(query.anim_time*180-50)*5+5", 0, 0]
+				},
+				"left_leg": {
+					"rotation": ["math.cos(query.anim_time*180)*25", 0, 0]
+				},
+				"right_leg": {
+					"rotation": ["-math.cos(query.anim_time*180)*25", 0, 0]
+				},
+				"right_arm": {
+					"rotation": ["math.cos(query.anim_time*180+25)*15", 0, 0]
+				},
+				"left_arm": {
+					"rotation": ["-math.cos(query.anim_time*180+50)*15", 0, 0]
+				},
+				"right_ear1": {
+					"rotation": [0, "math.cos(query.anim_time*180-50)*10", "math.cos(query.anim_time*180-50)*5"]
+				},
+				"left_ear1": {
+					"rotation": [0, "-(math.cos(query.anim_time*180-50)*10)", "-(math.cos(query.anim_time*180-50)*5)"]
+				},
+				"cape": {
+					"rotation": ["math.cos(query.anim_time*180)*5+10", 0, 0]
+				}
+			}
+		},
+		"animation.goblin_with_cape.run": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"body": {
+					"rotation": [10, 0, "math.cos(query.anim_time*360)*5"],
+					"position": [0, "math.cos(query.anim_time*360)/2.5-0.5", 0]
+				},
+				"head": {
+					"rotation": [0, "math.cos(query.anim_time*360)", "math.cos(query.anim_time*360)*2"]
+				},
+				"left_leg": {
+					"rotation": ["math.cos(query.anim_time*360)*50", 0, 0]
+				},
+				"right_leg": {
+					"rotation": ["-math.cos(query.anim_time*360)*50", 0, "-math.cos(query.anim_time*360)*5"]
+				},
+				"right_arm": {
+					"rotation": ["-90+math.cos(query.anim_time*180+25)*15", 5, 0]
+				},
+				"left_arm": {
+					"rotation": ["-90-math.cos(query.anim_time*180+50)*15", -5, 0]
+				},
+				"right_ear1": {
+					"rotation": [0, "math.cos(query.anim_time*180)*10", "-math.cos(query.anim_time*180)*5"]
+				},
+				"left_ear1": {
+					"rotation": [0, "-(math.cos(query.anim_time*180)*10)", "-(math.cos(query.anim_time*180)*5)"]
+				},
+				"cape": {
+					"rotation": ["math.cos(query.anim_time*360*2)*5+30", 0, 0],
+					"position": [0, 0.5, 0]
+				},
+				"cloth1": {
+					"rotation": [0, 0, "math.cos(query.anim_time*360*2)*5"]
+				},
+				"cloth2": {
+					"rotation": ["math.cos(query.anim_time*360*2)*5-10", 0, 0]
+				},
+				"cloth4": {
+					"rotation": ["math.cos(query.anim_time*360*2)*5+10", 0, 0]
+				},
+				"cloth3": {
+					"rotation": [0, 0, "-math.cos(query.anim_time*360*2)*5"]
+				}
+			}
+		},
+		"animation.goblin.idle": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"body": {
+					"scale": {
+						"0.0": [1, 1, 1],
+						"1.0": [1, 1, 1],
+						"2.0": [1, 1, 1]
+					}
+				},
+				"head": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, "math.cos(query.anim_time*180)*5*2", 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"right_arm": {
+					"rotation": ["-math.cos(query.anim_time*180)*5*1", 0, 7.5]
+				},
+				"left_arm": {
+					"rotation": ["math.cos(query.anim_time*180)*5*1", 0, -7.5]
+				}
+			}
+		}
+	}
+}

@@ -33,8 +33,7 @@ public class FluidInit {
 			"block/dark_water_still");
 	public static final ResourceLocation DARK_WATER_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/dark_water_flowing");
-	public static final ResourceLocation MANA_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID,
-			"block/mana_still");
+	public static final ResourceLocation MANA_STILL_RL = new ResourceLocation(MythicCraft.MOD_ID, "block/mana_still");
 	public static final ResourceLocation MANA_FLOWING_RL = new ResourceLocation(MythicCraft.MOD_ID,
 			"block/mana_flowing");
 	public static final ResourceLocation BLOOD_OVERLAY_RL = new ResourceLocation(MythicCraft.MOD_ID,
