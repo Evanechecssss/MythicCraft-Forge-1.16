@@ -26,7 +26,13 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
 	{
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.movement", true));
+		boolean isWalking = !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F);
+		if (isWalking){
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.movement", true));
+		} else {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.idle", true));
+		}
+
 		return PlayState.CONTINUE;
 	}
 	
@@ -43,7 +49,7 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 		this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, true));
 	
     }
 

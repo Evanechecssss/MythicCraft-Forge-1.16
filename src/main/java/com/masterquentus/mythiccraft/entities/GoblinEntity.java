@@ -30,7 +30,7 @@ public class GoblinEntity extends MonsterEntity implements IAnimatable {
 		if (isWalking){
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.walk", true));
 		} else {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.idle", true));
+			//event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.idle", true));
 		}
 
 		return PlayState.CONTINUE;
