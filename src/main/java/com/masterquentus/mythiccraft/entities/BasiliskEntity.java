@@ -7,9 +7,9 @@ import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -44,14 +44,19 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(0, new WaterAvoidingRandomWalkingGoal(this,  1.0D));
 		this.goalSelector.addGoal(1, new SwimGoal(this));
 		this.goalSelector.addGoal(2, new LookAtGoal(this, PlayerEntity.class, 6.0F));
 		this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, true));
+		this.goalSelector.addGoal( 1, new NearestAttackableTargetGoal<>( this, PlayerEntity.class, true ) );
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
+        this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, 10, true, false, TurtleEntity.BABY_ON_LAND_SELECTOR));
 	
     }
+	
+	@Override
+	protected int getExperienceReward(PlayerEntity player) {
+	return 3 + this.level.random.nextInt(5);
+}
 
 	public static AttributeModifierMap.MutableAttribute createAttributes() {
 		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, 26)

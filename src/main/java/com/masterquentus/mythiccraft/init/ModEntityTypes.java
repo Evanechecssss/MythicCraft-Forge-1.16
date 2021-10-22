@@ -31,8 +31,8 @@ public class ModEntityTypes {
 			() -> EntityType.Builder.<SirenEntity>of(SirenEntity::new, EntityClassification.WATER_CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "siren_entity").toString()));
 	public static final RegistryObject<EntityType<FairyEntity>> FAIRY_ENTITY = ENTITY_TYPES.register("fairy_entity",
-			() -> EntityType.Builder.<FairyEntity>of(FairyEntity::new, EntityClassification.CREATURE)
-					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "fairy_entity").toString()));
+			() -> EntityType.Builder.<FairyEntity>of(FairyEntity::new, EntityClassification.CREATURE).sized(0.8F, 2.0F)
+					.build(new ResourceLocation(MythicCraft.MOD_ID, "fairy_entity").toString()));
 	public static final RegistryObject<EntityType<LilithEntity>> LILITH_ENTITY = ENTITY_TYPES.register("lilith_entity",
 			() -> EntityType.Builder.<LilithEntity>of(LilithEntity::new, EntityClassification.CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "lilith_entity").toString()));
