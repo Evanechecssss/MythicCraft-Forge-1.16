@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:block/hellbark_log_top",
+        "side": "mythiccraft:block/hellbark_log"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "mythiccraft:block/silverwood_wood_top",
+        "side": "mythiccraft:block/silverwood_wood"
+    }
+}

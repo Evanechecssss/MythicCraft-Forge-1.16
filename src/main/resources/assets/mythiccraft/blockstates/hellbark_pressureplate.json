@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "mythiccraft:block/hellbark_pressureplate" },
+        "powered=true": { "model": "mythiccraft:block/hellbark_pressureplate_down" }
+    }
+}

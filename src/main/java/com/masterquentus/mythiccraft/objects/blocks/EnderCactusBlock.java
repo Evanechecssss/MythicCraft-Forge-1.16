@@ -67,6 +67,12 @@ public class EnderCactusBlock extends CactusBlock implements IPlantable {
 	         }
 	      }
 	   }
+	   
+	   @Override
+	    public boolean canSustainPlant(BlockState p_canSustainPlant_1_, IBlockReader p_canSustainPlant_2_,
+	                                   BlockPos p_canSustainPlant_3_, Direction p_canSustainPlant_4_, IPlantable p_canSustainPlant_5_) {
+	        return p_canSustainPlant_1_.getBlock() == this || super.canSustainPlant(p_canSustainPlant_1_, p_canSustainPlant_2_, p_canSustainPlant_3_, p_canSustainPlant_4_, p_canSustainPlant_5_);
+	    }
 
 	   public VoxelShape getCollisionShape(BlockState p_220071_1_, IBlockReader p_220071_2_, BlockPos p_220071_3_, ISelectionContext p_220071_4_) {
 	      return COLLISION_SHAPE;

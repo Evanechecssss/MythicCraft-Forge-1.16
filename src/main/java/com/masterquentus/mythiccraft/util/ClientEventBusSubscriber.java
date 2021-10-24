@@ -1,17 +1,18 @@
 package com.masterquentus.mythiccraft.util;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.client.gui.CrateScreen;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.FluidInit;
+import com.masterquentus.mythiccraft.init.ItemInit;
 import com.masterquentus.mythiccraft.init.ModContainerTypes;
-import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
-import com.masterquentus.mythiccraft.init.auto.LanternType;
-import com.masterquentus.mythiccraft.init.auto.WoodTypes;
-import com.masterquentus.mythiccraft.util.registers.EntityRegistor;
 import net.minecraft.client.gui.ScreenManager;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
+import net.minecraft.item.ItemModelsProperties;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -45,6 +46,8 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.ICY_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.DISTORTED_CRATE.get(), CrateScreen::new);
 		ScreenManager.register(ModContainerTypes.TWISTED_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.HELLBARK_CRATE.get(), CrateScreen::new);
+		ScreenManager.register(ModContainerTypes.WITCHES_OVEN_CONTAINER.get(), WitchesOvenScreen::new);
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
 
@@ -54,8 +57,8 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(wood.door.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.leaves.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(wood.trapdoor.get(), RenderType.cutout());
-			
-			//Pots
+
+			// Pots
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_BLOODOAK_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_WHITEOAK_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_SILVERWOOD_SAPLING.get(), RenderType.cutout());
@@ -77,6 +80,8 @@ public class ClientEventBusSubscriber {
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_ICY_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_TWISTED_SAPLING.get(), RenderType.cutout());
 			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_DISTORTED_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.POTTED_HELLBARK_SAPLING.get(), RenderType.cutout());
+			RenderTypeLookup.setRenderLayer(BlockInit.SEA_CANDLES.get(), RenderType.cutout());
 		}
 
 		// Crops
@@ -152,6 +157,20 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_GLOWING.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_MEDIUM.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.SCORCHED_GRASS_SMALL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TALL_SCORCHED_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TALL_SCORCHED_GRASS_GLOWING.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TALL_SCORCHED_GRASS_MEDIUM.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_SCORCHED_GRASS_SMALL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_INFESTED_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CHARRED_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_BLOODLY_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_MYSTIC_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEEP_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_DEEP_GRASS.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TAll_CHARRED_GRASS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.FIRE_FLOWER.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WISPY_COTTON.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.GLINT_WEED.get(), RenderType.cutout());
@@ -164,6 +183,107 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CRIMSON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_CRIMSON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ICY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_ICY_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL_WALL_FAN.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DRAGON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.DEAD_DRAGON_CORAL.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_CACTUS.get(), RenderType.cutout());
+
+		RenderTypeLookup.setRenderLayer(BlockInit.DEEP_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.INFESTED_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.CHARRED_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.BLOODLY_GRASS_BLOCK.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.MYSTIC_GRASS_BLOCK.get(), RenderType.cutout());
+
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.BLOOD_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.ECTOPLASM_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.INFESTEDGOO_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.DARK_WATER_FLOWING.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_FLUID.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_BLOCK.get(), RenderType.translucent());
+		RenderTypeLookup.setRenderLayer(FluidInit.MANA_FLOWING.get(), RenderType.translucent());
+
+		Atlases.addWoodType(WoodTypesInit.BLOOD_OAK);
+		Atlases.addWoodType(WoodTypesInit.WHITE_OAK);
+		Atlases.addWoodType(WoodTypesInit.SILVER_WOOD);
+		Atlases.addWoodType(WoodTypesInit.WITCH_WOOD);
+		Atlases.addWoodType(WoodTypesInit.ALDER);
+		Atlases.addWoodType(WoodTypesInit.HAWTHORN);
+		Atlases.addWoodType(WoodTypesInit.ROWAN);
+		Atlases.addWoodType(WoodTypesInit.WILLOW);
+		Atlases.addWoodType(WoodTypesInit.BEECH);
+		Atlases.addWoodType(WoodTypesInit.ASH);
+		Atlases.addWoodType(WoodTypesInit.BLACKTHORN);
+		Atlases.addWoodType(WoodTypesInit.CEDAR);
+		Atlases.addWoodType(WoodTypesInit.ELDER);
+		Atlases.addWoodType(WoodTypesInit.JUNIPER);
+		Atlases.addWoodType(WoodTypesInit.WITCHHAZEL);
+		Atlases.addWoodType(WoodTypesInit.YEW);
+		Atlases.addWoodType(WoodTypesInit.INFESTED);
+		Atlases.addWoodType(WoodTypesInit.CHARRED);
+		Atlases.addWoodType(WoodTypesInit.ICY);
+		Atlases.addWoodType(WoodTypesInit.TWISTED);
+		Atlases.addWoodType(WoodTypesInit.DISTORTED);
+		Atlases.addWoodType(WoodTypesInit.HELLBARK);
+
+		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.SIGN_TILE_ENTITY.get(), SignTileEntityRenderer::new);
+
+		ItemModelsProperties.register(ItemInit.DRAGONBONE_BOW.get(), new ResourceLocation("pull"),
+				(p_239429_0_, p_239429_1_, p_239429_2_) -> {
+					if (p_239429_2_ == null) {
+						return 0.0F;
+					} else {
+						return p_239429_2_.getUseItem() != p_239429_0_ ? 0.0F
+								: (float) (p_239429_0_.getUseDuration() - p_239429_2_.getUseItemRemainingTicks())
+										/ 20.0F;
+					}
+				});
+		ItemModelsProperties.register(ItemInit.DRAGONBONE_BOW.get(), new ResourceLocation("pulling"),
+				(p_239428_0_, p_239428_1_, p_239428_2_) -> {
+					return p_239428_2_ != null && p_239428_2_.isUsingItem() && p_239428_2_.getUseItem() == p_239428_0_
+							? 1.0F
+							: 0.0F;
+				});
 
 		EntityRegistor.registor(event);
 

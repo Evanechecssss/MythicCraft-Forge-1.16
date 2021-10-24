@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "mythiccraft:block/dead_icycoral_wall_fan",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "mythiccraft:block/dead_icycoral_wall_fan"
+    },
+    "facing=south": {
+      "model": "mythiccraft:block/dead_icycoral_wall_fan",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mythiccraft:block/dead_icycoral_wall_fan",
+      "y": 270
+    }
+  }
+}

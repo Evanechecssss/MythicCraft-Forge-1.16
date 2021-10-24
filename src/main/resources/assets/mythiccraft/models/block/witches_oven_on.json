@@ -1,0 +1,13 @@
+
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+        "particle": "mythiccraft:block/witches_oven_front_on",
+        "down": "mythiccraft:block/witches_oven_bottom_on",
+        "up": "mythiccraft:block/witches_oven_top",
+        "north": "mythiccraft:block/witches_oven_front_on",
+        "east": "mythiccraft:block/witches_oven_side",
+        "south": "mythiccraft:block/witches_oven_back",
+        "west": "mythiccraft:block/witches_oven_side"
+    }
+}

@@ -1,23 +1,26 @@
 package com.masterquentus.mythiccraft.client.entity.render;
 
-import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.client.entity.model.GoblinEntityModel;
 import com.masterquentus.mythiccraft.entities.GoblinEntity;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.vertex.IVertexBuilder;
 
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.util.ResourceLocation;
+import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class GoblinEntityRender extends MobRenderer<GoblinEntity, GoblinEntityModel> {
-
-	protected static final ResourceLocation TEXTURE = new ResourceLocation(MythicCraft.MOD_ID, "textures/entity/goblin_entity.png");
-
-	public GoblinEntityRender(EntityRendererManager renderManagerIn) {
-		super(renderManagerIn, new GoblinEntityModel(), 0.5f);
+public class GoblinEntityRender extends GeoEntityRenderer<GoblinEntity>
+{
+	public GoblinEntityRender(EntityRendererManager renderManager)
+	{
+		super(renderManager, new GoblinEntityModel());
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(GoblinEntity entity) {
-		return TEXTURE;
+	public RenderType getRenderType(GoblinEntity animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation)
+	{
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
 	}
 }

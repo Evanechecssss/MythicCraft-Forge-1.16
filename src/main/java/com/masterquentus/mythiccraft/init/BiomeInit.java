@@ -75,7 +75,7 @@ public class BiomeInit {
 		if (name.getNamespace().equals(MythicCraft.MOD_ID)) {
 			// add to world gen
 			RegistryKey<Biome> key = RegistryKey.create(Registry.BIOME_REGISTRY, name);
-			BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(key, 2));
+			BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(key, 0));
 		}
 	}
 }

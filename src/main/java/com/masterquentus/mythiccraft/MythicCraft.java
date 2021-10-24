@@ -1,20 +1,11 @@
 package com.masterquentus.mythiccraft;
-
-import com.masterquentus.mythiccraft.entities.*;
-import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
-import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
-import com.masterquentus.mythiccraft.entities.vampire.VampireVindicatorEntity;
-import com.masterquentus.mythiccraft.init.*;
-import com.masterquentus.mythiccraft.init.auto.OreType;
-import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
+import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.world.gen.OreGen;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.WallSignBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -26,6 +17,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -34,6 +26,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -54,8 +48,9 @@ public class MythicCraft {
 		BlockInit.NO_ITEM_BLOCK.register(modEventBus);
 		ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		ModContainerTypes.CONTAINER_TYPES.register(modEventBus);
+		ModRecipeSerializers.register(modEventBus);
 		ModEntityTypes.ENTITY_TYPES.register(modEventBus);
-		
+		StructuresInit.STRUCTURES.register(modEventBus);
 		BiomeInit.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::addFeaturesToBiomes);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -70,6 +65,11 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof WallSignBlock))
 				.filter(block -> !(block.get() instanceof WaterartichokeCrop))
 				.filter(block -> !(block.get() instanceof FlowerPotBlock))
+				.filter(block -> !(block.get() instanceof ModStandingSignBlock))
+				.filter(block -> !(block.get() instanceof ModWallSignBlock))
+				.filter(block -> !(block.get() instanceof CoralFanBlock))
+				.filter(block -> !(block.get() instanceof ModKelpTopBlock))
+				.filter(block -> !(block.get() instanceof DemonHeartBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {
 					final Item.Properties properties = new Item.Properties().tab(MythicCraftBlocks.instance);
@@ -95,7 +95,35 @@ public class MythicCraft {
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
-
+		event.enqueueWork(() -> {
+			StructuresInit.setupStructures();
+			WoodType.register(WoodTypesInit.BLOOD_OAK);
+			WoodType.register(WoodTypesInit.WHITE_OAK);
+			WoodType.register(WoodTypesInit.SILVER_WOOD);
+			WoodType.register(WoodTypesInit.WITCH_WOOD);
+			WoodType.register(WoodTypesInit.ALDER);
+			WoodType.register(WoodTypesInit.HAWTHORN);
+			WoodType.register(WoodTypesInit.ROWAN);
+			WoodType.register(WoodTypesInit.WILLOW);
+			WoodType.register(WoodTypesInit.BEECH);
+			WoodType.register(WoodTypesInit.ASH);
+			WoodType.register(WoodTypesInit.BLACKTHORN);
+			WoodType.register(WoodTypesInit.CEDAR);
+			WoodType.register(WoodTypesInit.ELDER);
+			WoodType.register(WoodTypesInit.JUNIPER);
+			WoodType.register(WoodTypesInit.WITCHHAZEL);
+			WoodType.register(WoodTypesInit.YEW);
+			WoodType.register(WoodTypesInit.INFESTED);
+			WoodType.register(WoodTypesInit.CHARRED);
+			WoodType.register(WoodTypesInit.ICY);
+			WoodType.register(WoodTypesInit.TWISTED);
+			WoodType.register(WoodTypesInit.DISTORTED);
+			WoodType.register(WoodTypesInit.HELLBARK);
+			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+					() -> SlotTypePreset.CHARM.getMessageBuilder().build());
+			InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE,
+					() -> SlotTypePreset.NECKLACE.getMessageBuilder().build());
+		});
 	}
 
 	@SubscribeEvent

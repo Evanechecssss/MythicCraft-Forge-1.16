@@ -26,6 +26,8 @@ public class UndeadBiomeProvider extends BiomeProvider {
 	static {
 		biomeList.add(BiomeInit.CRIMSON_FROST.get());
 		biomeList.add(BiomeInit.CHARREDFORESTBIOME.get());
+		biomeList.add(BiomeInit.FORESTOFLOSTSOULS.get());
+		biomeList.add(BiomeInit.VAMPIREBIOME.get());
 	}
 
 	public static final Codec<UndeadBiomeProvider> CODEC = RecordCodecBuilder.create((instance) -> instance.group(

@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+	"mythiccraft:black_sand",
+	"mythiccraft:crimson_sand",
+	"mythiccraft:icy_sand",
+	"mythiccraft:fairy_sand",
+	"mythiccraft:pixie_sand",
+	"mythiccraft:ember_sand",
+	"mythiccraft:charred_soil",
+	"mythiccraft:infested_soil",
+	"mythiccraft:mystic_soil",
+	"mythiccraft:bloodly_soil",
+	"mythiccraft:charred_grass_block",
+	"mythiccraft:infested_grass_block",
+	"mythiccraft:mystic_grass_block",
+	"mythiccraft:bloodly_grass_block",
+	"mythiccraft:deep_grass_block"
+  ]
+}

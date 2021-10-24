@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "mythiccraft:block/hellbark_door_bottom",
+        "top": "mythiccraft:block/hellbark_door_top"
+    }
+}

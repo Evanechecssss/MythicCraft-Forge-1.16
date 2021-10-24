@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "mythiccraft:block/tall_infested_grass_top"
+  }
+}

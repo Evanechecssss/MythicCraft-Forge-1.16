@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/juniper_planks",
+    "side": "mythiccraft:block/juniper_bookshelf"
+  }
+}

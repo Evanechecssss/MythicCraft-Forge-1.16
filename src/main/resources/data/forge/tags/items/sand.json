@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+	"mythiccraft:black_sand",
+	"mythiccraft:crimson_sand",
+    "mythiccraft:pixie_sand",
+	"mythiccraft:fairy_sand",
+	"mythiccraft:ember_sand"
+  ]
+}

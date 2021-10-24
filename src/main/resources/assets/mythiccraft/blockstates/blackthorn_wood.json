@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "mythiccraft:block/blackthorn_wood" },
+        "axis=z":   { "model": "mythiccraft:block/blackthorn_wood", "x": 90 },
+        "axis=x":   { "model": "mythiccraft:block/blackthorn_wood", "x": 90, "y": 90 }
+    }
+}

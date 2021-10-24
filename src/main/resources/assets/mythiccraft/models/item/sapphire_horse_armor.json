@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mythiccraft:item/sapphire_horse_armor"
+    "layer0": "mythiccraft:items/sapphire_horse_armor"
   }
 }

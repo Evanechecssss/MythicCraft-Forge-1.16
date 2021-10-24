@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "mythiccraft:mythic_diamond"
+    },
+    "title": "Diamonds! What?",
+    "description": "Acquire Mythic Diamonds",
+    "background": "mythiccraft:textures/block/bloodoak_planks.png",
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mythiccraft:mythic_diamond"
+          }
+        ]
+      }
+    }
+  }
+}

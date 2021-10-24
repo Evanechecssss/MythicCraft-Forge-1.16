@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mythiccraft:block/tall_infested_grass_bottom"
+    },
+    "half=upper": {
+      "model": "mythiccraft:block/tall_infested_grass_top"
+    }
+  }
+}
