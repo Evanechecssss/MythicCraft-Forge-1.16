@@ -2,6 +2,8 @@ package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
+import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
+import com.masterquentus.mythiccraft.entities.vampire.VampireVindicatorEntity;
 import com.masterquentus.mythiccraft.init.*;
 import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
@@ -88,6 +90,8 @@ public class MythicCraft {
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
 		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
+		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
+		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

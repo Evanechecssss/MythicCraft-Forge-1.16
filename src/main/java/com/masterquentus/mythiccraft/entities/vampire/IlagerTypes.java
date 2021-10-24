@@ -2,8 +2,8 @@ package com.masterquentus.mythiccraft.entities.vampire;
 
 public enum IlagerTypes {
     EVOKER("vampire_evoker"),
-    PILLAGER("pillager"),
-    VINDICATOR("vindicator");
+    PILLAGER("vampire_pillager"),
+    VINDICATOR("vampire_vindicator");
 
     private String name;
 
