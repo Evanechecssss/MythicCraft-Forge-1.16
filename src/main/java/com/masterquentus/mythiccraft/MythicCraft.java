@@ -1,37 +1,7 @@
 package com.masterquentus.mythiccraft;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.masterquentus.mythiccraft.entities.BasiliskEntity;
-import com.masterquentus.mythiccraft.entities.FairyEntity;
-import com.masterquentus.mythiccraft.entities.GoblinEntity;
-import com.masterquentus.mythiccraft.entities.LilithEntity;
-import com.masterquentus.mythiccraft.entities.SirenEntity;
-import com.masterquentus.mythiccraft.entities.UnicornEntity;
-import com.masterquentus.mythiccraft.init.BiomeInit;
-import com.masterquentus.mythiccraft.init.BlockInit;
-import com.masterquentus.mythiccraft.init.FluidInit;
-import com.masterquentus.mythiccraft.init.ItemInit;
-import com.masterquentus.mythiccraft.init.ModContainerTypes;
-import com.masterquentus.mythiccraft.init.ModEntityTypes;
-import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
-import com.masterquentus.mythiccraft.init.auto.OreType;
-import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
-import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.objects.items.crafting.ModRecipeSerializers;
-import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
-import com.masterquentus.mythiccraft.world.gen.OreGen;
-
-import net.minecraft.block.CoralFanBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.block.WallSignBlock;
@@ -53,6 +23,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
@@ -117,6 +89,9 @@ public class MythicCraft {
 		event.put(ModEntityTypes.LILITH_ENTITY.get(), LilithEntity.createAttributes().build());
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
+		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
+		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
+		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
