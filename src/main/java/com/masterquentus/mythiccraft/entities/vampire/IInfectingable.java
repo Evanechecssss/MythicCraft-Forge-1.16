@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 /**
  * the interface is implemented by types that can infect.
  * These can be vampires, snakes and other creatures.
+ * ***
  */
 public interface IInfectingable {
     /**
