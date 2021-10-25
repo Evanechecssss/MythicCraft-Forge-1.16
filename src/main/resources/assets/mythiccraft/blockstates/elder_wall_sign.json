@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/elder_sign"
+      "model": "mythiccraft:block/elder_sign"
     }
   }
 }

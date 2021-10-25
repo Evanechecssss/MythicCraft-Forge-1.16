@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/witchwood_sign"
+      "model": "mythiccraft:block/witchwood_sign"
     }
   }
 }

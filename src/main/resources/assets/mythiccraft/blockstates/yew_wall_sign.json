@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/yew_sign"
+      "model": "mythiccraft:block/yew_sign"
     }
   }
 }

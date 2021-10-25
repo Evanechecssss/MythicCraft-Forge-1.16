@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/infested_sign"
+      "model": "mythiccraft:block/infested_sign"
     }
   }
 }

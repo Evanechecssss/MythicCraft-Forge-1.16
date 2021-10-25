@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/distorted_sign"
+      "model": "mythiccraft:block/distorted_sign"
     }
   }
 }

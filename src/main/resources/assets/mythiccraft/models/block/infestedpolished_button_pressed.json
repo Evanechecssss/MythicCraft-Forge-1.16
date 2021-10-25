@@ -1,5 +1,6 @@
+
 {
-    "parent": "block/button_inventory",
+    "parent": "block/button_pressed",
     "textures": {
         "texture": "mythiccraft:block/infested_polished"
     }

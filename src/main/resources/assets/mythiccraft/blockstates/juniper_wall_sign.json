@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/juniper_sign"
+      "model": "mythiccraft:block/juniper_sign"
     }
   }
 }

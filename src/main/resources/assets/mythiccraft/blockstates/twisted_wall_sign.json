@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/twisted_sign"
+      "model": "mythiccraft:block/twisted_sign"
     }
   }
 }

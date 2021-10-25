@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/bloodoak_sign"
+      "model": "mythiccraft:block/bloodoak_sign"
     }
   }
 }

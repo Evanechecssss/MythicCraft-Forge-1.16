@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/icy_sign"
+      "model": "mythiccraft:block/icy_sign"
     }
   }
 }
