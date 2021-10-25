@@ -188,6 +188,7 @@ public class VampireVindicatorEntity extends VindicatorEntity implements IAnimat
 
     private enum AnimationTypes {
         IDLE("animation.model.idle", true),
+        WALK("animation.model.walk", true),
         ATACK("animation.model.atack", false);
         private String registerName;
         private boolean loop;

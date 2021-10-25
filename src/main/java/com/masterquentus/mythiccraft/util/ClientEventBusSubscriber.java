@@ -20,6 +20,7 @@ import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
+import com.masterquentus.mythiccraft.util.registers.EntityRegistor;
 
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.Atlases;
@@ -311,6 +312,7 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LILITH_ENTITY.get(), LilithEntityRender::new);
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(),
 				MobSummonProjectileRenderer::new);
+		EntityRegistor.registor(event);
 
 	}
 }
