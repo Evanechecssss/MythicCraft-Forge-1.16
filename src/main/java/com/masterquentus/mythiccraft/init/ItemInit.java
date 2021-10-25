@@ -1046,6 +1046,17 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x770000,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+
+	public static final RegistryObject<ModSpawnEggItem> ILAGER_PILLAGER = ITEMS.register("ilager_pillager_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.PILLAGER, 0x770000, 0x770000,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+
+	public static final RegistryObject<ModSpawnEggItem> ILAGER_VINDICATOR = ITEMS.register("ilager_vindicator_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x770000,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	
 
 	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,

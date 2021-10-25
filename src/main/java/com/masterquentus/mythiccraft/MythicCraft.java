@@ -120,9 +120,9 @@ public class MythicCraft {
 		event.put(ModEntityTypes.LILITH_ENTITY.get(), LilithEntity.createAttributes().build());
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
-		//event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
-		//event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
-		//event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
+		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
+		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
+		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
