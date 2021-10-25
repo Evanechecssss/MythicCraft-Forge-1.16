@@ -1046,6 +1046,7 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+	
 
 	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,
 			MythicCraft.MOD_ID);
