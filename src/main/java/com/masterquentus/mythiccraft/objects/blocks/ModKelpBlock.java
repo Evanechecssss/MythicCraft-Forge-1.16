@@ -3,6 +3,7 @@ package com.masterquentus.mythiccraft.objects.blocks;
 import java.util.Random;
 
 import com.masterquentus.mythiccraft.init.BlockInit;
+import com.masterquentus.mythiccraft.init.ItemInit;
 
 import net.minecraft.block.*;
 import net.minecraft.fluid.Fluid;
@@ -32,7 +33,7 @@ public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
 	   }
 
 	   public ItemStack getCloneItemStack(IBlockReader worldIn, BlockPos pos, BlockState state) {
-	      return new ItemStack(BlockInit.LIVING_KELP_PLANT.get());
+	      return new ItemStack(ItemInit.LIVING_KELP_ITEM.get());
 	      
 	   }
 
@@ -47,4 +48,8 @@ public class ModKelpBlock extends KelpBlock implements ILiquidContainer {
 	   public boolean placeLiquid(IWorld worldIn, BlockPos pos, BlockState state, FluidState fluidStateIn) {
 	      return false;
 	   }
+	   
+	   protected boolean canAttachToBlock(Block p_230333_1_) {
+		      return p_230333_1_ != Blocks.MAGMA_BLOCK;
+		   }
 	}

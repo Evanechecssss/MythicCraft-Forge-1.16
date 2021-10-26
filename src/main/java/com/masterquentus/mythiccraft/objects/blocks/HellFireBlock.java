@@ -46,4 +46,8 @@ public class HellFireBlock extends FireBlock {
 	public BlockState getStateToPlace(World world, BlockPos pos) {
 		return getStateForPlacement(world, pos);
 	}
+	
+	public static void lightEntityOnFire(Entity entity, int second) {
+        entity.setSecondsOnFire(second);
+	}
 }

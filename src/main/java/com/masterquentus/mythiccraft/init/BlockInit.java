@@ -6,22 +6,26 @@ import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.AmethystChimesBlock;
+import com.masterquentus.mythiccraft.objects.blocks.BloodBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.BloodyRose;
 import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.CharredBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
 import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
+import com.masterquentus.mythiccraft.objects.blocks.DoubbleGlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
 import com.masterquentus.mythiccraft.objects.blocks.EnderCactusBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GlowingScorchedGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
 import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
+import com.masterquentus.mythiccraft.objects.blocks.IcyBerryBlock;
+import com.masterquentus.mythiccraft.objects.blocks.InfestedBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
 import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModBerryBushBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModBloodBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModGrassBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
@@ -29,17 +33,34 @@ import com.masterquentus.mythiccraft.objects.blocks.ModLanternBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModLayer;
 import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModSlimeBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
+import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
+import com.masterquentus.mythiccraft.objects.blocks.MysticBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
 import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
 import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
 import com.masterquentus.mythiccraft.objects.blocks.QuarryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.SeaCandlesBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SilverBerryBlock;
+import com.masterquentus.mythiccraft.objects.blocks.SoulBerryBlock;
 import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
 import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
 import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
 import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WitchesOvenBlock;
+import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
+
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CoralBlock;
+import net.minecraft.block.CoralFanBlock;
+import net.minecraft.block.CoralFinBlock;
+import net.minecraft.block.CoralPlantBlock;
+import net.minecraft.block.CoralWallFanBlock;
+import net.minecraft.block.DeadCoralPlantBlock;
+import net.minecraft.block.DeadCoralWallFanBlock;
+import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.GlassBlock;
@@ -49,6 +70,8 @@ import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.VineBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
@@ -116,37 +139,57 @@ public class BlockInit {
 	// Blocks
 	public static final RegistryObject<Block> BLACK_OBSIDIAN = BLOCKS.register("black_obsidian",
 			() -> new Block(Block.Properties.copy(Blocks.OBSIDIAN).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
-					.harvestLevel(3)));
+					.harvestLevel(3).requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> CHARRED_GRASS_BLOCK = BLOCKS.register("charred_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> CHARRED_SOIL = BLOCKS.register("charred_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).sound(SoundType.SAND)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BLACK).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> INFESTED_GRASS_BLOCK = BLOCKS.register("infested_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> INFESTED_SOIL = BLOCKS.register("infested_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_MAGENTA)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_PURPLE).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> MYSTIC_GRASS_BLOCK = BLOCKS.register("mystic_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_PURPLE).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> MYSTIC_SOIL = BLOCKS.register("mystic_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_MAGENTA)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_PURPLE).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> BLOODLY_GRASS_BLOCK = BLOCKS.register("bloodly_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_RED).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> BLOODLY_SOIL = BLOCKS.register("bloodly_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.SAND, MaterialColor.COLOR_RED).sound(SoundType.GRAVEL)
-					.harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_RED).sound(SoundType.GRAVEL)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F)));
+	public static final RegistryObject<Block> DEEP_GRASS_BLOCK = BLOCKS.register("deep_grass_block",
+			() -> new GrassBlock(Block.Properties.of(Material.GRASS, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).randomTicks().strength(0.6F)));
 	public static final RegistryObject<Block> DEEP_SOIL = BLOCKS.register("deep_soil",
-			() -> new ModGrassBlock(Block.Properties.of(Material.DIRT, MaterialColor.COLOR_BLACK)
-					.sound(SoundType.GRAVEL).harvestTool(ToolType.SHOVEL).harvestLevel(0)));
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.STONE)
+					.harvestTool(ToolType.PICKAXE).harvestLevel(0).strength(1.5F)));
+	public static final RegistryObject<Block> CURSED_SOIL = BLOCKS.register("cursed_soil",
+			() -> new Block(Block.Properties.of(Material.SAND, MaterialColor.COLOR_BROWN).sound(SoundType.GRASS)
+					.harvestTool(ToolType.SHOVEL).harvestLevel(0).strength(0.5F).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CONGEALED_BLOOD = BLOCKS.register("congealed_blood",
 			() -> new ModBloodBlock(Block.Properties.copy(Blocks.HONEY_BLOCK).strength(5.0f, 30.0f)
 					.sound(SoundType.SLIME_BLOCK).speedFactor(0.4F).jumpFactor(0.5F).noOcclusion().instabreak()));
 	public static final RegistryObject<Block> ROSEQUARTZ_CHISELED = BLOCKS.register("rosequartz_chiseled",
 			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_SMOOTH = BLOCKS.register("rosequartz_smooth",
 			() -> new Block(Block.Properties.of(Material.STONE).strength(5.0f, 30.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_PILLAR = BLOCKS.register("rosequartz_pillar",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_PILLAR).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new RotatedPillarBlock(
+					Block.Properties.copy(Blocks.QUARTZ_PILLAR).strength(5.0f, 30.0f).sound(SoundType.STONE)
+							.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> ROSEQUARTZ_BRICKS = BLOCKS.register("rosequartz_bricks",
-			() -> new RotatedPillarBlock(Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f)
-					.sound(SoundType.STONE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+			() -> new RotatedPillarBlock(
+					Block.Properties.copy(Blocks.QUARTZ_BLOCK).strength(5.0f, 30.0f).sound(SoundType.STONE)
+							.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CHARREDSLIME_BLOCK = BLOCKS.register("charredslime_block",
 			() -> new ModSlimeBlock(
 					Block.Properties.copy(Blocks.SLIME_BLOCK).friction(0.8F).noOcclusion().instabreak()));
@@ -161,21 +204,28 @@ public class BlockInit {
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
 	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer",
 			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
-	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall", () -> new Block(
-			Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE).noOcclusion()));
+	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)
+					.noOcclusion().requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> LIVING_KELP_BLOCK = BLOCKS.register("living_kelp_block",
 			() -> new Block(Block.Properties.copy(Blocks.DRIED_KELP_BLOCK).strength(0.3f, 0.2f).sound(SoundType.FUNGUS)
 					.lightLevel((state) -> 13)));
 	public static final RegistryObject<Block> MIRROR_BLOCK = BLOCKS.register("mirror_blocks",
-			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)));
-	public static final RegistryObject<Block> EMBER_BLOCK = BLOCKS.register("ember_block", () -> new Block(
-			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.STONE).lightLevel((state) -> 15)));
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.GLASS)
+					.requiresCorrectToolForDrops()));
+	public static final RegistryObject<Block> EMBER_BLOCK = BLOCKS.register("ember_block",
+			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.STONE)
+					.lightLevel((state) -> 15).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CRIMSON_SAND = BLOCKS.register("crimson_sand",
 			() -> new SandBlock(14406560, Block.Properties.copy(Blocks.SAND).sound(SoundType.SAND)
 					.harvestTool(ToolType.SHOVEL).harvestLevel(1).strength(0.5F)));
 	public static final RegistryObject<Block> CRIMSON_SANDSTONE = BLOCKS.register("crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> CRIMSON_SANDSTONE_STAIRS = BLOCKS.register("crimson_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.CRIMSON_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_CRIMSON_SANDSTONE = BLOCKS.register("chiseled_crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -185,6 +235,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_CRIMSON_SANDSTONE = BLOCKS.register("smooth_crimson_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_CRIMSON_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_crimson_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_CRIMSON_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CRIMSON_SANDSTONE_SLAB = BLOCKS.register("crimson_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -201,6 +256,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> ICY_SANDSTONE = BLOCKS.register("icy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> ICY_SANDSTONE_STAIRS = BLOCKS.register("icy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.ICY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_ICY_SANDSTONE = BLOCKS.register("chiseled_icy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -216,6 +275,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_ICY_SANDSTONE_SLAB = BLOCKS.register("smooth_icy_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SMOOTH_STONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_ICY_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_icy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_ICY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> ICY_SANDSTONE_WALL = BLOCKS.register("icy_sandstone_wall",
 			() -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -225,6 +289,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> BLACK_SANDSTONE = BLOCKS.register("black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> BLACK_SANDSTONE_STAIRS = BLOCKS.register("black_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.BLACK_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_BLACK_SANDSTONE = BLOCKS.register("chiseled_black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -234,6 +302,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE = BLOCKS.register("smooth_black_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_BLACK_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_black_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_BLACK_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> BLACK_SANDSTONE_SLAB = BLOCKS.register("black_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -250,6 +323,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> PIXIE_SANDSTONE = BLOCKS.register("pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> PIXIE_SANDSTONE_STAIRS = BLOCKS.register("pixie_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.PIXIE_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_PIXIE_SANDSTONE = BLOCKS.register("chiseled_pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -259,6 +336,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_PIXIE_SANDSTONE = BLOCKS.register("smooth_pixie_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_PIXIE_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_pixie_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_PIXIE_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> PIXIE_SANDSTONE_SLAB = BLOCKS.register("pixie_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -275,6 +357,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> FAIRY_SANDSTONE = BLOCKS.register("fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> FAIRY_SANDSTONE_STAIRS = BLOCKS.register("fairy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.FAIRY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_FAIRY_SANDSTONE = BLOCKS.register("chiseled_fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -284,6 +370,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_FAIRY_SANDSTONE = BLOCKS.register("smooth_fairy_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_FAIRY_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_fairy_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_FAIRY_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> FAIRY_SANDSTONE_SLAB = BLOCKS.register("fairy_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -300,6 +391,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> EMBER_SANDSTONE = BLOCKS.register("ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SANDSTONE).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
 					.requiresCorrectToolForDrops().strength(0.8F)));
+	public static final RegistryObject<Block> EMBER_SANDSTONE_STAIRS = BLOCKS.register("ember_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.EMBER_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> CHISELED_EMBER_SANDSTONE = BLOCKS.register("chiseled_ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.CHISELED_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
@@ -309,6 +404,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_EMBER_SANDSTONE = BLOCKS.register("smooth_ember_sandstone",
 			() -> new Block(Block.Properties.copy(Blocks.SMOOTH_SANDSTONE).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
+	public static final RegistryObject<Block> SMOOTH_EMBER_SANDSTONE_STAIRS = BLOCKS.register(
+			"smooth_ember_sandstone_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_EMBER_SANDSTONE.get().defaultBlockState(),
+					Block.Properties.copy(Blocks.SANDSTONE_STAIRS).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)
+							.requiresCorrectToolForDrops().strength(0.8F)));
 	public static final RegistryObject<Block> EMBER_SANDSTONE_SLAB = BLOCKS.register("ember_sandstone_slab",
 			() -> new SlabBlock(Block.Properties.copy(Blocks.SANDSTONE_SLAB).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
@@ -323,6 +423,98 @@ public class BlockInit {
 			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS).friction(0.98f)));
 	public static final RegistryObject<Block> CRIMSON_MAGMA = BLOCKS.register("crimson_magma", () -> new MagmaBlock(
 			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS)));
+	public static final RegistryObject<Block> BLOODOAK_SIGN = BLOCKS.register("bloodoak_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+	public static final RegistryObject<Block> BLOODOAK_WALL_SIGN = BLOCKS.register("bloodoak_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+	public static final RegistryObject<Block> WHITE_OAK_SIGN = BLOCKS.register("whiteoak_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+	public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = BLOCKS.register("whiteoak_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+	public static final RegistryObject<Block> SILVER_WOOD_SIGN = BLOCKS.register("silverwood_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.SILVER_WOOD));
+	public static final RegistryObject<Block> SILVER_WOOD_WALL_SIGN = BLOCKS.register("silverwood_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.SILVER_WOOD));
+	public static final RegistryObject<Block> WITCH_WOOD_SIGN = BLOCKS.register("witchwood_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.WITCH_WOOD));
+	public static final RegistryObject<Block> WITCH_WOOD_WALL_SIGN = BLOCKS.register("witchwood_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCH_WOOD));
+	public static final RegistryObject<Block> ALDER_SIGN = BLOCKS.register("alder_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+	public static final RegistryObject<Block> ALDER_WALL_SIGN = BLOCKS.register("alder_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+	public static final RegistryObject<Block> HAWTHORN_SIGN = BLOCKS.register("hawthorn_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
+	public static final RegistryObject<Block> HAWTHORN_WALL_SIGN = BLOCKS.register("hawthorn_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
+	public static final RegistryObject<Block> ROWAN_SIGN = BLOCKS.register("rowan_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+	public static final RegistryObject<Block> ROWAN_WALL_SIGN = BLOCKS.register("rowan_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+	public static final RegistryObject<Block> WILLOW_SIGN = BLOCKS.register("willow_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
+	public static final RegistryObject<Block> WILLOW_WALL_SIGN = BLOCKS.register("willow_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
+	public static final RegistryObject<Block> BEECH_SIGN = BLOCKS.register("beech_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
+	public static final RegistryObject<Block> BEECH_WALL_SIGN = BLOCKS.register("beech_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
+	public static final RegistryObject<Block> ASH_SIGN = BLOCKS.register("ash_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+	public static final RegistryObject<Block> ASH_WALL_SIGN = BLOCKS.register("ash_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+	public static final RegistryObject<Block> BLACKTHORN_SIGN = BLOCKS.register("blackthorn_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.BLACKTHORN));
+	public static final RegistryObject<Block> BLACKTHORN_WALL_SIGN = BLOCKS.register("blackthorn_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLACKTHORN));
+	public static final RegistryObject<Block> CEDAR_SIGN = BLOCKS.register("cedar_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
+	public static final RegistryObject<Block> CEDAR_WALL_SIGN = BLOCKS.register("cedar_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
+	public static final RegistryObject<Block> ELDER_SIGN = BLOCKS.register("elder_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+	public static final RegistryObject<Block> ELDER_WALL_SIGN = BLOCKS.register("elder_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+	public static final RegistryObject<Block> JUNIPER_SIGN = BLOCKS.register("juniper_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+	public static final RegistryObject<Block> JUNIPER_WALL_SIGN = BLOCKS.register("juniper_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+	public static final RegistryObject<Block> WITCHHAZEL_SIGN = BLOCKS.register("witchhazel_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
+					WoodTypesInit.WITCHHAZEL));
+	public static final RegistryObject<Block> WITCHHAZEL_WALL_SIGN = BLOCKS.register("witchhazel_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCHHAZEL));
+	public static final RegistryObject<Block> YEW_SIGN = BLOCKS.register("yew_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+	public static final RegistryObject<Block> YEW_WALL_SIGN = BLOCKS.register("yew_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+	public static final RegistryObject<Block> INFESTED_SIGN = BLOCKS.register("infested_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+	public static final RegistryObject<Block> INFESTED_WALL_SIGN = BLOCKS.register("infested_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+	public static final RegistryObject<Block> CHARRED_SIGN = BLOCKS.register("charred_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
+	public static final RegistryObject<Block> CHARRED_WALL_SIGN = BLOCKS.register("charred_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
+	public static final RegistryObject<Block> ICY_SIGN = BLOCKS.register("icy_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+	public static final RegistryObject<Block> ICY_WALL_SIGN = BLOCKS.register("icy_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+	public static final RegistryObject<Block> TWISTED_SIGN = BLOCKS.register("twisted_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+	public static final RegistryObject<Block> TWISTED_WALL_SIGN = BLOCKS.register("twisted_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+	public static final RegistryObject<Block> DISTORTED_SIGN = BLOCKS.register("distorted_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+	public static final RegistryObject<Block> DISTORTED_WALL_SIGN = BLOCKS.register("distorted_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+	public static final RegistryObject<Block> HELLBARK_SIGN = BLOCKS.register("hellbark_sign",
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
+	public static final RegistryObject<Block> HELLBARK_WALL_SIGN = BLOCKS.register("hellbark_wall_sign",
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
@@ -478,23 +670,200 @@ public class BlockInit {
 	public static final RegistryObject<Block> LIVING_KELP_PLANT = BLOCKS.register("living_kelp_plant",
 			() -> new ModKelpBlock(Block.Properties.copy(Blocks.KELP_PLANT).sound(SoundType.WET_GRASS).randomTicks()
 					.noCollission().lightLevel((state) -> 15)));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL = BLOCKS.register("dead_livingcoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL = BLOCKS.register("livingcoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_LIVING_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_BLOCK = BLOCKS.register("dead_livingcoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> LIVING_CORAL_BLOCK = BLOCKS.register("livingcoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_LIVING_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_FAN = BLOCKS.register("dead_livingcoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL_FAN = BLOCKS.register("livingcoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_LIVING_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_LIVING_CORAL_WALL_FAN = BLOCKS.register("dead_livingcoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> LIVING_CORAL_WALL_FAN = BLOCKS.register("livingcoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL = BLOCKS.register("dead_bloodlycoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL = BLOCKS.register("bloodlycoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_BLOODLY_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_BLOCK = BLOCKS.register("dead_bloodlycoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> BLOODLY_CORAL_BLOCK = BLOCKS.register("bloodlycoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_BLOODLY_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_FAN = BLOCKS.register("dead_bloodlycoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL_FAN = BLOCKS.register("bloodlycoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL_WALL_FAN = BLOCKS
+			.register("dead_bloodlycoral_wall_fan", () -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_CORAL_WALL_FAN = BLOCKS.register("bloodlycoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL = BLOCKS.register("dead_twilightcoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL = BLOCKS.register("twilightcoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_TWILIGHT_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_BLOCK = BLOCKS.register("dead_twilightcoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_BLOCK = BLOCKS.register("twilightcoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_TWILIGHT_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_FAN = BLOCKS.register("dead_twilightcoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_FAN = BLOCKS.register("twilightcoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_TWILIGHT_CORAL_WALL_FAN = BLOCKS
+			.register("dead_twilightcoral_wall_fan", () -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> TWILIGHT_CORAL_WALL_FAN = BLOCKS.register("twilightcoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_CRIMSON_CORAL = BLOCKS.register("dead_crimsoncoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> CRIMSON_CORAL = BLOCKS.register("crimsoncoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_CRIMSON_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_CRIMSON_CORAL_BLOCK = BLOCKS.register("dead_crimsoncoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> CRIMSON_CORAL_BLOCK = BLOCKS.register("crimsoncoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_CRIMSON_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_CRIMSON_CORAL_FAN = BLOCKS.register("dead_crimsoncoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> CRIMSON_CORAL_FAN = BLOCKS.register("crimsoncoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_CRIMSON_CORAL_WALL_FAN = BLOCKS
+			.register("dead_crimsoncoral_wall_fan", () -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> CRIMSON_CORAL_WALL_FAN = BLOCKS.register("crimsoncoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_ICY_CORAL = BLOCKS.register("dead_icycoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> ICY_CORAL = BLOCKS.register("icycoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_ICY_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_ICY_CORAL_BLOCK = BLOCKS.register("dead_icycoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> ICY_CORAL_BLOCK = BLOCKS.register("icycoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_ICY_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_ICY_CORAL_FAN = BLOCKS.register("dead_icycoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> ICY_CORAL_FAN = BLOCKS.register("icycoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_ICY_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_ICY_CORAL_WALL_FAN = BLOCKS.register("dead_icycoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> ICY_CORAL_WALL_FAN = BLOCKS.register("icycoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_DRAGON_CORAL = BLOCKS.register("dead_dragoncoral",
+			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
+	public static final RegistryObject<Block> DRAGON_CORAL = BLOCKS.register("dragoncoral",
+			() -> new CoralPlantBlock(BlockInit.DEAD_DRAGON_CORAL.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_DRAGON_CORAL_BLOCK = BLOCKS.register("dead_dragoncoral_block",
+			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
+	public static final RegistryObject<Block> DRAGON_CORAL_BLOCK = BLOCKS.register("dragoncoral_block",
+			() -> new CoralBlock(BlockInit.DEAD_DRAGON_CORAL_BLOCK.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+	public static final RegistryObject<Block> DEAD_DRAGON_CORAL_FAN = BLOCKS.register("dead_dragoncoral_fan",
+			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
+	public static final RegistryObject<Block> DRAGON_CORAL_FAN = BLOCKS.register("dragoncoral_fan",
+			() -> new CoralFinBlock(BlockInit.DEAD_DRAGON_CORAL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+	public static final RegistryObject<Block> DEAD_DRAGON_CORAL_WALL_FAN = BLOCKS.register("dead_dragoncoral_wall_fan",
+			() -> new DeadCoralWallFanBlock(
+					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
+	public static final RegistryObject<Block> DRAGON_CORAL_WALL_FAN = BLOCKS.register("dragoncoral_wall_fan",
+			() -> new CoralWallFanBlock(BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
 	public static final RegistryObject<Block> WILD_BRAMBLE = BLOCKS.register("wild_bramble",
 			() -> new WildBrambleBlock(Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission()));
 	public static final RegistryObject<Block> ENDER_BRAMBLE = BLOCKS.register("ender_bramble",
 			() -> new EnderBrambleBlock(
 					Block.Properties.copy(Blocks.SUGAR_CANE).randomTicks().noCollission().harvestTool(ToolType.AXE)));
 	public static final RegistryObject<Block> SCORCHED_GRASS_SMALL = BLOCKS.register("scorched_grass_small",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_SCORCHED_GRASS_SMALL = BLOCKS.register("tall_scorched_grass_small",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS = BLOCKS.register("tall_scorched_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS = BLOCKS.register("scorched_grass",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_MEDIUM = BLOCKS.register("scorched_grass_medium",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS_MEDIUM = BLOCKS.register("tall_scorched_grass_medium",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> SCORCHED_GRASS_GLOWING = BLOCKS.register("scorched_grass_glowing",
-			() -> new GlowingScorchedGrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+			() -> new GlowingScorchedGrassBlock(
+					Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+							.lightLevel((state) -> 10).noCollission().instabreak()));
+	public static final RegistryObject<Block> TALL_SCORCHED_GRASS_GLOWING = BLOCKS.register(
+			"tall_scorched_grass_glowing",
+			() -> new DoubbleGlowingScorchedGrassBlock(
+					Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK).sound(SoundType.GRASS)
+							.lightLevel((state) -> 10).noCollission().instabreak()));
+	public static final RegistryObject<Block> INFESTED_GRASS = BLOCKS.register("infested_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_INFESTED_GRASS = BLOCKS.register("tall_infested_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> CHARRED_GRASS = BLOCKS.register("charred_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_CHARRED_GRASS = BLOCKS.register("tall_charred_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> BLOODLY_GRASS = BLOCKS.register("bloodly_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_RED)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_BLOODLY_GRASS = BLOCKS.register("tall_bloodly_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> MYSTIC_GRASS = BLOCKS.register("mystic_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_MYSTIC_GRASS = BLOCKS.register("tall_mystic_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> DEEP_GRASS = BLOCKS.register("deep_grass",
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BROWN)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
+	public static final RegistryObject<Block> TAll_DEEP_GRASS = BLOCKS.register("tall_deep_grass",
+			() -> new DoublePlantBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_PURPLE)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> GLINT_WEED = BLOCKS.register("glint_weed",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS).lightLevel((state) -> 10)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).lightLevel((state) -> 10).noCollission().instabreak()));
 	public static final RegistryObject<Block> WISPY_COTTON = BLOCKS.register("wispy_cotton",
-			() -> new GrassBlock(Block.Properties.copy(Blocks.GRASS)));
+			() -> new TallGrassBlock(Block.Properties.of(Material.REPLACEABLE_PLANT, MaterialColor.COLOR_BLACK)
+					.sound(SoundType.GRASS).noCollission().instabreak()));
 	public static final RegistryObject<Block> ENDER_CACTUS = BLOCKS.register("ender_cactus",
 			() -> new EnderCactusBlock(Block.Properties.copy(Blocks.CACTUS).randomTicks().harvestTool(ToolType.AXE)));
 	public static final RegistryObject<Block> SEA_CANDLES = BLOCKS.register("sea_candles", () -> new SeaCandlesBlock(
@@ -587,59 +956,69 @@ public class BlockInit {
 	public static final RegistryObject<Block> POTTED_DISTORTED_SAPLING = BLOCKS.register("potted_distorted_sapling",
 			() -> new FlowerPotBlock(WoodTypes.DISTORTED.sapling.get(),
 					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
+	@SuppressWarnings("deprecation")
+	public static final RegistryObject<Block> POTTED_HELLBARK_SAPLING = BLOCKS.register("potted_hellbark_sapling",
+			() -> new FlowerPotBlock(WoodTypes.HELLBARK.sapling.get(),
+					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 
 	// Special blocks
-	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box", () -> new PandorsBox(
-			Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box",
+			() -> new PandorsBox(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> pandors_box_open = BLOCKS.register("pandors_box_open",
 			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
 			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
 			() -> new MagicMirrorBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> STATUE_OF_BOKEN_CURSES = BLOCKS.register("statue_of_broken_curses",
 			() -> new StatueOfBrokenCursesBlock(Block.Properties.of(Material.STONE).sound(SoundType.STONE).noOcclusion()
-					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> CRYSTAL_BALL = BLOCKS.register("crystal_ball",
 			() -> new CrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
 	public static final RegistryObject<Block> BROKEN_CRYSTAL_BALL = BLOCKS.register("broken_crystal_ball",
 			() -> new BrokenCrystalBallBlock(Block.Properties.of(Material.GLASS).sound(SoundType.GLASS).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer", () -> new MobSlayerBlock(
-			Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(0)));
-	public static final RegistryObject<Block> AMETHYST_CHIMES = BLOCKS.register("amethyst_chimes", () -> new AmethystChimesBlock(
-			Block.Properties.copy(Blocks.IRON_BLOCK).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
-	//public static final RegistryObject<Block> WITCHES_OVEN = BLOCKS.register("witches_oven", () -> new WitchesOven(
-			//Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE).harvestLevel(1)));
+	public static final RegistryObject<Block> MOB_SLAYER = BLOCKS.register("mob_slayer",
+			() -> new MobSlayerBlock(Block.Properties.copy(Blocks.SLIME_BLOCK).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(0).sound(SoundType.FUNGUS)));
+	public static final RegistryObject<Block> AMETHYST_CHIMES = BLOCKS.register("amethyst_chimes",
+			() -> new AmethystChimesBlock(Block.Properties.copy(Blocks.IRON_BLOCK).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).requiresCorrectToolForDrops().sound(SoundType.GLASS)));
+	public static final RegistryObject<Block> DEMON_HEART = BLOCKS.register("demon_heart", () -> new DemonHeartBlock(
+			Block.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.WET_GRASS).harvestLevel(0)));
+	public static final RegistryObject<Block> WITCHES_OVEN = BLOCKS.register("witches_oven",
+			() -> new WitchesOvenBlock(Block.Properties.copy(Blocks.FURNACE).harvestTool(ToolType.PICKAXE)
+					.harvestLevel(1).sound(SoundType.METAL).requiresCorrectToolForDrops()));
 
 	// class
 	public static final RegistryObject<Block> PEDESTAL_TIER1 = BLOCKS.register("pedestal_tier1",
 			() -> new PedestalBlock(1, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER2 = BLOCKS.register("pedestal_tier2",
 			() -> new PedestalBlock(2, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER3 = BLOCKS.register("pedestal_tier3",
 			() -> new PedestalBlock(3, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER4 = BLOCKS.register("pedestal_tier4",
 			() -> new PedestalBlock(4, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER5 = BLOCKS.register("pedestal_tier5",
 			() -> new PedestalBlock(5, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> PEDESTAL_TIER6 = BLOCKS.register("pedestal_tier6",
 			() -> new PedestalBlock(6, Block.Properties.of(Material.STONE).strength(0.5f, 15.0f).sound(SoundType.STONE)
-					.harvestTool(ToolType.PICKAXE).harvestLevel(2)));
+					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 
 	public static final RegistryObject<Block> HELL_FIRE = BLOCKS.register("hell_fire",
 			() -> new HellFireBlock(Block.Properties.of(Material.FIRE).strength(0.5f, 15.0f)
@@ -649,25 +1028,25 @@ public class BlockInit {
 			MythicCraft.MOD_ID);
 
 	public static final RegistryObject<Block> ICY_BERRY_BUSH = NO_ITEM_BLOCK.register("icy_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new IcyBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> BLOOD_BERRY_BUSH = NO_ITEM_BLOCK.register("blood_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new BloodBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SILVER_BERRY_BUSH = NO_ITEM_BLOCK.register("silver_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new SilverBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> CHARRED_BERRY_BUSH = NO_ITEM_BLOCK.register("charred_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new CharredBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> SOUL_BERRY_BUSH = NO_ITEM_BLOCK.register("soul_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new SoulBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> INFESTED_BERRY_BUSH = NO_ITEM_BLOCK.register("infested_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new InfestedBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> MYSTIC_BERRY_BUSH = NO_ITEM_BLOCK.register("mystic_berry_bush",
-			() -> new ModBerryBushBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
+			() -> new MysticBerryBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()
 					.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> CINDER_FRUIT_PLANT = NO_ITEM_BLOCK.register("cinder_fruit_plant",
 			() -> new CinderPlantBlock(Block.Properties.of(Material.PLANT).noCollission().randomTicks()

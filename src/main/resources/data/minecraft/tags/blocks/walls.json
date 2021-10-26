@@ -48,6 +48,12 @@
 		"mythiccraft:black_sandstone_wall",
 		"mythiccraft:pixie_sandstone_wall",
 		"mythiccraft:fairy_sandstone_wall",
-		"mythiccraft:ember_sandstone_wall"
+		"mythiccraft:ember_sandstone_wall",
+		"mythiccraft:underworldstone_wall",
+		"mythiccraft:underworldcobble_wall",
+		"mythiccraft:underworldbricks_wall",
+		"mythiccraft:underworldpolished_wall",
+		"mythiccraft:underworldchisealed_wall",
+		"mythiccraft:underworldcracked_wall"
   	]
 }

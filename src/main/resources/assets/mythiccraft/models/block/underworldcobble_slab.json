@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "mythiccraft:block/underworld_cobble",
+        "top": "mythiccraft:block/underworld_cobble",
+        "side": "mythiccraft:block/underworld_cobble"
+    }
+}

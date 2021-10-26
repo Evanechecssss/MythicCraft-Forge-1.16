@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "": { "model": "mythiccraft:block/grassper" }
+  "variants": {
+    "": {
+      "model": "mythiccraft:block/grassper"
     }
+  }
 }

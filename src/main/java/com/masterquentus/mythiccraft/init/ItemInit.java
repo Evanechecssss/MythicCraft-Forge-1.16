@@ -1,12 +1,37 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
+import com.masterquentus.mythiccraft.MythicCraft.MythicCraftBlocks;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
-import com.masterquentus.mythiccraft.objects.items.*;
+import com.masterquentus.mythiccraft.objects.items.AnointingPasteItem;
+import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
+import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
+import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
+import com.masterquentus.mythiccraft.objects.items.MoonCharmItem;
+import com.masterquentus.mythiccraft.objects.items.MutandisItem;
+import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
+import com.masterquentus.mythiccraft.objects.items.TagLockKitItem;
+import com.masterquentus.mythiccraft.objects.items.TotemOfTeleportationItem;
+import com.masterquentus.mythiccraft.objects.items.VampriricItem;
+import com.masterquentus.mythiccraft.objects.items.WaterCropItem;
+import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
 import com.masterquentus.mythiccraft.util.enums.ModArmorMaterials;
 import com.masterquentus.mythiccraft.util.enums.ModItemTiers;
+
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.*;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
+import net.minecraft.item.Food;
+import net.minecraft.item.HoeItem;
+import net.minecraft.item.HorseArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.SignItem;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.WallOrFloorItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
@@ -47,6 +72,12 @@ public class ItemInit {
 	public static final RegistryObject<Item> RUBY = ITEMS.register("ruby",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> AMETHYST = ITEMS.register("amethyst",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_DUST = ITEMS.register("goblinite_dust",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_NUGGET = ITEMS.register("goblinite_nugget",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GOBLINITE_INGOT = ITEMS.register("goblinite_ingot",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> PUREGLOWSTONE_DUST = ITEMS.register("pureglowstone_dust",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
@@ -103,7 +134,7 @@ public class ItemInit {
 	public static final RegistryObject<Item> daylight_ring = ITEMS.register("daylight_ring",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> MOON_CHARM = ITEMS.register("moon_charm",
-			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new MoonCharmItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wolfsbane = ITEMS.register("wolfsbane",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> vervain = ITEMS.register("vervain",
@@ -198,6 +229,30 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> gluttony_bloodbottle = ITEMS.register("gluttony_bloodbottle",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> LILITH_SOUL = ITEMS.register("lilith_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> PANDORA_SOUL = ITEMS.register("pandora_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> DEATH_SOUL = ITEMS.register("death_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MEDUSA_SOUL = ITEMS.register("medusa_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MIRRORDEMON_SOUL = ITEMS.register("mirrordemon_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> LUST_SOUL = ITEMS.register("lust_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> WRATH_SOUL = ITEMS.register("wrath_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> ENVY_SOUL = ITEMS.register("envy_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> PRIDE_SOUL = ITEMS.register("pride_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> SLOTH_SOUL = ITEMS.register("sloth_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GREED_SOUL = ITEMS.register("greed_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GLUTTONY_SOUL = ITEMS.register("gluttony_soul",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<TagLockKitItem> TAGLOCK_KIT = ITEMS.register("taglock_kit",
 			() -> new TagLockKitItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> NECROMANTIC_STONE = ITEMS.register("necromantic_stone",
@@ -246,6 +301,123 @@ public class ItemInit {
 			() -> new MutandisItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> MUTANDIS_EXTREMIS = ITEMS.register("mutandis_extremis",
 			() -> new MutandisItem(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> ENT_TWIG = ITEMS.register("ent_twig",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MUTATING_SPRIG = ITEMS.register("mutating_sprig",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> MYSTIC_BRANCH = ITEMS.register("mystic_branch",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> QUICK_LIME = ITEMS.register("quicklime",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> GYPSUM = ITEMS.register("gypsum",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> DEAD_LIVING_CORAL_FAN_ITEM = ITEMS.register("dead_livingcoral_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_LIVING_CORAL_FAN.get(), BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> LIVING_CORAL_FAN_ITEM = ITEMS.register("livingcoral_fan",
+			() -> new WallOrFloorItem(BlockInit.LIVING_CORAL_FAN.get(), BlockInit.LIVING_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_BLOODLY_CORAL_FAN_ITEM = ITEMS.register("dead_bloodly_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(),
+					BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> BLOODLY_CORAL_FAN_ITEM = ITEMS.register("bloodly_fan",
+			() -> new WallOrFloorItem(BlockInit.BLOODLY_CORAL_FAN.get(), BlockInit.BLOODLY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("dead_twilight_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(),
+					BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("twilight_fan",
+			() -> new WallOrFloorItem(BlockInit.TWILIGHT_CORAL_FAN.get(), BlockInit.TWILIGHT_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_CRIMSON_CORAL_FAN_ITEM = ITEMS.register("dead_crimson_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(),
+					BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> CRIMSON_CORAL_FAN_ITEM = ITEMS.register("crimson_fan",
+			() -> new WallOrFloorItem(BlockInit.CRIMSON_CORAL_FAN.get(), BlockInit.CRIMSON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_ICY_CORAL_FAN_ITEM = ITEMS.register("dead_icy_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_ICY_CORAL_FAN.get(), BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> ICY_CORAL_FAN_ITEM = ITEMS.register("icy_fan",
+			() -> new WallOrFloorItem(BlockInit.ICY_CORAL_FAN.get(), BlockInit.ICY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_DRAGON_CORAL_FAN_ITEM = ITEMS.register("dead_dragon_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DRAGON_CORAL_FAN_ITEM = ITEMS.register("dragon_fan",
+			() -> new WallOrFloorItem(BlockInit.DRAGON_CORAL_FAN.get(), BlockInit.DRAGON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+
+	// Signs
+	public static final RegistryObject<Item> BLOODOAK_SIGN = ITEMS.register("bloodoak_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BLOODOAK_SIGN.get(), BlockInit.BLOODOAK_WALL_SIGN.get()));
+	public static final RegistryObject<Item> WHITEOAK_SIGN = ITEMS.register("whiteoak_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WHITE_OAK_SIGN.get(), BlockInit.WHITE_OAK_WALL_SIGN.get()));
+	public static final RegistryObject<Item> SILVERWOOD_SIGN = ITEMS.register("silverwood_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.SILVER_WOOD_SIGN.get(), BlockInit.SILVER_WOOD_WALL_SIGN.get()));
+	public static final RegistryObject<Item> WITCH_WOOD_SIGN = ITEMS.register("witchwood_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WITCH_WOOD_SIGN.get(), BlockInit.WITCH_WOOD_WALL_SIGN.get()));
+	public static final RegistryObject<Item> ALDER_SIGN = ITEMS.register("alder_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ALDER_SIGN.get(), BlockInit.ALDER_WALL_SIGN.get()));
+	public static final RegistryObject<Item> HAWTHORN_SIGN = ITEMS.register("hawthorn_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.HAWTHORN_SIGN.get(), BlockInit.HAWTHORN_WALL_SIGN.get()));
+	public static final RegistryObject<Item> ROWAN_SIGN = ITEMS.register("rowan_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ROWAN_SIGN.get(), BlockInit.ROWAN_WALL_SIGN.get()));
+	public static final RegistryObject<Item> WILLOW_SIGN = ITEMS.register("willow_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WILLOW_SIGN.get(), BlockInit.WILLOW_WALL_SIGN.get()));
+	public static final RegistryObject<Item> BEECH_SIGN = ITEMS.register("beech_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BEECH_SIGN.get(), BlockInit.BEECH_WALL_SIGN.get()));
+	public static final RegistryObject<Item> ASH_SIGN = ITEMS.register("ash_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ASH_SIGN.get(), BlockInit.ASH_WALL_SIGN.get()));
+	public static final RegistryObject<Item> BLACKTHORN_SIGN = ITEMS.register("blackthorn_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.BLACKTHORN_SIGN.get(), BlockInit.BLACKTHORN_WALL_SIGN.get()));
+	public static final RegistryObject<Item> CEDAR_SIGN = ITEMS.register("cedar_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.CEDAR_SIGN.get(), BlockInit.CEDAR_WALL_SIGN.get()));
+	public static final RegistryObject<Item> ELDER_SIGN = ITEMS.register("elder_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ELDER_SIGN.get(), BlockInit.ELDER_WALL_SIGN.get()));
+	public static final RegistryObject<Item> JUNIPER_SIGN = ITEMS.register("juniper_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.JUNIPER_SIGN.get(), BlockInit.JUNIPER_WALL_SIGN.get()));
+	public static final RegistryObject<Item> WITCHHAZEL_SIGN = ITEMS.register("witchhazel_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.WITCHHAZEL_SIGN.get(), BlockInit.WITCHHAZEL_WALL_SIGN.get()));
+	public static final RegistryObject<Item> YEW_SIGN = ITEMS.register("yew_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.YEW_SIGN.get(), BlockInit.YEW_WALL_SIGN.get()));
+	public static final RegistryObject<Item> INFESTED_SIGN = ITEMS.register("infested_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.INFESTED_SIGN.get(), BlockInit.INFESTED_WALL_SIGN.get()));
+	public static final RegistryObject<Item> CHARRED_SIGN = ITEMS.register("charred_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.CHARRED_SIGN.get(), BlockInit.CHARRED_WALL_SIGN.get()));
+	public static final RegistryObject<Item> ICY_SIGN = ITEMS.register("icy_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.ICY_SIGN.get(), BlockInit.ICY_WALL_SIGN.get()));
+	public static final RegistryObject<Item> TWISTED_SIGN = ITEMS.register("twisted_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.TWISTED_SIGN.get(), BlockInit.TWISTED_WALL_SIGN.get()));
+	public static final RegistryObject<Item> DISTORTED_SIGN = ITEMS.register("distorted_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.DISTORTED_SIGN.get(), BlockInit.DISTORTED_WALL_SIGN.get()));
+	public static final RegistryObject<Item> HELLBARK_SIGN = ITEMS.register("hellbark_sign",
+			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
+					BlockInit.HELLBARK_SIGN.get(), BlockInit.HELLBARK_WALL_SIGN.get()));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
@@ -833,6 +1005,10 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> snowbell_seeds = ITEMS.register("snowbell_seeds",
 			() -> new BlockItem(BlockInit.snowbell_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> LIVING_KELP_ITEM = ITEMS.register("living_kelp_item",
+			() -> new BlockItem(BlockInit.LIVING_KELP_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> DEMON_HEART_ITEM = ITEMS.register("demon_heart_item",
+			() -> new BlockItem(BlockInit.DEMON_HEART.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Fluids Bucket
 	public static final RegistryObject<BucketItem> blood_bucket = ITEMS.register("blood_bucket",
@@ -843,6 +1019,12 @@ public class ItemInit {
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
 	public static final RegistryObject<BucketItem> infestedgoo_bucket = ITEMS.register("infestedgoo_bucket",
 			() -> new BucketItem(() -> FluidInit.INFESTEDGOO_FLUID.get(),
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<BucketItem> DARK_WATER_BUCKET = ITEMS.register("dark_water_bucket",
+			() -> new BucketItem(() -> FluidInit.DARK_WATER_FLUID.get(),
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<BucketItem> MANA_BUCKET = ITEMS.register("mana_bucket",
+			() -> new BucketItem(() -> FluidInit.MANA_FLUID.get(),
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
 
 	// SpawnEggs
@@ -864,7 +1046,6 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> LILITH_SPAWN_EGG = ITEMS.register("lilith_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
-
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x770000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
@@ -876,15 +1057,9 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_VINDICATOR = ITEMS.register("ilager_vindicator_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x770000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
-
+	
 
 	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,
 			MythicCraft.MOD_ID);
-
-	// public static final RegistryObject<Item> BLOODOAK_SIGN =
-	// NO_BLOCK_ITEM.register("bloodoak_sign",
-	// () -> new SignItem((new Item.Properties()).stacksTo(16),
-	// WoodTypes.BLOODOAK.sign.get(),
-	// WoodTypes.BLOODOAK.wallsign.get()));
 
 }

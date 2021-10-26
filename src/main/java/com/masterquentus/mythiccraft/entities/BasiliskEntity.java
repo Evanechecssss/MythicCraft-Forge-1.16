@@ -4,11 +4,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
 import net.minecraft.entity.monster.AbstractRaiderEntity;
 import net.minecraft.entity.monster.MonsterEntity;
-import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -25,7 +23,13 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)
 	{
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.movement", true));
+		boolean isWalking = !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F);
+		if (isWalking){
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.movement", true));
+		} else {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.basilisk.idle", true));
+		}
+
 		return PlayState.CONTINUE;
 	}
 	
@@ -59,7 +63,13 @@ public class BasiliskEntity extends MonsterEntity implements IAnimatable {
 		this.goalSelector.addGoal(9, new LookAtGoal(this, PlayerEntity.class, 15.0F, 1.0F));
 		this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 15.0F));
 		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
+    this.targetSelector.addGoal(5, new NearestAttackableTargetGoal<>(this, TurtleEntity.class, 10, true, false, TurtleEntity.BABY_ON_LAND_SELECTOR));
     }
+	
+	@Override
+	protected int getExperienceReward(PlayerEntity player) {
+	return 3 + this.level.random.nextInt(5);
+}
 
 	public static AttributeModifierMap.MutableAttribute createAttributes() {
 		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, 26)

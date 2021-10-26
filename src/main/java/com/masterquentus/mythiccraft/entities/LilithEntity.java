@@ -47,7 +47,7 @@ public class LilithEntity extends MonsterEntity implements IAnimatable {
 	public static AttributeModifierMap.MutableAttribute createAttributes() {
 		return MonsterEntity.createMonsterAttributes().add(Attributes.MAX_HEALTH, 290)
 				.add(Attributes.MOVEMENT_SPEED, 0.33D).add(Attributes.FOLLOW_RANGE, 35)
-				.add(Attributes.ARMOR_TOUGHNESS, 10D).add(Attributes.ATTACK_DAMAGE, 11);
+				.add(Attributes.ARMOR_TOUGHNESS, 10D).add(Attributes.ATTACK_DAMAGE, 15);
 	}
 
 	public void onAttackEnd(){

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.function.Supplier;
 
 public enum StoneType {
-	ICYSTONE, MYSTICSTONE, PEARLSTONE, CHARRED, INFESTED, CRIMSON, MARBLE;
+	ICYSTONE, MYSTICSTONE, PEARLSTONE, CHARRED, INFESTED, CRIMSON, MARBLE, UNDERWORLD;
 
 	public HashMap<StoneVariation, Supplier<Block>> blocks = new HashMap<>();
 	public HashMap<StoneVariation, Supplier<Block>> stairs = new HashMap<>();
@@ -24,7 +24,7 @@ public enum StoneType {
 			String typeString = variation.toString();
 			if (variation == StoneType.StoneVariation.STONE && (name.equals("crimson") || name.equals("charred")
 					|| name.equals("infested") || name.equals("icy")
-					|| name.equals("pearl") || name.equals("mystic"))) {
+					|| name.equals("pearl") || name.equals("mystic") || name.equals("underworld"))) {
 				typeString = "stone";
 			}
 			AbstractBlock.Properties props = Block.Properties.of(Material.STONE).strength(5.0f, 30.0f)

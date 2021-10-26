@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/whiteoak_planks",
+    "side": "mythiccraft:block/whiteoak_bookshelf"
+  }
+}

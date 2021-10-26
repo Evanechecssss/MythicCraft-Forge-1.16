@@ -94,7 +94,8 @@ public class SeaCandlesBlock extends BushBlock implements IGrowable, IWaterLogga
 	      }
 	   }
 
-	   public boolean canBeReplaced(BlockState p_196253_1_, BlockItemUseContext p_196253_2_) {
+	   @SuppressWarnings("deprecation")
+	public boolean canBeReplaced(BlockState p_196253_1_, BlockItemUseContext p_196253_2_) {
 	      return p_196253_2_.getItemInHand().getItem() == this.asItem() && p_196253_1_.getValue(CANDLES) < 4 ? true : super.canBeReplaced(p_196253_1_, p_196253_2_);
 	   }
 
@@ -112,7 +113,8 @@ public class SeaCandlesBlock extends BushBlock implements IGrowable, IWaterLogga
 	      }
 	   }
 
-	   public FluidState getFluidState(BlockState p_204507_1_) {
+	   @SuppressWarnings("deprecation")
+	public FluidState getFluidState(BlockState p_204507_1_) {
 	      return p_204507_1_.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(p_204507_1_);
 	   }
 
@@ -132,7 +134,8 @@ public class SeaCandlesBlock extends BushBlock implements IGrowable, IWaterLogga
 		      BubbleColumnBlock.growColumn(p_225534_2_, p_225534_3_.above(), false);
 		   }
 
-	   public void performBonemeal(ServerWorld p_225535_1_, Random p_225535_2_, BlockPos p_225535_3_, BlockState p_225535_4_) {
+	   @SuppressWarnings("unused")
+	public void performBonemeal(ServerWorld p_225535_1_, Random p_225535_2_, BlockPos p_225535_3_, BlockState p_225535_4_) {
 	      if (!isDead(p_225535_4_) && p_225535_1_.getBlockState(p_225535_3_.below()).is(BlockTags.CORAL_BLOCKS)) {
 	         int i = 5;
 	         int j = 1;

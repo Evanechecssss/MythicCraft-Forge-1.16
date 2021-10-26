@@ -3,8 +3,6 @@ package com.masterquentus.mythiccraft.objects.blocks;
 
 import java.util.Random;
 
-import com.masterquentus.mythiccraft.init.BlockInit;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -66,7 +64,6 @@ public class EnderBrambleBlock extends SugarCaneBlock implements net.minecraftfo
 		   public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random rand) {
 		       BlockState above = world.getBlockState(pos.above());
 		       if (above.isAir()){
-		           world.setBlockAndUpdate(pos.above(), BlockInit.ENDER_BRAMBLE.get().defaultBlockState());
 		           int i;
 		           for(i = 1; world.getBlockState(pos.below(i)).is(this); ++i) {
 		       }

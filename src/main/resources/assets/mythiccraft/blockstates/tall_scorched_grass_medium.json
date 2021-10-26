@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mythiccraft:block/tall_scorched_grass_medium_bottom"
+    },
+    "half=upper": {
+      "model": "mythiccraft:block/tall_scorched_grass_medium_top"
+    }
+  }
+}

@@ -1,10 +1,17 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.entities.BasiliskEntity;
+import com.masterquentus.mythiccraft.entities.FairyEntity;
+import com.masterquentus.mythiccraft.entities.GoblinEntity;
+import com.masterquentus.mythiccraft.entities.LilithEntity;
+import com.masterquentus.mythiccraft.entities.MobSummonProjectile;
+import com.masterquentus.mythiccraft.entities.SirenEntity;
+import com.masterquentus.mythiccraft.entities.UnicornEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireVindicatorEntity;
+
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
@@ -34,18 +41,17 @@ public class ModEntityTypes {
 			() -> EntityType.Builder.<SirenEntity>of(SirenEntity::new, EntityClassification.WATER_CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "siren_entity").toString()));
 	public static final RegistryObject<EntityType<FairyEntity>> FAIRY_ENTITY = ENTITY_TYPES.register("fairy_entity",
-            () -> EntityType.Builder.<FairyEntity>of(FairyEntity::new, EntityClassification.CREATURE)
-                    .sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "fairy_entity").toString()));
-    public static final RegistryObject<EntityType<LilithEntity>> LILITH_ENTITY = ENTITY_TYPES.register("lilith_entity",
-            () -> EntityType.Builder.<LilithEntity>of(LilithEntity::new, EntityClassification.CREATURE)
-                    .sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "lilith_entity").toString()));
+			() -> EntityType.Builder.<FairyEntity>of(FairyEntity::new, EntityClassification.CREATURE).sized(0.8F, 2.0F)
+					.build(new ResourceLocation(MythicCraft.MOD_ID, "fairy_entity").toString()));
+	public static final RegistryObject<EntityType<LilithEntity>> LILITH_ENTITY = ENTITY_TYPES.register("lilith_entity",
+			() -> EntityType.Builder.<LilithEntity>of(LilithEntity::new, EntityClassification.CREATURE)
+					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "lilith_entity").toString()));
 
-    public static final RegistryObject<EntityType<MobSummonProjectile>> MOB_SUMMON = ENTITY_TYPES.register("mob_summon",
-            () -> EntityType.Builder.<MobSummonProjectile>of(MobSummonProjectile::new, EntityClassification.MISC)
-                    .sized(0.5F, 0.5F).build(new ResourceLocation(MythicCraft.MOD_ID, "mob_summon").toString()));
-
-
-    public static final RegistryObject<EntityType<VampireEvokerEntity>> EVOKER = ENTITY_TYPES.register("evoker_entity",
+	public static final RegistryObject<EntityType<MobSummonProjectile>> MOB_SUMMON = ENTITY_TYPES.register("mob_summon",
+			() -> EntityType.Builder.<MobSummonProjectile>of(MobSummonProjectile::new, EntityClassification.MISC)
+					.sized(0.5F, 0.5F).build(new ResourceLocation(MythicCraft.MOD_ID, "mob_summon").toString()));
+	
+	public static final RegistryObject<EntityType<VampireEvokerEntity>> EVOKER = ENTITY_TYPES.register("evoker_entity",
             () -> EntityType.Builder.<VampireEvokerEntity>of(VampireEvokerEntity::new, EntityClassification.MONSTER)
                     .sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "evoker_entity").toString()));
     public static final RegistryObject<EntityType<VampirePillagerEntity>> PILLAGER = ENTITY_TYPES.register("pillager_entity",
@@ -54,6 +60,5 @@ public class ModEntityTypes {
     public static final RegistryObject<EntityType<VampireVindicatorEntity>> VINDICATOR = ENTITY_TYPES.register("vindicator_entity",
             () -> EntityType.Builder.<VampireVindicatorEntity>of(VampireVindicatorEntity::new, EntityClassification.MONSTER)
                     .sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "vindicator_entity").toString()));
-
 
 }

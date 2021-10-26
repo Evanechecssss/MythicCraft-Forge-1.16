@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mythiccraft:block/distorted_planks",
+    "side": "mythiccraft:block/distorted_bookshelf"
+  }
+}
