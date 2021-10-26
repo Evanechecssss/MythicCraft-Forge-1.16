@@ -5,6 +5,7 @@ import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.objects.blocks.ModLanternBlock;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
 
 public class LanternTileEntity extends TileEntity implements ITickableTileEntity {
     public LanternTileEntity() {
@@ -13,9 +14,12 @@ public class LanternTileEntity extends TileEntity implements ITickableTileEntity
 
     @Override
     public void tick() {
-        if (!this.level.isClientSide()){
-            LanternType type = ((ModLanternBlock)this.getBlockState().getBlock()).type;
-            type.action.tick(this.worldPosition, this.level);
+        World world = this.level;
+        if (world != null) {
+            if (!world.isClientSide()) {
+                LanternType type = ((ModLanternBlock) this.getBlockState().getBlock()).type;
+                type.action.tick(this.worldPosition, this.level);
+            }
         }
     }
 }
