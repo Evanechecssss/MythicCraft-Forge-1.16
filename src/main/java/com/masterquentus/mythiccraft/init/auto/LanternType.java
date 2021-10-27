@@ -33,7 +33,6 @@ public enum LanternType {
         // werewolves dont exist...
     }),
     SOUL("Ensnares Mobs", (pos, world) -> {
-        MythicCraft.LOGGER.warn("SOUL");
         if (world.getGameTime() % 10 != 0) return;
         Predicate<Entity> check = (e) -> e instanceof MobEntity;
         for (Entity target : getEntities(7, pos, world, check)) {
