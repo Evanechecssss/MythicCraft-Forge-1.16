@@ -14,12 +14,12 @@ public class LanternTileEntity extends TileEntity implements ITickableTileEntity
 
     @Override
     public void tick() {
-        World world = this.level;
-        if (world != null) {
-            if (!world.isClientSide()) {
-                LanternType type = ((ModLanternBlock) this.getBlockState().getBlock()).type;
-                type.action.tick(this.worldPosition, this.level);
-            }
+    	 World world = this.level;
+         if (world != null) {
+             if (!world.isClientSide()) {
+                 LanternType type = ((ModLanternBlock) this.getBlockState().getBlock()).type;
+                 type.action.tick(this.worldPosition, this.level);
+             }
         }
     }
 }
