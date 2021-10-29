@@ -46,11 +46,9 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<LilithEntity>> LILITH_ENTITY = ENTITY_TYPES.register("lilith_entity",
 			() -> EntityType.Builder.<LilithEntity>of(LilithEntity::new, EntityClassification.CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "lilith_entity").toString()));
-
 	public static final RegistryObject<EntityType<MobSummonProjectile>> MOB_SUMMON = ENTITY_TYPES.register("mob_summon",
 			() -> EntityType.Builder.<MobSummonProjectile>of(MobSummonProjectile::new, EntityClassification.MISC)
 					.sized(0.5F, 0.5F).build(new ResourceLocation(MythicCraft.MOD_ID, "mob_summon").toString()));
-
 	public static final RegistryObject<EntityType<VampireEvokerEntity>> EVOKER = ENTITY_TYPES.register("evoker_entity",
 			() -> EntityType.Builder.<VampireEvokerEntity>of(VampireEvokerEntity::new, EntityClassification.MONSTER)
 					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "evoker_entity").toString()));
