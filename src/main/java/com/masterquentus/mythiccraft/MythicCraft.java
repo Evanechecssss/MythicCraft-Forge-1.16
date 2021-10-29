@@ -1,14 +1,9 @@
 package com.masterquentus.mythiccraft;
 
+import com.masterquentus.mythiccraft.entities.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.masterquentus.mythiccraft.entities.BasiliskEntity;
-import com.masterquentus.mythiccraft.entities.FairyEntity;
-import com.masterquentus.mythiccraft.entities.GoblinEntity;
-import com.masterquentus.mythiccraft.entities.LilithEntity;
-import com.masterquentus.mythiccraft.entities.SirenEntity;
-import com.masterquentus.mythiccraft.entities.UnicornEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireVindicatorEntity;
@@ -121,11 +116,13 @@ public class MythicCraft {
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
 		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
+		event.put(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlime.createAttributes().build());
 		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
 		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
+
 		event.enqueueWork(() -> {
 			StructuresInit.setupStructures();
 			WoodType.register(WoodTypesInit.BLOOD_OAK);
