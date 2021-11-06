@@ -678,18 +678,18 @@ public class BlockInit {
 			() -> new Block(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK)));
 	public static final RegistryObject<Block> LIVING_CORAL_BLOCK = BLOCKS.register("livingcoral_block",
 			() -> new CoralBlock(BlockInit.DEAD_LIVING_CORAL_BLOCK.get(),
-					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK))));
+					(Block.Properties.copy(Blocks.BRAIN_CORAL_BLOCK).lightLevel((state) -> 15))));
 	public static final RegistryObject<Block> DEAD_LIVING_CORAL_FAN = BLOCKS.register("dead_livingcoral_fan",
 			() -> new CoralFanBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_BLOCK).noCollission().instabreak()));
 	public static final RegistryObject<Block> LIVING_CORAL_FAN = BLOCKS.register("livingcoral_fan",
-			() -> new CoralFinBlock(BlockInit.DEAD_LIVING_CORAL_FAN.get(),
-					(Block.Properties.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak())));
+			() -> new CoralFinBlock(BlockInit.DEAD_LIVING_CORAL_FAN.get(), (Block.Properties
+					.copy(Blocks.BRAIN_CORAL_FAN).noCollission().instabreak().lightLevel((state) -> 15))));
 	public static final RegistryObject<Block> DEAD_LIVING_CORAL_WALL_FAN = BLOCKS.register("dead_livingcoral_wall_fan",
 			() -> new DeadCoralWallFanBlock(
 					Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN).noCollission().instabreak()));
 	public static final RegistryObject<Block> LIVING_CORAL_WALL_FAN = BLOCKS.register("livingcoral_wall_fan",
-			() -> new CoralWallFanBlock(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
-					(Block.Properties.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak())));
+			() -> new CoralWallFanBlock(BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(), (Block.Properties
+					.copy(Blocks.BRAIN_CORAL_WALL_FAN).noCollission().instabreak().lightLevel((state) -> 15))));
 	public static final RegistryObject<Block> DEAD_BLOODLY_CORAL = BLOCKS.register("dead_bloodlycoral",
 			() -> new DeadCoralPlantBlock(Block.Properties.copy(Blocks.DEAD_BRAIN_CORAL).noCollission().instabreak()));
 	public static final RegistryObject<Block> BLOODLY_CORAL = BLOCKS.register("bloodlycoral",

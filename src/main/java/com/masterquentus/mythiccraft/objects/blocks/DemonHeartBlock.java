@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
-import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.StateContainer.Builder;
@@ -12,8 +11,8 @@ import net.minecraft.util.Rotation;
 
 public class DemonHeartBlock extends Block {
 
-	public DemonHeartBlock(Properties p_i48440_1_) {
-		super(p_i48440_1_);
+	public DemonHeartBlock(Properties properties) {
+		super(properties);
 	}
 
 	public static final DirectionProperty FACING = HorizontalBlock.FACING;
