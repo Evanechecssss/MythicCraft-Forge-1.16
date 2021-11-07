@@ -1,6 +1,7 @@
 package com.masterquentus.mythiccraft.entities;
 
 import com.masterquentus.mythiccraft.MythicCraft;
+import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
@@ -26,8 +27,10 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class LilithEntity extends MonsterEntity implements IAnimatable {
+	private AnimationTypes currentAnimation;
 	public LilithEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
 		super(type, worldIn);
+		currentAnimation = AnimationTypes.IDLE;
 		// this.ignoreFrustumCheck = true;
 	}
 
@@ -102,22 +105,25 @@ public class LilithEntity extends MonsterEntity implements IAnimatable {
 	private AnimationFactory factory = new AnimationFactory(this);
 	
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-		if (this.isAttacking()){
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.lilith.attack", true));
-			return PlayState.CONTINUE;
+		if (event.getController().getCurrentAnimation() == null) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation(AnimationTypes.IDLE.registerName, true));
 		}
-
+		if (this.isAttacking()){
+			setCurrentAnimation(AnimationTypes.ATACK);
+		}
 		boolean isWalking = !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F);
 		if (isWalking){
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.lilith.walk", true));
+			setCurrentAnimation(AnimationTypes.WALK);
 		} else {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.lilith.idle", true));
+			setCurrentAnimation(AnimationTypes.IDLE);
 		}
-
+		event.getController().setAnimation(new AnimationBuilder().addAnimation(currentAnimation.registerName, currentAnimation.loop));
 		return PlayState.CONTINUE;
 	}
-	
 
+	public AnimationTypes getCurrentAnimation() {
+		return currentAnimation;
+	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
@@ -149,5 +155,20 @@ public class LilithEntity extends MonsterEntity implements IAnimatable {
 	public void stopSeenByPlayer(ServerPlayerEntity p_184203_1_) {
 		super.stopSeenByPlayer(p_184203_1_);
 		this.bossEvent.removePlayer(p_184203_1_);
+	}
+	public void setCurrentAnimation(AnimationTypes animationType) {
+		this.currentAnimation = animationType;
+	}
+	public enum AnimationTypes {
+		IDLE("animation.lilith.idle", true),
+		WALK("animation.lilith.walk",true),
+		ATACK("animation.lilith.attack", true);
+		private String registerName;
+		private boolean loop;
+
+		AnimationTypes(String string, boolean loop) {
+			this.registerName = string;
+			this.loop = loop;
+		}
 	}
 }

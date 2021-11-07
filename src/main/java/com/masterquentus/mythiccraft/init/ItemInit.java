@@ -1049,6 +1049,9 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x770000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+	public static final RegistryObject<ModSpawnEggItem> VAMPIRE_PIGLIN= ITEMS.register("vampire_piglin_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.PIGLIN, 0x770000, 0x770000,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	public static final RegistryObject<ModSpawnEggItem> UNDERWATER_SLIME = ITEMS.register("underwater_slime_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.UNDERWATER_SLIME, 0x770000, 0x770000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));

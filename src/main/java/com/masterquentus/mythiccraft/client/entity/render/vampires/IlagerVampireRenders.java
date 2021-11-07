@@ -1,7 +1,7 @@
 package com.masterquentus.mythiccraft.client.entity.render.vampires;
 
 import com.masterquentus.mythiccraft.client.entity.model.vampires.IlagerVampireModels;
-import com.masterquentus.mythiccraft.entities.vampire.IlagerTypes;
+import com.masterquentus.mythiccraft.entities.vampire.VampireTypes;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -20,7 +20,7 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
  * \
  */
 public class IlagerVampireRenders<T extends LivingEntity & IAnimatable> extends GeoEntityRenderer<T> {
-    public IlagerVampireRenders(EntityRendererManager renderManager, IlagerTypes types) {
+    public IlagerVampireRenders(EntityRendererManager renderManager, VampireTypes types) {
         super(renderManager, new IlagerVampireModels<T>(types));
 
     }

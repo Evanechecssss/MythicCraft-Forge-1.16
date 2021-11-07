@@ -3,6 +3,7 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
+import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireVindicatorEntity;
 
@@ -58,4 +59,8 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<UnderwaterSlime>> UNDERWATER_SLIME = ENTITY_TYPES.register("underwater_slime",
 			() -> EntityType.Builder.<UnderwaterSlime>of(UnderwaterSlime::new, EntityClassification.MONSTER).sized(1F, 1F)
 					.build(new ResourceLocation(MythicCraft.MOD_ID, "underwater_slime").toString()));
-		}
+
+	public static final RegistryObject<EntityType<VampirePiglinEntity>> PIGLIN = ENTITY_TYPES.register("piglin_entity",
+			() -> EntityType.Builder.<VampirePiglinEntity>of(VampirePiglinEntity::new, EntityClassification.MONSTER)
+					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "piglin_entity").toString()));
+}

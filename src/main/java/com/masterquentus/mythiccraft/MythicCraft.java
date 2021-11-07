@@ -1,6 +1,10 @@
 package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,6 +58,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import software.bernie.geckolib3.GeckoLib;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
+
+import java.util.List;
 
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -116,6 +122,7 @@ public class MythicCraft {
 		event.put(ModEntityTypes.SIREN_ENTITY.get(), SirenEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
 		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
+		event.put(ModEntityTypes.PIGLIN.get(), VampirePiglinEntity.createAttributes().build());
 		event.put(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlime.createAttributes().build());
 		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
 		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
