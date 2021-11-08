@@ -13,7 +13,8 @@ import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
 import com.masterquentus.mythiccraft.client.gui.CrateScreen;
 import com.masterquentus.mythiccraft.client.gui.WitchesOvenScreen;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
-import com.masterquentus.mythiccraft.events.loot.VampiricGemAdditionModifier;
+import com.masterquentus.mythiccraft.events.loot.GobliniteDustAdditionModifier;
+import com.masterquentus.mythiccraft.events.loot.VampiricGemStructureAdditionModifier;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.FluidInit;
 import com.masterquentus.mythiccraft.init.ItemInit;
@@ -325,8 +326,13 @@ public class ClientEventBusSubscriber {
 		    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>>
 		                                                           event) {
 		        event.getRegistry().registerAll(
-		                new VampiricGemAdditionModifier.Serializer().setRegistryName
+		                new VampiricGemStructureAdditionModifier.Serializer().setRegistryName
 		                        (new ResourceLocation(MythicCraft.MOD_ID,"vampiric_gem_in_jungle_temple"))
+		        );
+		        
+		        event.getRegistry().registerAll(
+		                new GobliniteDustAdditionModifier.Serializer().setRegistryName
+		                        (new ResourceLocation(MythicCraft.MOD_ID,"goblinite_dust_from_stone"))
 		        );
 		    }
 		}

@@ -14,11 +14,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class VampiricGemAdditionModifier extends LootModifier {
-
+public class GobliniteDustAdditionModifier extends LootModifier {
 	private final Item addition;
 
-    protected VampiricGemAdditionModifier(ILootCondition[] conditionsIn, Item addition) {
+    protected GobliniteDustAdditionModifier(ILootCondition[] conditionsIn, Item addition) {
         super(conditionsIn);
         this.addition = addition;
     }
@@ -28,23 +27,22 @@ public class VampiricGemAdditionModifier extends LootModifier {
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         // generatedLoot is the loot that would be dropped, if we wouldn't add or replace
         // anything!
-        if(context.getRandom().nextFloat() > 0.15) {
-            generatedLoot.add(new ItemStack(addition, 1));
-        }
+    	if(context.getRandom().nextFloat() > 0.99)
+        generatedLoot.add(new ItemStack(addition, 1));
         return generatedLoot;
     }
 
-    public static class Serializer extends GlobalLootModifierSerializer<VampiricGemAdditionModifier> {
+    public static class Serializer extends GlobalLootModifierSerializer<GobliniteDustAdditionModifier> {
 
         @Override
-        public VampiricGemAdditionModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
+        public GobliniteDustAdditionModifier read(ResourceLocation name, JsonObject object, ILootCondition[] conditionsIn) {
             Item addition = ForgeRegistries.ITEMS.getValue(
                     new ResourceLocation(JSONUtils.getAsString(object, "addition")));
-            return new VampiricGemAdditionModifier(conditionsIn, addition);
+            return new GobliniteDustAdditionModifier(conditionsIn, addition);
         }
 
         @Override
-        public JsonObject write(VampiricGemAdditionModifier instance) {
+        public JsonObject write(GobliniteDustAdditionModifier instance) {
             JsonObject json = makeConditions(instance.conditions);
             json.addProperty("addition", ForgeRegistries.ITEMS.getKey(instance.addition).toString());
             return json;

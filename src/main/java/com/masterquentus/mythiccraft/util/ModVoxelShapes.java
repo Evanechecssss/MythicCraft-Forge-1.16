@@ -40,9 +40,9 @@ public class ModVoxelShapes {
 			Block.box(5.5, 12, 0, 10.5, 17, 1), Block.box(1, 11, 1, 15, 18, 15),
 			Block.box(-1.25, 20, 7, 17.25, 25.75, 9), Block.box(7, 20, -1.5, 9, 25.75, 17.25),
 			Block.box(-1, 21, -1, 17, 23, 17), Block.box(4.5, -12, 4.5, 11.5, -7, 11.5),
-			Block.box(2.9999999999999982, -6, 3, 12.999999999999998, -1, 13), Block.box(5, -14, 5, 11, -8, 11),
-			Block.box(5, 1, 5, 11, 2, 11), Block.box(2, 18, 2, 14, 27, 14), Block.box(0, 18, 0, 16, 25, 16),
-			Block.box(4, 3, 4, 12, 4, 12)).reduce((v1, v2) -> {
+			Block.box(3, -6, 3, 13, -1, 13), Block.box(5, -14, 5, 11, -8, 11), Block.box(5, 1, 5, 11, 2, 11),
+			Block.box(2, 18, 2, 14, 27, 14), Block.box(0, 18, 0, 16, 25, 16), Block.box(4, 3, 4, 12, 4, 12))
+			.reduce((v1, v2) -> {
 				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
 
@@ -114,5 +114,5 @@ public class ModVoxelShapes {
 			.reduce((v1, v2) -> {
 				return VoxelShapes.join(v1, v2, IBooleanFunction.OR);
 			}).get();
-	
+
 }
