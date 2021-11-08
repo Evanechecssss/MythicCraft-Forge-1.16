@@ -1049,18 +1049,22 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x770000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+
 	public static final RegistryObject<ModSpawnEggItem> VAMPIRE_PIGLIN= ITEMS.register("vampire_piglin_spawn_egg",
-			() -> new ModSpawnEggItem(ModEntityTypes.PIGLIN, 0x770000, 0x770000,
+			() -> new ModSpawnEggItem(ModEntityTypes.PIGLIN, 0x770000, 0x000000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	public static final RegistryObject<ModSpawnEggItem> UNDERWATER_SLIME = ITEMS.register("underwater_slime_spawn_egg",
-			() -> new ModSpawnEggItem(ModEntityTypes.UNDERWATER_SLIME, 0x770000, 0x770000,
+			() -> new ModSpawnEggItem(ModEntityTypes.UNDERWATER_SLIME, 0x016300, 0x01636D,
+					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
+	public static final RegistryObject<ModSpawnEggItem> WENDIGO = ITEMS.register("wendigo_spawn_egg",
+			() -> new ModSpawnEggItem(ModEntityTypes.WENDIGO_ENTITY, 0x440026, 0x424271,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_PILLAGER = ITEMS.register("ilager_pillager_spawn_egg",
-			() -> new ModSpawnEggItem(ModEntityTypes.PILLAGER, 0x770000, 0x770000,
+			() -> new ModSpawnEggItem(ModEntityTypes.PILLAGER, 0x770000, 0x634C47,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_VINDICATOR = ITEMS.register("ilager_vindicator_spawn_egg",
-			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x770000,
+			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x878787,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	
 

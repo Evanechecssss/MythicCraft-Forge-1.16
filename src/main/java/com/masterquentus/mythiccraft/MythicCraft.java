@@ -1,10 +1,8 @@
 package com.masterquentus.mythiccraft;
 
 import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.entities.events.DamageHandler;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.world.biome.MobSpawnInfo;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -59,8 +57,6 @@ import software.bernie.geckolib3.GeckoLib;
 import top.theillusivec4.curios.api.SlotTypeMessage;
 import top.theillusivec4.curios.api.SlotTypePreset;
 
-import java.util.List;
-
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
 @Mod("mythiccraft")
@@ -86,6 +82,7 @@ public class MythicCraft {
 		BiomeInit.BIOMES.register(modEventBus);
 		MinecraftForge.EVENT_BUS.addListener(EventPriority.HIGH, OreGen::addFeaturesToBiomes);
 		MinecraftForge.EVENT_BUS.register(this);
+		MinecraftForge.EVENT_BUS.register(new DamageHandler());
 	}
 
 	@SubscribeEvent
@@ -126,6 +123,7 @@ public class MythicCraft {
 		event.put(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlime.createAttributes().build());
 		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
 		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
+		event.put(ModEntityTypes.WENDIGO_ENTITY.get(), WendigoEntity.createAttributes().build());
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {

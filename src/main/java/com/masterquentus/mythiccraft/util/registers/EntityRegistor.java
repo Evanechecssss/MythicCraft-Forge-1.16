@@ -19,6 +19,7 @@ public class EntityRegistor {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.LILITH_ENTITY.get(), LilithEntityRender::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(), MobSummonProjectileRenderer::new);
 
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WENDIGO_ENTITY.get(),WendigoEntityRender::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.EVOKER.get(), (manager) -> new IlagerVampireRenders<VampireEvokerEntity>(manager, VampireTypes.EVOKER));
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.PIGLIN.get(), (manager) -> new IlagerVampireRenders<VampirePiglinEntity>(manager, VampireTypes.PIGLIN));
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.PILLAGER.get(), (manager) -> new IlagerVampireRenders<VampirePillagerEntity>(manager, VampireTypes.PILLAGER));

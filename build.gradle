@@ -21,7 +21,9 @@ group = 'com.masterquentus.mythiccraft' // http://maven.apache.org/guides/mini/g
 archivesBaseName = 'mythic_craft'
 
 // java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
-
+compileJava{
+    [compileJava,compileTestJava]*.options*.encoding = "UTF-8"
+}
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -45,7 +47,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            // arg "-mixin.config=modid.mixins.json"
+            arg "-mixin.config=modid.mixins.json"
 
 	    property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', project.file('build/createSrgToMcp/output.srg')
@@ -182,7 +184,9 @@ jar {
                 "Implementation-Version": "${version}",
                 "Implementation-Vendor" :"MasterQuentus",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": "mimic.mixins.json"
+                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder": 0,
+                "MixinConfigs" : "modid.mixin.json"
         ])
     }
 }

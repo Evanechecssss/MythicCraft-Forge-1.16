@@ -63,4 +63,8 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<VampirePiglinEntity>> PIGLIN = ENTITY_TYPES.register("piglin_entity",
 			() -> EntityType.Builder.<VampirePiglinEntity>of(VampirePiglinEntity::new, EntityClassification.MONSTER)
 					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "piglin_entity").toString()));
+
+	public static final RegistryObject<EntityType<WendigoEntity>> WENDIGO_ENTITY = ENTITY_TYPES.register("wendigo",
+			() -> EntityType.Builder.<WendigoEntity>of(WendigoEntity::new, EntityClassification.CREATURE)
+					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "wendigo").toString()));
 }

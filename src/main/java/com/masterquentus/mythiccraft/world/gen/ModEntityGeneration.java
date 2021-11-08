@@ -17,9 +17,9 @@ public class ModEntityGeneration {
     public static void onEntitySpawn(final BiomeLoadingEvent event) {
         addEntityToSpecificBiomes(event, ModEntityTypes.BASILISK_ENTITY.get(), 5, 2, 4, Biomes.SWAMP,
                 Biomes.SWAMP_HILLS, Biomes.BAMBOO_JUNGLE);
+        event.getSpawns().getSpawner(ModEntityTypes.UNDERWATER_SLIME.get().getCategory()).clear();
         addEntityToAllBiomesOcean(event, ModEntityTypes.UNDERWATER_SLIME.get(), 5, 2, 4);
         addEntityToAllBiomesNoNether(event, ModEntityTypes.PIGLIN.get(), 5, 2, 4);
-        removeEntityFromNether(event, ModEntityTypes.UNDERWATER_SLIME.get());
     }
 
     @SafeVarargs
@@ -51,13 +51,6 @@ public class ModEntityGeneration {
         if (!event.getCategory().equals(Biome.Category.THEEND) && !event.getCategory().equals(Biome.Category.NETHER)) {
             List<MobSpawnInfo.Spawners> base = event.getSpawns().getSpawner(type.getCategory());
             base.add(new MobSpawnInfo.Spawners(type, weight, minCount, maxCount));
-        }
-    }
-
-    private static void removeEntityFromNether(BiomeLoadingEvent event, EntityType<?> type) {
-        if (!event.getCategory().equals(Biome.Category.NETHER)) {
-            List<MobSpawnInfo.Spawners> base = event.getSpawns().getSpawner(type.getCategory());
-            base.remove(new MobSpawnInfo.Spawners(type, 0, 0, 0));
         }
     }
 
