@@ -45,7 +45,7 @@ public abstract class VampirePiglinMixins {
                 PlayerEntity playerentity = (PlayerEntity) livingentity;
                 if (piglin instanceof VampirePiglinEntity){
                     playerInVamparickArmore(playerentity);
-                    if (!optional.isPresent() && EntityPredicates.ATTACK_ALLOWED.test(livingentity) && (!PiglinTasks.isWearingGold(playerentity) || playerInVamparickArmore(playerentity))) {
+                    if (!optional.isPresent() && EntityPredicates.ATTACK_ALLOWED.test(livingentity) && (!PiglinTasks.isWearingGold(playerentity) || !playerInVamparickArmore(playerentity))) {
                         optional = Optional.of(playerentity);
                     }
                 }else {
@@ -62,12 +62,6 @@ public abstract class VampirePiglinMixins {
     private static boolean playerInVamparickArmore(PlayerEntity entity){
         Iterable<ItemStack> stackIterable = entity.getArmorSlots();
         List<ItemStack> armor_list = Lists.newArrayList(stackIterable);
-        MythicCraft.LOGGER.debug("=====================================");
-        MythicCraft.LOGGER.debug(armor_list.get(3).getItem().equals(ItemInit.vampiric_helmet.get()));
-        MythicCraft.LOGGER.debug(armor_list.get(2).getItem().equals(ItemInit.vampiric_chestplate.get()));
-        MythicCraft.LOGGER.debug(armor_list.get(1).getItem().equals(ItemInit.vampiric_leggings.get()));
-        MythicCraft.LOGGER.debug(armor_list.get(0).getItem().equals(ItemInit.vampiric_boots.get()));
-        MythicCraft.LOGGER.warn("=====================================");
         return armor_list.get(3).getItem().equals(ItemInit.vampiric_helmet.get()) && armor_list.get(2).getItem().equals(ItemInit.vampiric_chestplate.get()) &&
                 armor_list.get(1).getItem().equals(ItemInit.vampiric_leggings.get()) && armor_list.get(0).getItem().equals(ItemInit.vampiric_boots.get());
     }

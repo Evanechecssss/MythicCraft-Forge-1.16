@@ -46,7 +46,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=modid.mixins.json"
+            arg "-mixin.config=mythiccraft.mixins.json"
 
 	        //property 'mixin.env.remapRefMap', 'true'
             //property 'mixin.env.refMapRemappingFile', project.file('build/createSrgToMcp/output.srg')
@@ -172,7 +172,7 @@ dependencies {
 
 }
 mixin {
-    add sourceSets.main, "modid.mixin-refmap.json"
+    add sourceSets.main, "mythiccraft.mixin-refmap.json"
 }
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
@@ -187,7 +187,7 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "TweakOrder": 0,
-                "MixinConfigs" : "modid.mixin.json"
+                "MixinConfigs" : "mythiccraft.mixin.json"
         ])
     }
 }

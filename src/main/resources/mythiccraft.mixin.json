@@ -3,10 +3,10 @@
   "package": "com.masterquentus.mythiccraft.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "VampirePiglinMixins"
+    "VampirePiglinMixins","VampirePiglinTask"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "refmap": "modid.mixin-refmap.json"
+  "refmap": "mythiccraft.mixin-refmap.json"
 }
