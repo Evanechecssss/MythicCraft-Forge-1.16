@@ -1,12 +1,12 @@
 buildscript {
     repositories {
         maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
-        classpath group: 'org.spongepowered', name: 'mixingradle', version: '0.7-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
 
     }
 }
@@ -15,15 +15,14 @@ apply plugin: 'net.minecraftforge.gradle'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
 group = 'com.masterquentus.mythiccraft' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'mythic_craft'
 
-// java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
-compileJava{
-    [compileJava,compileTestJava]*.options*.encoding = "UTF-8"
-}
+//java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
+
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
     // The mappings can be changed at any time, and must be in the following format.
@@ -49,8 +48,8 @@ minecraft {
             workingDirectory project.file('run')
             arg "-mixin.config=modid.mixins.json"
 
-	    property 'mixin.env.remapRefMap', 'true'
-            property 'mixin.env.refMapRemappingFile', project.file('build/createSrgToMcp/output.srg')
+	        //property 'mixin.env.remapRefMap', 'true'
+            //property 'mixin.env.refMapRemappingFile', project.file('build/createSrgToMcp/output.srg')
 
             // Recommended logging data for a userdev environment
             // The markers can be changed as needed.
@@ -172,7 +171,9 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
 }
-
+mixin {
+    add sourceSets.main, "modid.mixin-refmap.json"
+}
 // Example for how to get properties into the manifest for reading by the runtime..
 jar {
     manifest {
