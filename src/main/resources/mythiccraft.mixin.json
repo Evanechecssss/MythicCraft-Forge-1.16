@@ -3,7 +3,7 @@
   "package": "com.masterquentus.mythiccraft.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
-    "VampirePiglinMixins","VampirePiglinTask"
+    "VampirePiglinMixins","VampirePiglinTask","AdmirePiglinMixin"
   ],
   "injectors": {
     "defaultRequire": 1

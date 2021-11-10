@@ -47,7 +47,7 @@ public class VampirePiglinEntity extends PiglinEntity implements IAnimatable {
     public VampirePiglinEntity(EntityType<? extends AbstractPiglinEntity> p_i231570_1_, World p_i231570_2_) {
         super(p_i231570_1_, p_i231570_2_);
         currentAnimation = AnimationTypes.IDLE;
-
+        this.setImmuneToZombification(true);
     }
 
     @Override
