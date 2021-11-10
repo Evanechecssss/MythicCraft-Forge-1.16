@@ -946,7 +946,7 @@ public class ItemInit {
 
 	// Plants
 	public static final RegistryObject<Item> vervain_seeds = ITEMS.register("vervain_seeds",
-			() -> new BlockItem(BlockInit.vervain_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+			() -> new BlockItem(BlockInit.VERVAIN_CROP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> wolfsbane_seeds = ITEMS.register("wolfsbane_seeds",
 			() -> new BlockItem(BlockInit.wolfsbane_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> garlic_seeds = ITEMS.register("garlic_seeds",

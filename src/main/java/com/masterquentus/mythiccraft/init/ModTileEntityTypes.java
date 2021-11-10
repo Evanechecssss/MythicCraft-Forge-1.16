@@ -26,10 +26,10 @@ public class ModTileEntityTypes {
 			() -> TileEntityType.Builder.of(CrateTileEntity::new, BlockInit.getAllCrates()).build(null));
 	public static final RegistryObject<TileEntityType<PandorsBoxTileEntity>> pandors_box = TILE_ENTITY_TYPES.register(
 			"pandors_box",
-			() -> TileEntityType.Builder.of(PandorsBoxTileEntity::new, BlockInit.pandors_box.get()).build(null));
+			() -> TileEntityType.Builder.of(PandorsBoxTileEntity::new, BlockInit.PANDORS_BOX.get()).build(null));
 	public static final RegistryObject<TileEntityType<MagicQuarryTileEntity>> magic_quarry = TILE_ENTITY_TYPES.register(
 			"magic_quarry",
-			() -> TileEntityType.Builder.of(MagicQuarryTileEntity::new, BlockInit.magic_quarry.get()).build(null));
+			() -> TileEntityType.Builder.of(MagicQuarryTileEntity::new, BlockInit.MAGIC_QUARRY.get()).build(null));
 	public static final RegistryObject<TileEntityType<PedestalTileEntity>> pedestal_tier1 = TILE_ENTITY_TYPES.register(
 			"pedestal_tier1",
 			() -> TileEntityType.Builder.of(PedestalTileEntity::new, BlockInit.PEDESTAL_TIER1.get(),
