@@ -12,6 +12,7 @@ import com.masterquentus.mythiccraft.objects.items.MutandisItem;
 import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
 import com.masterquentus.mythiccraft.objects.items.TagLockKitItem;
 import com.masterquentus.mythiccraft.objects.items.TotemOfTeleportationItem;
+import com.masterquentus.mythiccraft.objects.items.VampiricStaffItem;
 import com.masterquentus.mythiccraft.objects.items.VampriricItem;
 import com.masterquentus.mythiccraft.objects.items.WaterCropItem;
 import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
@@ -311,45 +312,6 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> GYPSUM = ITEMS.register("gypsum",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
-	public static final RegistryObject<Item> DEAD_LIVING_CORAL_FAN_ITEM = ITEMS.register("dead_livingcoral_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_LIVING_CORAL_FAN.get(), BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> LIVING_CORAL_FAN_ITEM = ITEMS.register("livingcoral_fan",
-			() -> new WallOrFloorItem(BlockInit.LIVING_CORAL_FAN.get(), BlockInit.LIVING_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DEAD_BLOODLY_CORAL_FAN_ITEM = ITEMS.register("dead_bloodly_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(),
-					BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> BLOODLY_CORAL_FAN_ITEM = ITEMS.register("bloodly_fan",
-			() -> new WallOrFloorItem(BlockInit.BLOODLY_CORAL_FAN.get(), BlockInit.BLOODLY_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DEAD_TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("dead_twilight_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(),
-					BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("twilight_fan",
-			() -> new WallOrFloorItem(BlockInit.TWILIGHT_CORAL_FAN.get(), BlockInit.TWILIGHT_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DEAD_CRIMSON_CORAL_FAN_ITEM = ITEMS.register("dead_crimson_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(),
-					BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> CRIMSON_CORAL_FAN_ITEM = ITEMS.register("crimson_fan",
-			() -> new WallOrFloorItem(BlockInit.CRIMSON_CORAL_FAN.get(), BlockInit.CRIMSON_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DEAD_ICY_CORAL_FAN_ITEM = ITEMS.register("dead_icy_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_ICY_CORAL_FAN.get(), BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> ICY_CORAL_FAN_ITEM = ITEMS.register("icy_fan",
-			() -> new WallOrFloorItem(BlockInit.ICY_CORAL_FAN.get(), BlockInit.ICY_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DEAD_DRAGON_CORAL_FAN_ITEM = ITEMS.register("dead_dragon_fan",
-			() -> new WallOrFloorItem(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
-	public static final RegistryObject<Item> DRAGON_CORAL_FAN_ITEM = ITEMS.register("dragon_fan",
-			() -> new WallOrFloorItem(BlockInit.DRAGON_CORAL_FAN.get(), BlockInit.DRAGON_CORAL_WALL_FAN.get(),
-					new Item.Properties().tab(MythicCraftBlocks.instance)));
 
 	// Signs
 	public static final RegistryObject<Item> BLOODOAK_SIGN = ITEMS.register("bloodoak_sign",
@@ -446,6 +408,10 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> green_rune = ITEMS.register("green_rune",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	
+	// Staffs 
+	public static final RegistryObject<Item> VAMPIRIC_STAFF = ITEMS.register("vampiric_staff",
+			() -> new VampiricStaffItem(new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Horse Armor
 	public static final RegistryObject<Item> AMETHYST_HORSE_ARMOR = ITEMS.register("amethyst_horse_armor",
@@ -1009,6 +975,45 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.LIVING_KELP_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DEMON_HEART_ITEM = ITEMS.register("demon_heart_item",
 			() -> new BlockItem(BlockInit.DEMON_HEART.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> DEAD_LIVING_CORAL_FAN_ITEM = ITEMS.register("dead_livingcoral_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_LIVING_CORAL_FAN.get(), BlockInit.DEAD_LIVING_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> LIVING_CORAL_FAN_ITEM = ITEMS.register("livingcoral_fan",
+			() -> new WallOrFloorItem(BlockInit.LIVING_CORAL_FAN.get(), BlockInit.LIVING_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_BLOODLY_CORAL_FAN_ITEM = ITEMS.register("dead_bloodly_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_BLOODLY_CORAL_FAN.get(),
+					BlockInit.DEAD_BLOODLY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> BLOODLY_CORAL_FAN_ITEM = ITEMS.register("bloodly_fan",
+			() -> new WallOrFloorItem(BlockInit.BLOODLY_CORAL_FAN.get(), BlockInit.BLOODLY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("dead_twilight_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_TWILIGHT_CORAL_FAN.get(),
+					BlockInit.DEAD_TWILIGHT_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> TWILIGHT_CORAL_FAN_ITEM = ITEMS.register("twilight_fan",
+			() -> new WallOrFloorItem(BlockInit.TWILIGHT_CORAL_FAN.get(), BlockInit.TWILIGHT_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_CRIMSON_CORAL_FAN_ITEM = ITEMS.register("dead_crimson_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_CRIMSON_CORAL_FAN.get(),
+					BlockInit.DEAD_CRIMSON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> CRIMSON_CORAL_FAN_ITEM = ITEMS.register("crimson_fan",
+			() -> new WallOrFloorItem(BlockInit.CRIMSON_CORAL_FAN.get(), BlockInit.CRIMSON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_ICY_CORAL_FAN_ITEM = ITEMS.register("dead_icy_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_ICY_CORAL_FAN.get(), BlockInit.DEAD_ICY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> ICY_CORAL_FAN_ITEM = ITEMS.register("icy_fan",
+			() -> new WallOrFloorItem(BlockInit.ICY_CORAL_FAN.get(), BlockInit.ICY_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DEAD_DRAGON_CORAL_FAN_ITEM = ITEMS.register("dead_dragon_fan",
+			() -> new WallOrFloorItem(BlockInit.DEAD_DRAGON_CORAL_FAN.get(), BlockInit.DEAD_DRAGON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
+	public static final RegistryObject<Item> DRAGON_CORAL_FAN_ITEM = ITEMS.register("dragon_fan",
+			() -> new WallOrFloorItem(BlockInit.DRAGON_CORAL_FAN.get(), BlockInit.DRAGON_CORAL_WALL_FAN.get(),
+					new Item.Properties().tab(MythicCraftBlocks.instance)));
 
 	// Fluids Bucket
 	public static final RegistryObject<BucketItem> blood_bucket = ITEMS.register("blood_bucket",
@@ -1062,7 +1067,6 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_PILLAGER = ITEMS.register("ilager_pillager_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.PILLAGER, 0x770000, 0x634C47,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
-
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_VINDICATOR = ITEMS.register("ilager_vindicator_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x878787,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));

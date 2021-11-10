@@ -13,22 +13,19 @@ import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
 /**
- * \* User: Evanechecssss
- * \* https://bio.link/evanechecssss
- * \* Data: 01.10.2021
- * \* Description:
- * \
+ * \* User: Evanechecssss \* https://bio.link/evanechecssss \* Data: 01.10.2021
+ * \* Description: \
  */
 public class IlagerVampireRenders<T extends LivingEntity & IAnimatable> extends GeoEntityRenderer<T> {
     public IlagerVampireRenders(EntityRendererManager renderManager, VampireTypes types) {
         super(renderManager, new IlagerVampireModels<T>(types));
 
-    }
+	}
 
-
-
-    @Override
-    public RenderType getRenderType(T animatable, float partialTicks, MatrixStack stack, IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-        return RenderType.entityTranslucent(getTextureLocation(animatable));
-    }
+	@Override
+	public RenderType getRenderType(T animatable, float partialTicks, MatrixStack stack,
+			IRenderTypeBuffer renderTypeBuffer, IVertexBuilder vertexBuilder, int packedLightIn,
+			ResourceLocation textureLocation) {
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
+	}
 }
