@@ -29,7 +29,6 @@ public enum WoodTypes {
 	BLOODOAK, WHITEOAK, SILVERWOOD, WITCHWOOD, ALDER, HAWTHORN, ROWAN, WILLOW, BEECH, ASH, BLACKTHORN, CEDAR, ELDER,
 	JUNIPER, WITCHHAZEL, YEW, INFESTED, CHARRED, ICY, TWISTED, DISTORTED, HELLBARK;
 
-
 	public Supplier<Block> log;
 	public Supplier<Block> wood;
 	public Supplier<Block> strippedLog;
@@ -61,32 +60,33 @@ public enum WoodTypes {
 		this.strippedWood = blockRegistry.register(name + "_stripped_wood",
 				() -> new ModLogBlock(MaterialColor.COLOR_RED, true));
 		this.plank = blockRegistry.register(name + "_planks",
-				() -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS)));
+				() -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F)));
 		this.leaves = blockRegistry.register(name + "_leaves",
-				() -> new LeavesBlock(Block.Properties.copy(Blocks.OAK_LEAVES)));
-		this.door = blockRegistry.register(name + "_door", () -> new ModDoor(Block.Properties.copy(Blocks.OAK_DOOR)));
+				() -> new LeavesBlock(Block.Properties.copy(Blocks.OAK_LEAVES).strength(0.2F).randomTicks()));
+		this.door = blockRegistry.register(name + "_door",
+				() -> new ModDoor(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F)));
 		this.crate = blockRegistry.register(name + "_crate",
-				() -> new CrateBlock(Block.Properties.copy(Blocks.BARREL)));
+				() -> new CrateBlock(Block.Properties.copy(Blocks.BARREL).strength(2.5F)));
 		this.trapdoor = blockRegistry.register(name + "_trapdoor",
-				() -> new ModTrapDoor(Block.Properties.copy(Blocks.OAK_TRAPDOOR)));
+				() -> new ModTrapDoor(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F)));
 		this.stairs = blockRegistry.register(name + "_stairs",
 				() -> new StairsBlock(() -> this.plank.get().defaultBlockState(),
-						Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)));
+						Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).strength(2.0F, 3.0F)));
 		this.slab = blockRegistry.register(name + "_slab",
 				() -> new SlabBlock(Block.Properties.copy(this.plank.get())));
-		this.button = blockRegistry.register(name + "_button",
-				() -> new ModWoodButtonBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)));
+		this.button = blockRegistry.register(name + "_button", () -> new ModWoodButtonBlock(
+				Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission().strength(0.5F)));
 		this.pressureplate = blockRegistry.register(name + "_pressureplate",
 				() -> new ModWoodPressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING,
-						Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)));
+						Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).noCollission().strength(0.5F)));
 		this.fence = blockRegistry.register(name + "_fence",
-				() -> new FenceBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED)));
+				() -> new FenceBlock(Block.Properties.of(Material.WOOD, MaterialColor.COLOR_RED).strength(2.0F, 3.0F)));
 		this.gate = blockRegistry.register(name + "_fence_gate",
-				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE)));
-		this.sapling = blockRegistry.register(name + "_sapling",
-				() -> new SaplingBlock(this.tree, Block.Properties.copy(Blocks.OAK_SAPLING)));
-		this.bookshelf = blockRegistry.register(name + "_bookshelf",
-				() -> new ModBookshelfBlock(Block.Properties.copy(Blocks.BOOKSHELF).sound(SoundType.WOOD).strength(1.5F)));
+				() -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(2.0F, 3.0F)));
+		this.sapling = blockRegistry.register(name + "_sapling", () -> new SaplingBlock(this.tree,
+				Block.Properties.copy(Blocks.OAK_SAPLING).noCollission().randomTicks().instabreak()));
+		this.bookshelf = blockRegistry.register(name + "_bookshelf", () -> new ModBookshelfBlock(
+				Block.Properties.copy(Blocks.BOOKSHELF).sound(SoundType.WOOD).strength(1.5F)));
 
 	};
 }

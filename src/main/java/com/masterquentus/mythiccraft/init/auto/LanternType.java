@@ -1,6 +1,5 @@
 package com.masterquentus.mythiccraft.init.auto;
 
-import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.entities.FairyEntity;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;

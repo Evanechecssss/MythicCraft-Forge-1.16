@@ -1,5 +1,7 @@
 package com.masterquentus.mythiccraft.util;
 
+import javax.annotation.Nonnull;
+
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.client.entity.render.BasiliskEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.FairyEntityRender;
@@ -11,6 +13,8 @@ import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
 import com.masterquentus.mythiccraft.client.gui.CrateScreen;
 import com.masterquentus.mythiccraft.client.gui.WitchesOvenScreen;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
+import com.masterquentus.mythiccraft.events.loot.GobliniteDustAdditionModifier;
+import com.masterquentus.mythiccraft.events.loot.VampiricGemStructureAdditionModifier;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.FluidInit;
 import com.masterquentus.mythiccraft.init.ItemInit;
@@ -30,6 +34,8 @@ import net.minecraft.client.renderer.tileentity.SignTileEntityRenderer;
 import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -102,7 +108,7 @@ public class ClientEventBusSubscriber {
 		}
 
 		// Crops
-		RenderTypeLookup.setRenderLayer(BlockInit.vervain_crop.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.VERVAIN_CROP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.garlic_crop.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.belladonna_crop.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.foxgloves_crop.get(), RenderType.cutout());
@@ -196,7 +202,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.pandors_box_open.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());
@@ -313,6 +318,20 @@ public class ClientEventBusSubscriber {
 		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.MOB_SUMMON.get(),
 				MobSummonProjectileRenderer::new);
 		EntityRegistor.registor(event);
-
+		
 	}
-}
+
+		 @SubscribeEvent
+		    public static void registerModifierSerializers(@Nonnull final RegistryEvent.Register<GlobalLootModifierSerializer<?>>
+		                                                           event) {
+		        event.getRegistry().registerAll(
+		                new VampiricGemStructureAdditionModifier.Serializer().setRegistryName
+		                        (new ResourceLocation(MythicCraft.MOD_ID,"vampiric_gem_in_jungle_temple"))
+		        );
+		        
+		        event.getRegistry().registerAll(
+		                new GobliniteDustAdditionModifier.Serializer().setRegistryName
+		                        (new ResourceLocation(MythicCraft.MOD_ID,"goblinite_dust_from_stone"))
+		        );
+		    }
+		}

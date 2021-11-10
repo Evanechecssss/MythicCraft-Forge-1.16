@@ -79,12 +79,15 @@ public class VampireEvokerEntity extends EvokerEntity implements IAnimatable, II
 
     @OnlyIn(Dist.CLIENT)
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.getController().getCurrentAnimation() == null) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation(AnimationTypes.IDLE.registerName, true));
-        }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation(currentAnimation.registerName, currentAnimation.loop));
-        return PlayState.CONTINUE;
-    }
+    	boolean isWalking = !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F);
+		if (isWalking){
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.walk", true));
+		} else {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.model.idle", true));
+		}
+
+		return PlayState.CONTINUE;
+	}
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
@@ -188,11 +191,14 @@ public class VampireEvokerEntity extends EvokerEntity implements IAnimatable, II
         }
     }
 
+
     private enum AnimationTypes {
         IDLE("animation.model.idle", true),
+        WALK("animation.model.walk", true),
         ATACK("animation.model.atack", false);
-        private String registerName;
-        private boolean loop;
+		private String registerName;
+        @SuppressWarnings("unused")
+		private boolean loop;
 
         AnimationTypes(String string, boolean loop) {
             this.registerName = string;
