@@ -1,16 +1,16 @@
 package com.masterquentus.mythiccraft.client.entity.model.vampires;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.entities.vampire.IlagerTypes;
+import com.masterquentus.mythiccraft.entities.vampire.VampireTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class IlagerVampireModels<T extends Entity & IAnimatable> extends AnimatedGeoModel<T> {
-    private IlagerTypes types;
+    private VampireTypes types;
 
-    public IlagerVampireModels(IlagerTypes types) {
+    public IlagerVampireModels(VampireTypes types) {
         this.types = types;
     }
 

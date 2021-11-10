@@ -1,13 +1,14 @@
 package com.masterquentus.mythiccraft.entities.vampire;
 
-public enum IlagerTypes {
+public enum VampireTypes {
     EVOKER("vampire_evoker"),
     PILLAGER("vampire_pillager"),
+    PIGLIN("vampire_piglin"),
     VINDICATOR("vampire_vindicator");
 
     private String name;
 
-    IlagerTypes(String name) {
+    VampireTypes(String name) {
         this.name = name;
     }
 
