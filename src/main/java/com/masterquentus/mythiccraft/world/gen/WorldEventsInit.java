@@ -16,11 +16,8 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = MythicCraft.MOD_ID)
 public class WorldEventsInit {
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void biomeLoadingEvent(final BiomeLoadingEvent event) {
-        List<MobSpawnInfo.Spawners> spawns =
-                event.getSpawns().getSpawner(EntityClassification.MONSTER);
-        spawns.removeIf(e -> e.type == ModEntityTypes.UNDERWATER_SLIME.get());
         ModEntityGeneration.onEntitySpawn(event);
     }
 }
