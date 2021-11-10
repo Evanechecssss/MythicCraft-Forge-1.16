@@ -108,7 +108,7 @@ public class ClientEventBusSubscriber {
 		}
 
 		// Crops
-		RenderTypeLookup.setRenderLayer(BlockInit.vervain_crop.get(), RenderType.cutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.VERVAIN_CROP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.garlic_crop.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.belladonna_crop.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.foxgloves_crop.get(), RenderType.cutout());
@@ -202,7 +202,6 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.SPANISH_MOSS.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.ENDER_BRAMBLE.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.WILD_BRAMBLE.get(), RenderType.cutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.pandors_box_open.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_TOP.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LIVING_KELP_PLANT.get(), RenderType.cutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.LILITH_TROPHY.get(), RenderType.cutout());

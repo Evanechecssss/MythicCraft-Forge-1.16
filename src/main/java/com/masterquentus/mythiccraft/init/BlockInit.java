@@ -195,14 +195,16 @@ public class BlockInit {
 	public static final RegistryObject<Block> INFESTEDSLIME_BLOCK = BLOCKS.register("infestedslime_block",
 			() -> new ModSlimeBlock(
 					Block.Properties.copy(Blocks.SLIME_BLOCK).friction(0.8F).noOcclusion().instabreak().noOcclusion()));
-	public static final RegistryObject<Block> ASH_BLOCK = BLOCKS.register("ash_block",
-			() -> new Block(Block.Properties.copy(Blocks.RED_SAND).harvestTool(ToolType.SHOVEL).harvestLevel(1)));
+	public static final RegistryObject<Block> ASH_BLOCK = BLOCKS.register("ash_block", () -> new Block(Block.Properties
+			.copy(Blocks.RED_SAND).harvestTool(ToolType.SHOVEL).requiresCorrectToolForDrops().strength(0.2F)));
 	public static final RegistryObject<Block> HOTASH_BLOCK = BLOCKS.register("hotash_block",
-			() -> new Block(Block.Properties.copy(Blocks.RED_SAND)));
+			() -> new Block(Block.Properties.copy(Blocks.RED_SAND).requiresCorrectToolForDrops().strength(0.2F)));
 	public static final RegistryObject<Block> ASH_LAYER = BLOCKS.register("ash_layer",
-			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
+			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).randomTicks().strength(0.1F)
+					.requiresCorrectToolForDrops().sound(SoundType.SAND)));
 	public static final RegistryObject<Block> HOTASH_LAYER = BLOCKS.register("hotash_layer",
-			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).strength(0.3f, 0.2f).sound(SoundType.SAND)));
+			() -> new ModLayer(Block.Properties.copy(Blocks.SAND).randomTicks().strength(0.1F)
+					.requiresCorrectToolForDrops().sound(SoundType.SAND)));
 	public static final RegistryObject<Block> MAGIC_WALL = BLOCKS.register("magic_wall",
 			() -> new Block(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).sound(SoundType.STONE)
 					.noOcclusion().requiresCorrectToolForDrops()));
@@ -418,110 +420,153 @@ public class BlockInit {
 	public static final RegistryObject<Block> EMBER_SANDSTONE_WALL = BLOCKS.register("ember_sandstone_wall",
 			() -> new WallBlock(Block.Properties.copy(Blocks.SANDSTONE_WALL).sound(SoundType.STONE)
 					.harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(0.8F)));
-	public static final RegistryObject<Block> FROST_MAGMA = BLOCKS.register("frost_magma", () -> new MagmaBlock(
-			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS).friction(0.98f)));
-	public static final RegistryObject<Block> CRIMSON_MAGMA = BLOCKS.register("crimson_magma", () -> new MagmaBlock(
-			Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).sound(SoundType.NETHER_BRICKS)));
+	public static final RegistryObject<Block> FROST_MAGMA = BLOCKS.register("frost_magma",
+			() -> new MagmaBlock(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).requiresCorrectToolForDrops()
+					.sound(SoundType.NETHER_BRICKS).friction(0.98f).lightLevel((state) -> 3).randomTicks()
+					.strength(0.5F)));
+	public static final RegistryObject<Block> CRIMSON_MAGMA = BLOCKS.register("crimson_magma",
+			() -> new MagmaBlock(Block.Properties.copy(Blocks.STONE).strength(5.5f, 5.5f).requiresCorrectToolForDrops()
+					.sound(SoundType.NETHER_BRICKS).lightLevel((state) -> 3).randomTicks().strength(0.5F)));
 	public static final RegistryObject<Block> BLOODOAK_SIGN = BLOCKS.register("bloodoak_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.BLOOD_OAK));
 	public static final RegistryObject<Block> BLOODOAK_WALL_SIGN = BLOCKS.register("bloodoak_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLOOD_OAK));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.BLOOD_OAK));
 	public static final RegistryObject<Block> WHITE_OAK_SIGN = BLOCKS.register("whiteoak_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.WHITE_OAK));
 	public static final RegistryObject<Block> WHITE_OAK_WALL_SIGN = BLOCKS.register("whiteoak_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WHITE_OAK));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.WHITE_OAK));
 	public static final RegistryObject<Block> SILVER_WOOD_SIGN = BLOCKS.register("silverwood_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
-					WoodTypesInit.SILVER_WOOD));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.SILVER_WOOD));
 	public static final RegistryObject<Block> SILVER_WOOD_WALL_SIGN = BLOCKS.register("silverwood_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.SILVER_WOOD));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.SILVER_WOOD));
 	public static final RegistryObject<Block> WITCH_WOOD_SIGN = BLOCKS.register("witchwood_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
-					WoodTypesInit.WITCH_WOOD));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.WITCH_WOOD));
 	public static final RegistryObject<Block> WITCH_WOOD_WALL_SIGN = BLOCKS.register("witchwood_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCH_WOOD));
-	public static final RegistryObject<Block> ALDER_SIGN = BLOCKS.register("alder_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.WITCH_WOOD));
+	public static final RegistryObject<Block> ALDER_SIGN = BLOCKS.register("alder_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.ALDER));
 	public static final RegistryObject<Block> ALDER_WALL_SIGN = BLOCKS.register("alder_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ALDER));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.ALDER));
 	public static final RegistryObject<Block> HAWTHORN_SIGN = BLOCKS.register("hawthorn_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.HAWTHORN));
 	public static final RegistryObject<Block> HAWTHORN_WALL_SIGN = BLOCKS.register("hawthorn_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HAWTHORN));
-	public static final RegistryObject<Block> ROWAN_SIGN = BLOCKS.register("rowan_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.HAWTHORN));
+	public static final RegistryObject<Block> ROWAN_SIGN = BLOCKS.register("rowan_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.ROWAN));
 	public static final RegistryObject<Block> ROWAN_WALL_SIGN = BLOCKS.register("rowan_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ROWAN));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.ROWAN));
 	public static final RegistryObject<Block> WILLOW_SIGN = BLOCKS.register("willow_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.WILLOW));
 	public static final RegistryObject<Block> WILLOW_WALL_SIGN = BLOCKS.register("willow_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WILLOW));
-	public static final RegistryObject<Block> BEECH_SIGN = BLOCKS.register("beech_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.WILLOW));
+	public static final RegistryObject<Block> BEECH_SIGN = BLOCKS.register("beech_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.BEECH));
 	public static final RegistryObject<Block> BEECH_WALL_SIGN = BLOCKS.register("beech_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BEECH));
-	public static final RegistryObject<Block> ASH_SIGN = BLOCKS.register("ash_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.BEECH));
+	public static final RegistryObject<Block> ASH_SIGN = BLOCKS.register("ash_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.ASH));
 	public static final RegistryObject<Block> ASH_WALL_SIGN = BLOCKS.register("ash_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ASH));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.ASH));
 	public static final RegistryObject<Block> BLACKTHORN_SIGN = BLOCKS.register("blackthorn_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
-					WoodTypesInit.BLACKTHORN));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.BLACKTHORN));
 	public static final RegistryObject<Block> BLACKTHORN_WALL_SIGN = BLOCKS.register("blackthorn_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.BLACKTHORN));
-	public static final RegistryObject<Block> CEDAR_SIGN = BLOCKS.register("cedar_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.BLACKTHORN));
+	public static final RegistryObject<Block> CEDAR_SIGN = BLOCKS.register("cedar_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.CEDAR));
 	public static final RegistryObject<Block> CEDAR_WALL_SIGN = BLOCKS.register("cedar_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CEDAR));
-	public static final RegistryObject<Block> ELDER_SIGN = BLOCKS.register("elder_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.CEDAR));
+	public static final RegistryObject<Block> ELDER_SIGN = BLOCKS.register("elder_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.ELDER));
 	public static final RegistryObject<Block> ELDER_WALL_SIGN = BLOCKS.register("elder_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ELDER));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.ELDER));
 	public static final RegistryObject<Block> JUNIPER_SIGN = BLOCKS.register("juniper_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.JUNIPER));
 	public static final RegistryObject<Block> JUNIPER_WALL_SIGN = BLOCKS.register("juniper_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.JUNIPER));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.JUNIPER));
 	public static final RegistryObject<Block> WITCHHAZEL_SIGN = BLOCKS.register("witchhazel_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN),
-					WoodTypesInit.WITCHHAZEL));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.WITCHHAZEL));
 	public static final RegistryObject<Block> WITCHHAZEL_WALL_SIGN = BLOCKS.register("witchhazel_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.WITCHHAZEL));
-	public static final RegistryObject<Block> YEW_SIGN = BLOCKS.register("yew_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.WITCHHAZEL));
+	public static final RegistryObject<Block> YEW_SIGN = BLOCKS.register("yew_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.YEW));
 	public static final RegistryObject<Block> YEW_WALL_SIGN = BLOCKS.register("yew_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.YEW));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.YEW));
 	public static final RegistryObject<Block> INFESTED_SIGN = BLOCKS.register("infested_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.INFESTED));
 	public static final RegistryObject<Block> INFESTED_WALL_SIGN = BLOCKS.register("infested_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.INFESTED));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.INFESTED));
 	public static final RegistryObject<Block> CHARRED_SIGN = BLOCKS.register("charred_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.CHARRED));
 	public static final RegistryObject<Block> CHARRED_WALL_SIGN = BLOCKS.register("charred_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.CHARRED));
-	public static final RegistryObject<Block> ICY_SIGN = BLOCKS.register("icy_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.CHARRED));
+	public static final RegistryObject<Block> ICY_SIGN = BLOCKS.register("icy_sign", () -> new ModStandingSignBlock(
+			AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD),
+			WoodTypesInit.ICY));
 	public static final RegistryObject<Block> ICY_WALL_SIGN = BLOCKS.register("icy_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.ICY));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.ICY));
 	public static final RegistryObject<Block> TWISTED_SIGN = BLOCKS.register("twisted_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.TWISTED));
 	public static final RegistryObject<Block> TWISTED_WALL_SIGN = BLOCKS.register("twisted_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.TWISTED));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.TWISTED));
 	public static final RegistryObject<Block> DISTORTED_SIGN = BLOCKS.register("distorted_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.DISTORTED));
 	public static final RegistryObject<Block> DISTORTED_WALL_SIGN = BLOCKS.register("distorted_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.DISTORTED));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.DISTORTED));
 	public static final RegistryObject<Block> HELLBARK_SIGN = BLOCKS.register("hellbark_sign",
-			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
+			() -> new ModStandingSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission()
+					.strength(1.0F).sound(SoundType.WOOD), WoodTypesInit.HELLBARK));
 	public static final RegistryObject<Block> HELLBARK_WALL_SIGN = BLOCKS.register("hellbark_wall_sign",
-			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN), WoodTypesInit.HELLBARK));
+			() -> new ModWallSignBlock(AbstractBlock.Properties.copy(Blocks.ACACIA_SIGN).noCollission().strength(1.0F)
+					.sound(SoundType.WOOD), WoodTypesInit.HELLBARK));
 
 	// Transparent Blocks
 	public static final RegistryObject<Block> CRIMSON_ICE = BLOCKS.register("crimson_ice", () -> new ModIceBlock(
-			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
+			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f).randomTicks()));
 	public static final RegistryObject<Block> CRIMSON_PACKEDICE = BLOCKS.register("crimson_packedice", () -> new Block(
 			Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
 	public static final RegistryObject<Block> BLACK_ICE = BLOCKS.register("black_ice", () -> new ModIceBlock(
-			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f)));
+			Block.Properties.copy(Blocks.ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS).friction(0.98f).randomTicks()));
 	public static final RegistryObject<Block> BLACK_PACKEDICE = BLOCKS.register("black_packedice",
 			() -> new Block(Block.Properties.copy(Blocks.PACKED_ICE).strength(0.3f, 0.2f).sound(SoundType.GLASS)
 					.friction(0.98f).speedFactor(0.7f).randomTicks().noOcclusion()));
@@ -551,7 +596,7 @@ public class BlockInit {
 			() -> new ModPaneBlock(Block.Properties.copy(Blocks.GLASS).strength(0.3f, 0.2f).sound(SoundType.GLASS)
 					.noOcclusion().friction(0.98f)));
 
-	// Lanterns/Glowstone/Torches
+	// Glowstone/Torches
 	public static final RegistryObject<Block> PURE_GLOWSTONE = BLOCKS.register("pure_glowstone",
 			() -> new Block(Block.Properties.of(Material.GLASS).strength(2.0f, 10.0f).harvestLevel(2)
 					.sound(SoundType.GLASS).lightLevel((state) -> 15)));
@@ -597,7 +642,7 @@ public class BlockInit {
 					.harvestLevel(0).noOcclusion()));
 
 	// Crops
-	public static final RegistryObject<Block> vervain_crop = createCrop("vervain_crop", ItemInit.vervain_seeds);
+	public static final RegistryObject<Block> VERVAIN_CROP = createCrop("vervain_crop", ItemInit.vervain_seeds);
 	public static final RegistryObject<Block> wormwood_crop = createCrop("wormwood_crop", ItemInit.wormwood_seeds);
 	public static final RegistryObject<Block> wolfsbane_crop = createCrop("wolfsbane_crop", ItemInit.wolfsbane_seeds);
 	public static final RegistryObject<Block> garlic_crop = createCrop("garlic_crop", ItemInit.garlic_seeds);
@@ -961,13 +1006,13 @@ public class BlockInit {
 					Block.Properties.copy(Blocks.BRICKS).instabreak().noOcclusion()));
 
 	// Special blocks
-	public static final RegistryObject<Block> pandors_box = BLOCKS.register("pandors_box",
+	public static final RegistryObject<Block> PANDORS_BOX = BLOCKS.register("pandors_box",
 			() -> new PandorsBox(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion().harvestTool(ToolType.PICKAXE)
 					.harvestLevel(1).requiresCorrectToolForDrops()));
-	public static final RegistryObject<Block> pandors_box_open = BLOCKS.register("pandors_box_open",
+	public static final RegistryObject<Block> PANDORS_BOX_OPEN = BLOCKS.register("pandors_box_open",
 			() -> new PandorsBoxOpen(Block.Properties.copy(Blocks.BONE_BLOCK).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(1).requiresCorrectToolForDrops()));
-	public static final RegistryObject<Block> magic_quarry = BLOCKS.register("magic_quarry",
+	public static final RegistryObject<Block> MAGIC_QUARRY = BLOCKS.register("magic_quarry",
 			() -> new QuarryBlock(Block.Properties.of(Material.METAL).sound(SoundType.LANTERN).noOcclusion()
 					.harvestTool(ToolType.PICKAXE).harvestLevel(2).requiresCorrectToolForDrops()));
 	public static final RegistryObject<Block> MAGIC_MIRROR = BLOCKS.register("magic_mirror",
