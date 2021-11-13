@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  */
 @Mixin(AdmireItemTask.class)
 public abstract class AdmirePiglinMixin {
-    @Inject(at = @At(value = "HEAD"), method = "Lnet/minecraft/entity/monster/piglin/AdmireItemTask;checkExtraStartConditions(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/monster/piglin/PiglinEntity;)Z", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "Lnet/minecraft/entity/monster/piglin/AdmireItemTask;checkExtraStartConditions(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/monster/piglin/PiglinEntity;)Z", cancellable = true)
     private void checkExtraStartConditions(ServerWorld p_212832_1_, PiglinEntity p_212832_2_, CallbackInfoReturnable<Boolean> info) {
         info.cancel();
         ItemEntity itementity = p_212832_2_.getBrain().getMemory(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM).get();

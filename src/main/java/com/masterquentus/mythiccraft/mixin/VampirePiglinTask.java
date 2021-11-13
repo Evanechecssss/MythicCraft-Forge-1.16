@@ -51,7 +51,7 @@ public abstract class VampirePiglinTask {
     @Shadow()
     private static Set<Item> FOOD_ITEMS;
 
-    @Inject(at = @At(value = "HEAD"), method = "findNearestValidAttackTarget(Lnet/minecraft/entity/monster/piglin/PiglinEntity;)Ljava/util/Optional;", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "findNearestValidAttackTarget(Lnet/minecraft/entity/monster/piglin/PiglinEntity;)Ljava/util/Optional;", cancellable = true)
     private static void findNearestValidAttackTarget(PiglinEntity p_234526_0_, CallbackInfoReturnable<Optional<? extends LivingEntity>> cir) {
         cir.cancel();
         Brain<PiglinEntity> brain = p_234526_0_.getBrain();
@@ -87,7 +87,7 @@ public abstract class VampirePiglinTask {
     }
 
 
-    @Inject(at = @At(value = "HEAD"), method = "pickUpItem(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/entity/item/ItemEntity;)V", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "pickUpItem(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/entity/item/ItemEntity;)V", cancellable = true)
     private static void pickUpItem(PiglinEntity p_234470_0_, ItemEntity p_234470_1_, CallbackInfo cir) {
         cir.cancel();
         stopWalking(p_234470_0_);
@@ -142,7 +142,7 @@ public abstract class VampirePiglinTask {
         }
 
     }
-    @Inject(at = @At(value = "HEAD"), method = "stopHoldingOffHandItem(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Z)V", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "stopHoldingOffHandItem(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Z)V", cancellable = true)
     private static void stopHoldingOffHandItem(PiglinEntity p_234477_0_, boolean p_234477_1_, CallbackInfo info) {
         if(p_234477_0_ instanceof VampirePiglinEntity){
             ItemStack itemstack = p_234477_0_.getItemInHand(Hand.OFF_HAND);
@@ -198,7 +198,7 @@ public abstract class VampirePiglinTask {
             }
         }
     }
-    @Inject(at = @At(value = "HEAD"), method = "wantsToPickup(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/item/ItemStack;)Z", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "wantsToPickup(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/item/ItemStack;)Z", cancellable = true)
     private static void wantsToPickup(PiglinEntity p_234474_0_, ItemStack p_234474_1_, CallbackInfoReturnable<Boolean> cir) {
         cir.cancel();
         Item item = p_234474_1_.getItem();
@@ -244,7 +244,7 @@ public abstract class VampirePiglinTask {
         }
 
     }
-    @Inject(at = @At(value = "HEAD"), method = "canAdmire(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/item/ItemStack;)Z", cancellable = true, remap = false)
+    @Inject(at = @At(value = "HEAD"), method = "canAdmire(Lnet/minecraft/entity/monster/piglin/PiglinEntity;Lnet/minecraft/item/ItemStack;)Z", cancellable = true)
     private static void canAdmire(PiglinEntity p_234489_0_, ItemStack p_234489_1_, CallbackInfoReturnable<Boolean> info) {
         info.cancel();
         if(p_234489_0_ instanceof VampirePiglinEntity){

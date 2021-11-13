@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.7.11",
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.masterquentus.mythiccraft.mixin",
+  "refmap": "mixins.mythiccraft.refmap.json",
+  "mixins": [
+    "VampirePiglinMixins",
+    "VampirePiglinTask",
+    "AdmirePiglinMixin"
+  ],
+  "client": [],
+  "server": []
+}
