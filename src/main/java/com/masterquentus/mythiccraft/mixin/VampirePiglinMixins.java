@@ -36,7 +36,7 @@ import java.util.Optional;
  */
 @Mixin(PiglinMobsSensor.class)
 public abstract class VampirePiglinMixins {
-    @Inject(at = @At(value = "TAIL"), remap = false, method = "doTick(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/LivingEntity;)V", cancellable = true)
+    @Inject(at = @At(value = "TAIL"), method = "doTick(Lnet/minecraft/world/server/ServerWorld;Lnet/minecraft/entity/LivingEntity;)V", cancellable = true)
     protected void doTick(ServerWorld p_212872_1_, LivingEntity piglin, CallbackInfo info){
         Optional<PlayerEntity> optional = Optional.empty();
         Brain<?> brain = piglin.getBrain();
