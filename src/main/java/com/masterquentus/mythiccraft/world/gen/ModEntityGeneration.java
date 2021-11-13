@@ -17,6 +17,7 @@ public class ModEntityGeneration {
     public static void onEntitySpawn(final BiomeLoadingEvent event) {
         addEntityToSpecificBiomes(event, ModEntityTypes.BASILISK_ENTITY.get(), 5, 2, 4, Biomes.SWAMP,
                 Biomes.SWAMP_HILLS, Biomes.BAMBOO_JUNGLE);
+        
         List<MobSpawnInfo.Spawners> spawners = event.getSpawns().getSpawner(ModEntityTypes.UNDERWATER_SLIME.get().getCategory());
         spawners.clear();
         event.getSpawns().getSpawner(ModEntityTypes.UNDERWATER_SLIME.get().getCategory()).clear();

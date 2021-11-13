@@ -3,18 +3,13 @@ package com.masterquentus.mythiccraft.entities;
 import com.masterquentus.mythiccraft.entities.ai.HurtByTargetGoal;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.pathfinding.*;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.EntityPredicates;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -60,7 +55,8 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
     }
 
     //AI//
-    private boolean searchingForLand;
+    @SuppressWarnings("unused")
+	private boolean searchingForLand;
     protected final SwimmerPathNavigator waterNavigation;
     protected final GroundPathNavigator groundNavigation;
 
@@ -143,7 +139,8 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
         this.goalSelector.addGoal(6, new SwimUpGoal(this, 1.0D, this.level.getSeaLevel()));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, (p_213811_1_) -> Math.abs(p_213811_1_.getY() - this.getY()) <= 4.0D));
     }
-    private float getSoundPitch() {
+    @SuppressWarnings("unused")
+	private float getSoundPitch() {
         float f = this.isTiny() ? 1.4F : 0.8F;
         return ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F) * f;
     }
@@ -371,7 +368,8 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
         return entity.getDimensions(p_213305_1_).scale(4F * 0.25F * (float) this.getSize());
     }
 
-    @Override
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }

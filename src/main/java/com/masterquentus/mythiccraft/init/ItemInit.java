@@ -172,6 +172,8 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> charred_slimeball = ITEMS.register("charred_slimeball",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> WATER_SLIMEBALL = ITEMS.register("water_slimeball",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> dragon_bone = ITEMS.register("dragon_bone",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> contract_lilith = ITEMS.register("contract_lilith",
@@ -1052,9 +1054,8 @@ public class ItemInit {
 			() -> new ModSpawnEggItem(ModEntityTypes.LILITH_ENTITY, 0x770000, 0x735C30,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_EVOKER = ITEMS.register("ilager_evoker_spawn_egg",
-			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x770000,
+			() -> new ModSpawnEggItem(ModEntityTypes.EVOKER, 0x770000, 0x634C47,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
-
 	public static final RegistryObject<ModSpawnEggItem> VAMPIRE_PIGLIN= ITEMS.register("vampire_piglin_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.PIGLIN, 0x770000, 0x000000,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));

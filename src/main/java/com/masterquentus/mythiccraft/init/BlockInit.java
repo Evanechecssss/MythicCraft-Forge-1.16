@@ -195,6 +195,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> INFESTEDSLIME_BLOCK = BLOCKS.register("infestedslime_block",
 			() -> new ModSlimeBlock(
 					Block.Properties.copy(Blocks.SLIME_BLOCK).friction(0.8F).noOcclusion().instabreak().noOcclusion()));
+	public static final RegistryObject<Block> WATER_SLIME_BLOCK = BLOCKS.register("water_slime_block",
+			() -> new ModSlimeBlock(
+					Block.Properties.copy(Blocks.SLIME_BLOCK).friction(0.8F).noOcclusion().instabreak().noOcclusion()));
 	public static final RegistryObject<Block> ASH_BLOCK = BLOCKS.register("ash_block", () -> new Block(Block.Properties
 			.copy(Blocks.RED_SAND).harvestTool(ToolType.SHOVEL).requiresCorrectToolForDrops().strength(0.2F)));
 	public static final RegistryObject<Block> HOTASH_BLOCK = BLOCKS.register("hotash_block",

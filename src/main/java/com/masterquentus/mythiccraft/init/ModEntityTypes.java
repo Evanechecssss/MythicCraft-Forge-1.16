@@ -1,7 +1,15 @@
 package com.masterquentus.mythiccraft.init;
 
 import com.masterquentus.mythiccraft.MythicCraft;
-import com.masterquentus.mythiccraft.entities.*;
+import com.masterquentus.mythiccraft.entities.BasiliskEntity;
+import com.masterquentus.mythiccraft.entities.FairyEntity;
+import com.masterquentus.mythiccraft.entities.GoblinEntity;
+import com.masterquentus.mythiccraft.entities.LilithEntity;
+import com.masterquentus.mythiccraft.entities.MobSummonProjectile;
+import com.masterquentus.mythiccraft.entities.SirenEntity;
+import com.masterquentus.mythiccraft.entities.UnderwaterSlime;
+import com.masterquentus.mythiccraft.entities.UnicornEntity;
+import com.masterquentus.mythiccraft.entities.WendigoEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
@@ -56,15 +64,14 @@ public class ModEntityTypes {
 			() -> EntityType.Builder
 					.<VampireVindicatorEntity>of(VampireVindicatorEntity::new, EntityClassification.MONSTER)
 					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "vindicator_entity").toString()));
-
-	public static final RegistryObject<EntityType<UnderwaterSlime>> UNDERWATER_SLIME = ENTITY_TYPES.register("underwater_slime",
-			() -> EntityType.Builder.<UnderwaterSlime>of(UnderwaterSlime::new, EntityClassification.MONSTER).sized(1F, 1F)
-					.build(new ResourceLocation(MythicCraft.MOD_ID, "underwater_slime").toString()));
-
+	public static final RegistryObject<EntityType<UnderwaterSlime>> UNDERWATER_SLIME = ENTITY_TYPES
+			.register("underwater_slime",
+					() -> EntityType.Builder.<UnderwaterSlime>of(UnderwaterSlime::new, EntityClassification.MONSTER)
+							.sized(1F, 1F)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "underwater_slime").toString()));
 	public static final RegistryObject<EntityType<VampirePiglinEntity>> PIGLIN = ENTITY_TYPES.register("piglin_entity",
 			() -> EntityType.Builder.<VampirePiglinEntity>of(VampirePiglinEntity::new, EntityClassification.MONSTER)
 					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "piglin_entity").toString()));
-
 	public static final RegistryObject<EntityType<WendigoEntity>> WENDIGO_ENTITY = ENTITY_TYPES.register("wendigo",
 			() -> EntityType.Builder.<WendigoEntity>of(WendigoEntity::new, EntityClassification.CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "wendigo").toString()));
