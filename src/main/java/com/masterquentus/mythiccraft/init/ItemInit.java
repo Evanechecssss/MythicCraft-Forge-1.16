@@ -1030,7 +1030,7 @@ public class ItemInit {
 	public static final RegistryObject<BucketItem> DARK_WATER_BUCKET = ITEMS.register("dark_water_bucket",
 			() -> new BucketItem(() -> FluidInit.DARK_WATER_FLUID.get(),
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
-	public static final RegistryObject<BucketItem> MANA_BUCKET = ITEMS.register("mana_bucket",
+	public static final RegistryObject<BucketItem> LIQUID_MANA_BUCKET = ITEMS.register("liquid_mana_bucket",
 			() -> new BucketItem(() -> FluidInit.MANA_FLUID.get(),
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
 

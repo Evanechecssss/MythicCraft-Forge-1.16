@@ -7,7 +7,7 @@ import com.masterquentus.mythiccraft.entities.GoblinEntity;
 import com.masterquentus.mythiccraft.entities.LilithEntity;
 import com.masterquentus.mythiccraft.entities.MobSummonProjectile;
 import com.masterquentus.mythiccraft.entities.SirenEntity;
-import com.masterquentus.mythiccraft.entities.UnderwaterSlime;
+import com.masterquentus.mythiccraft.entities.UnderwaterSlimeEntity;
 import com.masterquentus.mythiccraft.entities.UnicornEntity;
 import com.masterquentus.mythiccraft.entities.WendigoEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
@@ -64,9 +64,9 @@ public class ModEntityTypes {
 			() -> EntityType.Builder
 					.<VampireVindicatorEntity>of(VampireVindicatorEntity::new, EntityClassification.MONSTER)
 					.sized(1F, 2F).build(new ResourceLocation(MythicCraft.MOD_ID, "vindicator_entity").toString()));
-	public static final RegistryObject<EntityType<UnderwaterSlime>> UNDERWATER_SLIME = ENTITY_TYPES
+	public static final RegistryObject<EntityType<UnderwaterSlimeEntity>> UNDERWATER_SLIME = ENTITY_TYPES
 			.register("underwater_slime",
-					() -> EntityType.Builder.<UnderwaterSlime>of(UnderwaterSlime::new, EntityClassification.MONSTER)
+					() -> EntityType.Builder.<UnderwaterSlimeEntity>of(UnderwaterSlimeEntity::new, EntityClassification.MONSTER)
 							.sized(1F, 1F)
 							.build(new ResourceLocation(MythicCraft.MOD_ID, "underwater_slime").toString()));
 	public static final RegistryObject<EntityType<VampirePiglinEntity>> PIGLIN = ENTITY_TYPES.register("piglin_entity",

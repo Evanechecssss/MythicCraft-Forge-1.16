@@ -1,0 +1,27 @@
+{
+	"replace": false,
+	"values": [
+		"mythiccraft:bloodoak_log",
+		"mythiccraft:whiteoak_log",
+		"mythiccraft:silverwood_log",
+		"mythiccraft:witchwood_log",
+		"mythiccraft:alder_log",
+		"mythiccraft:hawthorn_log",
+		"mythiccraft:rowan_log",
+		"mythiccraft:willow_log",
+		"mythiccraft:beech_log",
+		"mythiccraft:ash_log",
+		"mythiccraft:blackthorn_log",
+		"mythiccraft:cedar_log",
+		"mythiccraft:elder_log",
+		"mythiccraft:juniper_log",
+		"mythiccraft:witchhazel_log",
+		"mythiccraft:yew_log",
+		"mythiccraft:infested_log",
+		"mythiccraft:charred_log",
+		"mythiccraft:icy_log",
+		"mythiccraft:twisted_log",
+		"mythiccraft:distorted_log",
+		"mythiccraft:hellbark_log"
+	]
+}

@@ -5,12 +5,13 @@
     },
     "title": "Diamonds! What?",
     "description": "Acquire Mythic Diamonds",
-    "background": "mythiccraft:textures/block/bloodoak_planks.png",
-    "announce_to_chat": true,
-    "hidden": false
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
   },
+  "parent": "mythiccraft:root",
   "criteria": {
-    "i": {
+    "requirement": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [

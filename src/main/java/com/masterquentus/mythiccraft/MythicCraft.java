@@ -120,7 +120,7 @@ public class MythicCraft {
 		event.put(ModEntityTypes.UNICORN_ENTITY.get(), UnicornEntity.createAttributes().build());
 		event.put(ModEntityTypes.EVOKER.get(), VampireEvokerEntity.createAttributes().build());
 		event.put(ModEntityTypes.PIGLIN.get(), VampirePiglinEntity.createAttributes().build());
-		event.put(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlime.createAttributes().build());
+		event.put(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlimeEntity.createAttributes().build());
 		event.put(ModEntityTypes.VINDICATOR.get(), VampireVindicatorEntity.createAttributes().build());
 		event.put(ModEntityTypes.PILLAGER.get(), VampirePillagerEntity.createAttributes().build());
 		event.put(ModEntityTypes.WENDIGO_ENTITY.get(), WendigoEntity.createAttributes().build());
