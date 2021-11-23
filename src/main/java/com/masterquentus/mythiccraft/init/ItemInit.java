@@ -426,7 +426,7 @@ public class ItemInit {
 					BlockInit.HELLBARK_SIGN.get(), BlockInit.HELLBARK_WALL_SIGN.get()));
 
 	public static final RegistryObject<Item> BLOODOAK_BOAT = ITEMS.register("bloodoak_boat",
-			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "redwood"));
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "bloodoak"));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
