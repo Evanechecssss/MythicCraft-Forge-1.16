@@ -3,36 +3,12 @@ package com.masterquentus.mythiccraft.init;
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftBlocks;
 import com.masterquentus.mythiccraft.MythicCraft.MythicCraftItems;
-import com.masterquentus.mythiccraft.objects.items.AnointingPasteItem;
-import com.masterquentus.mythiccraft.objects.items.DragonBoneBow;
-import com.masterquentus.mythiccraft.objects.items.FlintAndHellFireItem;
-import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
-import com.masterquentus.mythiccraft.objects.items.MoonCharmItem;
-import com.masterquentus.mythiccraft.objects.items.MutandisItem;
-import com.masterquentus.mythiccraft.objects.items.ProjectileTest;
-import com.masterquentus.mythiccraft.objects.items.TagLockKitItem;
-import com.masterquentus.mythiccraft.objects.items.TotemOfTeleportationItem;
-import com.masterquentus.mythiccraft.objects.items.VampiricStaffItem;
-import com.masterquentus.mythiccraft.objects.items.VampriricItem;
-import com.masterquentus.mythiccraft.objects.items.WaterCropItem;
-import com.masterquentus.mythiccraft.objects.items.WoodAshItem;
+import com.masterquentus.mythiccraft.objects.items.*;
 import com.masterquentus.mythiccraft.util.enums.ModArmorMaterials;
 import com.masterquentus.mythiccraft.util.enums.ModItemTiers;
 
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Food;
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.HorseArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ShovelItem;
-import net.minecraft.item.SignItem;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.WallOrFloorItem;
+import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
@@ -256,7 +232,11 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> GLUTTONY_SOUL = ITEMS.register("gluttony_soul",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> QUARTZ_SPHERE = ITEMS.register("quartz_sphere",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<TagLockKitItem> TAGLOCK_KIT = ITEMS.register("taglock_kit",
+			() -> new TagLockKitItem(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<TagLockKitItem> TAGLOCK_KIT_FULL = ITEMS.register("taglock_kit_full",
 			() -> new TagLockKitItem(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> NECROMANTIC_STONE = ITEMS.register("necromantic_stone",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
@@ -287,6 +267,68 @@ public class ItemInit {
 	public static final RegistryObject<Item> TEAR_OF_THE_GODDESS = ITEMS.register("tear_of_the_goddess",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> ENDER_DEW = ITEMS.register("ender_dew",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> FLYING_OINTMENT = ITEMS.register("flying_ointment",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> REDSTONE_SOUP = ITEMS.register("redstone_soup",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> GHOST_OF_LIGHT = ITEMS.register("ghost_of_light",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> SOUL_OF_THE_WORLD = ITEMS.register("soul_of_the_world",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> SPIRIT_OF_OTHERWHERE = ITEMS.register("spirit_of_otherwhere",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> INFERNAL_ANIMUS = ITEMS.register("infernal_animus",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> MYSTIC_UNGUENT = ITEMS.register("mystic_unguent",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> HAPPENSTANCE_OIL = ITEMS.register("happenstance_oil",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_THORNS = ITEMS.register("brew_of_thorns",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_VINES = ITEMS.register("brew_of_vines",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_WEBS = ITEMS.register("brew_of_webs",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_INK = ITEMS.register("brew_of_ink",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_SPROUTING = ITEMS.register("brew_of_spouting",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_EROSION = ITEMS.register("brew_of_erosion",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_RAISING = ITEMS.register("brew_of_raising",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_LOVE = ITEMS.register("brew_of_love",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_THE_GROTESQUE = ITEMS.register("brew_of_the_grotesque",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_FROST = ITEMS.register("brew_of_frost",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_THE_DEPTHS = ITEMS.register("brew_of_the_depths",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_INFECTION = ITEMS.register("brew_of_infection",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_HELL = ITEMS.register("brew_of_hell",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_WASTING = ITEMS.register("brew_of_wasting",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_BATS = ITEMS.register("brew_of_bats",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_SUBSTITUTION = ITEMS.register("brew_of_substitution",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_REVEALING = ITEMS.register("brew_of_revealing",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> INFUSED_BREW_OF_SOARING = ITEMS.register("infused_brew_of_soaring",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> INFUSED_BREW_OF_THE_GRAVE = ITEMS.register("infused_brew_of_the_grave",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_FROGS_TONGUE = ITEMS.register("brew_of_frogs_tongue",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> BREW_OF_BODEGA = ITEMS.register("brew_of_bodega",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance).stacksTo(1)));
+	public static final RegistryObject<Item> TONGUE_OF_DOG = ITEMS.register("tongue_of_dog",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> TOE_OF_FROG = ITEMS.register("toe_of_frog",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> BONE_NEEDLE = ITEMS.register("bone_needle",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
@@ -382,6 +424,9 @@ public class ItemInit {
 	public static final RegistryObject<Item> HELLBARK_SIGN = ITEMS.register("hellbark_sign",
 			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
 					BlockInit.HELLBARK_SIGN.get(), BlockInit.HELLBARK_WALL_SIGN.get()));
+
+	public static final RegistryObject<Item> BLOODOAK_BOAT = ITEMS.register("bloodoak_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "redwood"));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",
@@ -975,6 +1020,8 @@ public class ItemInit {
 			() -> new BlockItem(BlockInit.snowbell_crop.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> LIVING_KELP_ITEM = ITEMS.register("living_kelp_item",
 			() -> new BlockItem(BlockInit.LIVING_KELP_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> WITCHES_LADDER_ITEM = ITEMS.register("witches_ladder_item",
+			() -> new BlockItem(BlockInit.WITCHES_LADDER_TOP.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DEMON_HEART_ITEM = ITEMS.register("demon_heart_item",
 			() -> new BlockItem(BlockInit.DEMON_HEART.get(), new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> DEAD_LIVING_CORAL_FAN_ITEM = ITEMS.register("dead_livingcoral_fan",
@@ -1071,9 +1118,4 @@ public class ItemInit {
 	public static final RegistryObject<ModSpawnEggItem> ILAGER_VINDICATOR = ITEMS.register("ilager_vindicator_spawn_egg",
 			() -> new ModSpawnEggItem(ModEntityTypes.VINDICATOR, 0x770000, 0x878787,
 					new Item.Properties().tab(MythicCraftItems.instance).stacksTo(16)));
-	
-
-	public static final DeferredRegister<Item> NO_BLOCK_ITEM = DeferredRegister.create(ForgeRegistries.ITEMS,
-			MythicCraft.MOD_ID);
-
 }

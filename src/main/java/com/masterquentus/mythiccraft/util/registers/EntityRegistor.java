@@ -27,6 +27,8 @@ public class EntityRegistor {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.VINDICATOR.get(), (manager) -> new IlagerVampireRenders<VampireVindicatorEntity>(manager, VampireTypes.VINDICATOR));
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlimeRender::new);
 
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BLOODOAK_BOAT.get(), ModBoatRenderer::new);
+
 		Raid.WaveMember.create("VAMPIRE_EVOKER", ModEntityTypes.EVOKER.get(), new int[] { 0, 0, 2, 0, 1, 4, 2, 5 });
 		Raid.WaveMember.create("VAMPIRE_PILLAGER", ModEntityTypes.PILLAGER.get(), new int[] { 0, 0, 2, 0, 1, 4, 2, 5 });
 		Raid.WaveMember.create("VAMPIRE_VINDICATOR", ModEntityTypes.VINDICATOR.get(),

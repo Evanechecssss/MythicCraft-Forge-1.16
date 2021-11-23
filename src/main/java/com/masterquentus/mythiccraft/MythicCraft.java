@@ -3,6 +3,7 @@ package com.masterquentus.mythiccraft;
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.entities.events.DamageHandler;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
+import com.masterquentus.mythiccraft.objects.blocks.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,15 +18,6 @@ import com.masterquentus.mythiccraft.init.ModContainerTypes;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
 import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.OreType;
-import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
-import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
-import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
-import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
 import com.masterquentus.mythiccraft.objects.items.ModSpawnEggItem;
 import com.masterquentus.mythiccraft.objects.items.crafting.ModRecipeSerializers;
 import com.masterquentus.mythiccraft.world.feature.structures.StructuresInit;
@@ -98,6 +90,8 @@ public class MythicCraft {
 				.filter(block -> !(block.get() instanceof ModWallSignBlock))
 				.filter(block -> !(block.get() instanceof CoralFanBlock))
 				.filter(block -> !(block.get() instanceof ModKelpTopBlock))
+				.filter(block -> !(block.get() instanceof WitchesLadderBlock))
+				.filter(block -> !(block.get() instanceof WitchesLadderTopBlock))
 				.filter(block -> !(block.get() instanceof DemonHeartBlock))
 				.filter(block -> !(block.get() instanceof ModKelpBlock)).map(RegistryObject::get)
 				.filter(block -> !(block instanceof FlowingFluidBlock)).forEach(block -> {

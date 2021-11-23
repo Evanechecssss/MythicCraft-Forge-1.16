@@ -10,6 +10,7 @@ import com.masterquentus.mythiccraft.entities.SirenEntity;
 import com.masterquentus.mythiccraft.entities.UnderwaterSlimeEntity;
 import com.masterquentus.mythiccraft.entities.UnicornEntity;
 import com.masterquentus.mythiccraft.entities.WendigoEntity;
+import com.masterquentus.mythiccraft.entities.boats.ModBoatEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampireEvokerEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePillagerEntity;
@@ -24,8 +25,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModEntityTypes {
 
-	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES,
-			MythicCraft.MOD_ID);
+	public static DeferredRegister<EntityType<?>> ENTITY_TYPES
+			= DeferredRegister.create(ForgeRegistries.ENTITIES, MythicCraft.MOD_ID);
+
 
 	public static final RegistryObject<EntityType<GoblinEntity>> GOBLIN_ENTITY = ENTITY_TYPES.register("goblin_entity",
 			() -> EntityType.Builder.<GoblinEntity>of(GoblinEntity::new, EntityClassification.CREATURE)
@@ -75,4 +77,10 @@ public class ModEntityTypes {
 	public static final RegistryObject<EntityType<WendigoEntity>> WENDIGO_ENTITY = ENTITY_TYPES.register("wendigo",
 			() -> EntityType.Builder.<WendigoEntity>of(WendigoEntity::new, EntityClassification.CREATURE)
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "wendigo").toString()));
+
+	public static final RegistryObject<EntityType<ModBoatEntity>> BLOODOAK_BOAT =
+			ENTITY_TYPES.register("redwood_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "bloodoak_boat").toString()));
 }

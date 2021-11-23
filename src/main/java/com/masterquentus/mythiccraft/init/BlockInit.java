@@ -5,75 +5,9 @@ import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.OreType;
 import com.masterquentus.mythiccraft.init.auto.StoneType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
-import com.masterquentus.mythiccraft.objects.blocks.AmethystChimesBlock;
-import com.masterquentus.mythiccraft.objects.blocks.BloodBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.BloodyRose;
-import com.masterquentus.mythiccraft.objects.blocks.BrokenCrystalBallBlock;
-import com.masterquentus.mythiccraft.objects.blocks.CharredBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.CinderPlantBlock;
-import com.masterquentus.mythiccraft.objects.blocks.CrystalBallBlock;
-import com.masterquentus.mythiccraft.objects.blocks.DemonHeartBlock;
-import com.masterquentus.mythiccraft.objects.blocks.DoubbleGlowingScorchedGrassBlock;
-import com.masterquentus.mythiccraft.objects.blocks.EmberMossBlock;
-import com.masterquentus.mythiccraft.objects.blocks.EnderBrambleBlock;
-import com.masterquentus.mythiccraft.objects.blocks.EnderCactusBlock;
-import com.masterquentus.mythiccraft.objects.blocks.GlowingScorchedGrassBlock;
-import com.masterquentus.mythiccraft.objects.blocks.GrassperBlock;
-import com.masterquentus.mythiccraft.objects.blocks.HellFireBlock;
-import com.masterquentus.mythiccraft.objects.blocks.IcyBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.InfestedBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.MagicMirrorBlock;
-import com.masterquentus.mythiccraft.objects.blocks.MobSlayerBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModBloodBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModCropBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModIceBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModKelpTopBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModLanternBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModLayer;
-import com.masterquentus.mythiccraft.objects.blocks.ModPaneBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModSlimeBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModStandingSignBlock;
-import com.masterquentus.mythiccraft.objects.blocks.ModWallSignBlock;
-import com.masterquentus.mythiccraft.objects.blocks.MysticBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.PandorsBox;
-import com.masterquentus.mythiccraft.objects.blocks.PandorsBoxOpen;
-import com.masterquentus.mythiccraft.objects.blocks.PedestalBlock;
-import com.masterquentus.mythiccraft.objects.blocks.QuarryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.SeaCandlesBlock;
-import com.masterquentus.mythiccraft.objects.blocks.SilverBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.SoulBerryBlock;
-import com.masterquentus.mythiccraft.objects.blocks.StatueOfBrokenCursesBlock;
-import com.masterquentus.mythiccraft.objects.blocks.TrophyBlock;
-import com.masterquentus.mythiccraft.objects.blocks.WaterartichokeCrop;
-import com.masterquentus.mythiccraft.objects.blocks.WildBrambleBlock;
-import com.masterquentus.mythiccraft.objects.blocks.WitchesOvenBlock;
-import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
+import com.masterquentus.mythiccraft.objects.blocks.*;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.CoralBlock;
-import net.minecraft.block.CoralFanBlock;
-import net.minecraft.block.CoralFinBlock;
-import net.minecraft.block.CoralPlantBlock;
-import net.minecraft.block.CoralWallFanBlock;
-import net.minecraft.block.DeadCoralPlantBlock;
-import net.minecraft.block.DeadCoralWallFanBlock;
-import net.minecraft.block.DoublePlantBlock;
-import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.block.GrassBlock;
-import net.minecraft.block.MagmaBlock;
-import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SandBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.TallGrassBlock;
-import net.minecraft.block.VineBlock;
-import net.minecraft.block.WallBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
@@ -709,6 +643,12 @@ public class BlockInit {
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> SPANISH_MOSS = BLOCKS.register("spanish_moss",
 			() -> new VineBlock(Block.Properties.copy(Blocks.VINE)));
+	public static final RegistryObject<Block> WITCHES_LADDER_TOP = BLOCKS.register("witches_ladder_top",
+			() -> new WitchesLadderTopBlock(Block.Properties.copy(Blocks.WEEPING_VINES).randomTicks()
+					.noCollission()));
+	public static final RegistryObject<Block> WITCHES_LADDER_PLANT = BLOCKS.register("witches_ladder_plant",
+			() -> new WitchesLadderBlock(Block.Properties.copy(Blocks.WEEPING_VINES_PLANT).sound(SoundType.WET_GRASS).randomTicks()
+					.noCollission()));
 	public static final RegistryObject<Block> EMBER_MOSS = BLOCKS.register("ember_moss",
 			() -> new EmberMossBlock(Block.Properties.copy(Blocks.VINE)));
 	public static final RegistryObject<Block> LIVING_KELP_TOP = BLOCKS.register("living_kelp_top",

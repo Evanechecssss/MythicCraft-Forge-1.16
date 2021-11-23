@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mythiccraft:items/infused_brew_of_the_grave"
+  }
+}
