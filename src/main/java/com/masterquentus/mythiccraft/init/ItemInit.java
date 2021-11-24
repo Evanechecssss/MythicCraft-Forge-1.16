@@ -424,9 +424,51 @@ public class ItemInit {
 	public static final RegistryObject<Item> HELLBARK_SIGN = ITEMS.register("hellbark_sign",
 			() -> new SignItem(new Item.Properties().tab(MythicCraftBlocks.instance).stacksTo(16),
 					BlockInit.HELLBARK_SIGN.get(), BlockInit.HELLBARK_WALL_SIGN.get()));
-
+    // Boats
 	public static final RegistryObject<Item> BLOODOAK_BOAT = ITEMS.register("bloodoak_boat",
 			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "bloodoak"));
+	public static final RegistryObject<Item> WHITEOAK_BOAT = ITEMS.register("whiteoak_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "whiteoak"));
+	public static final RegistryObject<Item> SILVERWOOD_BOAT = ITEMS.register("silverwood_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "silverwood"));
+	public static final RegistryObject<Item> WITCHWOOD_BOAT = ITEMS.register("witchwood_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "witchwood"));
+	public static final RegistryObject<Item> ALDER_BOAT = ITEMS.register("alder_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "alder"));
+	public static final RegistryObject<Item> HAWTHORN_BOAT = ITEMS.register("hawthorn_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "hawthorn"));
+	public static final RegistryObject<Item> ROWAN_BOAT = ITEMS.register("rowan_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "rowan"));
+	public static final RegistryObject<Item> WILLOW_BOAT = ITEMS.register("willow_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "willow"));
+	public static final RegistryObject<Item> BEECH_BOAT = ITEMS.register("beech_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "beech"));
+	public static final RegistryObject<Item> ASH_BOAT = ITEMS.register("ash_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "ash"));
+	public static final RegistryObject<Item> BLACKTHORN_BOAT = ITEMS.register("blackthorn_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "blackthorn"));
+	public static final RegistryObject<Item> CEDAR_BOAT = ITEMS.register("cedar_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "cedar"));
+	public static final RegistryObject<Item> ELDER_BOAT = ITEMS.register("elder_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "elder"));
+	public static final RegistryObject<Item> JUNIPER_BOAT = ITEMS.register("juniper_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "juniper"));
+	public static final RegistryObject<Item> WITCHHAZEL_BOAT = ITEMS.register("witchhazel_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "witchhazel"));
+	public static final RegistryObject<Item> YEW_BOAT = ITEMS.register("yew_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "yew"));
+	public static final RegistryObject<Item> INFESTED_BOAT = ITEMS.register("infested_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "infested"));
+	public static final RegistryObject<Item> CHARRED_BOAT = ITEMS.register("charred_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "charred"));
+	public static final RegistryObject<Item> ICY_BOAT = ITEMS.register("icy_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "icy"));
+	public static final RegistryObject<Item> TWISTED_BOAT = ITEMS.register("twisted_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "twisted"));
+	public static final RegistryObject<Item> DISTORTED_BOAT = ITEMS.register("distorted_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "distorted"));
+	public static final RegistryObject<Item> HELLBARK_BOAT = ITEMS.register("hellbark_boat",
+			() -> new ModBoatItem(new Item.Properties().tab(MythicCraftBlocks.instance), "hellbark"));
 
 	// Rune's
 	public static final RegistryObject<Item> blank_rune = ITEMS.register("blank_rune",

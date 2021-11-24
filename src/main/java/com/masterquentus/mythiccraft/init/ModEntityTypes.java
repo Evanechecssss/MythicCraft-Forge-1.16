@@ -79,8 +79,113 @@ public class ModEntityTypes {
 					.sized(0.8F, 2.0F).build(new ResourceLocation(MythicCraft.MOD_ID, "wendigo").toString()));
 
 	public static final RegistryObject<EntityType<ModBoatEntity>> BLOODOAK_BOAT =
-			ENTITY_TYPES.register("redwood_boat",
+			ENTITY_TYPES.register("bloodoak_boat",
 					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
 							EntityClassification.MISC).sized(0.5f, 0.5f)
 							.build(new ResourceLocation(MythicCraft.MOD_ID, "bloodoak_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> WHITEOAK_BOAT =
+			ENTITY_TYPES.register("whiteoak_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "whiteoak_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> SILVERWOOD_BOAT =
+			ENTITY_TYPES.register("silverwood_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "silverwood_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> WITCHWOOD_BOAT =
+			ENTITY_TYPES.register("witchwood_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "witchwood_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> ALDER_BOAT =
+			ENTITY_TYPES.register("alder_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "alder_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> HAWTHORN_BOAT =
+			ENTITY_TYPES.register("hawthorn_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "hawthorn_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> ROWAN_BOAT =
+			ENTITY_TYPES.register("rowan_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "rowan_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> WILLOW_BOAT =
+			ENTITY_TYPES.register("willow_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "willow_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> BEECH_BOAT =
+			ENTITY_TYPES.register("beech_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "beech_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> ASH_BOAT =
+			ENTITY_TYPES.register("ash_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "ash_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> BLACKTHORN_BOAT =
+			ENTITY_TYPES.register("blackthorn_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "blackthorn_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> CEDAR_BOAT =
+			ENTITY_TYPES.register("cedar_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "cedar_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> ELDER_BOAT =
+			ENTITY_TYPES.register("elder_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "elder_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> JUNIPER_BOAT =
+			ENTITY_TYPES.register("juniper_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "juniper_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> WITCHHAZEL_BOAT =
+			ENTITY_TYPES.register("witchhazel_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "witchhazel_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> YEW_BOAT =
+			ENTITY_TYPES.register("yew_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "yew_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> INFESTED_BOAT =
+			ENTITY_TYPES.register("infested_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "infested_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> CHARRED_BOAT =
+			ENTITY_TYPES.register("charred_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "charred_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> ICY_BOAT =
+			ENTITY_TYPES.register("icy_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "icy_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> TWISTED_BOAT =
+			ENTITY_TYPES.register("twisted_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "twisted_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> DISTORTED_BOAT =
+			ENTITY_TYPES.register("distorted_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "distorted_boat").toString()));
+	public static final RegistryObject<EntityType<ModBoatEntity>> HELLBARK_BOAT =
+			ENTITY_TYPES.register("hellbark_boat",
+					() -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new,
+							EntityClassification.MISC).sized(0.5f, 0.5f)
+							.build(new ResourceLocation(MythicCraft.MOD_ID, "hellbark_boat").toString()));
 }

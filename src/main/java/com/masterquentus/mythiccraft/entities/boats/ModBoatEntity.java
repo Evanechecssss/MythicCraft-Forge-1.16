@@ -63,10 +63,55 @@ public class ModBoatEntity extends BoatEntity {
 
 	public Item getItemBoat() {
 		switch(this.getWoodType()) {
-			case "redwood":
-				return ItemInit.BLOODOAK_BOAT.get();
 			default:
 				return ItemInit.BLOODOAK_BOAT.get();
+			case "bloodoak":
+				return ItemInit.BLOODOAK_BOAT.get();
+			case "whiteoak":
+				return ItemInit.WHITEOAK_BOAT.get();
+			case "silverwood":
+				return ItemInit.SILVERWOOD_BOAT.get();
+			case "witchwood":
+				return ItemInit.WITCHWOOD_BOAT.get();
+			case "alder":
+				return ItemInit.ALDER_BOAT.get();
+			case "hawthorn":
+				return ItemInit.HAWTHORN_BOAT.get();
+			case "rowan":
+				return ItemInit.ROWAN_BOAT.get();
+			case "willow":
+				return ItemInit.WILLOW_BOAT.get();
+			case "beech":
+				return ItemInit.BEECH_BOAT.get();
+			case "ash":
+				return ItemInit.ASH_BOAT.get();
+			case "blackthorn":
+				return ItemInit.BLACKTHORN_BOAT.get();
+			case "cedar":
+				return ItemInit.CEDAR_BOAT.get();
+			case "elder":
+				return ItemInit.ELDER_BOAT.get();
+			case "juniper":
+				return ItemInit.JUNIPER_BOAT.get();
+			case "witchhazel":
+				return ItemInit.WITCHHAZEL_BOAT.get();
+			case "yew":
+				return ItemInit.YEW_BOAT.get();
+			case "infested":
+				return ItemInit.INFESTED_BOAT.get();
+			case "charred":
+				return ItemInit.CHARRED_BOAT.get();
+			case "icy":
+				return ItemInit.ICY_BOAT.get();
+			case "twisted":
+				return ItemInit.TWISTED_BOAT.get();
+			case "distorted":
+				return ItemInit.DISTORTED_BOAT.get();
+			case "hellbark":
+				return ItemInit.HELLBARK_BOAT.get();
+
+
+
 		}
 	}
 

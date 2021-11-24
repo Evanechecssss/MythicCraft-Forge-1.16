@@ -1,6 +1,7 @@
 package com.masterquentus.mythiccraft.util.registers;
 
 import com.masterquentus.mythiccraft.client.entity.render.*;
+import com.masterquentus.mythiccraft.client.entity.render.boats.BloodoakBoatRenderer;
 import com.masterquentus.mythiccraft.client.entity.render.vampires.IlagerVampireRenders;
 import com.masterquentus.mythiccraft.entities.vampire.*;
 import com.masterquentus.mythiccraft.init.ModEntityTypes;
@@ -27,7 +28,27 @@ public class EntityRegistor {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.VINDICATOR.get(), (manager) -> new IlagerVampireRenders<VampireVindicatorEntity>(manager, VampireTypes.VINDICATOR));
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.UNDERWATER_SLIME.get(), UnderwaterSlimeRender::new);
 
-		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BLOODOAK_BOAT.get(), ModBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BLOODOAK_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WHITEOAK_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.SILVERWOOD_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WITCHWOOD_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ALDER_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.HAWTHORN_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ROWAN_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WILLOW_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BEECH_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ASH_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.BLACKTHORN_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CEDAR_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ELDER_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.JUNIPER_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WITCHHAZEL_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.YEW_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.INFESTED_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CHARRED_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.TWISTED_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.DISTORTED_BOAT.get(), BloodoakBoatRenderer::new);
+		RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.HELLBARK_BOAT.get(), BloodoakBoatRenderer::new);
 
 		Raid.WaveMember.create("VAMPIRE_EVOKER", ModEntityTypes.EVOKER.get(), new int[] { 0, 0, 2, 0, 1, 4, 2, 5 });
 		Raid.WaveMember.create("VAMPIRE_PILLAGER", ModEntityTypes.PILLAGER.get(), new int[] { 0, 0, 2, 0, 1, 4, 2, 5 });
