@@ -41,7 +41,7 @@ public class ModBoatEntity extends BoatEntity {
 
 	protected void registerData() {
 		super.defineSynchedData();
-		this.entityData.set(WOOD_TYPE, "redwood");
+		this.entityData.set(WOOD_TYPE, "bloodoak");
 	}
 
 	protected void readAdditional(CompoundNBT compound) {

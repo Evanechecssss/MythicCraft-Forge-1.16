@@ -13,6 +13,7 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.Item;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.Effects;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -49,16 +50,6 @@ public class BlockInit {
 		}
 
 		return crates;
-	}
-
-	public static Block[] getAllChest() {
-		Block[] chest = new Block[WoodTypes.values().length];
-		for (int i = 0; i < WoodTypes.values().length; i++) {
-			chest[i] = WoodTypes.values()[i].chest.get();
-		}
-
-		return chest;
-
 	}
 
 	public static Block[] getAllLanterns() {
@@ -577,6 +568,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> SLOTH_TROPHY = BLOCKS.register("sloth_trophy",
 			() -> new TrophyBlock(Block.Properties.copy(Blocks.STONE).strength(0.3f, 0.2f).harvestTool(ToolType.PICKAXE)
 					.harvestLevel(0).noOcclusion()));
+
 
 	// Crops
 	public static final RegistryObject<Block> VERVAIN_CROP = createCrop("vervain_crop", ItemInit.vervain_seeds);
