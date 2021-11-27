@@ -14,7 +14,8 @@ public class ElderBoatRenderer extends BoatRenderer {
         super(p_i46179_1_);
     }
 
-    public ResourceLocation getEntityTexture(BoatEntity entity) {
+    @Override
+    public ResourceLocation getTextureLocation(BoatEntity entity) {
         return BOAT_TEXTURE;
     }
-}
+    }

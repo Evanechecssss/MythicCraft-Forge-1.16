@@ -39,16 +39,19 @@ public class ModBoatEntity extends BoatEntity {
 		this.zo = p_i1705_6_;
 	}
 
-	protected void registerData() {
+	@Override
+	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.set(WOOD_TYPE, "bloodoak");
 	}
 
-	protected void readAdditional(CompoundNBT compound) {
+	@Override
+	protected void readAdditionalSaveData(CompoundNBT compound) {
 		super.readAdditionalSaveData(compound);
 		compound.putString("Type", this.getWoodType());
 	}
-	protected void writeAdditional(CompoundNBT compound) {
+	@Override
+	protected void addAdditionalSaveData(CompoundNBT compound) {
 		super.readAdditionalSaveData(compound);
 		compound.putString("Type", this.getWoodType());
 	}
@@ -61,7 +64,8 @@ public class ModBoatEntity extends BoatEntity {
 		this.entityData.set(WOOD_TYPE, wood);
 	}
 
-	public Item getItemBoat() {
+	@Override
+	public Item getDropItem() {
 		switch(this.getWoodType()) {
 			default:
 				return ItemInit.BLOODOAK_BOAT.get();
@@ -122,7 +126,8 @@ public class ModBoatEntity extends BoatEntity {
 	}
 
 	@Nonnull
-	public IPacket<?> createSpawnPacket() {
+	@Override
+	public IPacket<?> getAddEntityPacket () {
 		return NetworkHooks.getEntitySpawningPacket(this);
 	}
 }
