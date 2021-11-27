@@ -3,6 +3,7 @@ package com.masterquentus.mythiccraft.entities.boats;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.ItemInit;
+import com.masterquentus.mythiccraft.init.ModEntityTypes;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.item.Item;
@@ -31,7 +32,7 @@ public class ModBoatEntity extends BoatEntity {
 	}
 
 	public ModBoatEntity(World p_i1705_1_, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_) {
-		this(EntityType.BOAT, p_i1705_1_);
+		this(ModEntityTypes.BLOODOAK_BOAT.get(), p_i1705_1_);
 		this.setPos(p_i1705_2_, p_i1705_4_, p_i1705_6_);
 		this.setDeltaMovement(Vector3d.ZERO);
 		this.xo = p_i1705_2_;
@@ -42,7 +43,7 @@ public class ModBoatEntity extends BoatEntity {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.set(WOOD_TYPE, "bloodoak");
+		this.entityData.define(WOOD_TYPE, "bloodoak");
 	}
 
 	@Override
