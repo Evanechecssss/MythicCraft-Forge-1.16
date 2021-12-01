@@ -11,18 +11,10 @@ import com.masterquentus.mythiccraft.objects.blocks.ModWoodButtonBlock;
 import com.masterquentus.mythiccraft.objects.blocks.ModWoodPressurePlateBlock;
 import com.masterquentus.mythiccraft.world.feature.ModTree;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.PressurePlateBlock;
-import net.minecraft.block.SaplingBlock;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.StairsBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.registries.DeferredRegister;
 
 public enum WoodTypes {
@@ -46,8 +38,6 @@ public enum WoodTypes {
 	public Supplier<Block> gate;
 	public Supplier<Block> sapling;
 	public Supplier<Block> bookshelf;
-	public Supplier<Block> boat;
-	public Supplier<Block> chest;
 	public ModTree tree;
 
 	public void register(DeferredRegister<Block> blockRegistry) {
@@ -89,4 +79,4 @@ public enum WoodTypes {
 				Block.Properties.copy(Blocks.BOOKSHELF).sound(SoundType.WOOD).strength(1.5F)));
 
 	};
-}
+  }

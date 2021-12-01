@@ -12,9 +12,11 @@ import com.masterquentus.mythiccraft.client.entity.render.SirenEntityRender;
 import com.masterquentus.mythiccraft.client.entity.render.UnicornEntityRender;
 import com.masterquentus.mythiccraft.client.gui.CrateScreen;
 import com.masterquentus.mythiccraft.client.gui.WitchesOvenScreen;
+import com.masterquentus.mythiccraft.client.tile.ItemGrassperRenderer;
 import com.masterquentus.mythiccraft.client.tile.ItemPedestalRenderer;
 import com.masterquentus.mythiccraft.events.loot.GobliniteDustAdditionModifier;
 import com.masterquentus.mythiccraft.events.loot.VampiricGemStructureAdditionModifier;
+import com.masterquentus.mythiccraft.events.loot.VervainSeedsAdditionModifier;
 import com.masterquentus.mythiccraft.init.BlockInit;
 import com.masterquentus.mythiccraft.init.FluidInit;
 import com.masterquentus.mythiccraft.init.ItemInit;
@@ -24,6 +26,7 @@ import com.masterquentus.mythiccraft.init.ModTileEntityTypes;
 import com.masterquentus.mythiccraft.init.auto.LanternType;
 import com.masterquentus.mythiccraft.init.auto.WoodTypes;
 import com.masterquentus.mythiccraft.objects.blocks.WoodTypesInit;
+import com.masterquentus.mythiccraft.tileentity.GrassperTileEntity;
 import com.masterquentus.mythiccraft.util.registers.EntityRegistor;
 
 import net.minecraft.client.gui.ScreenManager;
@@ -73,6 +76,7 @@ public class ClientEventBusSubscriber {
 		ScreenManager.register(ModContainerTypes.WITCHES_OVEN_CONTAINER.get(), WitchesOvenScreen::new);
 
 		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.pedestal_tier1.get(), ItemPedestalRenderer::new);
+		ClientRegistry.bindTileEntityRenderer(ModTileEntityTypes.GRASSPER.get(), ItemGrassperRenderer::new);
 
 		// Sapling, Door, Trapdoor, & Leaves
 		for (WoodTypes wood : WoodTypes.values()) {
@@ -326,12 +330,11 @@ public class ClientEventBusSubscriber {
 		                                                           event) {
 		        event.getRegistry().registerAll(
 		                new VampiricGemStructureAdditionModifier.Serializer().setRegistryName
-		                        (new ResourceLocation(MythicCraft.MOD_ID,"vampiric_gem_in_jungle_temple"))
-		        );
-		        
-		        event.getRegistry().registerAll(
+		                        (new ResourceLocation(MythicCraft.MOD_ID,"vampiric_gem_in_jungle_temple")),
 		                new GobliniteDustAdditionModifier.Serializer().setRegistryName
-		                        (new ResourceLocation(MythicCraft.MOD_ID,"goblinite_dust_from_stone"))
-		        );
+		                        (new ResourceLocation(MythicCraft.MOD_ID,"goblinite_dust_from_stone")),
+					 new VervainSeedsAdditionModifier.Serializer().setRegistryName
+							 (new ResourceLocation(MythicCraft.MOD_ID,"vervain_seeds_from_grass"))
+			 );
 		    }
 		}

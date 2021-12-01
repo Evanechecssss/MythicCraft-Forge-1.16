@@ -196,6 +196,7 @@ public class VampireEvokerEntity extends EvokerEntity implements IAnimatable, II
         IDLE("animation.model.idle", true),
         WALK("animation.model.walk", true),
         ATACK("animation.model.atack", false);
+		@SuppressWarnings("unused")
 		private String registerName;
         @SuppressWarnings("unused")
 		private boolean loop;

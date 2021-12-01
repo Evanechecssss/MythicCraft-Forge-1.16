@@ -1,9 +1,23 @@
 package com.masterquentus.mythiccraft.mixin;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.function.Predicate;
+
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
 import com.google.common.collect.Lists;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;
 import com.masterquentus.mythiccraft.init.ItemInit;
-import net.minecraft.block.pattern.BlockStateMatcher;
+
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.RandomPositionGenerator;
@@ -17,26 +31,16 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.loot.*;
+import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootParameterSets;
+import net.minecraft.loot.LootParameters;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.LootTables;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.EntityPredicates;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.server.ServerWorld;
-import org.spongepowered.asm.mixin.Final;
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.Redirect;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.function.Predicate;
 
 /**
  * \* User: Evanechecssss
@@ -93,7 +97,7 @@ public abstract class VampirePiglinTask {
         stopWalking(p_234470_0_);
         ItemStack itemstack;
         if (p_234470_0_ instanceof VampirePiglinEntity){
-            if (p_234470_1_.getItem().getItem() == ItemInit.BLOODSTONE_INGOT.get()) {
+            if (p_234470_1_.getItem().getItem() == ItemInit.VAMPIRIC_GEM.get()) {
                 p_234470_0_.take(p_234470_1_, p_234470_1_.getItem().getCount());
                 itemstack = p_234470_1_.getItem();
                 p_234470_1_.remove();
@@ -103,7 +107,7 @@ public abstract class VampirePiglinTask {
             }
 
             Item item = itemstack.getItem();
-            if (p_234470_1_.getItem().getItem() == ItemInit.BLOODSTONE_INGOT.get()) {
+            if (p_234470_1_.getItem().getItem() == ItemInit.VAMPIRIC_GEM.get()) {
                 p_234470_0_.getBrain().eraseMemory(MemoryModuleType.TIME_TRYING_TO_REACH_ADMIRE_ITEM);
                 holdInOffhand(p_234470_0_, itemstack);
                 admireGoldItem(p_234470_0_);
@@ -148,7 +152,7 @@ public abstract class VampirePiglinTask {
             ItemStack itemstack = p_234477_0_.getItemInHand(Hand.OFF_HAND);
             p_234477_0_.setItemInHand(Hand.OFF_HAND, ItemStack.EMPTY);
             if (p_234477_0_.isAdult()) {
-                boolean flag = itemstack.getItem() == ItemInit.BLOODSTONE_INGOT.get();
+                boolean flag = itemstack.getItem() == ItemInit.VAMPIRIC_GEM.get();
                 if (p_234477_1_ && flag) {
                     throwItems(p_234477_0_, getBarterResponseItems(p_234477_0_));
                 } else if (!flag) {
@@ -161,7 +165,7 @@ public abstract class VampirePiglinTask {
                 boolean flag2 = p_234477_0_.equipItemIfPossible(itemstack);
                 if (!flag2) {
                     ItemStack itemstack1 = p_234477_0_.getMainHandItem();
-                    if (itemstack1.getItem()== ItemInit.BLOODSTONE_INGOT.get()) {
+                    if (itemstack1.getItem()== ItemInit.VAMPIRIC_GEM.get()) {
                         putInInventory(p_234477_0_, itemstack1);
                     } else {
                         throwItems(p_234477_0_, Collections.singletonList(itemstack1));
@@ -207,15 +211,15 @@ public abstract class VampirePiglinTask {
                 cir.setReturnValue(false);
             } else if (isAdmiringDisabled(p_234474_0_) && p_234474_0_.getBrain().hasMemoryValue(MemoryModuleType.ATTACK_TARGET)) {
                 cir.setReturnValue(false);
-            } else if (item == ItemInit.BLOODSTONE_INGOT.get()) {
+            } else if (item == ItemInit.VAMPIRIC_GEM.get()) {
                 cir.setReturnValue(isNotHoldingLovedItemInOffHand(p_234474_0_));
             } else {
                 boolean flag = p_234474_0_.canAddToInventory(p_234474_1_);
-                if (item == ItemInit.BLOODSTONE_INGOT.get()) {
+                if (item == ItemInit.VAMPIRIC_GEM.get()) {
                     cir.setReturnValue(flag);
                 } else if (isFood(item)) {
                     cir.setReturnValue(!hasEatenRecently(p_234474_0_) && flag);
-                } else if (item != ItemInit.BLOODSTONE_INGOT.get()) {
+                } else if (item != ItemInit.VAMPIRIC_GEM.get()) {
                     cir.setReturnValue(p_234474_0_.canReplaceCurrentItem(p_234474_1_));
                 } else {
                     cir.setReturnValue(isNotHoldingLovedItemInOffHand(p_234474_0_) && flag);
@@ -248,7 +252,7 @@ public abstract class VampirePiglinTask {
     private static void canAdmire(PiglinEntity p_234489_0_, ItemStack p_234489_1_, CallbackInfoReturnable<Boolean> info) {
         info.cancel();
         if(p_234489_0_ instanceof VampirePiglinEntity){
-            info.setReturnValue(!isAdmiringDisabled(p_234489_0_) && !isAdmiringItem(p_234489_0_) && p_234489_0_.isAdult() && p_234489_1_.getItem()== ItemInit.BLOODSTONE_INGOT.get());
+            info.setReturnValue(!isAdmiringDisabled(p_234489_0_) && !isAdmiringItem(p_234489_0_) && p_234489_0_.isAdult() && p_234489_1_.getItem()== ItemInit.VAMPIRIC_GEM.get());
         }else {
             info.setReturnValue(!isAdmiringDisabled(p_234489_0_) && !isAdmiringItem(p_234489_0_) && p_234489_0_.isAdult() && p_234489_1_.isPiglinCurrency());
         }
@@ -299,7 +303,7 @@ public abstract class VampirePiglinTask {
         return p_234451_0_.getBrain().hasMemoryValue(MemoryModuleType.ADMIRING_ITEM);
     }
     private static boolean isNotHoldingLovedItemInOffHand(PiglinEntity p_234455_0_) {
-        return p_234455_0_.getOffhandItem().isEmpty() || p_234455_0_.getOffhandItem().getItem() != ItemInit.BLOODSTONE_INGOT.get();
+        return p_234455_0_.getOffhandItem().isEmpty() || p_234455_0_.getOffhandItem().getItem() != ItemInit.VAMPIRIC_GEM.get();
     }
     private static boolean hasEatenRecently(PiglinEntity p_234538_0_) {
         return p_234538_0_.getBrain().hasMemoryValue(MemoryModuleType.ATE_RECENTLY);

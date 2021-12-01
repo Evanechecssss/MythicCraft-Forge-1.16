@@ -1,0 +1,22 @@
+{
+    "display": {
+        "icon": {
+            "item": "mythiccraft:mythic_diamond"
+        },
+        "title": {
+            "translate": "advancements.mythiccraft.root.title"
+        },
+        "description": {
+            "translate": "advancements.mythiccraft.root.description"
+        },
+        "background": "mythiccraft:textures/block/bloodoak_planks.png",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden" : false
+    },
+    "criteria": {
+        "tick": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

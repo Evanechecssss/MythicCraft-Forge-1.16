@@ -1,0 +1,34 @@
+  
+{
+	"replace": false,
+	"values": [
+		"mythiccraft:bloodoak_planks",
+		"mythiccraft:whiteoak_planks",
+		"mythiccraft:silverwood_planks",
+		"mythiccraft:witchwood_planks",
+		"mythiccraft:alder_planks",
+		"mythiccraft:hawthorn_planks",
+		"mythiccraft:rowan_planks",
+		"mythiccraft:willow_planks",
+		"mythiccraft:beech_planks",
+		"mythiccraft:ash_planks",
+		"mythiccraft:blackthorn_planks",
+		"mythiccraft:cedar_planks",
+		"mythiccraft:elder_planks",
+		"mythiccraft:juniper_planks",
+		"mythiccraft:witchhazel_planks",
+		"mythiccraft:yew_planks",
+		"mythiccraft:infested_planks",
+		"mythiccraft:charred_planks",
+		"mythiccraft:icy_planks",
+		"mythiccraft:twisted_planks",
+		"mythiccraft:distorted_planks",
+		"mythiccraft:hellbark_planks",
+		"minecraft:oak_planks",
+		"minecraft:spruce_planks",
+		"minecraft:birch_planks",
+		"minecraft:jungle_planks",
+		"minecraft:acacia_planks",
+		"minecraft:dark_oak_planks"
+	]
+}

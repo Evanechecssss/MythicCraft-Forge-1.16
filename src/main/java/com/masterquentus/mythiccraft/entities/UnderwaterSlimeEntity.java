@@ -3,18 +3,13 @@ package com.masterquentus.mythiccraft.entities;
 import com.masterquentus.mythiccraft.entities.ai.HurtByTargetGoal;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
-import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.pathfinding.*;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.EntityPredicates;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -42,9 +37,9 @@ import java.util.function.ToDoubleFunction;
  * \* Description:
  * \
  */
-public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
+public class UnderwaterSlimeEntity extends SlimeEntity implements IAnimatable, IMob {
 
-    public UnderwaterSlime(EntityType<? extends SlimeEntity> p_i48565_1_, World p_i48565_2_) {
+    public UnderwaterSlimeEntity(EntityType<? extends SlimeEntity> p_i48565_1_, World p_i48565_2_) {
         super(p_i48565_1_, p_i48565_2_);
         currentAnimation = AnimationTypes.IDLE;
 
@@ -60,7 +55,8 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
     }
 
     //AI//
-    private boolean searchingForLand;
+    @SuppressWarnings("unused")
+	private boolean searchingForLand;
     protected final SwimmerPathNavigator waterNavigation;
     protected final GroundPathNavigator groundNavigation;
 
@@ -137,13 +133,14 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
     }
 
     protected void addBehaviourGoals() {
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, UnderwaterSlime.class)).setAlertOthers(ZombifiedPiglinEntity.class));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, UnderwaterSlimeEntity.class)).setAlertOthers(ZombifiedPiglinEntity.class));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, this::okTarget));
         this.goalSelector.addGoal(1, new GoToWaterGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new SwimUpGoal(this, 1.0D, this.level.getSeaLevel()));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, (p_213811_1_) -> Math.abs(p_213811_1_.getY() - this.getY()) <= 4.0D));
     }
-    private float getSoundPitch() {
+    @SuppressWarnings("unused")
+	private float getSoundPitch() {
         float f = this.isTiny() ? 1.4F : 0.8F;
         return ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F) * f;
     }
@@ -154,14 +151,14 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
 
 
     public static class GoToWaterGoal extends Goal {
-        private final UnderwaterSlime mob;
+        private final UnderwaterSlimeEntity mob;
         private double wantedX;
         private double wantedY;
         private double wantedZ;
         private final double speedModifier;
         private final World level;
 
-        public GoToWaterGoal(UnderwaterSlime p_i48910_1_, double p_i48910_2_) {
+        public GoToWaterGoal(UnderwaterSlimeEntity p_i48910_1_, double p_i48910_2_) {
             this.mob = p_i48910_1_;
             this.speedModifier = p_i48910_2_;
             this.level = p_i48910_1_.level;
@@ -211,12 +208,12 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
     }
 
     public static class SwimUpGoal extends Goal {
-        private final UnderwaterSlime slime;
+        private final UnderwaterSlimeEntity slime;
         private final double speedModifier;
         private final int seaLevel;
         private boolean stuck;
 
-        public SwimUpGoal(UnderwaterSlime p_i48908_1_, double p_i48908_2_, int p_i48908_4_) {
+        public SwimUpGoal(UnderwaterSlimeEntity p_i48908_1_, double p_i48908_2_, int p_i48908_4_) {
             this.slime = p_i48908_1_;
             this.speedModifier = p_i48908_2_;
             this.seaLevel = p_i48908_4_;
@@ -335,7 +332,7 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
         @Nullable
         public static Vector3d getPosTowards(MobEntity p_75464_0_, int p_75464_1_, int p_75464_2_, Vector3d p_75464_3_) {
             Vector3d vector3d = p_75464_3_.subtract(p_75464_0_.getX(), p_75464_0_.getY(), p_75464_0_.getZ());
-            return generateRandomPos(p_75464_0_, p_75464_1_, p_75464_2_, 0, vector3d, true, (double)((float)Math.PI / 2F), ( (UnderwaterSlime) p_75464_0_ )::getWalkTargetValue, false, 0, 0, true);
+            return generateRandomPos(p_75464_0_, p_75464_1_, p_75464_2_, 0, vector3d, true, (double)((float)Math.PI / 2F), ( (UnderwaterSlimeEntity) p_75464_0_ )::getWalkTargetValue, false, 0, 0, true);
         }
         public void tick() {
             if (this.slime.getY() < (double) (this.seaLevel - 1) && (this.slime.getNavigation().isDone() || this.slime.closeToNextPos())) {
@@ -371,7 +368,8 @@ public class UnderwaterSlime extends SlimeEntity implements IAnimatable, IMob {
         return entity.getDimensions(p_213305_1_).scale(4F * 0.25F * (float) this.getSize());
     }
 
-    @Override
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }

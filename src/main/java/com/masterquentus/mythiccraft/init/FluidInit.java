@@ -101,7 +101,7 @@ public class FluidInit {
 			FluidAttributes.builder(MANA_STILL_RL, MANA_FLOWING_RL).density(10).viscosity(5).luminosity(2)
 					.sound(SoundEvents.WATER_AMBIENT).overlay(MANA_OVERLAY_RL)).slopeFindDistance(2)
 							.levelDecreasePerBlock(2).block(() -> FluidInit.MANA_BLOCK.get())
-							.bucket(() -> ItemInit.MANA_BUCKET.get());
+							.bucket(() -> ItemInit.LIQUID_MANA_BUCKET.get());
 
 	public static final RegistryObject<FlowingFluidBlock> BLOOD_BLOCK = BlockInit.BLOCKS.register("blood",
 			() -> new FlowingFluidBlock(() -> FluidInit.BLOOD_FLUID.get(),
