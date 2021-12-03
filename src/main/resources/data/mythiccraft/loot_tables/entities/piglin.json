@@ -1,0 +1,79 @@
+{
+	"type": "minecraft:entity",
+    "pools": [
+        {
+            "rolls": {
+                "min": 1,
+                "max": 10
+            },
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 10,
+                    "name": "mythiccraft:vampiric_gem",
+                    "quality": 10,
+                    "conditions": [
+                        {
+                            "condition": "random_chance_with_looting",
+                            "chance": 4.1,
+                            "looting_multiplier": 3.01
+                        }
+                    ],
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 4
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 3,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "weight": 3,
+                    "name": "mythiccraft:lilith_bloodbottle",
+                    "quality": 1
+                },
+                {
+                    "type": "item",
+                    "weight": 2,
+                    "name": "mythiccraft:contract_lilith",
+                    "conditions": [
+                        {
+                            "condition": "killed_by_player"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "name": "mythiccraft:lilith_trophy",
+                    "conditions": [
+                        {
+                            "condition": "killed_by_player"
+                        }
+                    ],
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

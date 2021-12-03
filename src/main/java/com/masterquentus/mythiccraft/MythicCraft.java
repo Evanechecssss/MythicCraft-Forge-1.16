@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft;
 
+
 import com.masterquentus.mythiccraft.entities.*;
 import com.masterquentus.mythiccraft.entities.events.DamageHandler;
 import com.masterquentus.mythiccraft.entities.vampire.VampirePiglinEntity;

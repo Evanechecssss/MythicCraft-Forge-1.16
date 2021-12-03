@@ -30,7 +30,7 @@ public abstract class AdmirePiglinMixin {
         info.cancel();
         ItemEntity itementity = p_212832_2_.getBrain().getMemory(MemoryModuleType.NEAREST_VISIBLE_WANTED_ITEM).get();
         if (p_212832_2_ instanceof VampirePiglinEntity) {
-            info.setReturnValue(itementity.getItem().getItem() == ItemInit.VAMPIRIC_GEM.get());
+            info.setReturnValue(itementity.getItem().getItem() == ItemInit.BLOODSTONE_INGOT.get());
         }else {
             info.setReturnValue(isLovedItem(itementity.getItem().getItem()));
         }

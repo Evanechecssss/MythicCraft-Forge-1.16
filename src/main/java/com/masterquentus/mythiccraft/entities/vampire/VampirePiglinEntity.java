@@ -2,6 +2,7 @@ package com.masterquentus.mythiccraft.entities.vampire;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.monster.piglin.AbstractPiglinEntity;
 import net.minecraft.entity.monster.piglin.PiglinEntity;
 import net.minecraft.entity.passive.BatEntity;
@@ -11,7 +12,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -69,6 +72,13 @@ public class VampirePiglinEntity extends PiglinEntity implements IAnimatable {
             }
         }
     }
+
+    @Override
+    public boolean checkSpawnRules(IWorld p_213380_1_, SpawnReason p_213380_2_) {
+        return this.level.getBiome(this.blockPosition()).getBiomeCategory() == Biome.Category.NETHER;
+
+    }
+
     private static final DataParameter<Integer> ATTACK_TIME = EntityDataManager.defineId(VampireEvokerEntity.class, DataSerializers.INT);
 
     protected void defineSynchedData() {
@@ -91,9 +101,10 @@ public class VampirePiglinEntity extends PiglinEntity implements IAnimatable {
         }
     }
     private void vampireAttackMouse(LivingEntity entity) {
-        entity.setHealth(entity.getHealth() - baseDamage);
-        this.setHealth(this.getHealth() + (entity.getHealth()- baseDamage));
+
         if (entity != null) {
+            entity.setHealth(entity.getHealth() - baseDamage);
+            this.setHealth(this.getHealth() + (entity.getHealth()- baseDamage));
             List<BatEntity> entities = new ArrayList<>();
             for (int i = 0; i<=2; i++) {
                 BatEntity bat = EntityType.BAT.create(level);

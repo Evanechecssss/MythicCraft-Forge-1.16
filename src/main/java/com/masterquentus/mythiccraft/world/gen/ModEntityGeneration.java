@@ -57,10 +57,9 @@ public class ModEntityGeneration {
         }
     }
 
-    @SuppressWarnings("unused")
     private static void addEntityToAllBiomesNoNether(BiomeLoadingEvent event, EntityType<?> type, int weight,
                                                      int minCount, int maxCount) {
-        if (!event.getCategory().equals(Biome.Category.NETHER)) {
+        if (event.getCategory().equals(Biome.Category.NETHER)) {
             List<MobSpawnInfo.Spawners> base = event.getSpawns().getSpawner(type.getCategory());
             base.add(new MobSpawnInfo.Spawners(type, weight, minCount, maxCount));
         }
@@ -68,7 +67,7 @@ public class ModEntityGeneration {
 
     private static void addEntityToAllBiomesOcean(BiomeLoadingEvent event, EntityType<?> type, int weight,
                                                   int minCount, int maxCount) {
-        if (!event.getCategory().equals(Biome.Category.OCEAN)) {
+        if (event.getCategory().equals(Biome.Category.OCEAN)) {
             List<MobSpawnInfo.Spawners> base = event.getSpawns().getSpawner(type.getCategory());
             base.add(new MobSpawnInfo.Spawners(type, weight, minCount, maxCount));
         }
