@@ -22,7 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 
-public class ModBoatEntity extends BoatEntity {
+public class ModBoatEntity extends BoatEntity{
 	private static final DataParameter<String> WOOD_TYPE
 			= EntityDataManager.defineId(ModBoatEntity.class, DataSerializers.STRING);
 
@@ -63,6 +63,7 @@ public class ModBoatEntity extends BoatEntity {
 
 	public void setWoodType(String wood) {
 		this.entityData.set(WOOD_TYPE, wood);
+
 	}
 
 	@Override

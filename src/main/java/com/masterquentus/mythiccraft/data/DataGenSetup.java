@@ -2,7 +2,9 @@ package com.masterquentus.mythiccraft.data;
 
 import com.masterquentus.mythiccraft.MythicCraft;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.loot.LootTable;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.event.LootTableLoadEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
@@ -27,4 +29,5 @@ public class DataGenSetup {
 
         // gen.addProvider(new DimensionSetup(gen));
     }
+
 }

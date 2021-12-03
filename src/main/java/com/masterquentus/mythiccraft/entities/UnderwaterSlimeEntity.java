@@ -1,18 +1,28 @@
 package com.masterquentus.mythiccraft.entities;
 
-import com.masterquentus.mythiccraft.entities.ai.HurtByTargetGoal;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.controller.LookController;
+import net.minecraft.entity.ai.controller.MovementController;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.*;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.pathfinding.*;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -26,9 +36,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
-import java.util.Random;
 import java.util.function.Predicate;
-import java.util.function.ToDoubleFunction;
 
 /**
  * \* User: Evanechecssss
@@ -37,335 +45,316 @@ import java.util.function.ToDoubleFunction;
  * \* Description:
  * \
  */
-public class UnderwaterSlimeEntity extends SlimeEntity implements IAnimatable, IMob {
+public class UnderwaterSlimeEntity extends MonsterEntity implements IAnimatable, IMob {
+    private static final DataParameter<Boolean> DATA_ID_MOVING = EntityDataManager.defineId(UnderwaterSlimeEntity.class, DataSerializers.BOOLEAN);
+    private static final DataParameter<Integer> DATA_ID_ATTACK_TARGET = EntityDataManager.defineId(UnderwaterSlimeEntity.class, DataSerializers.INT);
+    private static final DataParameter<Integer> SIZE = EntityDataManager.defineId(UnderwaterSlimeEntity.class, DataSerializers.INT);
+    protected RandomWalkingGoal randomStrollGoal;
 
-    public UnderwaterSlimeEntity(EntityType<? extends SlimeEntity> p_i48565_1_, World p_i48565_2_) {
+    public UnderwaterSlimeEntity(EntityType<? extends MonsterEntity> p_i48565_1_, World p_i48565_2_) {
         super(p_i48565_1_, p_i48565_2_);
         currentAnimation = AnimationTypes.IDLE;
-
         //AI
-        this.maxUpStep = 1.0F;
+        this.xpReward = 10;
         this.setPathfindingMalus(PathNodeType.WATER, 0.0F);
-        this.waterNavigation = new SwimmerPathNavigator(this, p_i48565_2_);
-        this.groundNavigation = new GroundPathNavigator(this, p_i48565_2_);
+        this.setPathfindingMalus(PathNodeType.BLOCKED, 0.0F);
+        this.moveControl = new MoveHelperController(this);
+
+
+
     }
+
 
     public static AttributeModifierMap.MutableAttribute createAttributes() {
-        return MonsterEntity.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 1.1D).add(Attributes.FOLLOW_RANGE, 20.0D).add(Attributes.MAX_HEALTH, 48.0D);
+        return MonsterEntity.createMonsterAttributes().add(Attributes.MOVEMENT_SPEED, 0.4D).add(Attributes.FOLLOW_RANGE, 20.0D).add(Attributes.MAX_HEALTH, 48.0D);
     }
-
+    @Override
+    public CreatureAttribute getMobType() {
+        return CreatureAttribute.WATER;
+    }
     //AI//
     @SuppressWarnings("unused")
-	private boolean searchingForLand;
-    protected final SwimmerPathNavigator waterNavigation;
-    protected final GroundPathNavigator groundNavigation;
-
-    public boolean isPushedByFluid() {
-        return !this.isSwimming();
-    }
-    public float getWalkTargetValue(BlockPos p_180484_1_) {
-        return this.getWalkTargetValue(p_180484_1_, this.level);
-    }
-
-    public float getWalkTargetValue(BlockPos p_205022_1_, IWorldReader p_205022_2_) {
-        return 0.0F;
-    }
-    private boolean wantsToSwim() {
-        LivingEntity livingentity = this.getTarget();
-        return livingentity != null && livingentity.isInWater();
-    }
-
-    public void travel(Vector3d p_213352_1_) {
-        if (this.isEffectiveAi() && this.isInWater() && this.wantsToSwim()) {
-            this.moveRelative(0.01F, p_213352_1_);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-        } else {
-            super.travel(p_213352_1_);
-        }
-
-    }
-
-    public void updateSwimming() {
-        if (!this.level.isClientSide) {
-            if (this.isEffectiveAi() && this.isInWater() && this.wantsToSwim()) {
-                this.navigation = this.waterNavigation;
-                this.setSwimming(true);
-            } else {
-                this.navigation = this.groundNavigation;
-                this.setSwimming(false);
-            }
-        }
-
-    }
-
-    protected boolean closeToNextPos() {
-        Path path = this.getNavigation().getPath();
-        if (path != null) {
-            BlockPos blockpos = path.getTarget();
-            if (blockpos != null) {
-                double d0 = this.distanceToSqr((double) blockpos.getX(), (double) blockpos.getY(), (double) blockpos.getZ());
-                if (d0 < 4.0D) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    public boolean okTarget(@Nullable LivingEntity p_204714_1_) {
-        if (p_204714_1_ != null) {
-            return p_204714_1_.isInWater();
-        } else {
-            return false;
-        }
-    }
-
     @Override
     public boolean canBreatheUnderwater() {
         return true;
     }
 
     @Override
-    protected void registerGoals() {
-        addBehaviourGoals();
-    }
-
-    protected void addBehaviourGoals() {
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, UnderwaterSlimeEntity.class)).setAlertOthers(ZombifiedPiglinEntity.class));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, this::okTarget));
-        this.goalSelector.addGoal(1, new GoToWaterGoal(this, 1.0D));
-        this.goalSelector.addGoal(6, new SwimUpGoal(this, 1.0D, this.level.getSeaLevel()));
-        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, 10, true, false, (p_213811_1_) -> Math.abs(p_213811_1_.getY() - this.getY()) <= 4.0D));
-    }
-    @SuppressWarnings("unused")
-	private float getSoundPitch() {
-        float f = this.isTiny() ? 1.4F : 0.8F;
-        return ((this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F) * f;
-    }
-
-    protected int getJumpDelay() {
-        return this.random.nextInt(20) + 10;
+    public boolean isPushedByFluid() {
+        return false;
     }
 
 
-    public static class GoToWaterGoal extends Goal {
-        private final UnderwaterSlimeEntity mob;
-        private double wantedX;
-        private double wantedY;
-        private double wantedZ;
-        private final double speedModifier;
-        private final World level;
 
-        public GoToWaterGoal(UnderwaterSlimeEntity p_i48910_1_, double p_i48910_2_) {
-            this.mob = p_i48910_1_;
-            this.speedModifier = p_i48910_2_;
-            this.level = p_i48910_1_.level;
-            this.setFlags(EnumSet.of(Goal.Flag.MOVE));
-        }
-
-        public boolean canUse() {
-            if (!this.level.isDay()) {
-                return false;
-            } else if (this.mob.isInWater()) {
-                return false;
-            } else {
-                Vector3d vector3d = this.getWaterPos();
-                if (vector3d == null) {
-                    return false;
-                } else {
-                    this.wantedX = vector3d.x;
-                    this.wantedY = vector3d.y;
-                    this.wantedZ = vector3d.z;
-                    return true;
-                }
-            }
-        }
-
-        public boolean canContinueToUse() {
-            return !this.mob.getNavigation().isDone();
-        }
-
-        public void start() {
-            this.mob.getNavigation().moveTo(this.wantedX, this.wantedY, this.wantedZ, this.speedModifier);
-        }
-
-        @Nullable
-        private Vector3d getWaterPos() {
-            Random random = this.mob.getRandom();
-            BlockPos blockpos = this.mob.blockPosition();
-
-            for (int i = 0; i < 10; ++i) {
-                BlockPos blockpos1 = blockpos.offset(random.nextInt(20) - 10, 2 - random.nextInt(8), random.nextInt(20) - 10);
-                if (this.level.getBlockState(blockpos1).is(Blocks.WATER)) {
-                    return Vector3d.atBottomCenterOf(blockpos1);
-                }
-            }
-
+    @Nullable
+    public LivingEntity getActiveAttackTarget() {
+        if (!this.hasActiveAttackTarget()) {
             return null;
         }
+        return this.getTarget();
+
     }
 
-    public static class SwimUpGoal extends Goal {
-        private final UnderwaterSlimeEntity slime;
-        private final double speedModifier;
-        private final int seaLevel;
-        private boolean stuck;
 
-        public SwimUpGoal(UnderwaterSlimeEntity p_i48908_1_, double p_i48908_2_, int p_i48908_4_) {
-            this.slime = p_i48908_1_;
-            this.speedModifier = p_i48908_2_;
-            this.seaLevel = p_i48908_4_;
-        }
+    protected boolean isMovementNoisy() {
+        return false;
+    }
 
-        public boolean canUse() {
-            return !this.slime.level.isDay() && this.slime.isInWater() && this.slime.getY() < (double) (this.seaLevel - 2);
-        }
+    protected float getStandingEyeHeight(Pose p_213348_1_, EntitySize p_213348_2_) {
+        return p_213348_2_.height * 0.5F;
+    }
 
-        public boolean canContinueToUse() {
-            return this.canUse() && !this.stuck;
-        }
-        static BlockPos moveUpToAboveSolid(BlockPos p_226342_0_, int p_226342_1_, int p_226342_2_, Predicate<BlockPos> p_226342_3_) {
-            if (p_226342_1_ < 0) {
-                throw new IllegalArgumentException("aboveSolidAmount was " + p_226342_1_ + ", expected >= 0");
-            } else if (!p_226342_3_.test(p_226342_0_)) {
-                return p_226342_0_;
-            } else {
-                BlockPos blockpos;
-                for(blockpos = p_226342_0_.above(); blockpos.getY() < p_226342_2_ && p_226342_3_.test(blockpos); blockpos = blockpos.above()) {
-                }
+    public float getWalkTargetValue(BlockPos p_205022_1_, IWorldReader p_205022_2_) {
+        return p_205022_2_.getFluidState(p_205022_1_).is(FluidTags.WATER) ? 10.0F + p_205022_2_.getBrightness(p_205022_1_) - 0.5F : super.getWalkTargetValue(p_205022_1_, p_205022_2_);
+    }
 
-                BlockPos blockpos1;
-                BlockPos blockpos2;
-                for(blockpos1 = blockpos; blockpos1.getY() < p_226342_2_ && blockpos1.getY() - blockpos.getY() < p_226342_1_; blockpos1 = blockpos2) {
-                    blockpos2 = blockpos1.above();
-                    if (p_226342_3_.test(blockpos2)) {
-                        break;
-                    }
-                }
+    public int getAttackDuration() {
+        return 80;
+    }
 
-                return blockpos1;
-            }
-        }
-        private static BlockPos getRandomDelta(Random p_226343_0_, int p_226343_1_, int p_226343_2_, int p_226343_3_, @Nullable Vector3d p_226343_4_, double p_226343_5_) {
-            if (p_226343_4_ != null && !(p_226343_5_ >= Math.PI)) {
-                double d3 = MathHelper.atan2(p_226343_4_.z, p_226343_4_.x) - (double)((float)Math.PI / 2F);
-                double d4 = d3 + (double)(2.0F * p_226343_0_.nextFloat() - 1.0F) * p_226343_5_;
-                double d0 = Math.sqrt(p_226343_0_.nextDouble()) * (double)MathHelper.SQRT_OF_TWO * (double)p_226343_1_;
-                double d1 = -d0 * Math.sin(d4);
-                double d2 = d0 * Math.cos(d4);
-                if (!(Math.abs(d1) > (double)p_226343_1_) && !(Math.abs(d2) > (double)p_226343_1_)) {
-                    int l = p_226343_0_.nextInt(2 * p_226343_2_ + 1) - p_226343_2_ + p_226343_3_;
-                    return new BlockPos(d1, (double)l, d2);
-                } else {
-                    return null;
-                }
-            } else {
-                int i = p_226343_0_.nextInt(2 * p_226343_1_ + 1) - p_226343_1_;
-                int j = p_226343_0_.nextInt(2 * p_226343_2_ + 1) - p_226343_2_ + p_226343_3_;
-                int k = p_226343_0_.nextInt(2 * p_226343_1_ + 1) - p_226343_1_;
-                return new BlockPos(i, j, k);
-            }
-        }
-        @Nullable
-        private static Vector3d generateRandomPos(MobEntity p_226339_0_, int p_226339_1_, int p_226339_2_, int p_226339_3_, @Nullable Vector3d p_226339_4_, boolean p_226339_5_, double p_226339_6_, ToDoubleFunction<BlockPos> p_226339_8_, boolean p_226339_9_, int p_226339_10_, int p_226339_11_, boolean p_226339_12_) {
-            PathNavigator pathnavigator = p_226339_0_.getNavigation();
-            Random random = p_226339_0_.getRandom();
-            boolean flag;
-            if (p_226339_0_.hasRestriction()) {
-                flag = p_226339_0_.getRestrictCenter().closerThan(p_226339_0_.position(), (double)(p_226339_0_.getRestrictRadius() + (float)p_226339_1_) + 1.0D);
-            } else {
-                flag = false;
+    private void setActiveAttackTarget(int p_175463_1_) {
+        this.entityData.set(DATA_ID_ATTACK_TARGET, p_175463_1_);
+    }
+
+    public boolean hasActiveAttackTarget() {
+        return this.entityData.get(DATA_ID_ATTACK_TARGET) != 0;
+    }
+    public boolean isMoving() {
+        return this.entityData.get(DATA_ID_MOVING);
+    }
+
+    private void setMoving(boolean p_175476_1_) {
+        this.entityData.set(DATA_ID_MOVING, p_175476_1_);
+    }
+
+
+    protected SoundEvent getHurtSound(DamageSource p_184601_1_) {
+        return this.isInWaterOrBubble() ? SoundEvents.AMBIENT_NETHER_WASTES_ADDITIONS : SoundEvents.AMBIENT_NETHER_WASTES_LOOP;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return this.isInWaterOrBubble() ? SoundEvents.BAT_DEATH : SoundEvents.COW_DEATH;
+    }
+
+
+
+    public void aiStep() {
+        if (this.isAlive()) {
+            if (this.isInWaterOrBubble()) {
+                this.setAirSupply(300);
+            } else if (this.onGround) {
+                this.setDeltaMovement(this.getDeltaMovement().add((double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5D, (double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F)));
+                this.yRot = this.random.nextFloat() * 360.0F;
+                this.onGround = false;
+                this.hasImpulse = true;
             }
 
-            boolean flag1 = false;
-            double d0 = Double.NEGATIVE_INFINITY;
-            BlockPos blockpos = p_226339_0_.blockPosition();
-
-            for(int i = 0; i < 10; ++i) {
-                BlockPos blockpos1 = getRandomDelta(random, p_226339_1_, p_226339_2_, p_226339_3_, p_226339_4_, p_226339_6_);
-                if (blockpos1 != null) {
-                    int j = blockpos1.getX();
-                    int k = blockpos1.getY();
-                    int l = blockpos1.getZ();
-                    if (p_226339_0_.hasRestriction() && p_226339_1_ > 1) {
-                        BlockPos blockpos2 = p_226339_0_.getRestrictCenter();
-                        if (p_226339_0_.getX() > (double)blockpos2.getX()) {
-                            j -= random.nextInt(p_226339_1_ / 2);
-                        } else {
-                            j += random.nextInt(p_226339_1_ / 2);
-                        }
-
-                        if (p_226339_0_.getZ() > (double)blockpos2.getZ()) {
-                            l -= random.nextInt(p_226339_1_ / 2);
-                        } else {
-                            l += random.nextInt(p_226339_1_ / 2);
-                        }
-                    }
-
-                    BlockPos blockpos3 = new BlockPos((double)j + p_226339_0_.getX(), (double)k + p_226339_0_.getY(), (double)l + p_226339_0_.getZ());
-                    if (blockpos3.getY() >= 0 && blockpos3.getY() <= p_226339_0_.level.getMaxBuildHeight() && (!flag || p_226339_0_.isWithinRestriction(blockpos3)) && (!p_226339_12_ || pathnavigator.isStableDestination(blockpos3))) {
-                        if (p_226339_9_) {
-                            blockpos3 = moveUpToAboveSolid(blockpos3, random.nextInt(p_226339_10_ + 1) + p_226339_11_, p_226339_0_.level.getMaxBuildHeight(), (p_226341_1_) -> {
-                                return p_226339_0_.level.getBlockState(p_226341_1_).getMaterial().isSolid();
-                            });
-                        }
-
-                        if (p_226339_5_ || !p_226339_0_.level.getFluidState(blockpos3).is(FluidTags.WATER)) {
-                            PathNodeType pathnodetype = WalkNodeProcessor.getBlockPathTypeStatic(p_226339_0_.level, blockpos3.mutable());
-                            if (p_226339_0_.getPathfindingMalus(pathnodetype) == 0.0F) {
-                                double d1 = p_226339_8_.applyAsDouble(blockpos3);
-                                if (d1 > d0) {
-                                    d0 = d1;
-                                    blockpos = blockpos3;
-                                    flag1 = true;
-                                }
-                            }
-                        }
-                    }
-                }
+            if (this.hasActiveAttackTarget()) {
+                this.yRot = this.yHeadRot;
             }
+        }
 
-            return flag1 ? Vector3d.atBottomCenterOf(blockpos) : null;
+        super.aiStep();
+    }
+
+
+    public boolean hurt(DamageSource p_70097_1_, float p_70097_2_) {
+        if (!this.isMoving() && !p_70097_1_.isMagic() && p_70097_1_.getDirectEntity() instanceof LivingEntity) {
+            LivingEntity livingentity = (LivingEntity)p_70097_1_.getDirectEntity();
+            if (!p_70097_1_.isExplosion()) {
+                livingentity.hurt(DamageSource.thorns(this), 2.0F);
+            }
         }
-        @Nullable
-        public static Vector3d getPosTowards(MobEntity p_75464_0_, int p_75464_1_, int p_75464_2_, Vector3d p_75464_3_) {
-            Vector3d vector3d = p_75464_3_.subtract(p_75464_0_.getX(), p_75464_0_.getY(), p_75464_0_.getZ());
-            return generateRandomPos(p_75464_0_, p_75464_1_, p_75464_2_, 0, vector3d, true, (double)((float)Math.PI / 2F), ( (UnderwaterSlimeEntity) p_75464_0_ )::getWalkTargetValue, false, 0, 0, true);
+
+        if (this.randomStrollGoal != null) {
+            this.randomStrollGoal.trigger();
         }
+
+        return super.hurt(p_70097_1_, p_70097_2_);
+    }
+
+    public int getMaxHeadXRot() {
+        return 180;
+    }
+
+    public void travel(Vector3d p_213352_1_) {
+        if (this.isEffectiveAi() && this.isInWater()) {
+            this.moveRelative(0.1F, p_213352_1_);
+            this.move(MoverType.SELF, this.getDeltaMovement());
+            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
+            if (!this.isMoving() && this.getTarget() == null) {
+                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+            }
+            this.setJumping(true);
+        } else {
+            super.travel(p_213352_1_);
+            this.setJumping(true);
+        }
+
+    }
+    @Override
+    public void remove(boolean keepData) {
+        int i = this.getSize();
+        if (!this.level.isClientSide && i > 1 && this.isDeadOrDying() && !this.removed) {
+            ITextComponent itextcomponent = this.getCustomName();
+            boolean flag = this.isNoAi();
+            float f = (float)i / 4.0F;
+            int j = i -1;
+            int k = 2 + this.random.nextInt(3);
+
+            for(int l = 0; l < k; ++l) {
+                float f1 = ((float)(l % 2) - 0.5F) * f;
+                float f2 = ((float)(l / 2) - 0.5F) * f;
+                UnderwaterSlimeEntity slimeentity = (UnderwaterSlimeEntity) this.getType().create(this.level);
+                if (this.isPersistenceRequired()) {
+                    slimeentity.setPersistenceRequired();
+                }
+
+                slimeentity.setCustomName(itextcomponent);
+                slimeentity.setNoAi(flag);
+                slimeentity.setInvulnerable(this.isInvulnerable());
+
+                slimeentity.moveTo(this.getX() + (double)f1, this.getY() + 0.5D, this.getZ() + (double)f2, this.random.nextFloat() * 360.0F, 0.0F);
+                this.level.addFreshEntity(slimeentity);
+                slimeentity.setSize(j);
+            }
+        }
+
+        super.remove(keepData);
+    }
+    @Override
+    public boolean checkSpawnRules(IWorld p_213380_1_, SpawnReason p_213380_2_) {
+        return p_213380_1_.isWaterAt(this.blockPosition());
+    }
+
+    static class MoveHelperController extends MovementController {
+        private final UnderwaterSlimeEntity underwater;
+
+        public MoveHelperController(UnderwaterSlimeEntity p_i45831_1_) {
+            super(p_i45831_1_);
+            this.underwater = p_i45831_1_;
+        }
+
         public void tick() {
-            if (this.slime.getY() < (double) (this.seaLevel - 1) && (this.slime.getNavigation().isDone() || this.slime.closeToNextPos())) {
-
-
-                Vector3d vector3d = getPosTowards(this.slime, 4, 8, new Vector3d(this.slime.getX(), (double) (this.seaLevel - 1), this.slime.getZ()));
-                if (vector3d == null) {
-                    this.stuck = true;
-                    return;
+            if (this.operation == MovementController.Action.MOVE_TO && !this.underwater.getNavigation().isDone()) {
+                Vector3d vector3d = new Vector3d(this.wantedX - this.underwater.getX(), this.wantedY - this.underwater.getY(), this.wantedZ - this.underwater.getZ());
+                double d0 = vector3d.length();
+                double d1 = vector3d.x / d0;
+                double d2 = vector3d.y / d0;
+                double d3 = vector3d.z / d0;
+                float f = (float)(MathHelper.atan2(vector3d.z, vector3d.x) * (double)(180F / (float)Math.PI)) - 90.0F;
+                this.underwater.yRot = this.rotlerp(this.underwater.yRot, f, 90.0F);
+                this.underwater.yBodyRot = this.underwater.yRot;
+                float f1 = (float)(this.speedModifier * this.underwater.getAttributeValue(Attributes.MOVEMENT_SPEED));
+                float f2 = MathHelper.lerp(0.125F, this.underwater.getSpeed(), f1);
+                this.underwater.setSpeed(f2);
+                double d4 = Math.sin((double)(this.underwater.tickCount + this.underwater.getId()) * 0.5D) * 0.05D;
+                double d5 = Math.cos((double)(this.underwater.yRot * ((float)Math.PI / 180F)));
+                double d6 = Math.sin((double)(this.underwater.yRot * ((float)Math.PI / 180F)));
+                double d7 = Math.sin((double)(this.underwater.tickCount + this.underwater.getId()) * 0.75D) * 0.05D;
+                this.underwater.setDeltaMovement(this.underwater.getDeltaMovement().add(d4 * d5, d7 * (d6 + d5) * 0.25D + (double)f2 * d2 * 0.1D, d4 * d6));
+                LookController lookcontroller = this.underwater.getLookControl();
+                double d8 = this.underwater.getX() + d1 * 2.0D;
+                double d9 = this.underwater.getEyeY() + d2 / d0;
+                double d10 = this.underwater.getZ() + d3 * 2.0D;
+                double d11 = lookcontroller.getWantedX();
+                double d12 = lookcontroller.getWantedY();
+                double d13 = lookcontroller.getWantedZ();
+                if (!lookcontroller.isHasWanted()) {
+                    d11 = d8;
+                    d12 = d9;
+                    d13 = d10;
                 }
 
-                this.slime.getNavigation().moveTo(vector3d.x, vector3d.y, vector3d.z, this.speedModifier);
+                this.underwater.getLookControl().setLookAt(MathHelper.lerp(0.125D, d11, d8), MathHelper.lerp(0.125D, d12, d9), MathHelper.lerp(0.125D, d13, d10), 10.0F, 40.0F);
+                this.underwater.setMoving(true);
+                if (!underwater.jumping){
+                    this.underwater.setJumping(true);
+                }
+
+            } else {
+                this.underwater.setSpeed(0.0F);
+                this.underwater.setMoving(false);
             }
+        }
+    }
+    static class TargetPredicate implements Predicate<LivingEntity> {
+        private final UnderwaterSlimeEntity slime;
 
+        public TargetPredicate(UnderwaterSlimeEntity p_i45832_1_) {
+            this.slime = p_i45832_1_;
         }
 
-        public void start() {
-
-            this.stuck = false;
+        public boolean test(@Nullable LivingEntity p_test_1_) {
+            return (p_test_1_ instanceof PlayerEntity || p_test_1_ instanceof SquidEntity) && p_test_1_.distanceToSqr(this.slime) > 9.0D;
         }
+    }
 
-        public void stop() {
-
+    public void addAdditionalSaveData(CompoundNBT p_213281_1_) {
+        super.addAdditionalSaveData(p_213281_1_);
+        p_213281_1_.putInt("Size", this.getSize() - 1);
+    }
+    public EntityType<? extends UnderwaterSlimeEntity> getType() {
+        return (EntityType<? extends UnderwaterSlimeEntity>)super.getType();
+    }
+    public void readAdditionalSaveData(CompoundNBT p_70037_1_) {
+        int i = p_70037_1_.getInt("Size");
+        if (i < 0) {
+            i = 0;
         }
+        this.setSize(i + 1);
+        super.readAdditionalSaveData(p_70037_1_);
     }
     //Animations and Render//
 
     private AnimationTypes currentAnimation;
+    public int getSize(){
+        return this.entityData.get(SIZE);
+    }
+    public void setSize(int size){
+        this.entityData.set(SIZE, size);
+        this.refreshDimensions();
+    }
 
     @Override
     public EntitySize getDimensions(Pose p_213305_1_) {
         Entity entity = new SlimeEntity(EntityType.SLIME, this.level);
-        return entity.getDimensions(p_213305_1_).scale(4F * 0.25F * (float) this.getSize());
+        int size = this.getSize();
+        if (size==3){
+            size=5;
+        }
+        return entity.getDimensions(p_213305_1_).scale((float) size/2);
+
+    }
+
+    @Override
+    protected PathNavigator createNavigation(World p_175447_1_) {
+        return new SwimmerPathNavigator(this, p_175447_1_);
+    }
+
+    protected void registerGoals() {
+        MoveTowardsRestrictionGoal movetowardsrestrictiongoal = new MoveTowardsRestrictionGoal(this, 1.0D);
+        this.randomStrollGoal = new RandomWalkingGoal(this, 1.0D, 80);
+        this.goalSelector.addGoal(4, new MeleeAttackGoal(this,3D, true));
+        this.goalSelector.addGoal(5, movetowardsrestrictiongoal);
+        this.goalSelector.addGoal(7, this.randomStrollGoal);
+        this.goalSelector.addGoal(8, new LookAtGoal(this, PlayerEntity.class, 8.0F));
+        this.goalSelector.addGoal(9, new LookRandomlyGoal(this));
+        this.randomStrollGoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        movetowardsrestrictiongoal.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false, new TargetPredicate(this)));
+    }
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.getEntityData().define(SIZE, 3);
+        this.getEntityData().define(DATA_ID_MOVING, false);
+        this.getEntityData().define(DATA_ID_ATTACK_TARGET, 0);
+    }
+
+    @Override
+    public void onSyncedDataUpdated(DataParameter<?> p_184206_1_) {
+        super.onSyncedDataUpdated(p_184206_1_);
+
     }
 
     @SuppressWarnings({ "unchecked", "rawtypes" })
