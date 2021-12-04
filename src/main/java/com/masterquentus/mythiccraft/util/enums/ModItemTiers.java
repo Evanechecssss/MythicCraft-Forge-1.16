@@ -61,6 +61,11 @@ public enum ModItemTiers implements IItemTier {
 	ARTHANA(2, 550, 5.0F, 6.5F, 15, () -> {
 		return Ingredient.of(ItemInit.AMETHYST.get());
 		
+	}),
+
+	DEATH(2, 550, 5.0F, 6.5F, 12, () -> {
+		return Ingredient.of(ItemInit.DEATH_SOUL.get());
+
 	});
 
 	private final int harvestLevel;

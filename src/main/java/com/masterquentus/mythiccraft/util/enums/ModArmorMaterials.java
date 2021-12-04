@@ -6,6 +6,7 @@ import com.masterquentus.mythiccraft.MythicCraft;
 import com.masterquentus.mythiccraft.init.ItemInit;
 
 import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
@@ -111,12 +112,12 @@ public enum ModArmorMaterials implements IArmorMaterial {
 				return Ingredient.of(ItemInit.dragon_bone.get());
 			}),
 	
-	RUBY(MythicCraft.MOD_ID + ":ruby", 5, new int[] { 7, 9, 11, 7 }, 420,
+	RUBY(MythicCraft.MOD_ID + ":ruby", 5, new int[] { 7, 9, 11, 7 }, 20,
 			SoundEvents.ARMOR_EQUIP_GENERIC, 6.9F, () -> {
 				return Ingredient.of(ItemInit.RUBY.get());
 			}),
 	
-	SAPPHIRE(MythicCraft.MOD_ID + ":sapphire", 5, new int[] { 7, 9, 11, 7 }, 420,
+	SAPPHIRE(MythicCraft.MOD_ID + ":sapphire", 5, new int[] { 7, 9, 11, 7 }, 20,
 			SoundEvents.ARMOR_EQUIP_GENERIC, 6.9F, () -> {
 				return Ingredient.of(ItemInit.SAPPHIRE.get());
 			}),
@@ -129,7 +130,16 @@ public enum ModArmorMaterials implements IArmorMaterial {
 	ANCIENT(MythicCraft.MOD_ID + ":ancent", 5, new int[] { 7, 9, 11, 7 }, 420,
 			SoundEvents.ARMOR_EQUIP_GENERIC, 6.9F, () -> {
 				return Ingredient.of(ItemInit.dragonscale_black.get());
-			});
+			}),
+	WITCH(MythicCraft.MOD_ID + ":witch", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
+			6.9F, () -> {
+		return Ingredient.of(ItemInit.INFUSED_FABRIC.get());
+			}),
+
+	DEATH(MythicCraft.MOD_ID + ":death", 5, new int[]{3, 4, 3, 2}, 15, SoundEvents.ARMOR_EQUIP_LEATHER,
+			6.9F, () -> {
+		return Ingredient.of(ItemInit.DEATH_SOUL.get());
+	});
 
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 16, 16, 16, 16 };
 	private final String name;
