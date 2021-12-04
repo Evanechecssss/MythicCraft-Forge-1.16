@@ -1,5 +1,6 @@
 package com.masterquentus.mythiccraft.entities;
 
+import javax.annotation.Nullable;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
@@ -13,7 +14,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.pathfinding.*;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.DamageSource;
@@ -34,7 +34,6 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
@@ -133,7 +132,7 @@ public class UnderwaterSlimeEntity extends MonsterEntity implements IAnimatable,
     }
 
     protected SoundEvent getDeathSound() {
-        return this.isInWaterOrBubble() ? SoundEvents.BAT_DEATH : SoundEvents.COW_DEATH;
+        return this.isInWaterOrBubble() ? SoundEvents.SLIME_DEATH : SoundEvents.SLIME_DEATH_SMALL;
     }
 
 

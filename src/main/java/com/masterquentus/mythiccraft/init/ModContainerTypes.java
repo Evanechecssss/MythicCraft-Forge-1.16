@@ -78,6 +78,8 @@ public class ModContainerTypes {
 			"witchhazel_chest");
 	public static final RegistryObject<ContainerType<CrateContainer>> HAWTHORN_CHEST = createContainer(
 			"hawthorn_chest");
+	public static final RegistryObject<ContainerType<CrateContainer>> HELLBARK_CHEST = createContainer(
+			"hellbark_chest");
 	public static final RegistryObject<ContainerType<WitchesOvenContainer>> WITCHES_OVEN_CONTAINER = CONTAINER_TYPES
 			.register("witches_oven_container", () -> IForgeContainerType.create(((windowId, inv, data) -> {
 				return new WitchesOvenContainer(windowId, inv);

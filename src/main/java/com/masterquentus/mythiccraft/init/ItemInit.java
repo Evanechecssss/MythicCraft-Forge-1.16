@@ -356,6 +356,8 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 	public static final RegistryObject<Item> GYPSUM = ITEMS.register("gypsum",
 			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<Item> INFUSED_FABRIC = ITEMS.register("infused_fabric",
+			() -> new Item(new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Signs
 	public static final RegistryObject<Item> BLOODOAK_SIGN = ITEMS.register("bloodoak_sign",
@@ -789,6 +791,92 @@ public class ItemInit {
 	public static final RegistryObject<ArmorItem> ancient_boots = ITEMS.register("ancient_boots",
 			() -> new ArmorItem(ModArmorMaterials.ANCIENT, EquipmentSlotType.FEET,
 					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT = ITEMS.register("witches_hat",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES = ITEMS.register("witches_robes",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS = ITEMS.register("witches_leggings",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS = ITEMS.register("witches_boots",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT_BROWN = ITEMS.register("witches_hat_brown",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES_BROWN = ITEMS.register("witches_robes_brown",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS_BROWN = ITEMS.register("witches_leggings_brown",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS_BROWN = ITEMS.register("witches_boots_brown",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT_WHITE = ITEMS.register("witches_hat_white",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES_WHITE = ITEMS.register("witches_robes_white",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS_WHITE = ITEMS.register("witches_leggings_white",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS_WHITE = ITEMS.register("witches_boots_white",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT_RED = ITEMS.register("witches_hat_red",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES_RED = ITEMS.register("witches_robes_red",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS_RED = ITEMS.register("witches_leggings_red",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS_RED = ITEMS.register("witches_boots_red",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT_GRAY = ITEMS.register("witches_hat_gray",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES_GRAY = ITEMS.register("witches_robes_gray",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS_GRAY = ITEMS.register("witches_leggings_gray",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS_GRAY = ITEMS.register("witches_boots_gray",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_HAT_GREEN = ITEMS.register("witches_hat_green",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_ROBES_GREEN = ITEMS.register("witches_robes_green",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_LEGGINGS_GREEN = ITEMS.register("witches_leggings_green",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> WITCHES_BOOTS_GREEN = ITEMS.register("witches_boots_green",
+			() -> new ArmorItem(ModArmorMaterials.WITCH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> DEATH_HOOD = ITEMS.register("death_hood",
+			() -> new ArmorItem(ModArmorMaterials.DEATH, EquipmentSlotType.HEAD,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> DEATH_ROBES = ITEMS.register("death_robes",
+			() -> new ArmorItem(ModArmorMaterials.DEATH, EquipmentSlotType.CHEST,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> DEATH_LEGGINGS = ITEMS.register("death_leggings",
+			() -> new ArmorItem(ModArmorMaterials.DEATH, EquipmentSlotType.LEGS,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+	public static final RegistryObject<ArmorItem> DEATH_BOOTS = ITEMS.register("death_boots",
+			() -> new ArmorItem(ModArmorMaterials.DEATH, EquipmentSlotType.FEET,
+					new Item.Properties().tab(MythicCraftItems.instance)));
+
+
 
 	// Bows
 	public static final RegistryObject<Item> DRAGONBONE_BOW = ITEMS.register("dragonbone_bow",
@@ -949,6 +1037,9 @@ public class ItemInit {
 
 	public static final RegistryObject<SwordItem> ARTHANA = ITEMS.register("arthana",
 			() -> new SwordItem(ModItemTiers.ARTHANA, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
+
+	public static final RegistryObject<SwordItem> DEATH_SCYTHE = ITEMS.register("death_scythe",
+			() -> new DeathScytheItem(ModItemTiers.DEATH, 2, 5.0f, new Item.Properties().tab(MythicCraftItems.instance)));
 
 	// Fuel
 	public static final RegistryObject<WoodAshItem> WOOD_ASH = ITEMS.register("wood_ash",
